@@ -31,6 +31,12 @@ pom.properties
 # CDT- autotools
 .autotools
 
+# Eclipse Core
+.project
+
+# JDT-Specific (Eclipse Java Development Tools)
+.classpath
+
 # Java annotation processor (APT)
 .factorypath
 
