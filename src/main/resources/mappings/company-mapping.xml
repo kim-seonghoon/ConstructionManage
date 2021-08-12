@@ -19,5 +19,4 @@
 		DELETE FROM company WHERE cp_num = #{cp_num}
 	</delete>
 	
-	
 </mapper>
