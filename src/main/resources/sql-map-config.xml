@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.green.biz.dto.AddressVO" alias="address"/>
+		<typeAlias type="com.green.biz.dto.CompanyVO" alias="company"/>
+		<typeAlias type="com.green.biz.dto.ComplaintsVO" alias="complaint"/>
+		<typeAlias type="com.green.biz.dto.ConstructionVO" alias="construction"/>
+		<typeAlias type="com.green.biz.dto.ManagerVO" alias="manager"/>
+		<typeAlias type="com.green.biz.dto.UserVO" alias="user"/>
+	</typeAliases>
+
+	<mappers>
+		<mapper resource="mappings/address-mapping.xml"/>
+		<mapper resource="mappings/company-mapping.xml"/>
+		<mapper resource="mappings/complaints-mapping.xml"/>
+		<mapper resource="mappings/construction-mapping.xml"/>
+		<mapper resource="mappings/manager-mapping.xml"/>
+		<mapper resource="mappings/user-mapping.xml"/>
+	</mappers>
+</configuration>
