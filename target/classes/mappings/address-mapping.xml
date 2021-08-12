@@ -6,6 +6,5 @@
    <select id="selectAddressByDong" parameterType="String" resultType="address">
       SELECT * FROM address WHERE dong LIKE '%'||#{dong}||'%'
    </select>
-   
-   
+
 </mapper>
