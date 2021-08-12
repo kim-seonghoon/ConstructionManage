@@ -3,10 +3,44 @@ package com.green.biz.dto;
 public class CompanyVO {
 	private String cp_id;
 	private String pwd;
-	private String name;
+	private String admin_name;
+	private String admin_phone;
 	private String cp_name;
+	private String cp_num;
 	private int cp_phone;
+	private int fax_num;
+	private String cp_address;
 	
+	public String getAdmin_name() {
+		return admin_name;
+	}
+	public void setAdmin_name(String admin_name) {
+		this.admin_name = admin_name;
+	}
+	public String getAdmin_phone() {
+		return admin_phone;
+	}
+	public void setAdmin_phone(String admin_phone) {
+		this.admin_phone = admin_phone;
+	}
+	public String getCp_num() {
+		return cp_num;
+	}
+	public void setCp_num(String cp_num) {
+		this.cp_num = cp_num;
+	}
+	public int getFax_num() {
+		return fax_num;
+	}
+	public void setFax_num(int fax_num) {
+		this.fax_num = fax_num;
+	}
+	public String getCp_address() {
+		return cp_address;
+	}
+	public void setCp_address(String cp_address) {
+		this.cp_address = cp_address;
+	}
 	public String getCp_id() {
 		return cp_id;
 	}
@@ -18,12 +52,6 @@ public class CompanyVO {
 	}
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
 	}
 	public String getCp_name() {
 		return cp_name;
@@ -39,7 +67,8 @@ public class CompanyVO {
 	}
 	@Override
 	public String toString() {
-		return "CompanyVO [cp_id=" + cp_id + ", pwd=" + pwd + ", name=" + name + ", cp_name=" + cp_name + ", cp_phone="
-				+ cp_phone + "]";
+		return "CompanyVO [cp_id=" + cp_id + ", pwd=" + pwd + ", admin_name=" + admin_name + ", admin_phone="
+				+ admin_phone + ", cp_name=" + cp_name + ", cp_num=" + cp_num + ", cp_phone=" + cp_phone + ", fax_num="
+				+ fax_num + ", cp_address=" + cp_address + "]";
 	}
 }

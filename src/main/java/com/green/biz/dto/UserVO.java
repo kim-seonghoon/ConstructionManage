@@ -3,11 +3,32 @@ package com.green.biz.dto;
 public class UserVO {
 	private String user_id;
 	private String pwd;
+	private String name;
 	private String sido;
 	private String gugun;
 	private String dong;
 	private String address;
-	private String user_num;
+	private String email;
+	private String birth_date;
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getBirth_date() {
+		return birth_date;
+	}
+	public void setBirth_date(String birth_date) {
+		this.birth_date = birth_date;
+	}
 	private int phone;
 	
 	public String getUser_id() {
@@ -46,12 +67,6 @@ public class UserVO {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getUser_num() {
-		return user_num;
-	}
-	public void setUser_num(String user_num) {
-		this.user_num = user_num;
-	}
 	public int getPhone() {
 		return phone;
 	}
@@ -60,7 +75,8 @@ public class UserVO {
 	}
 	@Override
 	public String toString() {
-		return "userVO [user_id=" + user_id + ", pwd=" + pwd + ", sido=" + sido + ", gugun=" + gugun + ", dong=" + dong
-				+ ", address=" + address + ", user_num=" + user_num + ", phone=" + phone + "]";
+		return "UserVO [user_id=" + user_id + ", pwd=" + pwd + ", name=" + name + ", sido=" + sido + ", gugun=" + gugun
+				+ ", dong=" + dong + ", address=" + address + ", email=" + email + ", birth_date=" + birth_date
+				+ ", phone=" + phone + "]";
 	}
 }

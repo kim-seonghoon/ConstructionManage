@@ -13,7 +13,14 @@ public class ConstructionVO {
 	private Timestamp start_date;
 	private Timestamp end_date;
 	private char con_num;
+	private String content;
 	
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
 	public int getCon_seq() {
 		return con_seq;
 	}
@@ -78,6 +85,6 @@ public class ConstructionVO {
 	public String toString() {
 		return "ConstructionVO [con_seq=" + con_seq + ", con_name=" + con_name + ", sido=" + sido + ", gugun=" + gugun
 				+ ", dong=" + dong + ", address=" + address + ", cp_name=" + cp_name + ", start_date=" + start_date
-				+ ", end_date=" + end_date + ", con_num=" + con_num + "]";
+				+ ", end_date=" + end_date + ", con_num=" + con_num + ", content=" + content + "]";
 	}
 }

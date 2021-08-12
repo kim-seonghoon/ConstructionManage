@@ -12,6 +12,7 @@ public class ComplaintsVO {
 	private String answer;
 	private Timestamp regdate;
 	private Timestamp moddate;
+	
 	public int getCom_seq() {
 		return com_seq;
 	}

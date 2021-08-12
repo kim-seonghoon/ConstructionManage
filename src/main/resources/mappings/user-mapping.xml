@@ -1,3 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mappings.user-mapping"></mapper>
+<mapper namespace="UserDAO">
+	<!-- 일반 유저 회원 가입 -->
+	<insert id="insertUser">
+		INSERT INTO users 
+		VALUES(#{user_id}, #{pwd}, #{name}, #{sido}, #{gugun}, #{dong}, #{address},
+			   #{email}, #{birth_date}, #{phone})
+	</insert>
+	
+	<!-- 유저 정보 수정 -->
+	<update id="updateUser">
+		UPDATE users 
+		SET pwd=#{pwd}, sido=#{sido}, gugun=#{gugun}, dong=#{dong}, address#{address},
+			email=#{email}, #{birth_date}=birth_date, phone=#{phone} 
+	</update>
+	
+	<!-- 유저 삭제 -->
+	<delete id="deleteUser">
+		DELETE users WHERE user_id=#{user_id}
+	</delete>
+	
+	<!-- 아이디로 유저 찾기 -->
+	<select id="getUser" resultType="user">
+		SELECT * FROM users WHERE user_id=#{user_id}
+	</select>
+	
+	<!-- 유저 리스트(관리자의 유저 관리) -->
+	<select id="getUserList" resultType="user">
+		SELECT * FROM users
+	</select>
+	
+	<!-- 유저 아이디 검색으로 유저찾기(관리자의 유저 관리) -->
+	<select id="getUserListById" parameterType="String" resultType="user">
+		SELECT * FROM users 
+		WHERE user_id LIKE '%'||#{key}||'%'
+	</select>
+	
+	<!-- 유저 이름 검색으로 유저찾기(관리자의 유저관리) -->
+	<select id="getUserListByName" parameterType="String" resultType="user">
+		SELECT * FROM users
+		WHERE name LIKE '%'||#{key}||'%'
+	</select>
+</mapper>

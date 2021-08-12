@@ -1,3 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mappings.manager-mapping"></mapper>
+<mapper namespace="ManagerDAO">
+	<!-- manager 회원 가입 -->
+	<insert id="insertManager">
+		INSERT INTO manager 
+		VALUES(#{manager_id}, #{pwd}, #{sido}, #{gugun}, #{address}, 
+			   #{name}, #{position})
+	</insert>
+	
+	<!-- 매니저 정보 수정 (승진했을 경우나 관리 지역이 달라졌을 경우) -->
+	<update id="updateManager">
+		UPDATE manager SET position=#{position}, sido=#{sido}, gugun=#{gugun}, address=#{address}
+		WHERE manager_id=#{manager_id}
+	</update>
+	
+	<!-- 매니저 삭제 -->
+	<delete id="deleteManager">
+		DELETE manager WHERE manager_id=#{manager_id}
+	</delete>
+	
+	<!-- 관리지역으로 매니저 찾기 -->
+	<select id="getManagerByArea" parameterType="HashMap" resultType="manager">
+		SELECT * FROM manager WHERE sido=#{sido} AND gugun=#{gugun}
+	</select>
+</mapper>

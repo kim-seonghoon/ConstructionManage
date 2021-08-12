@@ -5,7 +5,7 @@ public class ManagerVO {
 	private String pwd;
 	private String sido;
 	private String gugun;
-	private String adress;
+	private String address;
 	private String name;
 	private String position;
 	
@@ -33,11 +33,11 @@ public class ManagerVO {
 	public void setGugun(String gugun) {
 		this.gugun = gugun;
 	}
-	public String getAdress() {
-		return adress;
+	public String getAddress() {
+		return address;
 	}
-	public void setAdress(String adress) {
-		this.adress = adress;
+	public void setAddress(String adress) {
+		this.address = adress;
 	}
 	public String getName() {
 		return name;
@@ -54,6 +54,6 @@ public class ManagerVO {
 	@Override
 	public String toString() {
 		return "ManagerVO [manager_id=" + manager_id + ", pwd=" + pwd + ", sido=" + sido + ", gugun=" + gugun
-				+ ", adress=" + adress + ", name=" + name + ", position=" + position + "]";
+				+ ", address=" + address + ", name=" + name + ", position=" + position + "]";
 	}
 }
