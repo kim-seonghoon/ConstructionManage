@@ -6,7 +6,7 @@
 		INSERT INTO (cp_id, pwd, admin_name, admin_phone, cp_name, cp_num, cp_phone, fax_num, cp_address , cp_email)
 			   VALUES(#{cp_id}, #{pwd}, #{admin_name}, #{admin_phone}, #{cp_name}, #{cp_num}, #{cp_phone}, #{fax_num}, #{cp_address}, #{cp_email})
 	</insert>
-	
+	 
 	<!-- 공사업체 수정 -->
 	<update id="updateCompany">
 		UPDATE company

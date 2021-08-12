@@ -6,7 +6,7 @@
 		INSERT INTO complaints(com_seq, con_name, title, content, redate)
 		VELUES (com_seq.NEXTVAL, #{con_name}, #{title}, #{content}, #{redate})
 	</insert>
-	
+	 
 	<!-- 민원 수정 -->
 	<update id="updateComplaionts">
 		UPDATE complaints SET title = #{title}, contnet = #{content}, moddate = #{moddate}
