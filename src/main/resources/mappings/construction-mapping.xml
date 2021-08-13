@@ -37,7 +37,7 @@
 	<!-- 지역으로 공사 찾기 -->
 	<select id="getConstructionListByArea" parameterType="HashMap" resultType="construction">
 		SELECT *
-		FROM construction
+		FROM construction 
 		WHERE sido=#{sido}
 		AND gugun LIKE '%'||#{gugun}||'%'
 		AND dong LIKE '%'||#{dong}||'%'

@@ -10,7 +10,14 @@ public class CompanyVO {
 	private int cp_phone;
 	private int fax_num;
 	private String cp_address;
+	private String cp_email;
 	
+	public String getCp_email() {
+		return cp_email;
+	}
+	public void setCp_email(String cp_email) {
+		this.cp_email = cp_email;
+	}
 	public String getAdmin_name() {
 		return admin_name;
 	}
