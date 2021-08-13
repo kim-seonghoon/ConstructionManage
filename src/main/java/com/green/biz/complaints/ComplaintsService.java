@@ -12,7 +12,7 @@ public interface ComplaintsService {
 	
 	public int deleteComplaints(int com_seq);
 	
-	public int answerComplaints(int com_seq);
+	public int answerComplaints(ComplaintsVO vo);
 	
 	public List<ComplaintsVO> getComplaintsList(int com_seq);
 	

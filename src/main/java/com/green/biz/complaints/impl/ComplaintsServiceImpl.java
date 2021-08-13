@@ -34,9 +34,9 @@ public class ComplaintsServiceImpl implements ComplaintsService {
 	}
 
 	@Override
-	public int answerComplaints(int com_seq) {
+	public int answerComplaints(ComplaintsVO vo) {
 		
-		return complaintsDao.answerComplaints(com_seq);
+		return complaintsDao.answerComplaints(vo);
 	}
 
 	@Override
