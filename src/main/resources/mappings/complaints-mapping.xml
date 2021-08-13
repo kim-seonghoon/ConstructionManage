@@ -21,6 +21,7 @@
 	<!-- 답변 등록 -->
 	<update id="answerComplaints">
 		UPDATE complaints SET answer = #answer
+		 WHERE com_seq = #{com_seq}
 	</update>
 	
 	<!-- 민원 리스트 -->
