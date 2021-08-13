@@ -14,7 +14,7 @@ public class CompanyServiceImpl implements CompanyService {
 	private CompanyDAO companyDao;
 	
 	@Override
-	public void insertCompany(CompanyVO vo) {
+	public void insertCompany(CompanyVO vo) { 
 		
 		companyDao.insertCompany(vo);
 	}

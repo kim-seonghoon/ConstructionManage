@@ -15,4 +15,5 @@ public interface ComplaintsService {
 	public int answerComplaints(int com_seq);
 	
 	public List<ComplaintsVO> getComplaintsList(int com_seq);
+	
 }

@@ -38,4 +38,5 @@ public class ComplaintsDAO {
 		
 		return mybatis.selectList("ComplaintsDAO.getComplaintsList", com_seq);
 	}
+	
 }

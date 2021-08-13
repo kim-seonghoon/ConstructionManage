@@ -26,4 +26,5 @@ public class CompanyDAO {
 		
 		return mybatis.update("CompanyDAO.updateCompany",vo);
 	}
+	
 }
