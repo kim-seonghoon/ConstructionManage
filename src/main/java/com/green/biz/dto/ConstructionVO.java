@@ -10,11 +10,32 @@ public class ConstructionVO {
 	private String dong;
 	private String address;
 	private String cp_name;
+	private String cp_num;
 	private Timestamp start_date;
 	private Timestamp end_date;
+	private String con_size;
+	private String con_state;
 	private char con_num;
 	private String content;
 	
+	public String getCp_num() {
+		return cp_num;
+	}
+	public void setCp_num(String cp_num) {
+		this.cp_num = cp_num;
+	}
+	public String getCon_size() {
+		return con_size;
+	}
+	public void setCon_size(String con_size) {
+		this.con_size = con_size;
+	}
+	public String getCon_state() {
+		return con_state;
+	}
+	public void setCon_state(String con_state) {
+		this.con_state = con_state;
+	}	
 	public String getContent() {
 		return content;
 	}
@@ -84,7 +105,8 @@ public class ConstructionVO {
 	@Override
 	public String toString() {
 		return "ConstructionVO [con_seq=" + con_seq + ", con_name=" + con_name + ", sido=" + sido + ", gugun=" + gugun
-				+ ", dong=" + dong + ", address=" + address + ", cp_name=" + cp_name + ", start_date=" + start_date
-				+ ", end_date=" + end_date + ", con_num=" + con_num + ", content=" + content + "]";
+				+ ", dong=" + dong + ", address=" + address + ", cp_name=" + cp_name + ", cp_num=" + cp_num
+				+ ", start_date=" + start_date + ", end_date=" + end_date + ", con_size=" + con_size + ", con_state="
+				+ con_state + ", con_num=" + con_num + ", content=" + content + "]";
 	}
 }

@@ -4,16 +4,18 @@
 	<!-- 공사 접수 -->
 	<insert id="insertConstruction">
 		INSERT INTO construction(con_seq, con_name, sido, gugun, dong, address,
-						cp_name, c_num, start_date, end_date, con_num, content) 
+								 cp_name, cp_num, start_date, end_date, con_size, 
+								 con_state, con_num, content) 
 		VALUES(con_seq.NEXTVAL, #{con_name}, #{sido}, #{gugun}, #{dong},
 			   #{address}, #{cp_name}, #{cp_num}, #{start_date}, #{end_date},
-			   #{con_num}, #{content})
+			   #{con_size}, #{con_state}, #{con_num}, #{content})
 	</insert>
 	
 	<!-- 공사 수정 -->
 	<update id="updateConstruction">
 		UPDATE construction 
-		SET start_date=#{start_date}, end_date=#{end_date}, con_num=#{con_num}
+		SET start_date=#{start_date}, end_date=#{end_date}, con_num=#{con_num},
+			con_size=#{con_size}, con_state=#{con_state}
 		WHERE con_seq=#{con_seq}
 	</update>
 	
