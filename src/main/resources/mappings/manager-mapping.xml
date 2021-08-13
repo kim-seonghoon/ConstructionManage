@@ -3,7 +3,7 @@
 <mapper namespace="ManagerDAO">
 	<!-- manager 회원 가입 -->
 	<insert id="insertManager">
-		INSERT INTO manager 
+		INSERT INTO manager (manager_id, pwd, sido, gugun, address, name, position)
 		VALUES(#{manager_id}, #{pwd}, #{sido}, #{gugun}, #{address}, 
 			   #{name}, #{position})
 	</insert>
