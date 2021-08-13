@@ -32,7 +32,7 @@ public class UserDAO {
 	public List<UserVO> getUserList() {
 		return mybatis.selectList("UserDAO.getUserList");
 	}
-	
+	 
 	public List<UserVO> getUserListById(String key) {
 		return mybatis.selectList("UserDAO.getUserListById", key);
 	}

@@ -15,7 +15,7 @@ public class ManagerDAO {
 	
 	public void insertManager(ManagerVO vo) {
 		mybatis.insert("ManagerDAO.insertManager", vo);
-	}
+	} 
 	
 	public void updateManager(ManagerVO vo) {
 		mybatis.update("ManagerDAO.updateManager", vo);

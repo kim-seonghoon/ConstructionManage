@@ -42,7 +42,7 @@ public class ConstructionDAO {
 		
 		return mybatis.selectList("ConstructionDAO.getConstructionListByArea", map);
 	}
-	
+	 
 	public List<ConstructionVO> getManageConstructionList(String sido, String gugun) {
 		HashMap<String, String> map = new HashMap<>();
 		map.put("sido", sido);

@@ -41,7 +41,7 @@
 		AND dong LIKE '%'||#{dong}||'%'
 	</select>
 	
-	<!-- 관리 지역 리스트 찾기 -->
+	<!-- 관리 지역 리스트 찾기 --> 
 	<select id="getManageConstructionList" parameterType="HashMap" resultType="construction">
 		SELECT *
 		FROM construction
