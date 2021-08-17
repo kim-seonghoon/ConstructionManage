@@ -3,7 +3,7 @@ package com.green.biz.dto;
 import java.sql.Timestamp;
 
 public class ComplaintsVO {
-	private int com_seq;
+	private int com_seq; 
 	private int con_seq;
 	private String con_name;
 	private String title;

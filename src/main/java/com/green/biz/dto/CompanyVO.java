@@ -4,7 +4,7 @@ public class CompanyVO {
 	private String cp_id;
 	private String pwd;
 	private String admin_name;
-	private String admin_phone;
+	private String admin_phone; 
 	private String cp_name;
 	private String cp_num;
 	private int cp_phone;
