@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 public class ConstructionVO {
 	private int con_seq;
-	private String con_name;   
+	private String con_name;    
 	private String sido;
 	private String gugun;
 	private String dong;

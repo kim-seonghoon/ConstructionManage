@@ -6,7 +6,7 @@ public class ComplaintsVO {
 	private int com_seq; 
 	private int con_seq;
 	private String con_name;
-	private String title; 
+	private String title;  
 	private String name;
 	private String content;
 	private String answer;
