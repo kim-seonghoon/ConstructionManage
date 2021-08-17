@@ -10,8 +10,15 @@ public class CompanyVO {
 	private int cp_phone;
 	private int fax_num;
 	private String cp_address;
+	private String zip_num;
 	private String cp_email;
 	
+	public String getZip_num() {
+		return zip_num;
+	}
+	public void setZip_num(String zip_num) {
+		this.zip_num = zip_num;
+	}
 	public String getCp_email() {
 		return cp_email;
 	}
@@ -76,6 +83,7 @@ public class CompanyVO {
 	public String toString() {
 		return "CompanyVO [cp_id=" + cp_id + ", pwd=" + pwd + ", admin_name=" + admin_name + ", admin_phone="
 				+ admin_phone + ", cp_name=" + cp_name + ", cp_num=" + cp_num + ", cp_phone=" + cp_phone + ", fax_num="
-				+ fax_num + ", cp_address=" + cp_address + "]";
+				+ fax_num + ", cp_address=" + cp_address + ", zip_num=" + zip_num + ", cp_email=" + cp_email + "]";
 	}
+
 }

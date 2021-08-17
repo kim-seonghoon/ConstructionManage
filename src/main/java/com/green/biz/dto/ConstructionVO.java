@@ -8,9 +8,12 @@ public class ConstructionVO {
 	private String sido;
 	private String gugun;
 	private String dong;
+	private String zip_num;
 	private String address;
 	private String cp_name;
 	private String cp_num;
+	private String dept;
+	private String dept_tel;
 	private Timestamp start_date;
 	private Timestamp end_date;
 	private String con_size;
@@ -18,6 +21,18 @@ public class ConstructionVO {
 	private char con_num;
 	private String content;
 	
+	public String getDept() {
+		return dept;
+	}
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+	public String getDept_tel() {
+		return dept_tel;
+	}
+	public void setDept_tel(String dept_tel) {
+		this.dept_tel = dept_tel;
+	}
 	public String getCp_num() {
 		return cp_num;
 	}
@@ -72,6 +87,12 @@ public class ConstructionVO {
 	public void setDong(String dong) {
 		this.dong = dong;
 	}
+	public String getZip_num() {
+		return zip_num;
+	}
+	public void setZip_num(String zip_num) {
+		this.zip_num = zip_num;
+	}
 	public String getAddress() {
 		return address;
 	}
@@ -105,8 +126,9 @@ public class ConstructionVO {
 	@Override
 	public String toString() {
 		return "ConstructionVO [con_seq=" + con_seq + ", con_name=" + con_name + ", sido=" + sido + ", gugun=" + gugun
-				+ ", dong=" + dong + ", address=" + address + ", cp_name=" + cp_name + ", cp_num=" + cp_num
-				+ ", start_date=" + start_date + ", end_date=" + end_date + ", con_size=" + con_size + ", con_state="
-				+ con_state + ", con_num=" + con_num + ", content=" + content + "]";
+				+ ", dong=" + dong + ", zip_num=" + zip_num + ", address=" + address + ", cp_name=" + cp_name
+				+ ", cp_num=" + cp_num + ", dept=" + dept + ", dept_tel=" + dept_tel + ", start_date=" + start_date
+				+ ", end_date=" + end_date + ", con_size=" + con_size + ", con_state=" + con_state + ", con_num="
+				+ con_num + ", content=" + content + "]";
 	}
 }

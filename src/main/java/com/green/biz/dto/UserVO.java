@@ -7,10 +7,18 @@ public class UserVO {
 	private String sido;
 	private String gugun;
 	private String dong;
+	private String zip_num;
 	private String address;
 	private String email;
 	private String birth_date;
 	
+	
+	public String getZip_num() {
+		return zip_num;
+	}
+	public void setZip_num(String zip_num) {
+		this.zip_num = zip_num;
+	}
 	public String getName() {
 		return name;
 	}
@@ -76,7 +84,7 @@ public class UserVO {
 	@Override
 	public String toString() {
 		return "UserVO [user_id=" + user_id + ", pwd=" + pwd + ", name=" + name + ", sido=" + sido + ", gugun=" + gugun
-				+ ", dong=" + dong + ", address=" + address + ", email=" + email + ", birth_date=" + birth_date
-				+ ", phone=" + phone + "]";
+				+ ", dong=" + dong + ", zip_num=" + zip_num + ", address=" + address + ", email=" + email
+				+ ", birth_date=" + birth_date + ", phone=" + phone + "]";
 	}
 }
