@@ -2,7 +2,7 @@ package com.green.biz.dto;
 
 public class CompanyVO {
 	private String cp_id;
-	private String pwd;
+	private String pwd; 
 	private String admin_name;
 	private String admin_phone; 
 	private String cp_name;
