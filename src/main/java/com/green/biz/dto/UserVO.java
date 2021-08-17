@@ -76,7 +76,7 @@ public class UserVO {
 		this.address = address;
 	}
 	public int getPhone() {
-		return phone;  
+		return phone;   
 	}
 	public void setPhone(int phone) {
 		this.phone = phone;

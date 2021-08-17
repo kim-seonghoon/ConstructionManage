@@ -16,6 +16,6 @@ public class UserController {
 	public String userLogin(UserVO vo) {
 		userService.insertUser(vo);
 		
-		return "main"; 
+		return "main";  
 	}
 }
