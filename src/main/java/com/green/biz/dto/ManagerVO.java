@@ -2,7 +2,7 @@ package com.green.biz.dto;
 
 public class ManagerVO {
 	private String manager_id;
-	private String pwd;
+	private String pwd; 
 	private String sido;    
 	private String gugun;
 	private String address;
