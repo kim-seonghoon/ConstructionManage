@@ -81,6 +81,7 @@ public class UserVO {
 	public void setPhone(int phone) {
 		this.phone = phone;
 	}
+	
 	@Override
 	public String toString() {
 		return "UserVO [user_id=" + user_id + ", pwd=" + pwd + ", name=" + name + ", sido=" + sido + ", gugun=" + gugun
