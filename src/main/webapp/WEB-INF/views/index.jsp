@@ -15,7 +15,7 @@
                     </select>
                 </td>
                 <td><input type="text" name="key"></td>
-                <td><input type="button">검색</td>
+                <td><input type="button" value="검색"></td>
             </tr>
         </table>
         <div class="jumbotron col-md-6">

@@ -33,7 +33,7 @@
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
         <div class="row">
-          <div ><img src="image/main.jpg" class="container-fluid" alt=""  style="width: 100%; height: 100px; object-fit: cover;"></div>
+          <div ><img src="images/main.jpg" class="container-fluid" alt=""  style="width: 100%; height: 100px; object-fit: cover;"></div>
         </div>
       </nav>
       </header>
