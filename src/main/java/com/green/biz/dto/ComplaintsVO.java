@@ -6,13 +6,28 @@ public class ComplaintsVO {
 	private int com_seq; 
 	private int con_seq;
 	private String con_name;
+	private char con_num;
 	private String title;   
 	private String name;
 	private String content;
 	private String answer;
+	private int view_count;
 	private Timestamp regdate;
 	private Timestamp moddate;
 	
+	
+	public int getView_count() {
+		return view_count;
+	}
+	public void setView_count(int view_count) {
+		this.view_count = view_count;
+	}
+	public char getCon_num() {
+		return con_num;
+	}
+	public void setCon_num(char con_num) {
+		this.con_num = con_num;
+	}
 	public int getCom_seq() {
 		return com_seq;
 	}
@@ -69,8 +84,9 @@ public class ComplaintsVO {
 	}
 	@Override
 	public String toString() {
-		return "ComplaintsVO [com_seq=" + com_seq + ", con_seq=" + con_seq + ", con_name=" + con_name + ", title="
-				+ title + ", name=" + name + ", content=" + content + ", answer=" + answer + ", regdate=" + regdate
-				+ ", moddate=" + moddate + "]";
+		return "ComplaintsVO [com_seq=" + com_seq + ", con_seq=" + con_seq + ", con_name=" + con_name + ", con_num="
+				+ con_num + ", title=" + title + ", name=" + name + ", content=" + content + ", answer=" + answer
+				+ ", regdate=" + regdate + ", moddate=" + moddate + "]";
 	}
+
 }

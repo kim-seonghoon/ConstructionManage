@@ -18,9 +18,17 @@ public class ConstructionVO {
 	private Timestamp end_date;
 	private String con_size;
 	private String con_state;
+	private int view_count;
 	private char con_num;
 	private String content;
 	
+	
+	public int getView_count() {
+		return view_count;
+	}
+	public void setView_count(int view_count) {
+		this.view_count = view_count;
+	}
 	public String getDept() {
 		return dept;
 	}
