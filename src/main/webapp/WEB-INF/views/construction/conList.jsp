@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
     <div id="contents"  style="text-align: center;">
-        <form action="search">
+        <form action="search"> 
             <ul class="nav nav-tabs">
                 <li role="presentation" class="active"><a href="#">전체현황</a></li>
                 <li role="presentation"><a href="#">도로</a></li>

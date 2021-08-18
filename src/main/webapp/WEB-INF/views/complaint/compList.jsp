@@ -20,7 +20,7 @@
                     <th><p>글쓴이</p></th>
                     <th><p>조회</p></th>
                     <th><p>날짜</p></th>
-                    <th><p>답변</p></th>
+                    <th><p>답변</p></th> 
                 </tr>
                 <tr>
                     <th>${ComplaintsVO.com_seq}</th>

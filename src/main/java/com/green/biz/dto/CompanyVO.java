@@ -14,7 +14,7 @@ public class CompanyVO {
 	private String cp_email;
 	
 	public String getZip_num() {
-		return zip_num;
+		return zip_num; 
 	}
 	public void setZip_num(String zip_num) {
 		this.zip_num = zip_num;

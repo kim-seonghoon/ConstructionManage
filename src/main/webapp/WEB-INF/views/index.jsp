@@ -5,7 +5,7 @@
       <div class="page-header">
         <h1><a href=""><small>"우리동네 궁금한 공사 어떤 공사일까?"</small></a></h1>
       </div>
-        <table>
+        <table> 
             <tr>
                 <td>
                     <select id="search_condition">

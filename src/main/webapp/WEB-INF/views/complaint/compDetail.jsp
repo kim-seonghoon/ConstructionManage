@@ -13,7 +13,7 @@
                         <td>${ConstructionVO.sido} + " " + ${ConstructionVO.gugun}</td>
                     </tr>
                     <tr>
-                        <th><p>제목</p></th>
+                        <th><p>제목</p></th> 
                         <td>${ComplaintsVO.title}</td>
                     </tr>
                     <tr>

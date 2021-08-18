@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
         <div id="content">
-            <form id="com_form" action="comp_update" method="POST">
+            <form id="com_form" action="comp_update" method="POST"> 
                 <input type="hidden" name="con_seq" value="ComplaintsVO.con_seq">
                 <input type="hidden" name="com_seq" value="ComplaintsVO.com_seq">
                 <table>
