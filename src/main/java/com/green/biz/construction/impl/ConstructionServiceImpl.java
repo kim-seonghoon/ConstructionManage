@@ -69,4 +69,10 @@ public class ConstructionServiceImpl implements ConstructionService {
 		return constructionDao.mainConstructionList();
 	}
 
+	@Override
+	public List<ConstructionVO> getConstructionListByConNum(String con_num) {
+		
+		return constructionDao.getConstructionListByConNum(con_num);
+	}
+
 }

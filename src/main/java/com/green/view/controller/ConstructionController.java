@@ -19,7 +19,7 @@ public class ConstructionController {
 	@Autowired
 	ConstructionService constructionService;
 	
-	@RequestMapping(value="con_list_form")
+	@RequestMapping(value="/con_list_form")
 	public String constListForm(Model model) {
 		List<ConstructionVO> constructionList = constructionService.getConstructionList();
 		model.addAttribute("constructionList", constructionList);
@@ -27,7 +27,7 @@ public class ConstructionController {
 		return "construction/conList";
 	}
 	
-	@RequestMapping(value="write_con_form")
+	@RequestMapping(value="/write_con_form")
 	public String writeConForm(HttpSession session) {
 		UserVO loginUser = (UserVO) session.getAttribute("loginUser");
 		

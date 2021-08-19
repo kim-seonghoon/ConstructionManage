@@ -69,4 +69,9 @@
 		WHERE rn > 0 AND rn <=5;
 		]]>
 	</select>
+	
+	<!-- 공사 종류로 공사찾기 -->
+	<select id="getConstructionListByConNum" parameterType="String" resultType="construction">
+		SELECT * FROM construction WHERE con_num=#{con_num}
+	</select>
 </mapper>
