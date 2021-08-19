@@ -1,4 +1,20 @@
+#wrap {
+    position: relative;
+}
+
+div #content {
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 table {
+    width: 90%;
     border: 1px solid #111;
     border-left: none;
     border-right: none;
@@ -6,6 +22,12 @@ table {
 }
 
 th, td{
-    padding: 5px;
-    border-bottom: solid 1px #111;
+    padding: 05px;
+    border: solid 1px #111;
+    left: 5%;
+    top: 10%;
+}
+
+#buttons {
+    margin-top: 10px;
 }

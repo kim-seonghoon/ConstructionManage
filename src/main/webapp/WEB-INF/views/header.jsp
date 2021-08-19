@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 	<link rel="stylesheet" href="css/공사관리style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-	<script src="jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script> 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <title>Insert title here</title>
 </head> 
@@ -27,8 +27,8 @@
             <ul class="nav navbar-nav navbar-right">
               <li class="active"><a href="con_list_form">공사현황 <span class="sr-only">(current)</span></a></li>
               <li><a href="comp_list_form">민원보기</a></li>
-              <button type="button" class="btn btn-default navbar-btn" style="margin-left: 50px;">로그인</button>
-              <button type="button" class="btn btn-default navbar-btn">회원가입</button>
+              <input type="button" class="btn btn-default navbar-btn" style="margin-left: 50px;" onclick="location.href='member/login'" value="로그인">
+              <input type="button" class="btn btn-default navbar-btn" onclick="location.href='member/join'" value="회원가입">
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
