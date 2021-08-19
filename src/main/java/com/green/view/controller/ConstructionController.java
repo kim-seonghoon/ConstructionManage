@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.green.biz.construction.ConstructionService;
 import com.green.biz.dto.ConstructionVO;
@@ -21,8 +22,8 @@ public class ConstructionController {
 	
 	@RequestMapping(value="/con_list_form")
 	public String constListForm(Model model) {
-		List<ConstructionVO> constructionList = constructionService.getConstructionList();
-		model.addAttribute("constructionList", constructionList);
+		List<ConstructionVO> conList = constructionService.getConstructionList();
+		model.addAttribute("conList", conList);
 		
 		return "construction/conList";
 	}
@@ -36,5 +37,14 @@ public class ConstructionController {
 		} else {
 			return "construction/conWrite";
 		}
+	}
+	
+	@RequestMapping(value="/category")
+	public String constListByCategory(@RequestParam(value="con_num", defaultValue="0") String con_num,
+									  Model model) {
+		List<ConstructionVO> conList = constructionService.getConstructionListByConNum(con_num);
+		model.addAttribute("conList", conList);
+		
+		return "construction/conList";
 	}
 }

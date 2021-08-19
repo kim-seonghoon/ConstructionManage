@@ -4,7 +4,7 @@
     <div id="contents"  style="text-align: center;">
         <form action="search"> 
             <ul class="nav nav-tabs">
-                <li role="presentation" class="active"><a href="#">전체현황</a></li>
+                <li role="presentation" class="active"><a href="con_num=0">전체현황</a></li>
                 <li role="presentation"><a href="category?con_num=1">도로</a></li>
                 <li role="presentation"><a href="category?con_num=2">상/하수</a></li>
                 <li role="presentation"><a href="category?con_num=3">공공건축물</a></li>
