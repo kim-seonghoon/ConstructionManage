@@ -75,4 +75,22 @@ public class ConstructionController {
 		
 			return "construction/conList";
 	}
+	
+	@RequestMapping(value="search_by_address")
+	public String searchConByUserAddress(HttpSession session, Model model) {
+		UserVO loginUser = (UserVO) session.getAttribute("loginUser");
+		
+		if(loginUser==null) {
+			return "member/login";
+		} else {
+			String sido = loginUser.getSido();
+			String gugun = loginUser.getGugun();
+			String dong = loginUser.getDong().substring(0, 1);
+			
+			List<ConstructionVO> conList = constructionService.getConstructionListByArea(sido, gugun, dong);
+			model.addAttribute("conList", conList);
+			
+			return "construction/conList"; 
+		}
+	}
 }

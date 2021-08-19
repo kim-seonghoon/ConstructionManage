@@ -3,7 +3,7 @@
 <%@ include file="header.jsp" %>  
     <div id="contents"  style="text-align: center;">
       <div class="page-header">
-        <h1><a href=""><small>"우리동네 궁금한 공사 어떤 공사일까?"</small></a></h1>
+        <h1><a href="search_by_address"><small>"우리동네 궁금한 공사 어떤 공사일까?"</small></a></h1>
       </div>
       <form action="search">
 	       <table> 
