@@ -47,4 +47,32 @@ public class ConstructionController {
 		
 		return "construction/conList";
 	}
+	
+	@RequestMapping(value="/search")
+	public String searchConByKeyword(Model model,
+									 @RequestParam(value="key") String key,
+									 @RequestParam(value="search_condition", defaultValue="1") int search_condition) {
+		String keyArea = "";
+		String keyTitle = "";
+		List<ConstructionVO> conList = constructionService.getConstructionList();
+		
+		if(search_condition==1) {
+			keyArea = key;
+			keyTitle = key;
+			
+			conList = constructionService.getConstructionListByKey(keyArea, keyTitle);
+			
+		} else if(search_condition==2) {
+			keyArea = key;
+			
+			conList = constructionService.getConstructionListByKey(keyArea, keyTitle);
+		} else if(search_condition==3) {
+			keyTitle = key;
+			
+			conList = constructionService.getConstructionListByKey(keyArea, keyTitle);
+		}
+			model.addAttribute("conList", conList);
+		
+			return "construction/conList";
+	}
 }

@@ -58,9 +58,9 @@ public class ConstructionServiceImpl implements ConstructionService {
 	}
 
 	@Override
-	public List<ConstructionVO> getConstructionListByKey(String key) {
+	public List<ConstructionVO> getConstructionListByKey(String keyArea, String keyTitle) {
 
-		return constructionDao.getConstructionListByKey(key);
+		return constructionDao.getConstructionListByKey(keyArea, keyTitle);
 	}
 
 	@Override

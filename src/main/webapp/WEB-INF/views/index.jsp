@@ -5,19 +5,21 @@
       <div class="page-header">
         <h1><a href=""><small>"우리동네 궁금한 공사 어떤 공사일까?"</small></a></h1>
       </div>
-        <table> 
-            <tr>
-                <td>
-                    <select id="search_condition">
-                        <option value="1">통합검색</option>
-                        <option value="2">제목</option>
-                        <option value="3">작성자</option>
-                    </select>
-                </td>
-                <td><input type="text" name="key"></td>
-                <td><input type="button" value="검색"></td>
-            </tr>
-        </table>
+      <form action="search">
+	       <table> 
+	           <tr>
+	               <td>
+	                   <select id="search_condition">
+	                       <option value="1">통합검색</option>
+	                       <option value="2">지역</option>
+	                       <option value="3">제목</option>
+	                    </select>
+	                </td>
+	                <td><input type="text" name="key"></td>
+	                <td><input type="submit" value="검색"></td>
+	            </tr>
+	        </table>
+        </form>
         <div class="jumbotron col-md-6">
           <ul>
 	        <c:forEach items="${newConstructionList}"  var="constructionVO">

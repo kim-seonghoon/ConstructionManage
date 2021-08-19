@@ -20,7 +20,7 @@ public interface ConstructionService {
 
 	List<ConstructionVO> getManageConstructionList(String sido, String gugun);
 
-	List<ConstructionVO> getConstructionListByKey(String key);
+	List<ConstructionVO> getConstructionListByKey(String keyArea, String keyTitle);
 
 	List<ConstructionVO> mainConstructionList();
 	

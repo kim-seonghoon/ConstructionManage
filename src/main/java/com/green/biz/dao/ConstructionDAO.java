@@ -51,8 +51,11 @@ public class ConstructionDAO {
 		return mybatis.selectList("ConstructionDAO.getManageConstructionList", map);
 	}
 	
-	public List<ConstructionVO> getConstructionListByKey(String key) {
-		return mybatis.selectList("ConstructionDAO.getConstructionListByKey", key);
+	public List<ConstructionVO> getConstructionListByKey(String keyArea, String keyTitle) {
+		HashMap<String, String> map = new HashMap<>();
+		map.put("keyArea", keyArea);
+		map.put("keyTitle", keyTitle);
+		return mybatis.selectList("ConstructionDAO.getConstructionListByKey", map);
 	}
 	
 	public List<ConstructionVO> mainConstructionList() { 

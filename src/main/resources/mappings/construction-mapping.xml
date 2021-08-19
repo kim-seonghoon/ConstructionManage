@@ -52,11 +52,12 @@
 	</select>
 	
 	<!-- keyword로 지역 리스트 찾기 -->
-	<select id="getConstructionListByKey" parameterType="String" resultType="construction">
+	<select id="getConstructionListByKey" parameterType="HashMap" resultType="construction">
 		SELECT *
 		FROM construction
-		WHERE gugun LIKE '%'||#{key}||'%'
-		OR dong LIKE '%'||#{key}||'%'
+		WHERE gugun LIKE '%'||#{keyArea}||'%'
+		OR dong LIKE '%'||#{keyArea}||'%'
+		OR con_name LIKE '%'||#{keyTitle}||'%'
 	</select>
 	
 	<!-- 메인 페이지에서 최신 5개의 공사현황 전시-->
