@@ -37,7 +37,7 @@ public class ComplaintsDAO {
 	public List<ComplaintsVO> getComplaintsList(int com_seq){
 		
 		return mybatis.selectList("ComplaintsDAO.getComplaintsList", com_seq);
-	}
+	} 
 	
 	public List<ComplaintsVO> mainComplaintList() {
 		
