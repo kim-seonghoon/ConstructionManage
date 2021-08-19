@@ -19,5 +19,10 @@ public interface UserService {
 	List<UserVO> getUserListById(String key);
 
 	List<UserVO> getUserListByName(String key);
+	
+	public int loginID(UserVO vo);
+	
+	// 회원 상세정보 조회
+	UserVO getMember(String id);
 
 }

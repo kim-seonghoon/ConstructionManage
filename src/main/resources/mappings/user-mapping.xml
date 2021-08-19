@@ -42,4 +42,15 @@
 		SELECT * FROM users
 		WHERE name LIKE '%'||#{key}||'%'
 	</select>
+	
+	<select id="getMember">
+		SELECT * FROM users
+		WHERE user_id = #{user_id}
+	</select>
+	
+	<select id="confirmID" resultType="String">
+		SELECT pwd FROM users
+		 WHERE user_id = #{user_id}
+	</select>
+	
 </mapper>
