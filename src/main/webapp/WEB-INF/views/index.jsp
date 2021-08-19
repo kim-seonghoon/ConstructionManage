@@ -19,12 +19,20 @@
             </tr>
         </table>
         <div class="jumbotron col-md-6">
-          <h2>공사현황</h2>
-          <p>...</p>
+          <ul>
+	        <c:forEach items="${newConstructionList}"  var="constructionVO">
+	        	<li><a href="con_detail?con_seq=${constructionVO.con_seq}">${constructionVO.con_name}</a></li>
+	        	<li>${constructionVO.regdate}</li>
+      	    </c:forEach>
+          </ul>
         </div>
         <div class="jumbotron col-md-6">
-          <h2>공사현황</h2>
-          <p>...</p>
+          <ul>
+	        <c:forEach items="${newComplaintList}"  var="complaintVO">
+	        	<li><a href="comp_detail?com_seq=${complaintVO.com_seq}">${complaintVO.title}</a></li>
+	        	<li>${complaintVO.regdate}</li>
+      	    </c:forEach>
+          </ul>
         </div>
     </div>
   </div>

@@ -39,4 +39,9 @@ public class ComplaintsDAO {
 		return mybatis.selectList("ComplaintsDAO.getComplaintsList", com_seq);
 	}
 	
+	public List<ComplaintsVO> mainComplaintList() {
+		
+		return mybatis.selectList("ComplaintsDAO.mainComplaintList");
+	}
+	
 }

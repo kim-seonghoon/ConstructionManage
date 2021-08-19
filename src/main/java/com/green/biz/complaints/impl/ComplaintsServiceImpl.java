@@ -44,6 +44,12 @@ public class ComplaintsServiceImpl implements ComplaintsService {
 		
 		return complaintsDao.getComplaintsList(com_seq);
 	}
+
+	@Override
+	public List<ComplaintsVO> mainComplaintList() {
+		
+		return complaintsDao.mainComplaintList();
+	}
 	
 
 }

@@ -22,4 +22,5 @@ public interface ConstructionService {
 
 	List<ConstructionVO> getConstructionListByKey(String key);
 
+	List<ConstructionVO> mainConstructionList();
 }

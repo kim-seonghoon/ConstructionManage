@@ -58,4 +58,15 @@
 		WHERE gugun LIKE '%'||#{key}||'%'
 		OR dong LIKE '%'||#{key}||'%'
 	</select>
+	
+	<!-- 메인 페이지에서 최신 5개의 공사현황 전시-->
+	<select id="mainConstructionList" resultType="construction">
+		<![CDATA[
+		SELECT con_seq, con_name, regdate
+		FROM
+    		(SELECT ROW_NUMBER() OVER(ORDER BY regdate DESC) con_seq, con_name, title, regdate
+     		 FROM construction)    
+		WHERE rn > 0 AND rn <=5;
+		]]>
+	</select>
 </mapper>

@@ -29,5 +29,14 @@
 	SELECT * FROM complaints
 	</select>
 	
-	
+	<!-- 메인 페이지에서 최신 5개의 민원 전시-->
+	<select id="mainComplaintList" resultType="construction">
+		<![CDATA[
+		SELECT com_seq, title, regdate
+		FROM
+    		(SELECT ROW_NUMBER() OVER(ORDER BY regdate DESC) rn, com_seq, title, regdate
+     		 FROM complaints)    
+		WHERE rn > 0 AND rn <=5;
+		]]>
+	</select>
 </mapper>
