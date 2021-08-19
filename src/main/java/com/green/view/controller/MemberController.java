@@ -5,11 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.green.biz.dto.UserVO;
 import com.green.biz.user.UserService;
 
 @Controller
+@SessionAttributes("loginUser")
 public class MemberController {
 	@Autowired
 	UserService userService;

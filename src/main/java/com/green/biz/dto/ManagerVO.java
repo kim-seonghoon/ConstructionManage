@@ -9,6 +9,8 @@ public class ManagerVO {
 	private String name;
 	private String dept;
 	private String dept_tel;
+	private String position;
+	
 	public String getDept() {
 		return dept;
 	}
@@ -21,8 +23,6 @@ public class ManagerVO {
 	public void setDept_tel(String dept_tel) {
 		this.dept_tel = dept_tel;
 	}
-	private String position;
-	
 	public String getManager_id() {
 		return manager_id;
 	}

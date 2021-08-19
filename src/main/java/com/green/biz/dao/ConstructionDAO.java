@@ -58,4 +58,9 @@ public class ConstructionDAO {
 	public List<ConstructionVO> mainConstructionList() { 
 	      return mybatis.selectList("ConstructionDAO.mainConstructionList");
 	   } 
+	
+	public List<ConstructionVO> getConstructionListByConNum(String con_num) {
+		
+		return mybatis.selectList("ConstructionDAO.getConstructionListByConNum", con_num);
+	}
 }
