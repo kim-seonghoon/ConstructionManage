@@ -40,9 +40,9 @@ public class ComplaintsServiceImpl implements ComplaintsService {
 	}
 
 	@Override
-	public List<ComplaintsVO> getComplaintsList(int com_seq) {
+	public List<ComplaintsVO> getComplaintsList() {
 		
-		return complaintsDao.getComplaintsList(com_seq);
+		return complaintsDao.getComplaintsList();
 	}
 
 	@Override

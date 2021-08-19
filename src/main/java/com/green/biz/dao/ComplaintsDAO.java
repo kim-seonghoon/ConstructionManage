@@ -34,9 +34,9 @@ public class ComplaintsDAO {
 		return mybatis.update("ComplauntsDAO.answerComplaints", vo);
 	}
 	
-	public List<ComplaintsVO> getComplaintsList(int com_seq){
+	public List<ComplaintsVO> getComplaintsList(){
 		
-		return mybatis.selectList("ComplaintsDAO.getComplaintsList", com_seq);
+		return mybatis.selectList("ComplaintsDAO.getComplaintsList");
 	} 
 	
 	public List<ComplaintsVO> mainComplaintList() {
