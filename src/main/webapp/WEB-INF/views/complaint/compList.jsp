@@ -22,16 +22,20 @@
                     <th><p>날짜</p></th>
                     <th><p>답변</p></th> 
                 </tr>
-                <tr>
-                    <th>${ComplaintsVO.com_seq}</th>
-                    <th>${ComplaintsVO.title}</th>
-                    <th>${ComplaintsVO.writer}</th>
-                    <th>${ComplaintsVO.view_count}</th>
-                    <th>${ComplaintsVO.regdate}</th>
-                    <th>${ComplaintsVO.answer}</th>
-                </tr>
+                <c:forEach items="${compList}" var="ComplaintsVO">
+	                <tr>
+	                    <th>${ComplaintsVO.com_seq}</th>
+	                    <th>${ComplaintsVO.title}</th>
+	                    <th>${ComplaintsVO.writer}</th>
+	                    <th>${ComplaintsVO.view_count}</th>
+	                    <th>${ComplaintsVO.regdate}</th>
+	                    <th>${ComplaintsVO.answer}</th>
+	                </tr>
+                </c:forEach>
             </table>
-            <input type="button" onclick="go_write_comp()" value="글쓰기">
+            <form name="comp_write_form" id="comp_write_form">
+            	<input type="button" onclick="go_write_comp()" value="글쓰기">
+            </form>
         </div>
     </div>
   </div>

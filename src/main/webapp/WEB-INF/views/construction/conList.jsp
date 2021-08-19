@@ -22,16 +22,20 @@
                     <th><p>조회</p></th>
                     <th><p>날짜</p></th>
                 </tr>
-                <tr>
-                    <th>${ConstructionVO.con_seq}</th>
-                    <th>${ConstructionVO.con_name}</th>
-                    <th>${ConstructionVO.address}</th>
-                    <th>${ConstructionVO.com_name}</th>
-                    <th>${ConstructionVO.con_seq}</th>
-                    <th>${ConstructionVO.regdate}</th>
-                </tr>
+                <c:forEach items="${conList}" var="ConstructionVO">
+	                <tr>
+	                    <th>${ConstructionVO.con_seq}</th>
+	                    <th>${ConstructionVO.con_name}</th>
+	                    <th>${ConstructionVO.address}</th>
+	                    <th>${ConstructionVO.com_name}</th>
+	                    <th>${ConstructionVO.con_seq}</th>
+	                    <th>${ConstructionVO.regdate}</th>
+	                </tr>
+                </c:forEach>
             </table>
-            <input type="button" onclick="go_write_comp()" value="글쓰기">
+            <form id="write_con_form" name="write_con_form">
+            	<input type="button" onclick="go_write_con()" value="글쓰기">
+            </form>
         </div>
     </div>
   </div>

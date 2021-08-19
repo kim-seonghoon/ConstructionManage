@@ -24,7 +24,7 @@
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
           <form name="theform" id="theform">
-            <a class="navbar-brand" style="color: #fff;" href="#">공사관리</a>
+            <a class="navbar-brand" style="color: #fff;" href="index">공사관리</a>
           </div>     	  
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">        	
