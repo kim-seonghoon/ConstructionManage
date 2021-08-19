@@ -56,4 +56,16 @@ public class UserServiceImpl implements UserService {
 		return userDao.getUserListByName(key);
 	}
 
+	@Override
+	public int loginID(UserVO vo) {
+		
+		return userDao.loginID(vo);
+	}
+
+	@Override
+	public UserVO getMember(String id) {
+		
+		return userDao.getMember(id);
+	}
+
 }

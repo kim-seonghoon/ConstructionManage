@@ -40,6 +40,40 @@ public class UserDAO {
 	public List<UserVO> getUserListByName(String key) {
 		return mybatis.selectList("UserDAO.getUserListByName", key);
 	}
+	
+	// 회원 상세정보 조회
+	public UserVO getMember(String id) {
+		
+		return mybatis.selectOne("UserDAO.getMember",id);
+	}
+	
+	public int confirmID(String id) {
+		
+		String pwd = mybatis.selectOne("UserDAO.confirmID",id);
+		
+		if(pwd != null) {
+			return 1;
+		}else {
+			return -1;
+		}
+	}
+	
+	public int loginID(UserVO vo) {
+		int result = -1;
+		String pwd = null;
+		
+		pwd = mybatis.selectOne("UserDAO.confirmID", vo.getUser_id());
+		
+		// DB에서 조회한 password와 사용자가 입력한  password 비교
+		if(pwd == null) {
+			result = -1;
+		}else if(pwd.equals(vo.getPwd())) {
+			result = 1;
+		}else {
+			result = 0;
+		}
+		return result;
+	}
 }
 
 
