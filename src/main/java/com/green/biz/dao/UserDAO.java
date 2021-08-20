@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.green.biz.dto.AddressVO;
 import com.green.biz.dto.UserVO;
 
 @Repository
@@ -74,6 +75,13 @@ public class UserDAO {
 		}
 		return result;
 	}
+	
+	// 동 이름으로 우편번호 찾기
+		public List<AddressVO> selectAddressByDong(String dong) {
+			
+			return mybatis.selectList("MemberDAO.selectAddressByDong", dong);
+		}
+		
 }
 
 

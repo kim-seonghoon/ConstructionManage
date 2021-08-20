@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.green.biz.dao.UserDAO;
+import com.green.biz.dto.AddressVO;
 import com.green.biz.dto.UserVO;
 import com.green.biz.user.UserService;
 
@@ -72,6 +73,12 @@ public class UserServiceImpl implements UserService {
 	public int confirmID(String user_id) {
 		
 		return userDao.confirmID(user_id);
+	}
+
+	@Override
+	public List<AddressVO> selectAddressByDong(String dong) {
+		
+		return userDao.selectAddressByDong(dong);
 	}
 
 }

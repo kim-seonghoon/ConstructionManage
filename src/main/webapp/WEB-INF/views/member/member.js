@@ -32,6 +32,10 @@ function idcheck() {
 	"toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=450, height=250");	
 }
 
+function idok(){
+	$("#theform").attr("action", "id_check_confirmed").submit();
+}
+
 function go_save() {
 	if ($("#user_id").val() == "") {
 		alert("아이디를 입력해 주세요!");
@@ -50,5 +54,13 @@ function go_save() {
 		$("#name").focus();
 	} else {
 		$("#join").attr("action", "join").submit();
+	}
+	
+	
+	function post_zip() {
+		var url = "find_zip_num";
+		
+		window.open(url, "_blank_1", 
+		"toolbar=no, menubar=no, scrollbars=no, resizable=yes, width=500, height=350");
 	}
 }

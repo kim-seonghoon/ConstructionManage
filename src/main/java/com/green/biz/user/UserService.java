@@ -2,6 +2,7 @@ package com.green.biz.user;
 
 import java.util.List;
 
+import com.green.biz.dto.AddressVO;
 import com.green.biz.dto.UserVO;
 
 public interface UserService {
@@ -26,5 +27,7 @@ public interface UserService {
 	UserVO getMember(String user_id);
 	
 	int confirmID(String user_id);
+	
+	public List<AddressVO> selectAddressByDong(String dong);
 
 }

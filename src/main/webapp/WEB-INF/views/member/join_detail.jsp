@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <div>
 <h3>| 회원 가입</h3>
-<form action="join" name="formm">
+<form action="join" name="formm" method="post">
 <div>
 	<table>
 	<tr>
@@ -19,9 +19,9 @@
 	
 	<tr>
 		<th>비밀번호*</th>
-		<td><input type="text" name="pwd" id="pwd"></td>
+		<td><input type="password" name="pwd" id="pwd"></td>
 		<th>비밀번호 확인*</th>
-		<td><input type="text" name="pwd_chk" id="pwd_chk"></td>
+		<td><input type="password" name="pwd_chk" id="pwd_chk"></td>
 	</tr>
 	
 	<tr>
@@ -49,7 +49,12 @@
 	
 	<tr>
 		<th rowspan="2">주소</th>
-		<td colspan="3"><input type="text" name="zip_num" id="zip_num"><input type="button" value="주소검색" onclick="">
+		<td colspan="3"><input type="text" name="zip_num" id="zip_num">
+		<input type="button" value="주소검색" onclick="post_zip()">
+		<input type="hidden" name ="sido" id="sido">
+		<input type="hidden" name="gugun" id="gugun"> 
+		<input type="hidden" name="dong" id="dong">
+		</td>
 	</tr>
 	<tr>
 		<td><input type="text" name="addr1" id="address"> </td>
