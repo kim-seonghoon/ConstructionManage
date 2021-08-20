@@ -93,7 +93,7 @@ public class MemberController {
 		System.out.println("회원가입 회원정보 : " + vo);
 		return "member/login";
 	}
-	
+	// 일반회원 아이디 중복 체크
 	@RequestMapping(value="/id_check_form", method=RequestMethod.GET)
 	public String idCheckForm(@RequestParam(value="user_id", defaultValue="", required=true) String user_id,
 			 				  Model model) {
@@ -107,10 +107,31 @@ public class MemberController {
 	public String idCheck(@RequestParam(value="user_id", defaultValue="", required=true) String user_id,
 						  Model model) {
 
-		int message = userService.confirmID(user_id);
+		int message = companyService.confirmCpId(user_id);
 		model.addAttribute("message", message);		
 		model.addAttribute("user_id", user_id);
 
 		return "member/idcheck";
+	}
+	
+	// 업체회원 아이디 중복 체크
+	@RequestMapping(value="/id_check_form_cp", method=RequestMethod.GET)
+	public String idCheckFormCp(@RequestParam(value="cp_id", defaultValue="", required=true) String cp_id,
+			 				  Model model) {
+
+		model.addAttribute("cp_id", cp_id);
+		
+		return "member/idcheckcp";
+	}
+	
+	@RequestMapping(value="/id_check_form_cp", method=RequestMethod.POST)
+	public String idCheckCp(@RequestParam(value="cp_id", defaultValue="", required=true) String cp_id,
+						  Model model) {
+
+		int message = companyService.confirmCpId(cp_id);
+		model.addAttribute("message", message);		
+		model.addAttribute("cp_id", cp_id);
+
+		return "member/idcheckcp";
 	}
 }

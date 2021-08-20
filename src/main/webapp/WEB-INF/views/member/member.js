@@ -32,6 +32,20 @@ function idcheck() {
 	"toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=450, height=250");	
 }
 
+function idcheckcp() {
+	if($("#cp_id").val() == ""){
+		alert("아이디를 입력해 주세요!");
+		$("#cp_id").focus();
+		return;
+	}
+	
+	// 아이디 중복 체크를 위한 윈도우 오픈 요청
+	var url="id_check_form_cp?cp_id=" + $('#cp_id').val();
+
+	window.open(url, "_blank_1", 
+	"toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=450, height=250");	
+}
+
 function go_save() {
 	if ($("#user_id").val() == "") {
 		alert("아이디를 입력해 주세요!");
