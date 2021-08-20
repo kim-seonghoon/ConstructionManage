@@ -4,7 +4,7 @@ public class CompanyVO {
 	private String cp_id;
 	private String pwd;  
 	private String admin_name;
-	private String admin_phone;   
+	private int admin_phone;   
 	private String cp_name;
 	private String cp_num;
 	private int cp_phone;
@@ -31,11 +31,11 @@ public class CompanyVO {
 	public void setAdmin_name(String admin_name) {
 		this.admin_name = admin_name;
 	}
-	public String getAdmin_phone() {
+	public int getAdmin_phone() {
 		return admin_phone;
 	}
-	public void setAdmin_phone(String admin_phone) {
-		this.admin_phone = admin_phone;
+	public void setAdmin_phone(int admin_phone2) {
+		this.admin_phone = admin_phone2;
 	}
 	public String getCp_num() {
 		return cp_num;

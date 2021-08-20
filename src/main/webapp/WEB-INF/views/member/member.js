@@ -66,3 +66,43 @@ function go_save() {
 		$("#join").attr("action", "join").submit();
 	}
 }
+
+function go_save_cp() {
+	var $cp_id = $('#cp_id');
+	var $reid = $('#reid');
+	var $pwd = $('#pwd');
+	var $pwdCheck = $('#pwd_chk');
+	var $cp_name = $('#cp_name');
+	var $admin_name = $('#admin_name');
+	
+	if($cp_id.val()=="") {
+		alert("아이디를 입력해 주세요!");
+		$cp_id.focus();
+	} else if($cp_id.val()!=$reid.val()) {
+		alert("아이디 중복확인을 해주세요!");
+		$reid.focus();
+	} else if($pwd.val()=="") {
+		alert("비밀번호를 입력해 주세요!");
+		$pwd.focus();
+	} else if($pwd.val()!=$pwdCheck.val()) {
+		alert("비밀번호가 일치하지 않습니다!");
+		$pwdCheck.focus();
+	} else if($cp_name.val()=="") {
+		alert("공사 업체명을 입력해 주세요!");
+		$cp_name.focus();
+	} else if($("#cp_num1").val()=="" || $("#cp_num2").val()=="") {
+		alert("사업자 번호를 입력해 주세요!");
+		$("#cp_num1").focus();
+	} else if($admin_name.val()=="") {
+		alert("담당자를 입력해 주세요!");
+		$admin_name.focus();
+	} else if($("#admin_p1").val()=="" || $("#admin_p2").val()=="" || $("#admin_p3").val()=="") {
+		alert("담당자 연락처를 입력해 주세요!");
+		$("#admin_p1").focus();
+	} else if($("#cp_p1").val()=="" || $("#cp_p2").val()=="" || $("#cp_p3").val()=="") {
+		alert("전화번호를 입력해 주세요!");
+		$("#cp_p1").focus();
+	} else {
+		$('#formmCp').attr("action", "join_cp").submit();
+	}
+}
