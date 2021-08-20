@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.green.biz.dto.UserVO;
@@ -25,6 +26,11 @@ public class MemberController {
 	public String join_form() {
 		return "member/join";
 	}
+	@RequestMapping(value="join_detail_form")
+	public String join_detail_form() {
+		
+		return "member/join_detail";
+	}
 	
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String loginAction(UserVO vo, Model model) {
@@ -42,4 +48,16 @@ public class MemberController {
 			return "member/login_fail";
 		}
 	}
+	
+	@RequestMapping(value="/join", method=RequestMethod.POST)
+	public String joinAction(@RequestParam(value="addr1") String addr1,
+							 @RequestParam(value="addr2") String addr2,
+							 @RequestParam(value="num1") String num1,
+							 @RequestParam(value="num2") String num2,
+							 @RequestParam(value="num3") String num3,UserVO vo) {
+		
+		
+		
+	}
+	
 }
