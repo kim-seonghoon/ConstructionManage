@@ -31,6 +31,12 @@ public class MemberController {
 		
 		return "member/join_detail";
 	}
+	@RequestMapping(value="company_join_form")
+	public String company_join_form() {
+		
+		return "member/company_detail";
+	}
+	
 	
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String loginAction(UserVO vo, Model model) {
