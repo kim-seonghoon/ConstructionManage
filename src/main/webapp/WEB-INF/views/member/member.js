@@ -14,9 +14,9 @@ function join_detail_form(){
 }
 
 function idchek(){
-	if(('#id').val() == ""){
+	if(('#user_id').val() == ""){
 		alert("아이디를 입력해 주세요!");
-		$('#id').focus();
+		$('#user_id').focus();
 		return;
 	}
 	
@@ -26,7 +26,7 @@ function idchek(){
 			$("#user_id").focus();
 		} else if ($("#user_id").val() != $("#reid").val()) {
 			alert("아이디 중복체크를 해주세요!");
-			$("#id").focus();
+			$("#user_id").focus();
 		} else if ($("#pwd").val() == "") {
 			alert("비밀번호를 입력해 주세요!");
 			$("#pwd").focus();

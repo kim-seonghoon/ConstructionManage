@@ -55,9 +55,15 @@ public class MemberController {
 							 @RequestParam(value="num1") String num1,
 							 @RequestParam(value="num2") String num2,
 							 @RequestParam(value="num3") String num3,UserVO vo) {
+		String address = addr1 + " " + addr2;
+		String phone = num1 + num2 + num3;
 		
+		vo.setAddress(address);
+		vo.setPhone(Integer.parseInt(phone));
 		
-		
+		userService.insertUser(vo);
+		System.out.println("회원가입 회원정보 : " + vo);
+		return "member/login";
 	}
 	
 }
