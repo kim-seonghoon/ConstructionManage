@@ -9,47 +9,47 @@
 <div>
 	<table>
 	<tr>
-		<td>아이디*</td>
-		<td><input type="text" name="user_id" id="user_id"> <input type="button"    value="중복 체크"  class="dup" onclick="idcheck()"><br> </td>
+		<th>아이디*</th>
+		<td colspan="3"><input type="text" name="user_id" id="user_id"> <input type="button"    value="중복 체크"  class="dup" onclick="idcheck()"><br> </td>
 	</tr>
 	
 	<tr>
-		<td>비밀번호*</td>
+		<th>비밀번호*</th>
 		<td><input type="text" name="pwd" id="pwd"></td>
-		<td>비밀번호 확인*</td>
+		<th>비밀번호 확인*</th>
 		<td><input type="text" name="pwd_chk" id="pwd_chk"></td>
 	</tr>
 	
 	<tr>
-		<td>이름</td>
-		<td><input type="text" name="name" id="name"></td>
+		<th>이름</th>
+		<td colspan="3"><input type="text" name="name" id="name"></td>
 	</tr>
 	
 	<tr>
-		<td>생년월일*</td>
-		<td><input type="text" name="year" id="year">년
+		<th>생년월일*</th>
+		<td colspan="3"><input type="text" name="year" id="year">년
 			<input type="text" name="month" id="month">월
 			<input type="text" name="day" id="day">일
         </td>
 	</tr>
 	
 	<tr>
-		<td>이메일</td>
-		<td><input type="text" name="email" id="email"></td>
+		<th>이메일</th>
+		<td colspan="3"><input type="text" name="email" id="email"></td>
 	</tr>
 	
 	<tr>
-		<td>연락처</td>
-		<td><input type="text" name="num1"> - <input type="text" name="num2"> - <input type="text" name="num3"> </td> <!-- 번호 id 추가해야함 -->
+		<th>연락처</th>
+		<td colspan="3"><input type="text" name="num1"> - <input type="text" name="num2"> - <input type="text" name="num3"> </td> <!-- 번호 id 추가해야함 -->
 	</tr>
 	
 	<tr>
-		<td>주소</td>
+		<th rowspan="1">주소</th>
+		<td colspan="3"><input type="text" name="zip_num" id="zip_num"><input type="button" value="주소검색" onclick="">
+	</tr>
+	<tr>
 		<td><input type="text" name="addr1" id="address"> </td>
-		
-	</tr>
-	<tr>
-		<td>상세주소</td>
+		<th>상세주소</th>
 		<td><input type="text" name="addr2" id="address_detail"> </td>
 	</tr>
 	</table>
