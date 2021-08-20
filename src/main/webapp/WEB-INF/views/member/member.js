@@ -106,3 +106,13 @@ function go_save_cp() {
 		$('#formmCp').attr("action", "join_cp").submit();
 	}
 }
+
+/*
+ * 우편번호 찾기 창을 오픈
+ */
+function post_zip() {
+	var url = "find_zip_num";
+	
+	window.open(url, "_blank_1", 
+	"toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=600, height=450");
+}
