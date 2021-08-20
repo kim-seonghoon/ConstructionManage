@@ -44,7 +44,7 @@
 	</tr>
 	
 	<tr>
-		<th rowspan="1">주소</th>
+		<th rowspan="2">주소</th>
 		<td colspan="3"><input type="text" name="zip_num" id="zip_num"><input type="button" value="주소검색" onclick="">
 	</tr>
 	<tr>
