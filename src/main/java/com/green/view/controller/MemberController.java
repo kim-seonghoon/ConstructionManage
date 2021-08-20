@@ -1,5 +1,11 @@
 package com.green.view.controller;
 
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -71,12 +77,20 @@ public class MemberController {
 							 @RequestParam(value="addr2") String addr2,
 							 @RequestParam(value="num1") String num1,
 							 @RequestParam(value="num2") String num2,
-							 @RequestParam(value="num3") String num3,UserVO vo) {
+							 @RequestParam(value="num3") String num3,UserVO vo,
+							 @RequestParam(value="year") String year,
+							 @RequestParam(value="month") String month,
+							 @RequestParam(value="day") String day) {
+		
 		String address = addr1 + " " + addr2;
 		String phone = num1 + num2 + num3;
 		
 		vo.setAddress(address);
 		vo.setPhone(Integer.parseInt(phone));
+		
+		// 생년월일 입력
+		String birth_date = year + "-" + month + "-" + day;
+		vo.setBirth_date(birth_date);
 		
 		userService.insertUser(vo);
 		System.out.println("회원가입 회원정보 : " + vo);
