@@ -47,9 +47,9 @@ public class UserDAO {
 		return mybatis.selectOne("UserDAO.getMember",id);
 	}
 	
-	public int confirmID(String id) {
+	public int confirmID(String user_id) {
 		
-		String pwd = mybatis.selectOne("UserDAO.confirmID",id);
+		String pwd = mybatis.selectOne("UserDAO.confirmID",user_id);
 		
 		if(pwd != null) {
 			return 1;

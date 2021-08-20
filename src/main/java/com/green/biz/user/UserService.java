@@ -23,6 +23,8 @@ public interface UserService {
 	public int loginID(UserVO vo);
 	
 	// 회원 상세정보 조회
-	UserVO getMember(String id);
+	UserVO getMember(String user_id);
+	
+	int confirmID(String user_id);
 
 }

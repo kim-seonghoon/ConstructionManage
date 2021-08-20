@@ -8,4 +8,6 @@ public interface CompanyService {
 	public int deleteCompany(String cp_num); 
 	
 	public int updateCompany(CompanyVO vo);
+	
+	public int confirmCpId(String cp_id);
 }

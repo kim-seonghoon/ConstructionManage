@@ -63,9 +63,15 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public UserVO getMember(String id) {
+	public UserVO getMember(String user_id) {
 		
-		return userDao.getMember(id);
+		return userDao.getMember(user_id);
+	}
+
+	@Override
+	public int confirmID(String user_id) {
+		
+		return userDao.confirmID(user_id);
 	}
 
 }

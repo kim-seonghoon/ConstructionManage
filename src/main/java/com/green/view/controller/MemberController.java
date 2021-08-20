@@ -1,11 +1,5 @@
 package com.green.view.controller;
 
-import java.sql.Timestamp;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.green.biz.company.CompanyService;
 import com.green.biz.dto.UserVO;
 import com.green.biz.user.UserService;
 
@@ -22,8 +17,10 @@ import com.green.biz.user.UserService;
 public class MemberController {
 	@Autowired
 	UserService userService;
+	@Autowired
+	CompanyService companyService;
 	
-	@RequestMapping(value="login_form",method=RequestMethod.GET)
+	@RequestMapping(value="/login_form",method=RequestMethod.GET)
 	public String login_form() {
 		return "member/login";
 	}
@@ -97,4 +94,23 @@ public class MemberController {
 		return "member/login";
 	}
 	
+	@RequestMapping(value="/id_check_form", method=RequestMethod.GET)
+	public String idCheckForm(@RequestParam(value="user_id", defaultValue="", required=true) String user_id,
+			 				  Model model) {
+
+		model.addAttribute("user_id", user_id);
+		
+		return "member/idcheck";
+	}
+	
+	@RequestMapping(value="/id_check_form", method=RequestMethod.POST)
+	public String idCheck(@RequestParam(value="user_id", defaultValue="", required=true) String user_id,
+						  Model model) {
+
+		int message = userService.confirmID(user_id);
+		model.addAttribute("message", message);		
+		model.addAttribute("user_id", user_id);
+
+		return "member/idcheck";
+	}
 }

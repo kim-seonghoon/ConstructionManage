@@ -27,4 +27,13 @@ public class CompanyDAO {
 		return mybatis.update("CompanyDAO.updateCompany",vo);
 	}
 	
+	public int confirmCpId(String cp_id) {
+		String pwd = mybatis.selectOne("CompanyDAO.confirmCpId", cp_id);
+		
+		if(pwd != null) {
+			return 1;
+		}else {
+			return -1;
+		}
+	}
 }

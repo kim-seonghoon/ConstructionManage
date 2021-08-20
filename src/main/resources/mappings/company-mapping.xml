@@ -19,5 +19,9 @@
 		DELETE FROM company WHERE cp_num = #{cp_num}
 	</delete>
 	
+	<!-- cp_id 중복확인 -->
+	<select id="confirmCpId" parameterType="String" resultType="String">
+		SELECT pwd FROM company WHERE cp_id=${cp_id}
+	</select>
 	
 </mapper>

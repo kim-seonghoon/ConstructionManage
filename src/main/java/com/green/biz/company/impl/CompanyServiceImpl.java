@@ -31,4 +31,10 @@ public class CompanyServiceImpl implements CompanyService {
 		return companyDao.updateCompany(vo);
 	}
 
+	@Override
+	public int confirmCpId(String cp_id) {
+		
+		return companyDao.confirmCpId(cp_id);
+	}
+
 }

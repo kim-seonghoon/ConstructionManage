@@ -5,12 +5,16 @@
 <!DOCTYPE html>
 <div>
 <h3>| 회원 가입</h3>
-<form action="join">
+<form action="join" name="formm">
 <div>
 	<table>
 	<tr>
 		<th>아이디*</th>
-		<td colspan="3"><input type="text" name="user_id" id="user_id"> <input type="button"    value="중복 체크"  class="dup" onclick="idcheck()"><br> </td>
+					<td colspan="3">
+						<input type="text" name="user_id" id="user_id" value="${user_id}"> 
+						<input type="hidden" id="reid" name="reid" value="${reid}">
+						<input type="button" value="중복체크" onclick="idcheck()"> 
+					</td>
 	</tr>
 	
 	<tr>
