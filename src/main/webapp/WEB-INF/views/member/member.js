@@ -9,9 +9,6 @@ function login_form() {
 function join_form() {
 	$("#theform").attr("action", "join_form").submit();
 }
-function join_detail_form(){
-	$("#theform").attr("action","join_detail_form").submit();
-}
 
 function idchek(){
 	if(('#user_id').val() == ""){

@@ -49,6 +49,17 @@ public class MemberController {
 		}
 	}
 	
+	@RequestMapping(value="/go_join_detail")
+	public String joinDetail(@RequestParam(value="selectUser") int select) {
+		if(select==1) {
+			return "member/join_detail";
+		} else if(select==2) {
+			return "member/company_detail";
+		} else {
+			return "member/join";
+		}
+	}
+	
 	@RequestMapping(value="/join", method=RequestMethod.POST)
 	public String joinAction(@RequestParam(value="addr1") String addr1,
 							 @RequestParam(value="addr2") String addr2,
