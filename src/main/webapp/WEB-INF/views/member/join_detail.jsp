@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <div>
 <h3>| 회원 가입</h3>
-<form action="join" id="join" name="formm">
+<form action="join" id="join" name="formm" method="post">
 <div>
 	<table>
 	<tr>
@@ -19,9 +19,9 @@
 	
 	<tr>
 		<th>비밀번호*</th>
-		<td><input type="text" name="pwd" id="pwd"></td>
+		<td><input type="password" name="pwd" id="pwd"></td>
 		<th>비밀번호 확인*</th>
-		<td><input type="text" name="pwd_chk" id="pwd_chk"></td>
+		<td><input type="password" name="pwd_chk" id="pwd_chk"></td>
 	</tr>
 	
 	<tr>
