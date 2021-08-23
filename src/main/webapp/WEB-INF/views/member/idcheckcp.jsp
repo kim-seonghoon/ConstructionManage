@@ -52,7 +52,7 @@ function idokcp(){
         <input type="button" value="사용" class="cancel" onclick="idokcp()">
       </c:if>
     </div>
-  </form>
+  </form> 
 </div>  
 </body>
 </html>

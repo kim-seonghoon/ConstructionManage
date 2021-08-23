@@ -43,7 +43,7 @@
 	</tr>
 	
 	<tr>
-		<th>연락처</th>
+		<th>연락처</th> 
 		<td colspan="3"><input type="text" name="num1"> - <input type="text" name="num2"> - <input type="text" name="num3"> </td> <!-- 번호 id 추가해야함 -->
 	</tr>
 	

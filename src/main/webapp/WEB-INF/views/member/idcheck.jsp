@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>아이디 중복 체크</title>
+<title>아이디 중복 체크</title> 
 <link href="CSS/subpage.css" rel="stylesheet">
 <style type="text/css">
 body{   
@@ -27,8 +27,8 @@ input[type=button], input[type=submit] {
 </style>
 <script type="text/javascript">
 function idok(){
-  opener.formm.id.value="${id}"; 
-  opener.formm.reid.value="${id}";
+  opener.formm.user_id.value="${user_id}"; 
+  opener.formm.reid.value="${user_id}";
   self.close();
 }
 </script>
@@ -36,19 +36,19 @@ function idok(){
 <body>
 <div id="wrap">
   <h1>ID 중복확인</h1>
-  <form method=post name=formm id="theform" style="margin-right:0 "
+  <form method=post name=formm id="formm" style="margin-right:0 "
   		action="id_check_form" >
-    User ID <input type=text name="id" value="${id}"> 
+    User ID <input type=text name="user_id" value="${user_id}"> 
             <input type=submit value="검색" class="submit"><br>     
     <div style="margin-top: 20px">   
       <c:if test="${message == 1}">
         <script type="text/javascript">
           opener.document.formm.id.value="";
         </script>
-        ${id}는 이미 사용중인 아이디입니다.
+        ${user_id}는 이미 사용중인 아이디입니다.
       </c:if>
       <c:if test="${message==-1}">
-        ${id}는 사용 가능한 ID입니다.
+        ${user_id}는 사용 가능한 ID입니다.
         <input type="button" value="사용" class="cancel" onclick="idok()">
       </c:if>
     </div>

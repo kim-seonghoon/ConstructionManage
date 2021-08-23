@@ -5,7 +5,7 @@ import java.util.List;
 import com.green.biz.dto.UserVO;
 
 public interface UserService {
-
+ 
 	void insertUser(UserVO vo);
 
 	void updateUser(UserVO vo);

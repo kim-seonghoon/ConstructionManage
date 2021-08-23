@@ -9,7 +9,7 @@ import com.green.biz.dto.CompanyVO;
 
 @Service("CompanyService")
 public class CompanyServiceImpl implements CompanyService {
-	
+	 
 	@Autowired
 	private CompanyDAO companyDao;
 	

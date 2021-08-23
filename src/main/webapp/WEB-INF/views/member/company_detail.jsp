@@ -52,7 +52,7 @@
 			<th rowspan="2">사업장 주소</th>
 			<td><input type="text" name="zip_num" id="zip_num"> <input type="button" onclick="post_zip()" value="주소검색"></td>
 		</tr>
-		<tr>
+		<tr> 
 			<td>
 				<input type="text" name="addr1" id="address">
 				<input type="hidden" name="sido" id="sido">

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.green.biz.dto.UserVO;
 
 @Repository
-public class UserDAO {
+public class UserDAO { 
 	@Autowired 
 	SqlSessionTemplate mybatis;
 	

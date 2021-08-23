@@ -13,7 +13,7 @@ import com.green.biz.user.UserService;
 public class UserServiceImpl implements UserService {
 	@Autowired
 	UserDAO userDao;
-	
+	 
 	@Override
 	public void insertUser(UserVO vo) {
 		

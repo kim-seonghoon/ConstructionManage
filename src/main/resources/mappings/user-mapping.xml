@@ -7,7 +7,7 @@
 					      email, birth_date, phone)
 		VALUES(#{user_id}, #{pwd}, #{name}, #{sido}, #{gugun}, #{dong}, #{address},
 			   #{email}, #{birth_date}, #{phone})
-	</insert>
+	</insert> 
 	
 	<!-- 유저 정보 수정 -->
 	<update id="updateUser">
