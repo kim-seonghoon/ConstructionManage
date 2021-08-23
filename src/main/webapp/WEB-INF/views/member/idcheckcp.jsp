@@ -27,8 +27,8 @@ input[type=button], input[type=submit] {
 </style>
 <script type="text/javascript">
 function idokcp(){
-  opener.formmCp.cp_id.value="${cp_id}"; 
-  opener.formmCp.reid.value="${cp_id}";
+  opener.formm.cp_id.value="${cp_id}"; 
+  opener.formm.reid.value="${cp_id}";
   self.close();
 }
 </script>
@@ -36,7 +36,7 @@ function idokcp(){
 <body>
 <div id="wrap">
   <h1>ID 중복확인</h1>
-  <form method=post name=formmCp id="formmCp" style="margin-right:0 "
+  <form method=post name=formm id="formm" style="margin-right:0 "
   		action="id_check_form_cp" >
     Company ID <input type=text name="cp_id" value="${cp_id}"> 
             <input type=submit value="검색" class="submit"><br>     

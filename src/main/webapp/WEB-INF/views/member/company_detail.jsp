@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
 <h3>| 회원 가입</h3> 
-<form name="formmCp" id="formmCp" method="POST">
+<form name="formm" id="formm" method="POST">
 	<div>
 		<table>
 		<tr>
@@ -53,7 +53,12 @@
 			<td><input type="text" name="zip_num" id="zip_num"> <input type="button" onclick="post_zip()" value="주소검색"></td>
 		</tr>
 		<tr>
-			<td><input type="text" name="addr1" id="address"> </td>
+			<td>
+				<input type="text" name="addr1" id="address">
+				<input type="hidden" name="sido" id="sido">
+				<input type="hidden" name="gugun" id="gugun">
+				<input type="hidden" name="dong" id="dong">
+			</td>
 			<td>상세주소</td>
 			<td><input type="text" name="addr2" id="address_detail"> </td>
 		</tr>

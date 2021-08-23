@@ -5,16 +5,16 @@
 <!DOCTYPE html>
 <div>
 <h3>| 회원 가입</h3>
-<form action="join" name="formm">
+<form action="join" id="join" name="formm">
 <div>
 	<table>
 	<tr>
 		<th>아이디*</th>
-					<td colspan="3">
-						<input type="text" name="user_id" id="user_id" value="${user_id}"> 
-						<input type="hidden" id="reid" name="reid" value="${reid}">
-						<input type="button" value="중복체크" onclick="idcheck()"> 
-					</td>
+		<td colspan="3">
+			<input type="text" name="user_id" id="user_id" value="${user_id}"> 
+			<input type="hidden" id="reid" name="reid" value="${reid}">
+			<input type="button" value="중복체크" onclick="idcheck()"> 
+		</td>
 	</tr>
 	
 	<tr>
@@ -49,10 +49,15 @@
 	
 	<tr>
 		<th rowspan="2">주소</th>
-		<td colspan="3"><input type="text" name="zip_num" id="zip_num"><input type="button" value="주소검색" onclick="">
+		<td colspan="3"><input type="text" name="zip_num" id="zip_num"><input type="button" value="주소검색" onclick="post_zip()">
 	</tr>
 	<tr>
-		<td><input type="text" name="addr1" id="address"> </td>
+		<td>
+			<input type="text" name="addr1" id="address">
+			<input type="hidden" name="sido" id="sido">
+			<input type="hidden" name="gugun" id="gugun">
+			<input type="hidden" name="dong" id="dong">
+		</td>
 		<th>상세주소</th>
 		<td><input type="text" name="addr2" id="address_detail"> </td>
 	</tr>

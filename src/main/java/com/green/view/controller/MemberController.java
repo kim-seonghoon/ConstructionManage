@@ -1,5 +1,7 @@
 package com.green.view.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.green.biz.address.AddressService;
 import com.green.biz.company.CompanyService;
+import com.green.biz.dto.AddressVO;
 import com.green.biz.dto.UserVO;
 import com.green.biz.user.UserService;
 
@@ -19,6 +23,8 @@ public class MemberController {
 	UserService userService;
 	@Autowired
 	CompanyService companyService;
+	@Autowired
+	AddressService addressService;
 	
 	@RequestMapping(value="/login_form",method=RequestMethod.GET)
 	public String login_form() {
@@ -133,5 +139,26 @@ public class MemberController {
 		model.addAttribute("cp_id", cp_id);
 
 		return "member/idcheckcp";
+	}
+	
+	/*
+	 * 우편번호 찾기 화면 요청처리
+	 */ 
+	@RequestMapping(value="/find_zip_num", method=RequestMethod.GET)
+	public String findZipNumView() {
+		
+		return "member/findZipNum"; 
+	}
+	
+	/*
+	 * 동이름으로 우편번호 찾기 조회처리
+	 */
+	@RequestMapping(value="/find_zip_num", method=RequestMethod.POST)
+	public String findZipNumAction(AddressVO vo, Model model) {
+		
+		List<AddressVO> addrList = addressService.selectAddressByDong(vo.getDong());
+		model.addAttribute("addressList", addrList);
+		
+		return "member/findZipNum";
 	}
 }

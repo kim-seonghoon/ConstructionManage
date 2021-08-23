@@ -103,7 +103,7 @@ function go_save_cp() {
 		alert("전화번호를 입력해 주세요!");
 		$("#cp_p1").focus(); 
 	} else {
-		$('#formmCp').attr("action", "join_cp").submit();
+		$('#formm').attr("action", "join_cp").submit();
 	}
 }
 
