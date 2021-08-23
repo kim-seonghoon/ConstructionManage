@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.green.biz.construction.ConstructionService;
+import com.green.biz.dto.CompanyVO;
 import com.green.biz.dto.ConstructionVO;
 import com.green.biz.dto.UserVO;
 
@@ -30,12 +31,17 @@ public class ConstructionController {
 	
 	@RequestMapping(value="/write_con_form")
 	public String writeConForm(HttpSession session) {
-		UserVO loginUser = (UserVO) session.getAttribute("loginUser");
+		int user_type = (int) session.getAttribute("user_type");
 		
-		if(loginUser==null) {
-			return "member/login";
+		if(user_type==2) {
+			CompanyVO loginUser = (CompanyVO) session.getAttribute("loginUser");
+			if(loginUser==null) {
+				return "member/login";
+			} else {
+				return "construction/conWrite";
+			}
 		} else {
-			return "construction/conWrite";
+			return "member/login";
 		}
 	}
 	

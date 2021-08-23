@@ -2,6 +2,8 @@ package com.green.view.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -49,7 +51,7 @@ public class MemberController {
 	
 	
 	@RequestMapping(value="/login", method=RequestMethod.POST)
-	public String loginAction(UserVO vo, Model model,
+	public String loginAction(UserVO vo, Model model, HttpSession session,
 							  @RequestParam(value="user_type", defaultValue="1") int user_type) {
 		int result = 1;
 		// 일반회원인 경우
@@ -61,7 +63,7 @@ public class MemberController {
 				UserVO loginUser = userService.getMember(vo.getUser_id());
 				
 				model.addAttribute("loginUser", loginUser);
-				model.addAttribute("user_type", user_type);
+				session.setAttribute("user_type", user_type);
 				
 				return "redirect:/index";
 			} else  {
@@ -75,7 +77,10 @@ public class MemberController {
 				CompanyVO loginUser = companyService.getCompany(vo.getUser_id());
 				
 				model.addAttribute("loginUser", loginUser);
-				model.addAttribute("user_type", user_type);
+				session.setAttribute("user_type", user_type);
+				
+				System.out.println("loginUser = " + loginUser);
+				System.out.println("user_type = " + user_type);
 				
 				return "redirect:/index";
 			} else  {

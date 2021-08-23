@@ -19,7 +19,7 @@
                         </select>
                     </td>
                     <th><p>공사 업체</p></th>
-                    <td><input type="text" name="cp_name" value="${ConstructionVO.cp_name}"></td>
+                    <td><input type="text" name="cp_name" value="${loginUser.cp_name}"></td>
                 </tr>
                 <tr>
                     <th rowspan="2"><p>공사 위치</p></th>
@@ -49,7 +49,7 @@
                 </tr>
                 <tr>
                     <th><p>담당부서</p></th>
-                    <td><input type="text" name="cp_name" value="CompanyVO.cp_name"></td>
+                    <td><input type="text" name="cp_name"></td>
                     <th><p>전화번호</p></th>
                     <td><input type="text" name="admin_num"></td>
                 </tr>
