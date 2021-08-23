@@ -141,7 +141,7 @@ public class MemberController {
 	public String idCheck(@RequestParam(value="user_id", defaultValue="", required=true) String user_id,
 						  Model model) {
 
-		int message = companyService.confirmCpId(user_id);
+		int message = userService.confirmID(user_id);
 		model.addAttribute("message", message);		
 		model.addAttribute("user_id", user_id);
 
