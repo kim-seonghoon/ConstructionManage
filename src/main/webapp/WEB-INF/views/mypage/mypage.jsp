@@ -9,7 +9,7 @@
             <table>
             <tr>
                 <td>아이디*</td>
-                <td>${users.user_id} </td>
+                <td>${loginUser.user_id} </td>
             </tr>
             
             <tr>
@@ -26,7 +26,7 @@
             
             <tr>
                 <td>생년월일*</td>
-                <td>${users.birthdate}</td>
+                <td>${loginUser.birth_date}</td>
             </tr>
             
             <tr>

@@ -31,8 +31,16 @@
             <ul class="nav navbar-nav navbar-right">
               <li class="active"><a href="con_list_form">공사현황 <span class="sr-only">(current)</span></a></li>
               <li><a href="comp_list_form">민원보기</a></li>
-              <input type="button" class="btn btn-default navbar-btn" style="margin-left: 50px;" onclick="login_form()" value="로그인">
-              <input type="button" class="btn btn-default navbar-btn" onclick="join_form()" value="회원가입">
+              <c:choose>
+	              <c:when test="${empty sessionScope.loginUser}">
+		              <input type="button" class="btn btn-default navbar-btn" style="margin-left: 50px;" onclick="login_form()" value="로그인">
+		              <input type="button" class="btn btn-default navbar-btn" onclick="join_form()" value="회원가입">
+		          </c:when>
+		          <c:otherwise>
+		          	  <input type="button" class="btn btn-default navbar-btn" style="margin-left: 50px;" onclick="logout()" value="로그아웃">
+		              <input type="button" class="btn btn-default navbar-btn" onclick="mypage_form()" value="내 정보">
+		      	  </c:otherwise>
+		      </c:choose>
             </ul>
           </div><!-- /.navbar-collapse -->
           </form>

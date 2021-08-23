@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 
 import com.green.biz.address.AddressService;
 import com.green.biz.company.CompanyService;
@@ -188,5 +189,23 @@ public class MemberController {
 		model.addAttribute("addressList", addrList);
 		
 		return "member/findZipNum";
+	}
+	
+	@RequestMapping(value="/logout")
+	public String logout(SessionStatus status) {
+		status.setComplete();
+		
+		return "redirect:/index";
+	}
+	
+	@RequestMapping(value="/mypage_form")
+	public String mypageForm(HttpSession session) {
+		int user_type = (int) session.getAttribute("user_type");
+		
+		if(user_type == 1) {
+			return "mypage/mypage";
+		} else {
+			return "mypage/company_page";
+		}
 	}
 }

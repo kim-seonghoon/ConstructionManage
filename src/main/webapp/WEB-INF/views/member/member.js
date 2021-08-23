@@ -116,3 +116,11 @@ function post_zip() {
 	window.open(url, "_blank_1", 
 	"toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=600, height=450");
 }
+
+function logout() {
+	$("#theform").attr("action", "logout").submit();
+}
+
+function mypage_form() {
+	$("#theform").attr("action", "mypage_form").submit();
+}
