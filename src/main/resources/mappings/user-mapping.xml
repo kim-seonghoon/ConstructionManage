@@ -43,7 +43,7 @@
 		WHERE name LIKE '%'||#{key}||'%'
 	</select>
 	
-	<select id="getMember">
+	<select id="getMember" parameterType="String" resultType="user">
 		SELECT * FROM users
 		WHERE user_id = #{user_id}
 	</select>
