@@ -9,7 +9,7 @@ import com.green.biz.company.CompanyService;
 import com.green.biz.dto.CompanyVO;
 
 @Controller
-public class CompanyController {
+public class CompanyController { 
 	@Autowired
 	CompanyService companyService;
 	
@@ -24,7 +24,7 @@ public class CompanyController {
 		int admin_phone = Integer.parseInt(admin_p1 + admin_p2 + admin_p3);
 		int cp_phone = Integer.parseInt(cp_p1 + cp_p2 + cp_p3);
 		int fax_num = Integer.parseInt(fax_num1 + fax_num2 + fax_num3);
-		String cp_address = addr1 + " " + addr2;
+		String cp_address = addr1 + " " + addr2; 
 		
 		vo.setCp_num(cp_num);
 		vo.setAdmin_phone(admin_phone);

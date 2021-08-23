@@ -13,7 +13,7 @@ import com.green.biz.dto.UserVO;
 import com.green.biz.user.UserService;
 
 @Controller
-@SessionAttributes("loginUser")
+@SessionAttributes("loginUser") 
 public class MemberController {
 	@Autowired
 	UserService userService;

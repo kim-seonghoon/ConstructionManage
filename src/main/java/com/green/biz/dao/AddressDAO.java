@@ -18,7 +18,7 @@ public class AddressDAO {
 	public List<AddressVO> selectAddressByDong(String dong){
 		
 		return mybatis.selectList("AddressDAO.selectAddressByDong", dong);
-	}
+	} 
 	
 
 }

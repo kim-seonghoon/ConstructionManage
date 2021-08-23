@@ -54,7 +54,7 @@ public class UserDAO {
 		if(pwd != null) {
 			return 1;
 		}else {
-			return -1;
+			return -1; 
 		}
 	}
 	

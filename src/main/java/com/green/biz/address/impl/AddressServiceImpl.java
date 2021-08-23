@@ -13,7 +13,7 @@ import com.green.biz.dto.AddressVO;
 public class AddressServiceImpl implements AddressService {
 	
 	@Autowired
-	private AddressDAO addressDao;
+	private AddressDAO addressDao; 
 	
 	@Override
 	public List<AddressVO> selectAddressByDong(String dong) {

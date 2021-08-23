@@ -101,7 +101,7 @@ function go_save_cp() {
 		$("#admin_p1").focus();
 	} else if($("#cp_p1").val()=="" || $("#cp_p2").val()=="" || $("#cp_p3").val()=="") {
 		alert("전화번호를 입력해 주세요!");
-		$("#cp_p1").focus();
+		$("#cp_p1").focus(); 
 	} else {
 		$('#formmCp').attr("action", "join_cp").submit();
 	}

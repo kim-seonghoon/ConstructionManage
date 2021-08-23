@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
-<h3>| 회원 가입</h3>
+<h3>| 회원 가입</h3> 
 <form name="formmCp" id="formmCp" method="POST">
 	<div>
 		<table>
