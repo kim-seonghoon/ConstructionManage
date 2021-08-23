@@ -11,7 +11,9 @@
           <label>User ID</label>
           <input name="user_id" type="text"><br> 
           <label>Password</label> 
-          <input name="pwd" type="password"><br> 
+          <input name="pwd" type="password"><br>
+          <input type="radio" name="user_type" value="1">일반회원
+          <input type="radio" name="user_type" value="2">공사업체<br>
           <input type="submit" value="로그인" class="submit">
         </fieldset>
         <div class="clear"></div>

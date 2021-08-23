@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import com.green.biz.address.AddressService;
 import com.green.biz.company.CompanyService;
 import com.green.biz.dto.AddressVO;
+import com.green.biz.dto.CompanyVO;
 import com.green.biz.dto.UserVO;
 import com.green.biz.user.UserService;
 
@@ -48,20 +49,42 @@ public class MemberController {
 	
 	
 	@RequestMapping(value="/login", method=RequestMethod.POST)
-	public String loginAction(UserVO vo, Model model) {
-		UserVO loginUser = null;
-		
-		int result = userService.loginID(vo);
-		
-		if (result == 1) { // 사용자 인증 성공
-			loginUser = userService.getMember(vo.getUser_id());
+	public String loginAction(UserVO vo, Model model,
+							  @RequestParam(value="user_type", defaultValue="1") int user_type) {
+		int result = 1;
+		// 일반회원인 경우
+		if(user_type==1) {
 			
-			model.addAttribute("loginUser", loginUser);
+			result = userService.loginID(vo);
 			
+			if (result == 1) { // 사용자 인증 성공
+				UserVO loginUser = userService.getMember(vo.getUser_id());
+				
+				model.addAttribute("loginUser", loginUser);
+				model.addAttribute("user_type", user_type);
+				
+				return "redirect:/index";
+			} else  {
+				return "member/login_fail";
+			}
+		// 공사업체인 경우
+		} else if(user_type==2) {
+			result = companyService.loginID(vo);
+			
+			if (result == 1) { // 사용자 인증 성공
+				CompanyVO loginUser = companyService.getCompany(vo.getUser_id());
+				
+				model.addAttribute("loginUser", loginUser);
+				model.addAttribute("user_type", user_type);
+				
+				return "redirect:/index";
+			} else  {
+				return "member/login_fail";
+			}
+		} else {
 			return "redirect:/index";
-		} else  {
-			return "member/login_fail";
 		}
+
 	}
 	
 	@RequestMapping(value="/go_join_detail")

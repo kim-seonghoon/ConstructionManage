@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.green.biz.company.CompanyService;
 import com.green.biz.dao.CompanyDAO;
 import com.green.biz.dto.CompanyVO;
+import com.green.biz.dto.UserVO;
 
 @Service("CompanyService")
 public class CompanyServiceImpl implements CompanyService {
@@ -35,6 +36,18 @@ public class CompanyServiceImpl implements CompanyService {
 	public int confirmCpId(String cp_id) {
 		
 		return companyDao.confirmCpId(cp_id);
+	}
+
+	@Override
+	public CompanyVO getCompany(String cp_id) {
+		
+		return companyDao.getCompany(cp_id);
+	}
+
+	@Override
+	public int loginID(UserVO vo) {
+		
+		return companyDao.loginID(vo);
 	}
 
 }

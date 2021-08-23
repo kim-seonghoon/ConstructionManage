@@ -1,6 +1,7 @@
 package com.green.biz.company;
  
 import com.green.biz.dto.CompanyVO;
+import com.green.biz.dto.UserVO;
 
 public interface CompanyService {
 	public void insertCompany(CompanyVO vo);
@@ -10,4 +11,8 @@ public interface CompanyService {
 	public int updateCompany(CompanyVO vo);
 	
 	public int confirmCpId(String cp_id);
+	
+	public CompanyVO getCompany(String cp_id);
+	
+	public int loginID(UserVO vo);
 }

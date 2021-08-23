@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.green.biz.dto.CompanyVO;
+import com.green.biz.dto.UserVO;
 
 @Repository
 public class CompanyDAO {
@@ -35,5 +36,28 @@ public class CompanyDAO {
 		}else {
 			return -1;
 		}
+	}
+	
+	public CompanyVO getCompany(String cp_id) {
+		
+		return mybatis.selectOne("CompanyDAO.getCompany", cp_id);
+	}
+	
+	public int loginID(UserVO vo) {
+		int result = -1;
+		String pwd = null;
+		String cp_id = vo.getUser_id();
+		
+		pwd = mybatis.selectOne("CompanyDAO.confirmCpId", cp_id);
+		
+		// DB에서 조회한 password와 사용자가 입력한  password 비교
+		if(pwd == null) {
+			result = -1;
+		}else if(pwd.equals(vo.getPwd())) {
+			result = 1;
+		}else {
+			result = 0;
+		}
+		return result;
 	}
 }
