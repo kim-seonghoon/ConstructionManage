@@ -66,6 +66,9 @@ public class MemberController {
 				model.addAttribute("loginUser", loginUser);
 				session.setAttribute("user_type", user_type);
 				
+				System.out.println("loginUser = " + loginUser);
+				System.out.println("user_type = " + user_type);
+				
 				return "redirect:/index";
 			} else  {
 				return "member/login_fail";

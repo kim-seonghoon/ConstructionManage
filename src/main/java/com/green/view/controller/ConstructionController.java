@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.green.biz.company.CompanyService;
 import com.green.biz.construction.ConstructionService;
 import com.green.biz.dto.CompanyVO;
 import com.green.biz.dto.ConstructionVO;
@@ -38,8 +39,10 @@ public class ConstructionController {
 		if(user_type==2) {
 			CompanyVO loginUser = (CompanyVO) session.getAttribute("loginUser");
 			if(loginUser==null) {
+				
 				return "member/login";
 			} else {
+
 				return "construction/conWrite";
 			}
 		} else {

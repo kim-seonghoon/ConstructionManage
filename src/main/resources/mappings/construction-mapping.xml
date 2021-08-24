@@ -4,10 +4,10 @@
 	<!-- 공사 접수 -->
 	<insert id="insertConstruction">
 		INSERT INTO construction(con_seq, con_name, sido, gugun, dong, address,
-								 cp_name, cp_num, start_date, end_date, con_size, 
+								 cp_name, start_date, end_date, con_size, 
 								 con_state, con_num, content) 
 		VALUES(con_seq.NEXTVAL, #{con_name}, #{sido}, #{gugun}, #{dong},
-			   #{address}, #{cp_name}, #{cp_num}, #{start_date}, #{end_date},
+			   #{address}, #{cp_name}, #{start_date}, #{end_date},
 			   #{con_size}, #{con_state}, #{con_num}, #{content})
 	</insert>
 	

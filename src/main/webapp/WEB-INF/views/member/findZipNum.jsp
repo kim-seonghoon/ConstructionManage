@@ -50,8 +50,8 @@ table#zipcode a:hover{
 }
 </style>
 <script type="text/javascript">
-function result(zipnum,sido,gugun,dong) {
-   opener.document.formm.zip_num.value=zipnum;
+function result(zip_num,sido,gugun,dong) {
+   opener.document.formm.zip_num.value=zip_num;
    opener.document.formm.addr1.value=sido+" "+gugun+" "+dong;
    opener.document.formm.sido.value=sido;
    opener.document.formm.gugun.value=gugun;

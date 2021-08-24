@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <div>
 <h3>| 회원 가입</h3>
-<form action="join" id="join" name="formm" method="post">
+<form id="join" name="formm" method="post">
 <div>
 	<table>
 	<tr>
@@ -63,7 +63,7 @@
 	</tr>
 	</table>
 	<input type="reset" value="취소">
-	<input type="submit" value="확인">
+	<input type="submit" value="확인" onclick="go_save()">
 </div>
 </form>
 </div>
