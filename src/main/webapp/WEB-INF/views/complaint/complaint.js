@@ -34,7 +34,7 @@ function categoryChange(e) {
 				  ,"춘천시", "인제군", "홍천군", "정선군", "철원군"
 				  ,"횡성군", "삼척시", "속초시"];
 	var good_k = ["밀양시"];
-	var target = document.getElementById("good");
+	var target = document.getElementById("addr2");
 
 	if(e.value == "서울") var d = good_a;
 	else if(e.value == "경기") var d = good_b;
@@ -63,16 +63,15 @@ function go_save(){
 	if ($("#title").val() == "") {
 		alert("제목 입력해 주세요!");
 		$("#title").focus();
+	} else if($("#con_num").val == "0"){
+		alert("공사를 선택해주세요!")
+	} else if ($("#addr1").val() == "시도") {
+		alert("지역을 선택해 주세요!");
 	} else if ($("#content").val() == "") {
 		alert("내용을 입력해 주세요!");
 		$("#content").focus();
-	} else if ($("#addr1").val() == "시도") {
-		alert("지역을 선택해 주세요!");
-	} else if($("#addr2").val() == "구군"){
-		alert("지역을 선택해주세요!")
-	} 
-	else {
-		$("#join").attr("action", "join").submit();
+	} else {
+		$("#comp_update").attr("action", "comp_update").submit();
 	}
 }
 

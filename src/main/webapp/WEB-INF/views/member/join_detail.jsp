@@ -63,7 +63,7 @@
 	</tr>
 	</table>
 	<input type="reset" value="취소">
-	<input type="submit" value="확인">
+	<input type="button" value="확인" onclick="go_save()">
 </div>
 </form>
 </div>
