@@ -1,10 +1,6 @@
 package com.green.view.controller;
 
 import java.sql.Timestamp;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -14,8 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.green.biz.company.CompanyService;
 import com.green.biz.construction.ConstructionService;
 import com.green.biz.dto.CompanyVO;
 import com.green.biz.dto.ConstructionVO;
@@ -139,5 +135,38 @@ public class ConstructionController {
 		constructionService.insertConstruction(vo);
 		System.out.println("construction = " + vo);
 		return "redirect:/con_list_form";
+	}
+	
+	@RequestMapping(value="con_detail")
+	public String conDetailForm(ConstructionVO vo, Model model) {
+		ConstructionVO con = constructionService.getConstruction(vo);
+		
+		model.addAttribute("ConstructionVO", con);
+		return "construction/conDetail";
+	}
+	
+	@RequestMapping(value="con_delete")
+	public String conDelete(ConstructionVO vo, HttpSession session, Model model) {
+		int user_type = 0;
+		
+		if(session.getAttribute("user_type")!=null) {
+			user_type = (int) session.getAttribute("user_type");
+		}
+		
+		if(user_type == 2) {
+			CompanyVO loginUser = (CompanyVO) session.getAttribute("loginUser");
+			
+			if(loginUser.getCp_num().equals(vo.getCp_num())) {
+				constructionService.deleteConstruction(vo);
+				return "redirect:/con_list_form";
+			} else {
+
+				return "redirect:/con_detail";
+			}
+		} else {
+	        model.addAttribute("con_seq", vo.getCon_seq());
+
+	        return "redirect:/con_detail";
+		}
 	}
 }
