@@ -58,8 +58,13 @@ public class ConstructionController {
 	@RequestMapping(value="/category")
 	public String constListByCategory(@RequestParam(value="con_num", defaultValue="0") String con_num,
 									  Model model) {
-		List<ConstructionVO> conList = constructionService.getConstructionListByConNum(con_num);
-		model.addAttribute("conList", conList);
+		if(con_num.equals("0")) {
+			List<ConstructionVO> conList = constructionService.getConstructionList();
+			model.addAttribute("conList", conList);
+		} else {
+			List<ConstructionVO> conList = constructionService.getConstructionListByConNum(con_num);
+			model.addAttribute("conList", conList);
+		}
 		
 		return "construction/conList";
 	}

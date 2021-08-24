@@ -4,7 +4,7 @@
     <div id="contents"  style="text-align: center;">
         <form action="search"> 
             <ul class="nav nav-tabs">
-                <li role="presentation" class="active"><a href="con_num=0">전체현황</a></li>
+                <li role="presentation" class="active"><a href="category?con_num=0">전체현황</a></li>
                 <li role="presentation"><a href="category?con_num=1">도로</a></li>
                 <li role="presentation"><a href="category?con_num=2">상/하수</a></li>
                 <li role="presentation"><a href="category?con_num=3">공공건축물</a></li>
@@ -20,7 +20,7 @@
                     <th><p>지역</p></th>
                     <th><p>글쓴이</p></th>
                     <th><p>조회</p></th>
-                    <th><p>종료날짜</p></th>
+                    <th><p>종료일자</p></th>
                 </tr>
                 <c:forEach items="${conList}" var="ConstructionVO">
 	                <tr>
