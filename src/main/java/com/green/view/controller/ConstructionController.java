@@ -31,8 +31,10 @@ public class ConstructionController {
 	
 	@RequestMapping(value="/write_con_form")
 	public String writeConForm(HttpSession session) {
-		int user_type = (int) session.getAttribute("user_type");
-		
+		int user_type = 0;
+		if(session.getAttribute("user_type")!=null) {
+			user_type = (int) session.getAttribute("user_type");
+		}
 		if(user_type==2) {
 			CompanyVO loginUser = (CompanyVO) session.getAttribute("loginUser");
 			if(loginUser==null) {
