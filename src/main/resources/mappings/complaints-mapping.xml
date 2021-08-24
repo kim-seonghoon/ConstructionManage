@@ -3,8 +3,8 @@
 <mapper namespace="ComplaintsDAO">
 	<!-- 민원 등록 -->
 	<insert id="insertComplaints">
-		INSERT INTO complaints(com_seq, con_name, title, content, regdate)
-		VELUES (com_seq.NEXTVAL, #{con_name}, #{title}, #{content}, #{regdate})
+		INSERT INTO complaints(com_seq, con_name, title, content, regdate, address)
+		VELUES (com_seq.NEXTVAL, #{con_name}, #{title}, #{content}, #{regdate}, #{address})
 	</insert>
 	 
 	<!-- 민원 수정 -->

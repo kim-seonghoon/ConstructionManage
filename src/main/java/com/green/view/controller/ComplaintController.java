@@ -34,7 +34,7 @@ public class ComplaintController {
 		if(loginUser==null) {
 			return "member/login";
 		} else {
-			return "complaint/compWrtie";
+			return "complaint/compWrite";
 		}
 	}
 }
