@@ -63,7 +63,7 @@ function go_save(){
 	if ($("#title").val() == "") {
 		alert("제목 입력해 주세요!");
 		$("#title").focus();
-	} else if($("#con_num").val == "0"){
+	} else if($("#con_num").val == "공사선택"){
 		alert("공사를 선택해주세요!")
 	} else if ($("#addr1").val() == "시도") {
 		alert("지역을 선택해 주세요!");
