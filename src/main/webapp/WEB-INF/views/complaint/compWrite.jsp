@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
-<div id="content">
+<div id="container">
 	<form id="com_form" action="comp_write" method="POST">
 		<input type="hidden" name="con_seq" value="ComplaintsVO.con_seq">
 		<input type="hidden" name="com_seq" value="ComplaintsVO.com_seq">
@@ -43,8 +43,8 @@
 				<textarea name="content" id="content" cols="60" rows="10"></textarea></td>
 		</table>
 		<div id="buttons">
-			 <input type="button" value="취소">
-			 <input type="button" value="작성완료" onclick="go_save()">
+			 <input type="reset" value="취소">
+			 <input type="button" value="작성완료" onclick="go_save_comp()">
 			 <input type="button" value="목록">
 		</div>
 	</form>
