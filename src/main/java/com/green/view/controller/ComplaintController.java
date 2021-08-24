@@ -36,7 +36,7 @@ public class ComplaintController {
 			user_type = (int) session.getAttribute("user_type");
 		}
 		if(user_type==1) {
-			ComplaintsVO loginUser = (ComplaintsVO) session.getAttribute("loginUser");
+			UserVO loginUser = (UserVO) session.getAttribute("loginUser");
 			if(loginUser==null) {
 				
 				return "member/login";
@@ -49,20 +49,18 @@ public class ComplaintController {
 		}
 	}
 	
-//	@RequestMapping(value = "comp_write")
-//	public String writeCompAction(ComplaintsVO vo, HttpSession session,
-//								  @RequestParam(value="addr1") String addr1,
-//								  @RequestParam(value="addr2") String addr2) {
-//		
-//		String address = addr1 + " " + addr2;
-//		vo.setAddress(address);
-//		
-//		ComplaintsVO loginUser = (ComplaintsVO) session.getAttribute("loginUser");
-//		vo.setCon_num(loginUser.getCon_num());
-//		
-//		complaintService.insertComplaints(vo);
-//		System.out.println("complaints=" + vo);
-//		return "redirect:/com_list_form";
-//		
-//	}
+	@RequestMapping(value = "comp_write")
+	public String writeCompAction(ComplaintsVO vo, HttpSession session,
+								  @RequestParam(value="addr1") String addr1,
+								  @RequestParam(value="addr2") String addr2) {
+		
+		String address = addr1 + " " + addr2;
+		vo.setAddress(address);
+		
+		
+		complaintService.insertComplaints(vo);
+		System.out.println("complaints=" + vo);
+		return "redirect:/comp_list_form";
+		
+	}
 }

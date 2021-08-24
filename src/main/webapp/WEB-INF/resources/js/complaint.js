@@ -59,7 +59,7 @@ function categoryChange(e) {
 }
 
 
-function go_save(){
+function go_save_comp(){
 	if ($("#title").val() == "") {
 		alert("제목 입력해 주세요!");
 		$("#title").focus();
@@ -67,10 +67,9 @@ function go_save(){
 		alert("공사를 선택해주세요!")
 	} else if ($("#addr1").val() == "시도") {
 		alert("지역을 선택해 주세요!");
-	} else if ($("#content").val() == "") {
+	}else if ($("#content").val().length == 0) {
 		alert("내용을 입력해 주세요!");
-		$("#content").focus();
-	} else {
-		$("#comp_update").attr("action", "comp_update").submit();
+	}	else {
+		$("#com_form").attr("action", "comp_write").submit();
 	}
 }
