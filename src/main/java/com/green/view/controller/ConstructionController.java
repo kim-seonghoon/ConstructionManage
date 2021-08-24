@@ -1,5 +1,10 @@
 package com.green.view.controller;
 
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -103,5 +108,31 @@ public class ConstructionController {
 			
 			return "construction/conList"; 
 		}
+	}
+	
+	@RequestMapping(value="/con_write")
+	public String ConWriteAction(ConstructionVO vo, HttpSession session,
+								 @RequestParam(value="addr1") String addr1,
+								 @RequestParam(value="addr2") String addr2,
+								 @RequestParam(value="s_date") String s_date,
+								 @RequestParam(value="e_date") String e_date) {
+
+		  Timestamp start_date = Timestamp.valueOf(s_date+" 00:00:00");
+		  Timestamp end_date = Timestamp.valueOf(e_date+" 00:00:00");
+		  
+		  vo.setStart_date(start_date);
+		  vo.setEnd_date(end_date);
+		  System.out.println(start_date);
+		  System.out.println(end_date);
+		
+		String address = addr1 + " " + addr2;
+		vo.setAddress(address);
+		
+		CompanyVO loginUser = (CompanyVO) session.getAttribute("loginUser");
+		vo.setCp_num(loginUser.getCp_num());
+		
+		constructionService.insertConstruction(vo);
+		System.out.println("construction = " + vo);
+		return "redirect:/con_list_form";
 	}
 }

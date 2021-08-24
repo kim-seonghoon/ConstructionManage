@@ -31,7 +31,7 @@ public class ConstructionDAO {
 	}
 	
 	public List<ConstructionVO> getConstructionList() {
-		return mybatis.selectOne("ConstructionDAO.getConstructionList");
+		return mybatis.selectList("ConstructionDAO.getConstructionList");
 	}
 	
 	public List<ConstructionVO> getConstructionListByArea(String sido, String gugun, String dong) {

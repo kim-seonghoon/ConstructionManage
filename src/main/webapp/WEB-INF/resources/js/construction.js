@@ -8,6 +8,7 @@ function go_write_con() {
 
 function write_con() {
 	var $con_name = $("#con_name");
+	var $con_num = $("#con_num");
 	var $cp_name = $("cp_name");
 	var $zip_num = $("zip_num");
 	var $sido = $("#sido");
@@ -17,8 +18,8 @@ function write_con() {
 	var $addr2 = $("#addr2");
 	var $con_size = $("#con_size");
 	var $con_state = $("#con_state");
-	var $start_date = $("#start_date");
-	var $end_date = $("#end_date");
+	var $start_date = $("#s_date");
+	var $end_date = $("#e_date");
 	var $dept = $("#dept");
 	var $dept_tel = $("#dept_tel");
 	var $content = $("#content");

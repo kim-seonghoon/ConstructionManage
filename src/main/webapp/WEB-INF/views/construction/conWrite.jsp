@@ -6,7 +6,7 @@
             <table>
                 <tr>
                     <th><p>제목</p></th>
-                    <td colspan="3"><input type="text" name="con_name" id="con_name"></td>
+                    <td colspan="3"><input style="width:600px" type="text" name="con_name" id="con_name"></td>
                 </tr>
                 <tr>
                     <th><p>공사 분류</p></th>
@@ -26,7 +26,7 @@
                     <th rowspan="2"><p>공사 위치</p></th>
                     <td colspan="3">
                         <input type="text" name="zip_num" id="zip_num" value="우편 번호">
-                        <input type="button" value="주소검색">
+                        <input type="button" value="주소검색" onclick="post_zip()">
                         <input type="hidden" name="sido" id="sido">
                         <input type="hidden" name="gugun" id="gugun">
                         <input type="hidden" name="dong" id="dong">
@@ -46,7 +46,7 @@
                 <tr>
                     <th><p>공사 기간</p></th>
                     <td colspan="3">
-                        <input name="start_date" id="start_date" type="date"> ~ <input type="date" name="end_date" id="end_date"></td>
+                        <input name="s_date" id="s_date" type="date"> ~ <input type="date" name="e_date" id="e_date"></td>
                 </tr>
                 <tr>
                     <th><p>담당부서</p></th>

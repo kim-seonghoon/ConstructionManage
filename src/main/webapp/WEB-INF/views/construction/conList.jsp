@@ -20,16 +20,16 @@
                     <th><p>지역</p></th>
                     <th><p>글쓴이</p></th>
                     <th><p>조회</p></th>
-                    <th><p>날짜</p></th>
+                    <th><p>종료날짜</p></th>
                 </tr>
                 <c:forEach items="${conList}" var="ConstructionVO">
 	                <tr>
 	                    <th>${ConstructionVO.con_seq}</th>
-	                    <th>${ConstructionVO.con_name}</th>
-	                    <th>${ConstructionVO.address}</th>
-	                    <th>${ConstructionVO.com_name}</th>
-	                    <th>${ConstructionVO.con_seq}</th>
-	                    <th>${ConstructionVO.regdate}</th>
+	                    <th><a href="conDetail?con_seq='{con_seq}'">${ConstructionVO.con_name}</a></th>
+	                    <th>${ConstructionVO.sido} ${ConstructionVO.gugun}</th>
+	                    <th>${ConstructionVO.cp_name}</th>
+	                    <th>${ConstructionVO.view_count}</th>
+	                    <th><fmt:formatDate value="${ConstructionVO.end_date}" pattern="yyyy-MM-dd"/></th>
 	                </tr>
                 </c:forEach>
             </table>
