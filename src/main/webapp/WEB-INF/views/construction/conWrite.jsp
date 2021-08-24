@@ -20,7 +20,10 @@
                         </select>
                     </td>
                     <th><p>공사 업체</p></th>
-                    <td><input type="text" name="cp_name" id="cp_name" value="${loginUser.cp_name}"></td>
+                    <td>
+                    	<input type="text" name="cp_name" id="cp_name" value="${loginUser.cp_name}">
+                    	<input type="hidden" name="cp_num" id="cp_num" value="${loginUser.cp_num}">
+                    </td>
                 </tr>
                 <tr>
                     <th rowspan="2"><p>공사 위치</p></th>

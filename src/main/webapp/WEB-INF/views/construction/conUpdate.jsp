@@ -25,38 +25,38 @@
                 <tr>
                     <th rowspan="2"><p>공사 위치</p></th>
                     <td colspan="3">
-                        <input type="text" name="zip_num" value="우편 번호">
+                        <input type="text" name="zip_num" value="${ConstructionVO.zip_num}">
                         <input type="button" value="주소검색">
-                        <input type="hidden" name="sido">
-                        <input type="hidden" name="gugun">
-                        <input type="hidden" name="dong">
+                        <input type="hidden" name="sido" value="${ConstructionVO.sido}">
+                        <input type="hidden" name="gugun" value="${ConstructionVO.gugun}">
+                        <input type="hidden" name="dong" value="${ConstructionVO.dong}">
                     </td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="addr1"></td>
+                    <td><input type="text" name="addr1" value="${ConstructionVO.sido} ${ConstructionVO.gugun}"></td>
                     <th><p>상세주소</p></th>
                     <td><input type="text" name="addr2"></td>
                 </tr>
                 <tr>
                     <th><p>공사규모</p></th>
-                    <td><input type="text" name="con_size"></td>
+                    <td><input type="text" name="con_size" value="${ConstructionVO.con_size}"></td>
                     <th><p>현재현황</p></th>
-                    <td><input type="text" name="con_state"></td>
+                    <td><input type="text" name="con_state" value="${ConstructionVO.con_state}"></td>
                 </tr>
                 <tr>
                     <th><p>공사 기간</p></th>
                     <td colspan="3">
-                        <input name="start_date" type="date" value="xxx" min="yyy" max="zzz"> ~ <input type="date" name="end_date" value="xxx" min="yyy" max="zzz"></td>
+                        <input name="s_date" id="s_date" type="date" value="${Construction.start_date}"> ~ <input type="date" name="e_date"  value="${Construction.end_date}" id="e_date"></td>
                 </tr>
                 <tr>
                     <th><p>담당부서</p></th>
-                    <td><input type="text" name="cp_name" value="CompanyVO.cp_name"></td>
+                    <td><input type="text" name="dept" value="${Construction.dept}"></td>
                     <th><p>전화번호</p></th>
-                    <td><input type="text" name="admin_num"></td>
+                    <td><input type="text" name="dept_tel" value="${ConstructionVO.dept_tel}"></td>
                 </tr>
                 <tr>
                     <th><p>기타</p></th>
-                    <td colspan="3"><textarea name="content" rows="8" cols="40"></textarea></td>
+                    <td colspan="3"><textarea name="content" rows="8" cols="40">${ConstructionVO.content}</textarea></td>
                 </tr>
             </table>
             <div id="buttons">

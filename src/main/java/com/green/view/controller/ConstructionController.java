@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.green.biz.construction.ConstructionService;
 import com.green.biz.dto.CompanyVO;
@@ -133,7 +133,6 @@ public class ConstructionController {
 		vo.setCp_num(loginUser.getCp_num());
 		
 		constructionService.insertConstruction(vo);
-		System.out.println("construction = " + vo);
 		return "redirect:/con_list_form";
 	}
 	
@@ -164,9 +163,42 @@ public class ConstructionController {
 				return "redirect:/con_detail";
 			}
 		} else {
-	        model.addAttribute("con_seq", vo.getCon_seq());
 
 	        return "redirect:/con_detail";
 		}
+	}
+	
+	@RequestMapping(value="con_update_form")
+	public String conUpdateForm(ConstructionVO vo, HttpSession session, Model model) {
+		int user_type = 0;
+		
+		if(session.getAttribute("user_type")!=null) {
+			user_type = (int) session.getAttribute("user_type");
+		}
+		
+		if(user_type == 2) {
+			CompanyVO loginUser = (CompanyVO) session.getAttribute("loginUser");
+			
+			ConstructionVO con = constructionService.getConstruction(vo);
+			model.addAttribute("ConstructionVO", con);
+
+			if(loginUser.getCp_num().equals(vo.getCp_num())) {
+
+				return "construction/conUpdate";
+			} else {
+
+				return "construction/conDetail";
+			}
+		} else {
+
+	        return "construction/conDetail";
+		}
+	}
+	
+	@RequestMapping(value="/con_update")
+	public String conUpdate(ConstructionVO vo) {
+		constructionService.updateConstruction(vo);
+		
+		return "redirect:/con_List_form";
 	}
 }

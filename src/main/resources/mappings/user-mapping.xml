@@ -3,9 +3,8 @@
 <mapper namespace="UserDAO">
 	<!-- 일반 유저 회원 가입 -->
 	<insert id="insertUser">
-		INSERT INTO users(user_id, pwd, name, sido, gugun, dong, address,
-					      email, birth_date, phone)
-		VALUES(#{user_id}, #{pwd}, #{name}, #{sido}, #{gugun}, #{dong}, #{address},
+		INSERT INTO users(user_id, pwd, name, sido, gugun, dong, address, zip_num, email, birth_date, phone)
+		VALUES(#{user_id}, #{pwd}, #{name}, #{sido}, #{gugun}, #{dong}, #{address}, #{zip_num},
 			   #{email}, #{birth_date}, #{phone})
 	</insert> 
 	

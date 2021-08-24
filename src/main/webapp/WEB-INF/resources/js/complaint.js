@@ -59,7 +59,7 @@ function categoryChange(e) {
 }
 
 
-function go_save(){
+function go_save_comp(){
 	if ($("#title").val() == "") {
 		alert("제목 입력해 주세요!");
 		$("#title").focus();
