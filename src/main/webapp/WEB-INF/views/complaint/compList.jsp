@@ -4,11 +4,11 @@
     <div id="contents"  style="text-align: center;">
         <form action="search">
             <ul class="nav nav-tabs">
-                <li role="presentation" class="active"><a href="#">전체현황</a></li>
-                <li role="presentation"><a href="#">도로</a></li>
-                <li role="presentation"><a href="#">상/하수</a></li>
-                <li role="presentation"><a href="#">공공건축물</a></li>
-                <li role="presentation"><a href="#">기타</a></li>
+                <li role="presentation" class="active" ><a href="com_category?con_num=0">전체현황</a></li>
+                <li role="presentation"><a href="com_category?con_num=1">도로</a></li>
+                <li role="presentation"><a href="com_category?con_num=2">상/하수</a></li>
+                <li role="presentation"><a href="com_category?con_num=3">공공건축물</a></li>
+                <li role="presentation"><a href="com_category?con_num=4">기타</a></li>
                 <li class="navbar-right"><input type="text"><input type="submit" value="검색" style="margin-right: 20px;"></li>
             </ul>
         </form>
@@ -26,9 +26,9 @@
 	                <tr>
 	                    <th>${ComplaintsVO.com_seq}</th>
 	                    <th>${ComplaintsVO.title}</th>
-	                    <th>${ComplaintsVO.writer}</th>
+	                    <th>${ComplaintsVO.name}</th>
 	                    <th>${ComplaintsVO.view_count}</th>
-	                    <th>${ComplaintsVO.regdate}</th>
+	                    <th><fmt:formatDate value="${ComplaintsVO.regdate}" pattern="yyyy-MM-dd"/></th>
 	                    <th>${ComplaintsVO.answer}</th>
 	                </tr>
                 </c:forEach>
@@ -38,6 +38,5 @@
             </form>
         </div>
     </div>
-  </div>
 </body>
 </html>

@@ -44,4 +44,9 @@ public class ComplaintsDAO {
 		return mybatis.selectList("ComplaintsDAO.mainComplaintList");
 	}
 	
+	public List<ComplaintsVO> getComplaintsListByConNum(String con_num){
+		
+		return mybatis.selectList("ComplaintsDAO.getComplaintsListByConNum", con_num);
+	}
+	
 }
