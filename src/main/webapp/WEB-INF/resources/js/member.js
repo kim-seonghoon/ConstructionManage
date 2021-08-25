@@ -56,7 +56,7 @@ function go_save() {
 	} else if ($("#pwd").val() == "") {
 		alert("비밀번호를 입력해 주세요!");
 		$("#pwd").focus();
-	} else if ($("#pwd").val() != $("#pwdCheck").val()) {
+	} else if ($("#pwd").val() != $("#pwd_chk").val()) {
 		alert("비밀번호가 일치하지 않습니다!");
 		$("#pwd").focus();
 	} else if ($("#name").val() == "") {
