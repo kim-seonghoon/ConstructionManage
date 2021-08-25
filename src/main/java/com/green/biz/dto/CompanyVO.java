@@ -13,6 +13,7 @@ public class CompanyVO {
 	private String zip_num;
 	private String cp_email;
 	
+
 	public String getZip_num() {
 		return zip_num; 
 	}

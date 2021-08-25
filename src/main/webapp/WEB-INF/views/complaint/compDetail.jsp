@@ -3,14 +3,13 @@
 <%@ include file="../header.jsp" %>
         <div id="content">
             <form id="com_form" action="comp_update" method="POST">
-                <input type="hidden" name="con_seq" value="ComplaintsVO.con_seq">
-                <input type="hidden" name="com_seq" value="ComplaintsVO.com_seq">
+                <input type="hidden" name="com_seq" value="${ComplaintsVO.com_seq}">
                 <table>
                     <tr>
                         <th><p>문의 분류</p></th>
-                        <td>${ConstructionVO.con_num}</td>
+                        <td>${ComplaintsVO.con_num}</td>
                         <th><p>문의 지역</p></th>
-                        <td>${ConstructionVO.sido} + " " + ${ConstructionVO.gugun}</td>
+                        <td>${ComplaintsVO.address}</td>
                     </tr>
                     <tr>
                         <th><p>제목</p></th> 

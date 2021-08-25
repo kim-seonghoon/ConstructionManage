@@ -12,7 +12,6 @@ public class UserVO {
 	private String email;
 	private String birth_date;
 	
-	
 	public String getZip_num() {
 		return zip_num;
 	}

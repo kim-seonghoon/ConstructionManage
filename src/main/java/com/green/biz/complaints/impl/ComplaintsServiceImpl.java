@@ -56,6 +56,12 @@ public class ComplaintsServiceImpl implements ComplaintsService {
 
 		return complaintsDao.getComplaintsListByConNum(con_num);
 	}
+
+	@Override
+	public ComplaintsVO getComplaints(ComplaintsVO vo) {
+		
+		return complaintsDao.getComplaints(vo);
+	}
 	
 
 }

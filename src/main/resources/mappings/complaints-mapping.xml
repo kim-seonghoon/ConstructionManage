@@ -32,7 +32,12 @@
 	 
 	<!-- 민원 리스트 -->
 	<select id="getComplaintsList" resultType="complaint">
-	SELECT * FROM complaints
+		SELECT * FROM complaints
+	</select>
+	
+	<!-- 민원 상세 보기 -->
+	<select id="getComplaints" resultType="complaint">
+		SELECT * FROM complaints WHERE com_seq = #{com_seq}
 	</select>
 	
 	<!-- 메인 페이지에서 최신 5개의 민원 전시-->

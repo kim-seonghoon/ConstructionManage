@@ -25,7 +25,7 @@
                 <c:forEach items="${compList}" var="ComplaintsVO">
 	                <tr>
 	                    <th>${ComplaintsVO.com_seq}</th>
-	                    <th>${ComplaintsVO.title}</th>
+	                    <th><a href="com_detail?com_seq=${ComplaintsVO.com_seq}">${ComplaintsVO.title}</a></th>
 	                    <th>${ComplaintsVO.name}</th>
 	                    <th>${ComplaintsVO.view_count}</th>
 	                    <th><fmt:formatDate value="${ComplaintsVO.regdate}" pattern="yyyy-MM-dd"/></th>

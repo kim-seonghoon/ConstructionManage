@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.green.biz.complaints.ComplaintsService;
 import com.green.biz.dto.ComplaintsVO;
-import com.green.biz.dto.ConstructionVO;
 import com.green.biz.dto.UserVO;
 
 @Controller
@@ -70,14 +69,23 @@ public class ComplaintController {
 									  Model model) {
 		if(con_num.equals("0")) {
 			List<ComplaintsVO> comList = complaintService.getComplaintsList();
-			model.addAttribute("comList", comList);
+			model.addAttribute("compList", comList);
 		} else {
 			List<ComplaintsVO> comList = complaintService.getComplaintsListByConNum(con_num);
-			model.addAttribute("comList", comList);
+			model.addAttribute("compList", comList);
 		}
 		
 		return "complaint/compList";
 	}
 	
-	
+	@RequestMapping(value="/com_detail")
+	public String complaintDetail(ComplaintsVO vo, Model model) {
+		
+		ComplaintsVO com = complaintService.getComplaints(vo);
+		com.setView_count(vo.getView_count()+1);
+		
+		model.addAttribute("ComplaintsVO", com);
+		
+		return "complaint/compDetail";
+	}
 }
