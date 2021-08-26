@@ -11,16 +11,18 @@
                 </tr>
                 <tr>
                     <th><p>공사 분류</p></th>
-                    <td>
+					<td>
+                    <c:set var="c_num" value="${ConstructionVO.con_num}"/>
                         <select name="con_num">
-                            <option value="1">도로 공사</option>
-                            <option value="2">상/하수 공사</option>
-                            <option value="3">공공건축물 공사</option>
-                            <option value="4">기타</option>
+                            <option value="1" <c:if test="${c_num == 1}">selected</c:if>>도로 공사</option>
+                            <option value="2" <c:if test="${c_num == 2}">selected</c:if>>상/하수 공사</option>
+                            <option value="3" <c:if test="${c_num == 3}">selected</c:if>>공공건축물 공사</option>
+                            <option value="4" <c:if test="${c_num == 4}">selected</c:if>>기타</option>
                         </select>
                     </td>
+
                     <th><p>공사 업체</p></th>
-                    <td><input type="text" name="cp_name" value="${ConstructionVO.cp_name}"></td>
+                    <td><input type="text" name="Construction" value="${ConstructionVO.cp_name}"></td>
                 </tr>
                 <tr>
                     <th rowspan="2"><p>공사 위치</p></th>
@@ -33,7 +35,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="addr1" value="${ConstructionVO.sido} ${ConstructionVO.gugun}"></td>
+                    <td><input type="text" name="addr1" value="${ConstructionVO.sido} ${ConstructionVO.gugun} ${ConstructionVO.dong}"></td>
                     <th><p>상세주소</p></th>
                     <td><input type="text" name="addr2" value="${addr2}"></td>
                 </tr>

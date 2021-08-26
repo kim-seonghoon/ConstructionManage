@@ -14,7 +14,8 @@
 	<!-- 공사 수정 -->
 	<update id="updateConstruction">
 		UPDATE construction 
-		SET start_date=#{start_date}, end_date=#{end_date}, con_num=#{con_num},
+		SET start_date=#{start_date}, end_date=#{end_date}, con_num=#{con_num}, zip_num=#{zip_num},
+			sido=#{sido}, gugun=#{gugun}, dong=#{dong}, content=#{content},
 			con_size=#{con_size}, con_state=#{con_state}, dept=#{dept}, dept_tel=#{dept_tel}
 		WHERE con_seq=#{con_seq}
 	</update>

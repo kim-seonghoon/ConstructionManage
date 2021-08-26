@@ -2,7 +2,6 @@ package com.green.view.controller;
 
 import java.sql.Timestamp;
 import java.util.List;
-import java.util.StringTokenizer;
 
 import javax.servlet.http.HttpSession;
 
@@ -189,7 +188,7 @@ public class ConstructionController {
 				String[] addr = con.getAddress().split(" ");
 				String addr2 = "";
 				
-				for(int i=2; i<addr.length; i++) {
+				for(int i=3; i<addr.length; i++) {
 					addr2 += addr[i] + " ";
 				}
 				
@@ -240,6 +239,6 @@ public class ConstructionController {
 		  
 		constructionService.updateConstruction(vo);
 		
-		return "redirect:/con_List_form";
+		return "redirect:/con_list_form";
 	}
 }
