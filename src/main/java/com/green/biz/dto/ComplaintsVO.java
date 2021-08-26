@@ -15,6 +15,7 @@ public class ComplaintsVO {
 	private Timestamp regdate;
 	private Timestamp moddate;
 	private String address;
+	private String user_id;
 
 	public int getView_count() {
 		return view_count;
@@ -89,13 +90,20 @@ public class ComplaintsVO {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	public String getUser_id() {
+		return user_id;
+	}
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
 	@Override
 	public String toString() {
 		return "ComplaintsVO [com_seq=" + com_seq + ", con_seq=" + con_seq + ", con_name=" + con_name + ", con_num="
 				+ con_num + ", title=" + title + ", name=" + name + ", content=" + content + ", answer=" + answer
 				+ ", view_count=" + view_count + ", regdate=" + regdate + ", moddate=" + moddate + ", address="
-				+ address + "]";
+				+ address + ", user_id=" + user_id + "]";
 	}
+	
 
 	
 
