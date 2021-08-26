@@ -25,7 +25,7 @@
                 <c:forEach items="${conList}" var="ConstructionVO">
 	                <tr>
 	                    <th>${ConstructionVO.con_seq}</th>
-	                    <th><a href="conDetail?con_seq='{con_seq}'">${ConstructionVO.con_name}</a></th>
+	                    <th><a href="con_detail?con_seq=${ConstructionVO.con_seq}">${ConstructionVO.con_name}</a></th>
 	                    <th>${ConstructionVO.sido} ${ConstructionVO.gugun}</th>
 	                    <th>${ConstructionVO.cp_name}</th>
 	                    <th>${ConstructionVO.view_count}</th>

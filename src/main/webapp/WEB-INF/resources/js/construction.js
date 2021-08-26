@@ -62,3 +62,11 @@ function write_con() {
 		$("#writeForm").attr("action", "con_write").submit();
 	}
 }
+
+function delete_con() {
+	$("#con_detail_form").attr("action", "con_delete").submit();
+}
+
+function update_con() {
+	$("#con_detail_form").attr("action", "con_update_form").submit();
+}

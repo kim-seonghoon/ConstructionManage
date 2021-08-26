@@ -47,6 +47,8 @@ function idcheckcp() {
 }
 
 function go_save() {
+	var $pwdCheck = $('#pwd_chk');
+	
 	if ($("#user_id").val() == "") {
 		alert("아이디를 입력해 주세요!");
 		$("#user_id").focus();
@@ -56,8 +58,8 @@ function go_save() {
 	} else if ($("#pwd").val() == "") {
 		alert("비밀번호를 입력해 주세요!");
 		$("#pwd").focus();
-	} else if ($("#pwd").val() != $("#pwd_chk").val()) {
-		alert("비밀번호가 일치하지 않습니다!");
+	} else if ($("#pwd").val() != $pwdCheck.val()) {
+		alert("비밀번호가 일치하지 않습니다!" + $("#pwd").val() + $("#pwd_chk").val());
 		$("#pwd").focus();
 	} else if ($("#name").val() == "") {
 		alert("이름을 입력해 주세요!");
