@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.green.biz.complaints.ComplaintsService;
+import com.green.biz.dto.CompanyVO;
 import com.green.biz.dto.ComplaintsVO;
+import com.green.biz.dto.ConstructionVO;
 import com.green.biz.dto.UserVO;
 
 @Controller
@@ -58,6 +60,7 @@ public class ComplaintController {
 		
 		UserVO loginUser = (UserVO) session.getAttribute("loginUser");
 		vo.setName(loginUser.getName());
+		vo.setUser_id(loginUser.getUser_id());
 		System.out.println("complaints=" + vo);
 		
 		complaintService.insertComplaints(vo);
@@ -87,5 +90,33 @@ public class ComplaintController {
 		model.addAttribute("ComplaintsVO", com);
 		
 		return "complaint/compDetail";
+	}
+	
+	@RequestMapping(value="comp_update_form")
+	public String comUpdateForm(HttpSession session, ComplaintsVO vo, Model model) {
+int user_type = 0;
+		
+		if(session.getAttribute("user_type")!=null) {
+			user_type = (int) session.getAttribute("user_type");
+		}
+		
+		if(user_type == 1) {
+			UserVO loginUser = (UserVO) session.getAttribute("loginUser");
+			
+			ComplaintsVO con = complaintService.getComplaints(vo);
+			model.addAttribute("ComplaintsVO", con);
+
+			if(loginUser.getUser_id().equals(vo.getUser_id())) {
+
+				return "complaint/compUpdate";
+				
+			} else {
+
+				return "complaint/compDetail";
+			}
+		} else {
+
+	        return  "complaint/compDetail";
+		}
 	}
 }
