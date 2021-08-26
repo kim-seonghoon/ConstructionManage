@@ -3,11 +3,11 @@
 <%@ include file="../header.jsp" %> 
 
     <div id="content">
-        <form id="con_form" action="con_write" method="POST">
+        <form id="con_form" name="formm" action="con_update" method="POST">
             <table>
                 <tr>
                     <th><p>제목</p></th>
-                    <td colspan="3"><input type="text" name="title"></td>
+                    <td colspan="3"><input type="text" name="con_name" value="${ConstructionVO.con_name}"></td>
                 </tr>
                 <tr>
                     <th><p>공사 분류</p></th>
@@ -20,13 +20,13 @@
                         </select>
                     </td>
                     <th><p>공사 업체</p></th>
-                    <td><input type="text" name="con_name" value="${ConstructionVO.cp_name}"></td>
+                    <td><input type="text" name="cp_name" value="${ConstructionVO.cp_name}"></td>
                 </tr>
                 <tr>
                     <th rowspan="2"><p>공사 위치</p></th>
                     <td colspan="3">
                         <input type="text" name="zip_num" value="${ConstructionVO.zip_num}">
-                        <input type="button" value="주소검색">
+                        <input type="button" value="주소검색" onclick="post_zip()">
                         <input type="hidden" name="sido" value="${ConstructionVO.sido}">
                         <input type="hidden" name="gugun" value="${ConstructionVO.gugun}">
                         <input type="hidden" name="dong" value="${ConstructionVO.dong}">
@@ -35,7 +35,7 @@
                 <tr>
                     <td><input type="text" name="addr1" value="${ConstructionVO.sido} ${ConstructionVO.gugun}"></td>
                     <th><p>상세주소</p></th>
-                    <td><input type="text" name="addr2"></td>
+                    <td><input type="text" name="addr2" value="${addr2}"></td>
                 </tr>
                 <tr>
                     <th><p>공사규모</p></th>
@@ -46,11 +46,11 @@
                 <tr>
                     <th><p>공사 기간</p></th>
                     <td colspan="3">
-                        <input name="s_date" id="s_date" type="date" value="${Construction.start_date}"> ~ <input type="date" name="e_date"  value="${Construction.end_date}" id="e_date"></td>
+                        <input name="s_date" id="s_date" type="date" value="${s_date}"> ~ <input type="date" name="e_date"  value="${e_date}" id="e_date"></td>
                 </tr>
                 <tr>
                     <th><p>담당부서</p></th>
-                    <td><input type="text" name="dept" value="${Construction.dept}"></td>
+                    <td><input type="text" name="dept" value="${ConstructionVO.dept}"></td>
                     <th><p>전화번호</p></th>
                     <td><input type="text" name="dept_tel" value="${ConstructionVO.dept_tel}"></td>
                 </tr>
@@ -60,7 +60,7 @@
                 </tr>
             </table>
             <div id="buttons">
-                <input type="reset" value="취소">
+                <input type="reset" value="취소" onclick="go_con_list()">
                 <input type="button" value="삭제하기">
                 <input type="submit" value="수정하기">
             </div>

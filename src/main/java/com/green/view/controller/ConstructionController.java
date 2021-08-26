@@ -2,6 +2,7 @@ package com.green.view.controller;
 
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.StringTokenizer;
 
 import javax.servlet.http.HttpSession;
 
@@ -9,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.green.biz.construction.ConstructionService;
@@ -160,11 +160,11 @@ public class ConstructionController {
 				return "redirect:/con_list_form";
 			} else {
 
-				return "redirect:/con_detail";
+				return "member/login";
 			}
 		} else {
 
-	        return "redirect:/con_detail";
+	        return "member/login";
 		}
 	}
 	
@@ -179,24 +179,65 @@ public class ConstructionController {
 		if(user_type == 2) {
 			CompanyVO loginUser = (CompanyVO) session.getAttribute("loginUser");
 			
-			ConstructionVO con = constructionService.getConstruction(vo);
-			model.addAttribute("ConstructionVO", con);
+			if(loginUser!=null && loginUser.getCp_num().equals(vo.getCp_num())) {
 
-			if(loginUser.getCp_num().equals(vo.getCp_num())) {
-
+				
+				ConstructionVO con = constructionService.getConstruction(vo);
+				
+				System.out.println(con);
+				
+				String[] addr = con.getAddress().split(" ");
+				String addr2 = "";
+				
+				for(int i=2; i<addr.length; i++) {
+					addr2 += addr[i] + " ";
+				}
+				
+				String s_date = "";
+				String e_date = "";
+				
+				try {
+					  java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy-MM-dd");
+					  s_date = formatter.format(con.getStart_date());
+					  e_date = formatter.format(con.getEnd_date());
+				} catch (Exception ex) {
+					  s_date = "";
+					  e_date = "";
+				}
+				System.out.println(s_date + " " + e_date);
+				
+				model.addAttribute("s_date", s_date);
+				model.addAttribute("e_date", e_date);
+				model.addAttribute("ConstructionVO", con);
+				model.addAttribute("addr2", addr2);
+				
 				return "construction/conUpdate";
 			} else {
 
-				return "construction/conDetail";
+				return "member/login";
 			}
 		} else {
 
-	        return "construction/conDetail";
+	        return "member/login";
 		}
 	}
 	
 	@RequestMapping(value="/con_update")
-	public String conUpdate(ConstructionVO vo) {
+	public String conUpdate(ConstructionVO vo,
+			 				@RequestParam(value="addr1") String addr1,
+			 				@RequestParam(value="addr2") String addr2,
+			 				@RequestParam(value="s_date") String s_date,
+			 				@RequestParam(value="e_date") String e_date) {
+		
+		Timestamp start_date = Timestamp.valueOf(s_date+" 00:00:00");
+		Timestamp end_date = Timestamp.valueOf(e_date+" 00:00:00");
+		  
+		vo.setStart_date(start_date);
+		vo.setEnd_date(end_date);
+		  
+		String address = addr1 + " " + addr2;
+		vo.setAddress(address);
+		  
 		constructionService.updateConstruction(vo);
 		
 		return "redirect:/con_List_form";

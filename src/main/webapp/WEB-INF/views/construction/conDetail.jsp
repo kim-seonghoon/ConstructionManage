@@ -49,9 +49,16 @@
                     </tr>
                 </table>
                 <div id="buttons">
-                    <input type="reset" value="취소">
-                    <input type="button" value="삭제하기" onclick="delete_con()">
-                    <input type="submit" value="수정하기" onclick="update_con()">
+                <c:choose>
+       				<c:when test="${sessionScope.user_type == 2}">
+	                    <input type="button" value="목록" onclick="go_con_list()">
+	                    <input type="button" value="삭제하기" onclick="delete_con()">
+	                    <input type="submit" value="수정하기" onclick="update_con()">
+	                </c:when>
+	                <c:otherwise>
+	                	<input type="button" value="목록" onclick="go_con_list()">
+	                </c:otherwise>
+	            </c:choose>
                 </div>
             </form>
         </div>

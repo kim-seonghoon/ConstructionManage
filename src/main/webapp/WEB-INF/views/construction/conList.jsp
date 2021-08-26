@@ -33,8 +33,15 @@
 	                </tr>
                 </c:forEach>
             </table>
-            <form id="write_con_form" name="write_con_form">
-            	<input type="button" onclick="go_write_con()" value="글쓰기">
+            <form id="write_con_form" name="write_con_form">        	
+       			<c:choose>
+       				<c:when test="${sessionScope.user_type == 2}">
+						<input type="button" onclick="go_write_con()" value="글쓰기">
+       				</c:when>
+       				<c:otherwise>
+
+       				</c:otherwise>       
+       			</c:choose>
             </form>
         </div>
     </div>
