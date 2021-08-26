@@ -63,6 +63,10 @@ function write_con() {
 	}
 }
 
+function go_con_list() {
+	$("#con_detail_form").attr("action", "con_list_form").submit();
+}
+
 function delete_con() {
 	$("#con_detail_form").attr("action", "con_delete").submit();
 }
