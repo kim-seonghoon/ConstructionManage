@@ -17,4 +17,8 @@ public interface ComplaintsService {
 	public List<ComplaintsVO> getComplaintsList();
 
 	public List<ComplaintsVO> mainComplaintList();
+	
+	public List<ComplaintsVO> getComplaintsListByConNum(String con_num);
+	
+	public ComplaintsVO getComplaints(ComplaintsVO vo);
 }

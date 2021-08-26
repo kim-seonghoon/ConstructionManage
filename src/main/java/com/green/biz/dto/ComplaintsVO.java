@@ -15,8 +15,7 @@ public class ComplaintsVO {
 	private Timestamp regdate;
 	private Timestamp moddate;
 	private String address;
-	
-	
+
 	public int getView_count() {
 		return view_count;
 	}

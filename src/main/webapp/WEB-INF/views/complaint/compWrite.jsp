@@ -2,9 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
 <div id="container">
-	<form id="com_form" action="comp_write" method="POST">
-		<input type="hidden" name="con_seq" value="ComplaintsVO.con_seq">
-		<input type="hidden" name="com_seq" value="ComplaintsVO.com_seq">
+	<form id="com_form" action="comp_write" method="get">
 		<table>
 			<tr>
 				<th><p>문의 분류</p></th>

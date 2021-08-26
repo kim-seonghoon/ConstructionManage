@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="ComplaintsDAO">
-	<!-- 민원 등록 -->
+	<!-- 민원 현황에서 직접 등록 -->
 	<insert id="insertComplaints">
-		INSERT INTO complaints(com_seq, con_name, title, content, regdate)
-		VELUES (com_seq.NEXTVAL, #{con_name}, #{title}, #{content}, #{regdate})
+		INSERT INTO complaints(com_seq, con_num, name, title, content, address)
+		VALUES (com_seq.NEXTVAL, #{con_num}, #{name}, #{title}, #{content}, #{address})
+	</insert>
+	
+	<!-- 공사 현황에서 등록 -->
+	<insert id="insertComplaintsFromCon">
+		INSERT INTO complaints(com_seq, con_seq, con_name, con_num, name, title, content, address)
+		VELUES (com_seq.NEXTVAL, #{con_seq}, ${con_name}, #{con_num}, #{name}, #{title}, #{content}, #{address})
 	</insert>
 	 
 	<!-- 민원 수정 -->
@@ -26,7 +32,12 @@
 	 
 	<!-- 민원 리스트 -->
 	<select id="getComplaintsList" resultType="complaint">
-	SELECT * FROM complaints
+		SELECT * FROM complaints
+	</select>
+	
+	<!-- 민원 상세 보기 -->
+	<select id="getComplaints" resultType="complaint">
+		SELECT * FROM complaints WHERE com_seq = #{com_seq}
 	</select>
 	
 	<!-- 메인 페이지에서 최신 5개의 민원 전시-->
@@ -39,4 +50,9 @@
 		WHERE rn > 0 AND rn <=5;
 		]]>
 	</select>
+	
+	<select id="getComplaintsListByConNum" parameterType="String" resultType="complaint">
+			SELECT * FROM complaints WHERE con_num = #{con_num}
+	</select>
+	
 </mapper>

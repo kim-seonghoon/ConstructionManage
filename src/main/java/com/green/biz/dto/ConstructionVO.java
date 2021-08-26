@@ -22,7 +22,6 @@ public class ConstructionVO {
 	private char con_num;
 	private String content;
 	
-	
 	public int getView_count() {
 		return view_count;
 	}
