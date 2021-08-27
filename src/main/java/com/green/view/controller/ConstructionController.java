@@ -183,8 +183,6 @@ public class ConstructionController {
 				
 				ConstructionVO con = constructionService.getConstruction(vo);
 				
-				System.out.println(con);
-				
 				String[] addr = con.getAddress().split(" ");
 				String addr2 = "";
 				
@@ -205,10 +203,15 @@ public class ConstructionController {
 				}
 				System.out.println(s_date + " " + e_date);
 				
+			    String[] constructionKind = {"", "도로 공사", "상/하수도 공사",  "공공건축물 공사", "기타"};
+
+			    model.addAttribute("constKind", constructionKind);			
 				model.addAttribute("s_date", s_date);
 				model.addAttribute("e_date", e_date);
 				model.addAttribute("ConstructionVO", con);
 				model.addAttribute("addr2", addr2);
+				
+				System.out.println(con);
 				
 				return "construction/conUpdate";
 			} else {
@@ -237,6 +240,7 @@ public class ConstructionController {
 		String address = addr1 + " " + addr2;
 		vo.setAddress(address);
 		  
+		System.out.println(vo);
 		constructionService.updateConstruction(vo);
 		
 		return "redirect:/con_list_form";

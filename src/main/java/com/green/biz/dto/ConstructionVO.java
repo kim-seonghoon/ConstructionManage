@@ -19,7 +19,7 @@ public class ConstructionVO {
 	private String con_size;
 	private String con_state;
 	private int view_count;
-	private char con_num;
+	private int con_num;
 	private String content;
 	
 	public int getView_count() {
@@ -124,10 +124,11 @@ public class ConstructionVO {
 	public void setEnd_date(Timestamp end_date) {
 		this.end_date = end_date;
 	}
-	public char getCon_num() {
+
+	public int getCon_num() {
 		return con_num;
 	}
-	public void setCon_num(char con_num) {
+	public void setCon_num(int con_num) {
 		this.con_num = con_num;
 	}
 	@Override

@@ -6,7 +6,7 @@ public class ComplaintsVO {
 	private int com_seq; 
 	private int con_seq;
 	private String con_name;
-	private char con_num;
+	private int con_num;
 	private String title;   
 	private String name;
 	private String content;
@@ -23,10 +23,10 @@ public class ComplaintsVO {
 	public void setView_count(int view_count) {
 		this.view_count = view_count;
 	}
-	public char getCon_num() {
+	public int getCon_num() {
 		return con_num;
 	}
-	public void setCon_num(char con_num) {
+	public void setCon_num(int con_num) {
 		this.con_num = con_num;
 	}
 	public int getCom_seq() {

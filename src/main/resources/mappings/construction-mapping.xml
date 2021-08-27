@@ -3,11 +3,11 @@
 <mapper namespace="ConstructionDAO">
 	<!-- 공사 접수 -->
 	<insert id="insertConstruction">
-		INSERT INTO construction(con_seq, con_name, sido, gugun, dong, address,
+		INSERT INTO construction(con_seq, con_name, sido, gugun, dong, address, zip_num,
 								 cp_name, cp_num, start_date, end_date, con_size, 
 								 con_state, con_num, dept, dept_tel, content) 
 		VALUES(con_seq.NEXTVAL, #{con_name}, #{sido}, #{gugun}, #{dong},
-			   #{address}, #{cp_name}, #{cp_num}, #{start_date}, #{end_date},
+			   #{address}, #{zip_num}, #{cp_name}, #{cp_num}, #{start_date}, #{end_date},
 			   #{con_size}, #{con_state}, #{con_num}, #{dept}, #{dept_tel}, #{content})
 	</insert>
 	
@@ -15,7 +15,7 @@
 	<update id="updateConstruction">
 		UPDATE construction 
 		SET start_date=#{start_date}, end_date=#{end_date}, con_num=#{con_num}, zip_num=#{zip_num},
-			sido=#{sido}, gugun=#{gugun}, dong=#{dong}, content=#{content},
+			sido=#{sido}, gugun=#{gugun}, dong=#{dong}, content=#{content},address=#{address},
 			con_size=#{con_size}, con_state=#{con_state}, dept=#{dept}, dept_tel=#{dept_tel}
 		WHERE con_seq=#{con_seq}
 	</update>

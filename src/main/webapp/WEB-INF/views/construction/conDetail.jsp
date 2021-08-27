@@ -11,7 +11,14 @@
                     </tr>
                     <tr>
                         <th><p>공사 분류</p></th>
-                        <td>${ConstructionVO.con_num}</td>
+                        <td>
+                        	<c:choose>
+                        		<c:when test="${ConstructionVO.con_num == 1}">도로 공사</c:when>
+                        		<c:when test="${ConstructionVO.con_num == 2}">상/하수 공사</c:when>
+                        		<c:when test="${ConstructionVO.con_num == 3}">공공건축물 공사</c:when>
+                        		<c:when test="${ConstructionVO.con_num == 4}">기타</c:when>
+                        	</c:choose>
+                        </td>
                         <th><p>공사 업체</p></th>
                         <td>${ConstructionVO.cp_name}</td>
                     </tr>
@@ -57,7 +64,8 @@
 	                </c:when>
 	                <c:otherwise>
 	                	<input type="button" value="목록" onclick="go_con_list()">
-	                </c:otherwise>
+	                	<input type="button" value="민원접수" onclick="">
+	            	</c:otherwise>
 	            </c:choose>
                 </div>
             </form>
