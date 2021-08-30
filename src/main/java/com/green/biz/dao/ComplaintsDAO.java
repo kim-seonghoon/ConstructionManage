@@ -19,14 +19,14 @@ public class ComplaintsDAO {
 		mybatis.insert("ComplaintsDAO.insertComplaints", vo);
 	}
 	
-	public int updateComplaints(ComplaintsVO vo) {
+	public void updateComplaints(ComplaintsVO vo) {
 		
-		return mybatis.update("ComplaintsDAO.updateComplaints", vo);
+		mybatis.update("ComplaintsDAO.updateComplaints", vo);
 	}
 	
-	public int deleteComplaints(int com_seq) {
+	public void deleteComplaints(ComplaintsVO vo) {
 		
-		return mybatis.delete("ComplaintsDAO.deleteComplaints", com_seq);
+		mybatis.delete("ComplaintsDAO.deleteComplaints", vo);
 	}
 	
 	public int answerComplaints(ComplaintsVO vo) {

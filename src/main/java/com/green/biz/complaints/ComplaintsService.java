@@ -8,9 +8,9 @@ public interface ComplaintsService {
 	
 	public void insertComplaints(ComplaintsVO vo);
 	
-	public int updateComplaints(ComplaintsVO vo);
+	public void updateComplaints(ComplaintsVO vo);
 	
-	public int deleteComplaints(int com_seq);
+	public void deleteComplaints(ComplaintsVO vo);
 	
 	public int answerComplaints(ComplaintsVO vo);
 	

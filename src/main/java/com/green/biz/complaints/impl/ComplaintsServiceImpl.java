@@ -22,15 +22,15 @@ public class ComplaintsServiceImpl implements ComplaintsService {
 	}
 
 	@Override
-	public int updateComplaints(ComplaintsVO vo) {
+	public void updateComplaints(ComplaintsVO vo) {
 		
-		return complaintsDao.updateComplaints(vo);
+		 complaintsDao.updateComplaints(vo);
 	}
 
 	@Override
-	public int deleteComplaints(int com_seq) {
+	public void deleteComplaints(ComplaintsVO vo) {
 		
-		return complaintsDao.deleteComplaints(com_seq);
+		complaintsDao.deleteComplaints(vo);
 	}
 
 	@Override

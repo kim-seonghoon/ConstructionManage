@@ -14,8 +14,8 @@
 	</insert>
 	 
 	<!-- 민원 수정 -->
-	<update id="updateComplaionts">
-		UPDATE complaints SET title = #{title}, contnet = #{content}, moddate = #{moddate}
+	<update id="updateComplaints">
+		UPDATE complaints SET title = #{title}, content = #{content}, con_num = #{con_num}, address = #{address}, moddate = SYSDATE
 		 WHERE com_seq = #{com_seq}
 	</update>
 	

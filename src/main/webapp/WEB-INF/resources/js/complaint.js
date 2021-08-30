@@ -10,6 +10,8 @@ function comp_update(){
 	$("#comp_detail_form").attr("action", "comp_update_form").submit();
 }
 
+
+
 function categoryChange(e) {
 	var good_a = ["강남구", "관악구", "중구", "강동구","종로구"
 				  ,"중랑구", "강서구", "동작구", "강북구","구로구"
@@ -80,3 +82,5 @@ function go_save_comp(){
 		$("#com_form").attr("action", "comp_write").submit();
 	}
 }
+
+
