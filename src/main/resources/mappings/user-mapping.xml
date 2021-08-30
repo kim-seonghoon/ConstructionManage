@@ -57,4 +57,11 @@
 		   AND email = #{email}
 	</select>
 	
+	<update id="getUserByNameAndEmailAndID">
+		UPDATE pwd FROM users
+		 WHERE name = #{name}
+		   AND email = #{email}
+		   AND user_id = #{user_id}
+		
+	</update>
 </mapper>

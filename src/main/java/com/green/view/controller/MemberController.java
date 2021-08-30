@@ -236,4 +236,9 @@ public class MemberController {
 			return "member/idResultFail";
 		}
 	}
+	
+	@RequestMapping(value="find_pwd")
+	public String getPwdBy
+	
+	
 }
