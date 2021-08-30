@@ -44,7 +44,7 @@
                 </table>
                 <div id="buttons">
                     <input type="button" value="취소">
-                    <input type="button" value="삭제하기">
+                    <input type="button" value="삭제하기" onclick="comp_delete()">
                     <input type="submit" value="수정하기">
                 </div>
             </form>
