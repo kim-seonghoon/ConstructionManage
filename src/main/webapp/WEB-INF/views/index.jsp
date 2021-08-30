@@ -1,41 +1,67 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
   pageEncoding="UTF-8"%>
 <%@ include file="header.jsp" %>  
-    <div id="contents"  style="text-align: center;">
-      <div class="page-header">
-        <h1><a href="search_by_address"><small>"우리동네 궁금한 공사 어떤 공사일까?"</small></a></h1>
-      </div>
-      <form action="search">
-	       <table class="search"> 
-	           <tr>
-	               <td>
-	                   <select id="search_condition">
-	                       <option value="1">통합검색</option>
-	                       <option value="2">지역</option>
-	                       <option value="3">제목</option>
-	                    </select>
-	                </td>
-	                <td><input type="text" name="key"></td>
-	                <td><input type="submit" value="검색"></td>
-	            </tr>
-	        </table>
-        </form>
-        <div class="jumbotron col-md-6">
-          <ul>
-	        <c:forEach items="${newConstructionList}"  var="constructionVO">
-	        	<li><a href="con_detail?con_seq=${constructionVO.con_seq}">${constructionVO.con_name}</a></li>
-	        	<li>${constructionVO.regdate}</li>
-      	    </c:forEach>
-          </ul>
-        </div>
-        <div class="jumbotron col-md-6">
-          <ul>
-	        <c:forEach items="${newComplaintList}"  var="complaintVO">
-	        	<li><a href="comp_detail?com_seq=${complaintVO.com_seq}">${complaintVO.title}</a></li>
-	        	<li>${complaintVO.regdate}</li>
-      	    </c:forEach>
-          </ul>
-        </div>
-    </div>
+		<div class="jumbotron">
+			<div class="container">
+                <h1><a href="search_by_address">“우리동네 궁금한 공사 어떤 공사일까?”</a></h1>
+			</div>
+		</div>
+		<!-- /jumbotron -->
+
+		<div class="container bbs_main">
+			<div class="search"> 
+				<select class="form-control input" id="search01">
+					<option value="1">통합검색</option>
+                    <option value="2">지역</option>
+                    <option value="3">제목</option>
+				</select>
+				<input type="text" name="key" class="form-control textarea" id="search02" placeholder="원하시는 지역을 입력하세요">
+				<span ><button class="form-control btn" type="button">검색</button></span>
+			</div>
+		<!-- /Search-->
+
+			<div class="inner-container">
+				<h2>｜ 공사현황</h2>
+
+				<table class="list-group">
+                    <c:forEach items="${newConstructionList}"  var="constructionVO">
+					<tr>
+                        <td><a href="con_detail?con_seq=${constructionVO.con_seq}">- ${constructionVO.con_name}</a></td>
+						<td>${constructionVO.regdate}</td>
+					</tr>
+                    </c:forEach>
+				</table>
+
+			
+				<!-- /list-group -->
+			</div>
+
+			<div class="inner-container">
+				<h2>｜ 민원 보기</h2>
+				<table class="list-group">
+                    <c:forEach items="${newComplaintList}"  var="complaintVO">
+					<tr>
+						<td><a href="comp_detail?com_seq=${complaintVO.com_seq}">- ${complaintVO.title}</a></td>
+						<td>${complaintVO.regdate}</td>
+					</tr>
+					</c:forEach>
+				</table>
+	
+				<!-- /list-group -->
+			</div>
+		</div>
+		<!-- /inner-container -->
+		</div>
+		<!-- /container -->
+
+
+		<!-- /container -->
+		<div class="container copyright">
+			Copyright 2021 project construction management
+		</div>
+		<!-- /container -->
+	</div> 
+<!-- /wrap -->
+
 </body>
 </html>

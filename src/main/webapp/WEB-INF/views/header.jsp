@@ -3,9 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
 <!DOCTYPE html>
-<html>
+<html lang="ko">
+
 <head>
-<meta charset="UTF-8">
 	<link rel="stylesheet" href="css/공사관리style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
@@ -13,40 +13,26 @@
 	<script type="text/javascript" src="js/complaint.js"></script>
 	<script type="text/javascript" src="js/construction.js"></script>
 	<script type="text/javascript" src="js/mypage.js"></script>  
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<title>Insert title here</title>
-</head> 
-<body>
-	<div id="wrap" class="container-fluid">
-	<header>
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-          <form name="theform" id="theform">
-            <a class="navbar-brand" style="color: #fff;" href="index">공사관리</a>
-          </div>     	  
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">        	
-            <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="con_list_form">공사현황 <span class="sr-only">(current)</span></a></li>
-              <li><a href="comp_list_form">민원보기</a></li>
-              <c:choose>
-	              <c:when test="${empty sessionScope.loginUser}">
-		              <input type="button" class="btn btn-default navbar-btn" style="margin-left: 50px;" onclick="login_form()" value="로그인">
-		              <input type="button" class="btn btn-default navbar-btn" onclick="join_form()" value="회원가입">
-		          </c:when>
-		          <c:otherwise>
-		          	  <input type="button" class="btn btn-default navbar-btn" style="margin-left: 50px;" onclick="logout()" value="로그아웃">
-		              <input type="button" class="btn btn-default navbar-btn" onclick="mypage_form()" value="내 정보">
-		      	  </c:otherwise>
-		      </c:choose>
-            </ul>
-          </div><!-- /.navbar-collapse -->
-          </form>
-        </div><!-- /.container-fluid -->
-        <div class="row">
-          <div ><img src="images/main.jpg" class="container-fluid" alt=""  style="width: 100%; height: 100px; object-fit: cover;"></div>
-        </div>
-      </nav>
-      </header>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<title>공사관리 Main</title>
+</head>
+
+<body class="body">
+	<div class="wrap">
+		<header class="navbar navbar-inverse">
+			<div class="navbar-header">
+				<h1><a class="navbar-brand" href="index">공사관리</a></h1>
+			</div>
+			<nav class="gnb">
+				<ul class="nav navbar-nav">
+					<!-- <li class="active"><a href="#">1depth-01</a></li> -->
+					<li><a href="con_list_form">공사 현황</a></li>
+					<li><a href="comp_list_form">민원 보기</a></li>
+					<li class="btn"><a href="login_form">로그인</a></li>
+					<li class="btn"><a href="join_form">회원가입</a></li>
+
+				</ul>
+
+			</nav>
+		</header>
+		<!-- /navbar -->

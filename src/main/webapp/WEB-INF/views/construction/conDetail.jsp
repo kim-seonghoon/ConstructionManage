@@ -64,7 +64,7 @@
 	                </c:when>
 	                <c:otherwise>
 	                	<input type="button" value="목록" onclick="go_con_list()">
-	                	<input type="button" value="민원접수" onclick="">
+	                	<input type="button" value="민원접수" onclick="go_write_comp()">
 	            	</c:otherwise>
 	            </c:choose>
                 </div>

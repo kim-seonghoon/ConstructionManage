@@ -103,8 +103,4 @@ public class ComplaintsVO {
 				+ ", view_count=" + view_count + ", regdate=" + regdate + ", moddate=" + moddate + ", address="
 				+ address + ", user_id=" + user_id + "]";
 	}
-	
-
-	
-
 }
