@@ -25,10 +25,6 @@ function go_find_pwd_form(){
 	$("#member").attr("action","find_pwd_form").submit();
 }
 
-function forid(){
-
-}
-
 function idcheck() {
 	if($("#user_id").val() == ""){
 		alert("아이디를 입력해 주세요!");

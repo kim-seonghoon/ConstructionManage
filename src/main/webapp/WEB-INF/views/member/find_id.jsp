@@ -9,10 +9,10 @@
         <fieldset>
         <legend></legend>
           <label>이름</label>
-          <input name="name" type="text" ><br> 
-          <label>연락처</label> 
-          <input name="phone" type="text"><br> 
-          <input type="submit" value="아이디 찾기" class="submit">
+          <input name="name" id="name" type="text" ><br> 
+          <label>이메일</label> 
+          <input name="email" id="email" type="text"><br> 
+          <input type="submit" value="아이디 찾기">
         </fieldset>
         <div class="clear"></div>
         <div id="buttons">

@@ -74,4 +74,10 @@ public class UserServiceImpl implements UserService {
 		return userDao.confirmID(user_id);
 	}
 
+	@Override
+	public UserVO getUserByNameAndEmail(UserVO vo) {
+		
+		return userDao.getUserByNameAndEmail(vo);
+	}
+
 }

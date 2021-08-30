@@ -67,6 +67,5 @@
 		<input type="button" value="확인" onclick="go_save_cp()">
 	</div>
 	</form>
-</div>
 </body>
 </html>

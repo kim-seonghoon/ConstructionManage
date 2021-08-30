@@ -221,4 +221,19 @@ public class MemberController {
 			return "mypage/company_page";
 		}
 	}
+	
+	@RequestMapping(value="find_id")
+	public String getUserByNameAndEmail(UserVO vo, Model model) {
+			
+		UserVO user = userService.getUserByNameAndEmail(vo);
+		
+		if(user != null) {
+			model.addAttribute("user_id", user.getUser_id());
+			
+			return "member/idResult";
+		}else {
+			
+			return "member/idResultFail";
+		}
+	}
 }
