@@ -51,10 +51,10 @@
 		 WHERE user_id = #{user_id}
 	</select>
 	
-	<select id="findID" resultType="String" >
-		SELECT id FROM users
+	<select id="getUserByNameAndEmail" resultType="user" parameterType="String" >
+		SELECT user_id FROM users
 		 WHERE name = #{name}
-		   AND phone = #{phone}
+		   AND email = #{email}
 	</select>
 	
 </mapper>

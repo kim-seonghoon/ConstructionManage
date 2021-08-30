@@ -74,6 +74,11 @@ public class UserDAO {
 		}
 		return result;
 	}
+	
+	public UserVO getUserByNameAndEmail(UserVO vo) {
+		
+		return mybatis.selectOne("UserDAO.getUserByNameAndEmail",vo);
+	}
 }
 
 

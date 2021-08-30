@@ -26,5 +26,7 @@ public interface UserService {
 	UserVO getMember(String user_id);
 	
 	int confirmID(String user_id);
+	
+	public UserVO getUserByNameAndEmail(UserVO vo);
 
 }
