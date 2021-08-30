@@ -32,7 +32,7 @@
                 <div id="buttons">
                     <input type="button" value="삭제하기" onclick="comp_delete()">
                     <input type="button" value="수정하기" onclick="comp_update()">
-                    <input type="button" value="목록">
+                    <input type="button" value="목록" onclick="go_comp_list()">
                 </div>
             </form>
         </div>

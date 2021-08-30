@@ -5,7 +5,7 @@
 <html>
 <body>
  <h3>| 비밀번호 찾기</h3>
-    <form method="post" action="find_pwd">
+    <form method="post" action="find_pwd" id="member">
         <fieldset>
         <legend></legend>
           <label>아이디</label>
@@ -16,10 +16,8 @@
         </fieldset>
         <div class="clear"></div>
         <div id="buttons">
-            <input type="button" value="로그인" class="cancel"
-                 onclick="location='contract'">
-            <input type="button" value="아이디 찾기" class="submit"
-                 onclick="find_id_form()">     
+            <input type="button" value="로그인" onclick="login_form()">
+            <input type="button" value="아이디 찾기" onclick="go_find_id_form()">     
         </div>
     </form>  
 </body>

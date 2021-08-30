@@ -10,6 +10,13 @@ function comp_update(){
 	$("#comp_detail_form").attr("action", "comp_update_form").submit();
 }
 
+function comp_delete(){
+	$("#comp_detail_form").attr("action","comp_delete").submit();
+}
+
+function go_comp_list(){
+	$("#comp_detail_form").attr("action","comp_list_form").submit();
+}
 
 
 function categoryChange(e) {

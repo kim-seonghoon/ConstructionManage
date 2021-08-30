@@ -11,8 +11,7 @@
 	<!-- 유저 정보 수정 -->
 	<update id="updateUser">
 		UPDATE users 
-		SET pwd=#{pwd}, sido=#{sido}, gugun=#{gugun}, dong=#{dong}, address#{address},
-			email=#{email}, #{birth_date}=birth_date, phone=#{phone} 
+		SET pwd=#{pwd}, address#={address},	email=#{email}, phone=#{phone} 
 	</update>
 	
 	<!-- 유저 삭제 -->
@@ -50,6 +49,12 @@
 	<select id="confirmID" resultType="String">
 		SELECT pwd FROM users
 		 WHERE user_id = #{user_id}
+	</select>
+	
+	<select id="findID" resultType="String" >
+		SELECT id FROM users
+		 WHERE name = #{name}
+		   AND phone = #{phone}
 	</select>
 	
 </mapper>

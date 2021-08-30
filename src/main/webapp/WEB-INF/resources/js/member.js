@@ -17,6 +17,17 @@ function join_detail_form(){
 function company_join_form(){
 	$("#theform").attr("action","company_join_form").submit();
 }
+function go_find_id_form(){
+	$("#member").attr("action","find_id_form").submit();
+}
+
+function go_find_pwd_form(){
+	$("#member").attr("action","find_pwd_form").submit();
+}
+
+function forid(){
+
+}
 
 function idcheck() {
 	if($("#user_id").val() == ""){
@@ -67,6 +78,10 @@ function go_save() {
 	} else {
 		$("#join").attr("action", "join").submit();
 	}
+}
+
+function go_save_mp(){
+	
 }
 
 function go_save_cp() {

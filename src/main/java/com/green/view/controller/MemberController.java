@@ -49,6 +49,16 @@ public class MemberController {
 		
 		return "member/company_detail";
 	}
+	@RequestMapping(value="find_id_form")
+	public String fing_id_form() {
+		
+		return "member/find_id";
+	}
+	@RequestMapping(value="find_pwd_form")
+	public String find_pwd_form() {
+		
+		return "member/find_pwd";
+	}
 	
 	
 	@RequestMapping(value="/login", method=RequestMethod.POST)

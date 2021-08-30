@@ -5,7 +5,7 @@
 <html>
 <body>
  <h3>| 로그인</h3>
-    <form method="post" action="login">
+    <form method="post" action="login" id="member">
         <fieldset>
         <legend></legend>
           <label>User ID</label>
@@ -18,10 +18,8 @@
         </fieldset>
         <div class="clear"></div>
         <div id="buttons">
-            <input type="button" value="아이디 찾기" class="cancel"
-                 onclick="location='contract'">
-            <input type="button" value="비밀번호 찾기" class="submit"
-                 onclick="find_id_form()">     
+            <input type="button" value="아이디 찾기" onclick="go_find_id_form()">
+            <input type="button" value="비밀번호 찾기" onclick="go_find_pwd_form()">     
         </div>
     </form>  
 
