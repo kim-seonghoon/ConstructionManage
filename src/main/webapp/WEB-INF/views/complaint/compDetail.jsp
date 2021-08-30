@@ -1,13 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
-        <div id="content">
+        <div id="container">
             <form id="comp_detail_form" method="POST">
                 <input type="hidden" name="com_seq" value="${ComplaintsVO.com_seq}">
+                <input type="hidden" name="user_id" value="${ComplaintsVO.user_id }">
                 <table>
                     <tr>
                         <th><p>문의 분류</p></th>
-                        <td>${ComplaintsVO.con_num}</td>
+                        <td><c:choose>
+                        	<c:when test="${ComplaintsVO.con_num==1}">도로공사</c:when>
+                        	<c:when test="${ComplaintsVO.con_num==2}">상/하수 공사</c:when>
+                        	<c:when test="${ComplaintsVO.con_num==3}">공공건축물 공사</c:when>
+                        	<c:when test="${ComplaintsVO.con_num==4}">기타</c:when>
+                        </c:choose> </td>
                         <th><p>문의 지역</p></th>
                         <td>${ComplaintsVO.address}</td>
                     </tr>
@@ -24,7 +30,7 @@
                     <tr><td colspan="4">${ComplaintsVO.content}</td></tr>
                 </table>
                 <div id="buttons">
-                    <input type="button" value="삭제하기">
+                    <input type="button" value="삭제하기" onclick="comp_delete()">
                     <input type="button" value="수정하기" onclick="comp_update()">
                     <input type="button" value="목록">
                 </div>

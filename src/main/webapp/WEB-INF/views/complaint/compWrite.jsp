@@ -3,6 +3,7 @@
 <%@ include file="../header.jsp"%>
 <div id="container">
 	<form id="com_form" action="comp_write" method="get">
+	  <input type="hidden" name="user_id" value="${ComplaintsVO.user_id }">
 		<table>
 			<tr>
 				<th><p>문의 분류</p></th>

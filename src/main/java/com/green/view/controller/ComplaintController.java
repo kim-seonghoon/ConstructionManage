@@ -94,7 +94,8 @@ public class ComplaintController {
 	
 	@RequestMapping(value="comp_update_form")
 	public String comUpdateForm(HttpSession session, ComplaintsVO vo, Model model) {
-int user_type = 0;
+		int user_type = 0;
+		
 		
 		if(session.getAttribute("user_type")!=null) {
 			user_type = (int) session.getAttribute("user_type");
@@ -102,21 +103,82 @@ int user_type = 0;
 		
 		if(user_type == 1) {
 			UserVO loginUser = (UserVO) session.getAttribute("loginUser");
-			
-			ComplaintsVO con = complaintService.getComplaints(vo);
-			model.addAttribute("ComplaintsVO", con);
-
-			if(loginUser.getUser_id().equals(vo.getUser_id())) {
-
+			if(loginUser !=null && loginUser.getUser_id().equals(vo.getUser_id()) ) {
+				
+				ComplaintsVO con = complaintService.getComplaints(vo);
+				
+				
+				model.addAttribute("ComplaintsVO",con);
+				
+				System.out.println(con);
+				
+				System.out.println("1¹ø");
 				return "complaint/compUpdate";
 				
-			} else {
-
-				return "complaint/compDetail";
+			}else {
+				System.out.println("2¹ø");
+				return "member/login";
 			}
-		} else {
-
-	        return  "complaint/compDetail";
+		}else {
+			System.out.println("3¹ø");
+			return "member/login";
 		}
 	}
+	
+	@RequestMapping(value="/comp_update")
+	public String compUpdate(ComplaintsVO vo,
+							 @RequestParam(value="addr1") String addr1,
+							 @RequestParam(value="addr2") String addr2,
+							 HttpSession session) {
+		
+		String address = addr1 + " " + addr2;
+		vo.setAddress(address);
+		
+		UserVO loginUser = (UserVO) session.getAttribute("loginUser");
+		vo.setName(loginUser.getName());
+		vo.setUser_id(loginUser.getUser_id());
+		
+		System.out.println(vo);
+		complaintService.updateComplaints(vo);
+		
+		return "redirect:/comp_list_form";
+	}
+	
+	@RequestMapping(value="/comp_delete")
+	public String compDelete(ComplaintsVO vo, HttpSession session, Model model) {
+		int user_type = 0;
+		
+		if(session.getAttribute("user_type")!= null) {
+			user_type = (int) session.getAttribute("user_type");
+		}
+		if(user_type == 1) {
+			UserVO loginUser = (UserVO) session.getAttribute("loginUser");
+			
+			if(loginUser.getUser_id().equals(vo.getUser_id())) {
+				complaintService.deleteComplaints(vo);
+				
+				return "redirect:/comp_list_form";
+			}else {
+				return "member/login";
+			}
+		} else {
+			return "member/login";
+		}
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
