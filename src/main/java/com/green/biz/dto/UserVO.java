@@ -11,6 +11,7 @@ public class UserVO {
 	private String address;
 	private String email;
 	private String birth_date;
+	private String phone;
 	
 	public String getZip_num() {
 		return zip_num;
@@ -36,8 +37,12 @@ public class UserVO {
 	public void setBirth_date(String birth_date) {
 		this.birth_date = birth_date;
 	}
-	private int phone;
-	
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 	public String getUser_id() {
 		return user_id;
 	}
@@ -74,13 +79,6 @@ public class UserVO {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public int getPhone() {
-		return phone;    
-	}
-	public void setPhone(int phone) {
-		this.phone = phone;
-	}
-	 
 	@Override
 	public String toString() {
 		return "UserVO [user_id=" + user_id + ", pwd=" + pwd + ", name=" + name + ", sido=" + sido + ", gugun=" + gugun

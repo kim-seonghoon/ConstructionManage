@@ -131,7 +131,7 @@ public class MemberController {
 		String phone = num1 + num2 + num3;
 		
 		vo.setAddress(address);
-		vo.setPhone(Integer.parseInt(phone));
+		vo.setPhone(phone);
 		
 		// 생년월일 입력
 		String birth_date = year + "-" + month + "-" + day;
@@ -211,14 +211,38 @@ public class MemberController {
 		return "redirect:/index";
 	}
 	
-	@RequestMapping(value="/mypage_form")
-	public String mypageForm(HttpSession session) {
-		int user_type = (int) session.getAttribute("user_type");
+	@RequestMapping(value="mypage_form")
+	public String mypageForm(HttpSession session, Model model) {
+		int user_type = (int)session.getAttribute("user_type");
 		
 		if(user_type == 1) {
+			UserVO loginUser = (UserVO) session.getAttribute("loginUser");
+			String addr1 = loginUser.getSido() + " " + loginUser.getGugun() + " " + loginUser.getDong();
+			String[] addr = loginUser.getAddress().split(" ");
+			String addr2 = "";
+			
+			for(int i=3; i<addr.length; i++) {
+				addr2 += addr[i] + " ";
+			}
+			model.addAttribute("addr1", addr1);
+			model.addAttribute("addr2", addr2);
+			
+			String num1 = loginUser.getPhone().substring(0, 2);
+			String num2 = loginUser.getPhone().substring(2, 6);
+			String num3 = loginUser.getPhone().substring(6);
+			
+			model.addAttribute("num1", num1);
+			model.addAttribute("num2", num2);
+			model.addAttribute("num3", num3);
+			
 			return "mypage/mypage";
-		} else {
+			
+		} else if(user_type == 2) {
+			
 			return "mypage/company_page";
+		} else {
+			
+			return "member/login";
 		}
 	}
 	
@@ -255,15 +279,13 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="pwd_change")
-	public String pwdChange(UserVO vo,HttpSession session ) {
+	public String pwdChange(UserVO vo, HttpSession session) {
 		
-		UserVO user = (UserVO) session.getAttribute("user");
+		vo.setUser_id(vo.getUser_id());
+		vo.setEmail(vo.getEmail());
+		vo.setName(vo.getName());
 		
-		vo.setUser_id(user.getUser_id());
-		vo.setEmail(user.getEmail());
-		vo.setName(user.getName());
-		
-		System.out.println(user);
+		System.out.println(vo);
 		userService.pwdChange(vo);
 		
 		return "member/login";

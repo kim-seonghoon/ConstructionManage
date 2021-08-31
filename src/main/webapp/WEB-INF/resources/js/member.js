@@ -78,14 +78,14 @@ function go_save() {
 
 // 비밀번호 변경 시 비밀번호 확인
 function go_save_pwd(){
-	var $pwdCheck = $('#pwd_chk');
+	var $pwdCheck = $("#pwd_chk");
 	
 	if ($("#pwd").val() == "") {
 		alert("비밀번호를 입력해 주세요!");
 		$("#pwd").focus();
 	} else if ($("#pwd").val() != $pwdCheck.val()) {
 		alert("비밀번호가 일치하지 않습니다!");
-		$("#pwd_chk").focus();
+		$pwdCheck.focus();
 	}else {
 		$("#member").attr("action", "pwd_change").submit();
 	}

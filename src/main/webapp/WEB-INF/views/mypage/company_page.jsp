@@ -29,21 +29,21 @@
         
         <tr>
             <td>담당자*</td>
-            <td><input type="text" name="" id="name">   </td>
+            <td><input type="text" name="admin_name" id="name" value="${company.admin_name}">   </td>
             <td>담당자 연락처*</td>
-            <td><input type="text"> - <input type="text"> - <input type="text"></td>
+            <td><input type="text" name="anum1" value="0${anum1}"> - <input type="text" name="anum1" value="${anum1}"> - <input type="text" name="anum1" value="${anum1}"></td>
         </tr>
         
         
         <tr>
             <td>이메일</td>
-            <td><input type="text" name="" id="email"></td>
+            <td><input type="text" name="cp_email" id="cp_email" value="${company.cp_email}"></td>
         </tr>
         
         
         <tr>
             <td>연락처*</td>
-            <td><input type="text"> - <input type="text"> - <input type="text"></td>
+            <td><input type="text" name="cnum1" value="0${cnum1}"> - <input type="text" name="cnum2" value="${cum2}"> - <input type="text" name="cnum3" value="${cum3}"></td>
             <td>팩스번호</td>
             <td><input type="text"> - <input type="text"> - <input type="text"></td>
         </tr>

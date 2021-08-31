@@ -28,9 +28,16 @@
 					<!-- <li class="active"><a href="#">1depth-01</a></li> -->
 					<li><a href="con_list_form">공사 현황</a></li>
 					<li><a href="comp_list_form">민원 보기</a></li>
-					<li class="btn"><a href="login_form">로그인</a></li>
-					<li class="btn"><a href="join_form">회원가입</a></li>
-
+					<c:choose>
+						<c:when test="${empty sessionScope.loginUser}">
+							<li class="btn"><a href="login_form">로그인</a></li>
+							<li class="btn"><a href="join_form">회원가입</a></li>
+						</c:when>
+						<c:otherwise>
+							<li class="btn"><a href="logout">로그아웃</a></li>
+							<li class="btn"><a href="mypage_form">내정보</a></li>
+						</c:otherwise>
+					</c:choose>
 				</ul>
 
 			</nav>
