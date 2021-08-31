@@ -34,7 +34,7 @@
             
             <tr>
                 <td>연락처</td>
-                <td colspan="3"><input type="text" name="num1" value="0${num1}"> - <input type="text" name="num2" value="${num2}"> - <input type="text" name="num3" value="${num3}"> </td> 
+                <td colspan="3"><input type="text" name="num1" value="${num0}"> - <input type="text" name="num2" value="${num1}"> - <input type="text" name="num3" value="${num2}"> </td> 
             </tr>
             
             <tr>

@@ -237,6 +237,39 @@ public class MemberController {
 			
 		} else if(user_type == 2) {
 			
+			CompanyVO loginUser = (CompanyVO) session.getAttribute("loginUser");
+			String[] addr = loginUser.getCp_address().split(" ");
+			String addr1 = "";
+			String addr2 = "";
+			
+			for(int i=0; i<3; i++) {
+				addr1 += addr[i] + " ";
+			}
+			for(int i=3; i<addr.length; i++) {
+				addr2 += addr[i] + " ";
+			}
+			
+			model.addAttribute("addr1", addr1);
+			model.addAttribute("addr2", addr2);
+			
+			String[] anum = loginUser.getAdmin_phone().split("-");
+			
+			for(int i=0; i<anum.length; i++) {
+				model.addAttribute("anum"+i+1, anum[i]);
+			}
+			
+			String[] cnum = loginUser.getCp_phone().split("-");
+			
+			for(int i=0; i<cnum.length; i++) {
+				model.addAttribute("cnum"+i+1, cnum[i]);
+			}
+			
+			String[] fax = loginUser.getFax_num().split("-");
+			
+			for(int i=0; i<fax.length; i++) {
+				model.addAttribute("fax"+i+1, fax[i]);
+			}
+			
 			return "mypage/company_page";
 		} else {
 			

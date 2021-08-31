@@ -29,7 +29,7 @@
 	            <td>담당자*</td>
 	            <td><input type="text" name="admin_name" id="name" value="${company.admin_name}">   </td>
 	            <td>담당자 연락처*</td>
-	            <td><input type="text" name="anum1" value="0${anum1}"> - <input type="text" name="anum1" value="${anum1}"> - <input type="text" name="anum1" value="${anum1}"></td>
+	            <td><input type="text" name="anum1" value="${anum1}"> - <input type="text" name="anum1" value="${anum1}"> - <input type="text" name="anum1" value="${anum1}"></td>
 	        </tr>
 	        
 	        
@@ -41,19 +41,19 @@
 	        
 	        <tr>
 	            <td>연락처*</td>
-	            <td><input type="text" name="cnum1" value="0${cnum1}"> - <input type="text" name="cnum2" value="${cum2}"> - <input type="text" name="cnum3" value="${cum3}"></td>
+	            <td><input type="text" name="cnum1" value="${cnum1}"> - <input type="text" name="cnum2" value="${cum2}"> - <input type="text" name="cnum3" value="${cum3}"></td>
 	            <td>팩스번호</td>
-	            <td><input type="text"> - <input type="text"> - <input type="text"></td>
+	            <td><input type="text" name="fax1" value="${fax1}"> - <input type="text" name="fax1" value="${fax1}"> - <input type="text" name="fax1" value="${fax1}"></td>
 	        </tr>
 	        
 	        <tr>
 	            <td>사업장 주소</td>
-	            <td><input type="text" name="" id="address"> </td>
+	            <td><input type="text" name="addr1" id="address" value="${addr1}"> </td>
 	            
 	        </tr>
 	        <tr>
 	            <td>상세주소</td>
-	            <td><input type="text" name="" id="address_detail"> </td>
+	            <td><input type="text" name="addr2" id="address_detail" value="${addr2}"> </td>
 	        </tr>
 	        </table>
 	        <input type="reset" value="취소">

@@ -35,4 +35,5 @@ public class CompanyController {
 		companyService.insertCompany(vo);
 		return "member/login";
 	}
+
 }
