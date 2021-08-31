@@ -113,15 +113,12 @@ public class ComplaintController {
 				
 				System.out.println(con);
 				
-				System.out.println("1¹ø");
 				return "complaint/compUpdate";
 				
 			}else {
-				System.out.println("2¹ø");
 				return "member/login";
 			}
 		}else {
-			System.out.println("3¹ø");
 			return "member/login";
 		}
 	}

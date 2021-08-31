@@ -236,4 +236,39 @@ public class MemberController {
 			return "member/idResultFail";
 		}
 	}
+	
+	@RequestMapping(value="find_pwd")
+	public String getUserByNameAndEmailAndID(UserVO vo, Model model) {
+		
+		UserVO user = userService.getUserByNameAndEmailAndID(vo);
+		
+		if(user != null) {
+			model.addAttribute("user_id",vo.getUser_id());
+			model.addAttribute("email",vo.getEmail());
+			model.addAttribute("name",vo.getName());
+			
+			System.out.println(vo);
+			return "member/changePwd";
+		}else {
+			return "member/idResultFail";
+		}
+	}
+	
+	@RequestMapping(value="pwd_change")
+	public String pwdChange(UserVO vo,HttpSession session ) {
+		
+		UserVO user = (UserVO) session.getAttribute("user");
+		
+		vo.setUser_id(user.getUser_id());
+		vo.setEmail(user.getEmail());
+		vo.setName(user.getName());
+		
+		System.out.println(user);
+		userService.pwdChange(vo);
+		
+		return "member/login";
+		
+	}
+	
+	
 }

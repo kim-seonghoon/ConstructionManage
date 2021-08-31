@@ -79,6 +79,16 @@ public class UserDAO {
 		
 		return mybatis.selectOne("UserDAO.getUserByNameAndEmail",vo);
 	}
+	
+	public UserVO getUserByNameAndEmailAndID(UserVO vo) {
+		
+		return mybatis.selectOne("UserDAO.getUserByNameAndEmailAndID",vo);
+	}
+	
+	public void pwdChange(UserVO vo) {
+		
+		mybatis.update("UserDAO.pwdChange",vo);
+	}
 }
 
 

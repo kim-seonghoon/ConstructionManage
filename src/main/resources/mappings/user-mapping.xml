@@ -57,4 +57,20 @@
 		   AND email = #{email}
 	</select>
 	
+	<select id="getUserByNameAndEmailAndID" resultType="user" parameterType="String">
+		SELECT user_id FROM users
+		 WHERE name = #{name}
+		   AND email = #{email}
+		   AND user_id = #{user_id}
+	</select>
+	
+	<update id="pwdChange">
+		UPDATE users SET pwd = #{pwd}
+		 WHERE name = #{name}
+		   AND email = #{email}
+		   AND user_id = #{user_id}
+	</update>
+	
+	
+	
 </mapper>
