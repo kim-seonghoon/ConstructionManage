@@ -243,11 +243,11 @@ public class MemberController {
 		UserVO user = userService.getUserByNameAndEmailAndID(vo);
 		
 		if(user != null) {
-			model.addAttribute("user_id",user.getUser_id());
-			model.addAttribute("email",user.getEmail());
-			model.addAttribute("name",user.getName());
+			model.addAttribute("user_id",vo.getUser_id());
+			model.addAttribute("email",vo.getEmail());
+			model.addAttribute("name",vo.getName());
 			
-			System.out.println(user);
+			System.out.println(vo);
 			return "member/changePwd";
 		}else {
 			return "member/idResultFail";
@@ -255,13 +255,17 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="pwd_change")
-	public String pwdChange(UserVO vo) {
+	public String pwdChange(UserVO vo,HttpSession session ) {
 		
-		UserVO user = userService.getUserByNameAndEmailAndID(vo);
+		UserVO user = (UserVO) session.getAttribute("user");
 		
-		userService.pwdChange(vo);
+		vo.setUser_id(user.getUser_id());
+		vo.setEmail(user.getEmail());
+		vo.setName(user.getName());
 		
 		System.out.println(user);
+		userService.pwdChange(vo);
+		
 		return "member/login";
 		
 	}
