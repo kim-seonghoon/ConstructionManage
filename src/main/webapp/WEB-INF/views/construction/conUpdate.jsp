@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %> 
 
-    <div id="content">
+    <div class="container bbs_main">
         <form id="con_detail_form" name="formm" action="con_update" method="POST">
             <table>
                 <tr>

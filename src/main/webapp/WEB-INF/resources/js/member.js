@@ -7,16 +7,17 @@ function login_form() {
 }
 
 function join_form() {
-	$("#theform").attr("action", "join_form").submit();
+	   $("#theform").attr("action", "join_form").submit();
 }
 
 function join_detail_form(){
-	$("#theform").attr("action","join_detail_form").submit();
+	   $("#member").attr("action","join_detail_form").submit();
 }
 
 function company_join_form(){
-	$("#theform").attr("action","company_join_form").submit();
+	   $("#member").attr("action","company_join_form").submit();
 }
+
 function go_find_id_form(){
 	$("#member").attr("action","find_id_form").submit();
 }

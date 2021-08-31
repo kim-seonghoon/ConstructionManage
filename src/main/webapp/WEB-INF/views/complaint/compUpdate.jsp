@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
-        <div id="container">
+        <div id="container" class="container bbs_main">
             <form id="com_detail_form" action="comp_update" method="POST"> 
             <input type="hidden" name="com_seq" value="${ComplaintsVO.com_seq }">
                 <table>

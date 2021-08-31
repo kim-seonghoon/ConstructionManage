@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ include file="../header.jsp" %>
-<!DOCTYPE html>
-<html>
-<body>
+<div class="container bbs_main">
  <h3>| 비밀번호 찾기</h3>
     <form method="post" action="find_pwd" id="member">
         <fieldset>
@@ -21,6 +19,8 @@
             <input type="button" value="로그인" onclick="login_form()">
             <input type="button" value="아이디 찾기" onclick="go_find_id_form()">     
         </div>
-    </form>  
+    </form> 
+</div>
+</div> 
 </body>
 </html>

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>  
+	<div class="container bbs_main">
         <div id="content">
             <form id="con_detail_form" method="POST">
                 <input type="hidden" name="cp_num" id="cp_num" value="${ConstructionVO.cp_num}">
@@ -71,5 +72,6 @@
             </form>
         </div>
     </div>
+</div>
 </body>
 </html>

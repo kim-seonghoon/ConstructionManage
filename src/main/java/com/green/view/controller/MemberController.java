@@ -279,7 +279,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="pwd_change")
-	public String pwdChange(UserVO vo, HttpSession session) {
+	public String pwdChange(UserVO vo) {
 		
 		vo.setUser_id(vo.getUser_id());
 		vo.setEmail(vo.getEmail());
@@ -291,6 +291,5 @@ public class MemberController {
 		return "member/login";
 		
 	}
-	
-	
+
 }

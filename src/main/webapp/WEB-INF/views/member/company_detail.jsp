@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
+<div class="container bbs_main">
 <h3>| 회원 가입</h3> 
 <form name="formm" id="formm" method="POST">
 	<div>
@@ -67,5 +68,6 @@
 		<input type="button" value="확인" onclick="go_save_cp()">
 	</div>
 	</form>
+	</div>
 </body>
 </html>

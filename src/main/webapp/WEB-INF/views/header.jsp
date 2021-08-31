@@ -39,7 +39,6 @@
 						</c:otherwise>
 					</c:choose>
 				</ul>
-
 			</nav>
 		</header>
 		<!-- /navbar -->

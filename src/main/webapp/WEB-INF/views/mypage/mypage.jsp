@@ -1,10 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ include file="../header.jsp" %>
-<!DOCTYPE html>
-<html>
-<body>
- <form action="updateUser" method="post">
+	<div class="container bbs_main">
+	<form action="updateUser" method="post">
         <div>
             <table>
             <tr>
@@ -40,27 +38,28 @@
             </tr>
             
             <tr>
-		<th rowspan="2" rowspan="2">주소</th>
-		<td colspan="3"><input type="text" name="zip_num" id="zip_num" value="${loginUser.zip_num}"><input type="button" value="주소검색" onclick="post_zip()">
-	</tr>
-	<tr>
-		<td>
-			<input type="text" name="addr1" id="address" value="${addr1}">
-			<input type="hidden" name="sido" id="sido" value="${loginUser.sido}">
-			<input type="hidden" name="gugun" id="gugun" value="${loginUser.gugun}">
-			<input type="hidden" name="dong" id="dong" value="${loginUser.dong}">
-		</td>
-		<th>상세주소</th>
-		<td><input type="text" name="addr2" id="address_detail" value="${addr2}"> </td>
-	</tr>
+				<th rowspan="2" rowspan="2">주소</th>
+				<td colspan="3"><input type="text" name="zip_num" id="zip_num" value="${loginUser.zip_num}"><input type="button" value="주소검색" onclick="post_zip()">
+			</tr>
+			<tr>
+				<td>
+					<input type="text" name="addr1" id="address" value="${addr1}">
+					<input type="hidden" name="sido" id="sido" value="${loginUser.sido}">
+					<input type="hidden" name="gugun" id="gugun" value="${loginUser.gugun}">
+					<input type="hidden" name="dong" id="dong" value="${loginUser.dong}">
+				</td>
+				<th>상세주소</th>
+				<td><input type="text" name="addr2" id="address_detail" value="${addr2}"> </td>
+			</tr>
             </table>
             <div class="button">
-            <input type="reset" value="취소">
-            <input type="button" value="회원탈퇴">
-            <input type="submit" value="정보 수정">
-        </div>
+	            <input type="reset" value="취소">
+	            <input type="button" value="회원탈퇴">
+	            <input type="submit" value="정보 수정">
+        	</div>
         </div>
         </form>
-
+	</div>
+</div>
 </body>
 </html>

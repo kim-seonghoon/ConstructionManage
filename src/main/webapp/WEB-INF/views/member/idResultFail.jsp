@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
+<div class="container bbs_main">
 <form id="member" method="post">
 	<div>
 		<table>
@@ -13,5 +14,7 @@
 		</table>	
 	</div>
 </form>
+</div>
+</div>
 </body>
 </html>

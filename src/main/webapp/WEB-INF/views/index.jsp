@@ -31,7 +31,6 @@
 					</tr>
                     </c:forEach>
 				</table>
-
 			
 			<!-- /list-group -->
 			</div>
