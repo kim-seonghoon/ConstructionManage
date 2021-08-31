@@ -41,18 +41,38 @@
 	</select>
 	
 	<!-- 메인 페이지에서 최신 5개의 민원 전시-->
-	<select id="mainComplaintList" resultType="construction">
+	<select id="mainComplaintList" resultType="complaint">
 		<![CDATA[
 		SELECT com_seq, title, regdate
 		FROM
     		(SELECT ROW_NUMBER() OVER(ORDER BY regdate DESC) rn, com_seq, title, regdate
      		 FROM complaints)    
-		WHERE rn > 0 AND rn <=5;
+		WHERE rn > 0 AND rn <=5
 		]]>
 	</select>
 	
-	<select id="getComplaintsListByConNum" parameterType="String" resultType="complaint">
-			SELECT * FROM complaints WHERE con_num = #{con_num}
+	<!-- 민원 페이징 처리 -->
+	<select id="compListWithPaging" parameterType="HashMap" resultType="complaint">
+		<![CDATA[
+		SELECT com_seq, con_seq, con_name, con_num, title, name, content, 
+			   answer, view_count, regdate, moddate, address, user_id
+		  FROM
+    		(SELECT row_number() over(ORDER BY regdate desc) rn, com_seq, con_seq, con_name, con_num, 
+    				title, name, content, answer, view_count, regdate, moddate, address, user_id
+           	   FROM complaints
+     	   	  WHERE title LIKE '%'||#{key}||'%' AND con_num LIKE '%'||#{con_num}||'%')
+		 WHERE rn > (#{criteria.pageNum}-1) * #{criteria.rowsPerPage}
+		   AND rn <= #{criteria.pageNum} * #{criteria.rowsPerPage}
+		]]>
 	</select>
 	
+	<!-- 전체 민원 갯수 구하기 -->
+	<select id="getCompCount" parameterType="String" resultType="int">
+		SELECT COUNT(*) FROM complaints WHERE title LIKE '%'||#{key}||'%'
+	</select>
+	
+	<!-- 조회수 업데이트 -->
+	<update id="updateCompView" parameterType="complaint">
+		UPDATE complaints SET view_count = #{view_count} WHERE com_seq=#{com_seq}
+	</update>	
 </mapper>

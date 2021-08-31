@@ -4,11 +4,11 @@
     <div id="contents"  style="text-align: center;">
         <form action="search">
             <ul class="nav nav-tabs">
-                <li role="presentation" class="active" ><a href="com_category?con_num=0">전체현황</a></li>
-                <li role="presentation"><a href="com_category?con_num=1">도로</a></li>
-                <li role="presentation"><a href="com_category?con_num=2">상/하수</a></li>
-                <li role="presentation"><a href="com_category?con_num=3">공공건축물</a></li>
-                <li role="presentation"><a href="com_category?con_num=4">기타</a></li>
+                <li role="presentation" class="active" ><a href="comp_list_form">전체현황</a></li>
+                <li role="presentation"><a href="comp_list_form?con_num=1">도로</a></li>
+                <li role="presentation"><a href="comp_list_form?con_num=2">상/하수</a></li>
+                <li role="presentation"><a href="comp_list_form?con_num=3">공공건축물</a></li>
+                <li role="presentation"><a href="comp_list_form?con_num=4">기타</a></li>
                 <li class="navbar-right"><input type="text"><input type="submit" value="검색" style="margin-right: 20px;"></li>
             </ul>
         </form>
@@ -25,7 +25,7 @@
                 <c:forEach items="${compList}" var="ComplaintsVO">
 	                <tr>
 	                    <th>${ComplaintsVO.com_seq}</th>
-	                    <th><a href="com_detail?com_seq=${ComplaintsVO.com_seq}">${ComplaintsVO.title}</a></th>
+	                    <th><a href="com_detail${pageMaker.makeQuery(pageMaker.cri.pageNum)}&com_seq=${ComplaintsVO.com_seq}">${ComplaintsVO.title}</a></th>
 	                    <th>${ComplaintsVO.name}</th>
 	                    <th>${ComplaintsVO.view_count}</th>
 	                    <th><fmt:formatDate value="${ComplaintsVO.regdate}" pattern="yyyy-MM-dd"/></th>
@@ -33,6 +33,28 @@
 	                </tr>
                 </c:forEach>
             </table>
+            <div>
+				<ul class="pagination">
+				
+					<c:if test="${pageMaker.prev}">
+						<li class="paginate_button previous">
+							<a href="comp_list_form${pageMaker.makeQuery(pageMaker.startPage-1)}">[이전]</a>
+						</li>
+					</c:if>
+							
+					<!-- [1][2][3]... 표시 부분 -->
+					<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="index">
+						<a href="comp_list_form${pageMaker.makeQuery(index)}">[${index}]</a>
+					</c:forEach>
+					
+					<c:if test="${pageMaker.next}">
+						<li class="paginate_button next">
+							<a href="comp_list_form${pageMaker.makeQuery(pageMaker.endPage+1)}">[다음]</a>
+						</li>
+					</c:if>	
+						
+				</ul>
+			</div>
             <form name="comp_write_form" id="comp_write_form">
             	<input type="button" onclick="go_write_comp()" value="글쓰기">
             </form>

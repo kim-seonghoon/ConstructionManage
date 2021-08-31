@@ -1,6 +1,5 @@
 package com.green.view.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,17 +19,21 @@ import com.green.biz.dto.ConstructionVO;
 @Controller
 public class HomeController {
 	@Autowired
-	ConstructionService consturctionService;
+	ConstructionService constructionService;
 	@Autowired
 	ComplaintsService complaintsService;
 	
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String home(Model model) {
-		List<ConstructionVO> constructionList = new ArrayList<>();
-		List<ComplaintsVO> complaintList = new ArrayList<>();
+		List<ConstructionVO> constructionList = constructionService.mainConstructionList();
+		List<ComplaintsVO> complaintList = complaintsService.mainComplaintList();
 		
 		model.addAttribute("newConstructionList", constructionList);
 		model.addAttribute("newComplaintList", complaintList);
+		
+		for(ComplaintsVO vo : complaintList) {
+			System.out.println(vo);
+		}
 		
 		return "index";		// index.jsp 파일 출력
 	}	

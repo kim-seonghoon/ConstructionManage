@@ -3,6 +3,7 @@ package com.green.biz.complaints;
 import java.util.List;
 
 import com.green.biz.dto.ComplaintsVO;
+import com.green.biz.utils.Criteria;
 
 public interface ComplaintsService {
 	
@@ -18,7 +19,11 @@ public interface ComplaintsService {
 
 	public List<ComplaintsVO> mainComplaintList();
 	
-	public List<ComplaintsVO> getComplaintsListByConNum(String con_num);
-	
 	public ComplaintsVO getComplaints(ComplaintsVO vo);
+	
+	public List<ComplaintsVO> compListWithPaging(String key, Criteria criteria, String con_num);
+	
+	public int getCompCount(String key);
+	
+	public void updateCompView(ComplaintsVO vo);
 }

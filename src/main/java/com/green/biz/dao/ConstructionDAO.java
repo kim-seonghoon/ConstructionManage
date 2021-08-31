@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.green.biz.dto.ConstructionVO;
+import com.green.biz.utils.Criteria;
 
 @Repository
 public class ConstructionDAO {
@@ -62,8 +63,22 @@ public class ConstructionDAO {
 	      return mybatis.selectList("ConstructionDAO.mainConstructionList");
 	   } 
 	
-	public List<ConstructionVO> getConstructionListByConNum(String con_num) {
+	public List<ConstructionVO> constListWithPaging(String key, Criteria criteria, String con_num) {
+		HashMap<String, Object> map = new HashMap<>();
 		
-		return mybatis.selectList("ConstructionDAO.getConstructionListByConNum", con_num);
+		map.put("key", key);
+		map.put("criteria", criteria);
+		map.put("con_num", con_num);
+		
+		return mybatis.selectList("ConstructionDAO.constListWithPaging", map);
+	}
+	
+	public int getConstCount(String key) {
+		return mybatis.selectOne("ConstructionDAO.getConstCount", key);
+	}
+	
+	public void updateConstView(ConstructionVO vo) {
+		
+		mybatis.update("ConstructionDAO.updateConstView", vo);
 	}
 }

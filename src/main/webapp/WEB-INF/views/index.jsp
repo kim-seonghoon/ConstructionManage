@@ -27,13 +27,13 @@
                     <c:forEach items="${newConstructionList}"  var="constructionVO">
 					<tr>
                         <td><a href="con_detail?con_seq=${constructionVO.con_seq}">- ${constructionVO.con_name}</a></td>
-						<td>${constructionVO.regdate}</td>
+						<td><fmt:formatDate value="${constructionVO.start_date}" pattern="yyyy-MM-dd"/></td>
 					</tr>
                     </c:forEach>
 				</table>
 
 			
-				<!-- /list-group -->
+			<!-- /list-group -->
 			</div>
 
 			<div class="inner-container">
@@ -42,7 +42,7 @@
                     <c:forEach items="${newComplaintList}"  var="complaintVO">
 					<tr>
 						<td><a href="comp_detail?com_seq=${complaintVO.com_seq}">- ${complaintVO.title}</a></td>
-						<td>${complaintVO.regdate}</td>
+						<td><fmt:formatDate value="${complaintVO.regdate}" pattern="yyyy-MM-dd"/></td>
 					</tr>
 					</c:forEach>
 				</table>

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.green.biz.complaints.ComplaintsService; 
 import com.green.biz.dao.ComplaintsDAO;
 import com.green.biz.dto.ComplaintsVO;
+import com.green.biz.utils.Criteria;
 
 @Service("ComplaintsService")
 public class ComplaintsServiceImpl implements ComplaintsService {
@@ -50,18 +51,28 @@ public class ComplaintsServiceImpl implements ComplaintsService {
 		
 		return complaintsDao.mainComplaintList();
 	}
-
-	@Override
-	public List<ComplaintsVO> getComplaintsListByConNum(String con_num) {
-
-		return complaintsDao.getComplaintsListByConNum(con_num);
-	}
-
+	
 	@Override
 	public ComplaintsVO getComplaints(ComplaintsVO vo) {
 		
 		return complaintsDao.getComplaints(vo);
 	}
-	
 
+	@Override
+	public List<ComplaintsVO> compListWithPaging(String key, Criteria criteria, String con_num) {
+		
+		return complaintsDao.compListWithPaging(key, criteria, con_num);
+	}
+
+	@Override
+	public int getCompCount(String key) {
+	
+		return complaintsDao.getCompCount(key);
+	}
+
+	@Override
+	public void updateCompView(ComplaintsVO vo) {
+		
+		complaintsDao.updateCompView(vo);
+	}
 }

@@ -15,6 +15,8 @@ import com.green.biz.dto.CompanyVO;
 import com.green.biz.dto.ComplaintsVO;
 import com.green.biz.dto.ConstructionVO;
 import com.green.biz.dto.UserVO;
+import com.green.biz.utils.Criteria;
+import com.green.biz.utils.PageMaker;
 
 @Controller
 public class ComplaintController {
@@ -23,10 +25,21 @@ public class ComplaintController {
 	ComplaintsService complaintService;
 	
 	@RequestMapping(value="comp_list_form")
-	public String compListForm(Model model) {
-		List<ComplaintsVO> compList = complaintService.getComplaintsList();
-		model.addAttribute("compList", compList);
+	public String compListForm(HttpSession session, Model model, Criteria criteria,
+							   @RequestParam(value="con_num", defaultValue="") String con_num,
+							   @RequestParam(value="key", defaultValue="") String key) {
+				
+		List<ComplaintsVO> compList = complaintService.compListWithPaging(key, criteria, con_num);
 		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(criteria);	// 현재 페이지와 페이지당 항목 수 설정
+		pageMaker.setTotalCount(complaintService.getCompCount(key));
+		System.out.println("페이징 정보="+pageMaker);
+		
+		model.addAttribute("compListSize", compList.size());
+		model.addAttribute("compList", compList);
+		model.addAttribute("pageMaker", pageMaker);
+
 		return "complaint/compList";
 	}
 	
@@ -67,25 +80,13 @@ public class ComplaintController {
 		return "redirect:/comp_list_form";
 		
 	}
-	@RequestMapping(value="/com_category")
-	public String complaintListByCategory(@RequestParam(value="con_num", defaultValue="0") String con_num,
-									  Model model) {
-		if(con_num.equals("0")) {
-			List<ComplaintsVO> comList = complaintService.getComplaintsList();
-			model.addAttribute("compList", comList);
-		} else {
-			List<ComplaintsVO> comList = complaintService.getComplaintsListByConNum(con_num);
-			model.addAttribute("compList", comList);
-		}
-		
-		return "complaint/compList";
-	}
 	
 	@RequestMapping(value="/com_detail")
 	public String complaintDetail(ComplaintsVO vo, Model model) {
 		
 		ComplaintsVO com = complaintService.getComplaints(vo);
-		com.setView_count(vo.getView_count()+1);
+		com.setView_count(com.getView_count()+1);
+		complaintService.updateCompView(com);
 		
 		model.addAttribute("ComplaintsVO", com);
 		

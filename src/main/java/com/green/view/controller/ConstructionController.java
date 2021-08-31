@@ -15,6 +15,8 @@ import com.green.biz.construction.ConstructionService;
 import com.green.biz.dto.CompanyVO;
 import com.green.biz.dto.ConstructionVO;
 import com.green.biz.dto.UserVO;
+import com.green.biz.utils.Criteria;
+import com.green.biz.utils.PageMaker;
 
 @Controller
 public class ConstructionController {
@@ -23,9 +25,20 @@ public class ConstructionController {
 	ConstructionService constructionService;
 	
 	@RequestMapping(value="/con_list_form")
-	public String constListForm(Model model) {
-		List<ConstructionVO> conList = constructionService.getConstructionList();
+	public String constListForm(HttpSession session, Model model, Criteria criteria, 
+								@RequestParam(value="con_num", defaultValue="") String con_num,
+								@RequestParam(value="key", defaultValue="") String key) {
+		
+		List<ConstructionVO> conList = constructionService.constListWithPaging(key, criteria, con_num);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(criteria);	// 현재 페이지와 페이지당 항목 수 설정
+		pageMaker.setTotalCount(constructionService.getConstCount(key));
+		System.out.println("페이징 정보="+pageMaker);
+		
+		model.addAttribute("conListSize", conList.size());
 		model.addAttribute("conList", conList);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "construction/conList";
 	}
@@ -48,20 +61,6 @@ public class ConstructionController {
 		} else {
 			return "member/login";
 		}
-	}
-	
-	@RequestMapping(value="/category")
-	public String constListByCategory(@RequestParam(value="con_num", defaultValue="0") String con_num,
-									  Model model) {
-		if(con_num.equals("0")) {
-			List<ConstructionVO> conList = constructionService.getConstructionList();
-			model.addAttribute("conList", conList);
-		} else {
-			List<ConstructionVO> conList = constructionService.getConstructionListByConNum(con_num);
-			model.addAttribute("conList", conList);
-		}
-		
-		return "construction/conList";
 	}
 	
 	@RequestMapping(value="/search")
@@ -138,6 +137,8 @@ public class ConstructionController {
 	@RequestMapping(value="con_detail")
 	public String conDetailForm(ConstructionVO vo, Model model) {
 		ConstructionVO con = constructionService.getConstruction(vo);
+		con.setView_count(con.getView_count()+1);
+		constructionService.updateConstView(con);
 		
 		model.addAttribute("ConstructionVO", con);
 		return "construction/conDetail";

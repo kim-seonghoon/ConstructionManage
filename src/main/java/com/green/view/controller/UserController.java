@@ -1,4 +1,4 @@
-package com.green.biz.controller;
+package com.green.view.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

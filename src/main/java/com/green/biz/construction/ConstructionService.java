@@ -3,6 +3,7 @@ package com.green.biz.construction;
 import java.util.List;
 
 import com.green.biz.dto.ConstructionVO;
+import com.green.biz.utils.Criteria;
 
 public interface ConstructionService {
 
@@ -24,5 +25,9 @@ public interface ConstructionService {
 
 	List<ConstructionVO> mainConstructionList();
 	
-	List<ConstructionVO> getConstructionListByConNum(String con_num);
+	List<ConstructionVO> constListWithPaging(String key, Criteria criteria, String con_num);
+	
+	int getConstCount(String key);
+	
+	void updateConstView(ConstructionVO vo);
 }

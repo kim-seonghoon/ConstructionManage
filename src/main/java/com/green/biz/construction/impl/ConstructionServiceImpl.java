@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.green.biz.construction.ConstructionService;
 import com.green.biz.dao.ConstructionDAO;
 import com.green.biz.dto.ConstructionVO;
+import com.green.biz.utils.Criteria;
 
 @Service
 public class ConstructionServiceImpl implements ConstructionService {
@@ -70,9 +71,21 @@ public class ConstructionServiceImpl implements ConstructionService {
 	}
 
 	@Override
-	public List<ConstructionVO> getConstructionListByConNum(String con_num) {
+	public List<ConstructionVO> constListWithPaging(String key, Criteria criteria, String con_num) {
 		
-		return constructionDao.getConstructionListByConNum(con_num);
+		return constructionDao.constListWithPaging(key, criteria, con_num);
+	}
+
+	@Override
+	public int getConstCount(String key) {
+		
+		return constructionDao.getConstCount(key);
+	}
+
+	@Override
+	public void updateConstView(ConstructionVO vo) {
+		
+		constructionDao.updateConstView(vo);
 	}
 
 }

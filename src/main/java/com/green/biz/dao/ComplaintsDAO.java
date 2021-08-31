@@ -1,12 +1,14 @@
 package com.green.biz.dao;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.green.biz.dto.ComplaintsVO;
+import com.green.biz.utils.Criteria;
 
 @Repository
 public class ComplaintsDAO {
@@ -44,13 +46,28 @@ public class ComplaintsDAO {
 		return mybatis.selectList("ComplaintsDAO.mainComplaintList");
 	}
 	
-	public List<ComplaintsVO> getComplaintsListByConNum(String con_num){
-		
-		return mybatis.selectList("ComplaintsDAO.getComplaintsListByConNum", con_num);
-	}
-	
 	public ComplaintsVO getComplaints(ComplaintsVO vo) {
 		
 		return mybatis.selectOne("ComplaintsDAO.getComplaints", vo);
+	}
+	
+	public List<ComplaintsVO> compListWithPaging(String key, Criteria criteria, String con_num) {
+		HashMap<String, Object> map = new HashMap<>();
+		
+		map.put("criteria", criteria);
+		map.put("key", key);
+		map.put("con_num", con_num);
+		
+		return mybatis.selectList("ComplaintsDAO.compListWithPaging", map);
+	}
+	
+	public int getCompCount(String key) {
+		
+		return mybatis.selectOne("ComplaintsDAO.getCompCount", key);
+	}
+	
+	public void updateCompView(ComplaintsVO vo) {
+		
+		mybatis.update("updateCompView", vo);
 	}
 }
