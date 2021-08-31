@@ -80,4 +80,16 @@ public class UserServiceImpl implements UserService {
 		return userDao.getUserByNameAndEmail(vo);
 	}
 
+	@Override
+	public UserVO getUserByNameAndEmailAndID(UserVO vo) {
+
+		return userDao.getUserByNameAndEmailAndID(vo);
+	}
+
+	@Override
+	public void pwdChange(UserVO vo) {
+		
+		userDao.pwdChange(vo);
+	}
+
 }

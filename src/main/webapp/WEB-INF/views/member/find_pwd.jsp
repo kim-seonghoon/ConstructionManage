@@ -11,7 +11,7 @@
           <label>아이디</label>
           <input name="user_id" id="name" type="text" ><br> 
           <label>이름</label>
-          <input name="name" type="text">
+          <input name="name" type="text"><br>
           <label>이메일</label> 
           <input name="email" type="text"><br> 
           <input type="submit" value="비밀번호 찾기">

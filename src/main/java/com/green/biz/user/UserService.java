@@ -29,4 +29,7 @@ public interface UserService {
 	
 	public UserVO getUserByNameAndEmail(UserVO vo);
 
+	public UserVO getUserByNameAndEmailAndID(UserVO vo);
+	
+	public void pwdChange(UserVO vo);
 }

@@ -238,7 +238,33 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="find_pwd")
-	public String getPwdBy
+	public String getUserByNameAndEmailAndID(UserVO vo, Model model) {
+		
+		UserVO user = userService.getUserByNameAndEmailAndID(vo);
+		
+		if(user != null) {
+			model.addAttribute("user_id",user.getUser_id());
+			model.addAttribute("email",user.getEmail());
+			model.addAttribute("name",user.getName());
+			
+			System.out.println(user);
+			return "member/changePwd";
+		}else {
+			return "member/idResultFail";
+		}
+	}
+	
+	@RequestMapping(value="pwd_change")
+	public String pwdChange(UserVO vo) {
+		
+		UserVO user = userService.getUserByNameAndEmailAndID(vo);
+		
+		userService.pwdChange(vo);
+		
+		System.out.println(user);
+		return "member/login";
+		
+	}
 	
 	
 }
