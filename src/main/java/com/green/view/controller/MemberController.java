@@ -128,7 +128,7 @@ public class MemberController {
 							 @RequestParam(value="day") String day) {
 		
 		String address = addr1 + " " + addr2;
-		String phone = num1 + num2 + num3;
+		String phone = num1 + "-" + num2 + "-" + num3;
 		
 		vo.setAddress(address);
 		vo.setPhone(phone);
@@ -227,13 +227,11 @@ public class MemberController {
 			model.addAttribute("addr1", addr1);
 			model.addAttribute("addr2", addr2);
 			
-			String num1 = loginUser.getPhone().substring(0, 2);
-			String num2 = loginUser.getPhone().substring(2, 6);
-			String num3 = loginUser.getPhone().substring(6);
+			String[] num = loginUser.getPhone().split("-");
 			
-			model.addAttribute("num1", num1);
-			model.addAttribute("num2", num2);
-			model.addAttribute("num3", num3);
+			for(int i=0; i<num.length; i++) {
+				model.addAttribute("num"+i, num[i]);
+			}
 			
 			return "mypage/mypage";
 			

@@ -4,16 +4,34 @@ public class CompanyVO {
 	private String cp_id;
 	private String pwd;  
 	private String admin_name;
-	private int admin_phone;   
+	private String admin_phone;   
 	private String cp_name;
 	private String cp_num;
-	private int cp_phone;
-	private int fax_num;
+	private String cp_phone;
+	private String fax_num;
 	private String cp_address;
 	private String zip_num;
 	private String cp_email;
 	
 
+	public String getAdmin_phone() {
+		return admin_phone;
+	}
+	public void setAdmin_phone(String admin_phone) {
+		this.admin_phone = admin_phone;
+	}
+	public String getCp_phone() {
+		return cp_phone;
+	}
+	public void setCp_phone(String cp_phone) {
+		this.cp_phone = cp_phone;
+	}
+	public String getFax_num() {
+		return fax_num;
+	}
+	public void setFax_num(String fax_num) {
+		this.fax_num = fax_num;
+	}
 	public String getZip_num() {
 		return zip_num; 
 	}
@@ -32,24 +50,13 @@ public class CompanyVO {
 	public void setAdmin_name(String admin_name) {
 		this.admin_name = admin_name;
 	}
-	public int getAdmin_phone() {
-		return admin_phone;
-	}
-	public void setAdmin_phone(int admin_phone2) {
-		this.admin_phone = admin_phone2;
-	}
 	public String getCp_num() {
 		return cp_num;
 	}
 	public void setCp_num(String cp_num) {
 		this.cp_num = cp_num;
 	}
-	public int getFax_num() {
-		return fax_num;
-	}
-	public void setFax_num(int fax_num) {
-		this.fax_num = fax_num;
-	}
+
 	public String getCp_address() {
 		return cp_address;
 	}
@@ -73,12 +80,6 @@ public class CompanyVO {
 	}
 	public void setCp_name(String cp_name) {
 		this.cp_name = cp_name;
-	}
-	public int getCp_phone() {
-		return cp_phone;
-	}
-	public void setCp_phone(int cp_phone) {
-		this.cp_phone = cp_phone;
 	}
 	@Override
 	public String toString() {
