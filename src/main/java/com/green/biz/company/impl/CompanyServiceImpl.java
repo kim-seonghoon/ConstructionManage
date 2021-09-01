@@ -7,7 +7,7 @@ import com.green.biz.company.CompanyService;
 import com.green.biz.dao.CompanyDAO;
 import com.green.biz.dto.CompanyVO;
 import com.green.biz.dto.UserVO;
-
+ 
 @Service("CompanyService")
 public class CompanyServiceImpl implements CompanyService {
 	 

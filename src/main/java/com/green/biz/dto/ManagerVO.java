@@ -1,5 +1,5 @@
 package com.green.biz.dto;
-
+ 
 public class ManagerVO {
 	private String manager_id;
 	private String pwd; 

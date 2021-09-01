@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.green.biz.dto.ComplaintsVO;
 import com.green.biz.utils.Criteria;
-
+ 
 public interface ComplaintsService {
 	
 	public void insertComplaints(ComplaintsVO vo);

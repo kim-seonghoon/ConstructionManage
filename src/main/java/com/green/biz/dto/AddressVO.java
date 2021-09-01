@@ -1,5 +1,5 @@
 package com.green.biz.dto;
-
+ 
 public class AddressVO {
 	private String zip_num;
 	private String sido;

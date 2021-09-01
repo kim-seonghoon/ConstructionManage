@@ -2,7 +2,7 @@ package com.green.biz.company;
  
 import com.green.biz.dto.CompanyVO;
 import com.green.biz.dto.UserVO;
-
+  
 public interface CompanyService {
 	public void insertCompany(CompanyVO vo);
  

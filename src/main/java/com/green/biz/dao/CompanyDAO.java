@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import com.green.biz.dto.CompanyVO;
 import com.green.biz.dto.UserVO;
-
+ 
 @Repository
 public class CompanyDAO {
 	

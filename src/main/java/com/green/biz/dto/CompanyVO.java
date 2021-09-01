@@ -1,5 +1,5 @@
 package com.green.biz.dto;
-
+ 
 public class CompanyVO {
 	private String cp_id;
 	private String pwd;  

@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.green.biz.dto.ConstructionVO;
 import com.green.biz.utils.Criteria;
-
+ 
 public interface ConstructionService {
 
 	void insertConstruction(ConstructionVO vo);

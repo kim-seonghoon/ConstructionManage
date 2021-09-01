@@ -1,5 +1,5 @@
 package com.green.biz.dto;
-
+ 
 public class UserVO {
 	private String user_id;
 	private String pwd;
