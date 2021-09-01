@@ -9,9 +9,11 @@
 	</insert> 
 	
 	<!-- 유저 정보 수정 -->
-	<update id="updateUser">
+	<update id="updateUser" parameterType="user">
 		UPDATE users 
-		SET pwd=#{pwd}, address#={address},	email=#{email}, phone=#{phone} 
+		SET address=#{address},	email=#{email}, phone=#{phone}, zip_num=#{zip_num},
+			sido=#{sido}, gugun=#{gugun}, dong=#{dong} 
+		WHERE user_id=#{user_id}
 	</update>
 	
 	<!-- 유저 삭제 -->

@@ -15,9 +15,10 @@
 	<!-- 공사업체 수정 -->
 	<update id="updateCompany">
 		UPDATE company 
-		   SET pwd = #{pwd}, admin_name = #{admin_name}, admin_phone = #{admin_phone}, cp_phone = #{cp_phone}, 
-		   	   fax_num = #{fax_num} , cp_address = #{cp_address}, cp_email = #{cp_email}
-	     WHERE cp_id = #{cp_id}
+		   SET admin_name = #{admin_name}, admin_phone = #{admin_phone}, cp_phone = #{cp_phone}, 
+		   	   fax_num = #{fax_num} , cp_address = #{cp_address}, cp_email = #{cp_email}, zip_num = #{zip_num},
+		   	   cp_name = #{cp_name}
+	     WHERE cp_num = #{cp_num}
 	</update>
 	<!-- 업체 탈퇴 -->
 	<delete id="deleteCompany">
