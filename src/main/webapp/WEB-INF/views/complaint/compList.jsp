@@ -10,7 +10,7 @@
                 <li role="presentation"><a href="comp_list_form?con_num=3">공공건축물</a></li>
                 <li role="presentation"><a href="comp_list_form?con_num=4">기타</a></li>
                 <li class="navbar-right"><input type="text"><input type="submit" value="검색" style="margin-right: 20px;"></li>
-            </ul>
+            </ul> 
         </form>
         <div>
             <table>

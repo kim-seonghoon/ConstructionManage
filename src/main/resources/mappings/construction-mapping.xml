@@ -9,7 +9,7 @@
 		VALUES(con_seq.NEXTVAL, #{con_name}, #{sido}, #{gugun}, #{dong},
 			   #{address}, #{zip_num}, #{cp_name}, #{cp_num}, #{start_date}, #{end_date},
 			   #{con_size}, #{con_state}, #{con_num}, #{dept}, #{dept_tel}, #{content})
-	</insert>
+	</insert> 
 	
 	<!-- 공사 수정 -->
 	<update id="updateConstruction">

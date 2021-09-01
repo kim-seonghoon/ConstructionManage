@@ -7,7 +7,7 @@
                 <input type="hidden" name="cp_num" id="cp_num" value="${ConstructionVO.cp_num}">
                 <input type="hidden" name="con_seq" id="con_seq" value="${ConstructionVO.con_seq}">
                 <table>
-                    <tr>
+                    <tr> 
                         <th colspan="4">${ConstructionVO.con_name}</th>
                     </tr>
                     <tr>

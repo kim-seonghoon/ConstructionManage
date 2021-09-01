@@ -19,7 +19,7 @@ import com.green.biz.dto.AddressVO;
 import com.green.biz.dto.CompanyVO;
 import com.green.biz.dto.UserVO;
 import com.green.biz.user.UserService;
-
+ 
 @Controller
 @SessionAttributes("loginUser") 
 public class MemberController {

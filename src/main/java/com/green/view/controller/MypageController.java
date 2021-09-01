@@ -96,7 +96,7 @@ public class MypageController {
 			return "member/login";
 		}
 	}
-	
+	 
 	// 일반 유저 정보 수정
 	@RequestMapping(value="update_user")
 	public String updateUser(@RequestParam(value="addr1") String addr1, @RequestParam(value="addr2") String addr2, UserVO vo, Model model,

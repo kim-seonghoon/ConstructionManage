@@ -5,7 +5,7 @@
             <form id="com_detail_form" action="comp_update" method="POST"> 
             <input type="hidden" name="com_seq" value="${ComplaintsVO.com_seq }">
                 <table>
-                    <tr>
+                    <tr> 
                         <th><p>문의 분류</p></th>
                         <td>
                         	<c:set var="c_num" value="${ComplaintsVO.con_num}"/>

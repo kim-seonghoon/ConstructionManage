@@ -6,7 +6,7 @@
                 <input type="hidden" name="com_seq" value="${ComplaintsVO.com_seq}">
                 <input type="hidden" name="user_id" value="${ComplaintsVO.user_id }">
                 <table>
-                    <tr>
+                    <tr> 
                         <th><p>문의 분류</p></th>
                         <td><c:choose>
                         	<c:when test="${ComplaintsVO.con_num==1}">도로공사</c:when>

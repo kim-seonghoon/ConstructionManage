@@ -5,7 +5,7 @@
 	<form id="com_form" action="comp_write" method="get">
 	  <input type="hidden" name="user_id" value="${ComplaintsVO.user_id }">
 		<table>
-			<tr>
+			<tr> 
 				<th><p>문의 분류</p></th>
 				<td><select name="con_num" id="con_num">
 						<option value="공사선택">공사 선택</option>

@@ -10,7 +10,7 @@
                     <td colspan="3">
                     	<input type="text" name="con_name" value="${ConstructionVO.con_name}">
                     	<input type="hidden" name="con_seq" value="${ConstructionVO.con_seq}">
-                    </td>
+                    </td> 
                 </tr>
                 <tr>
                     <th><p>공사 분류</p></th>

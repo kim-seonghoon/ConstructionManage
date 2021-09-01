@@ -12,7 +12,7 @@ import com.green.biz.dto.CompanyVO;
 public class CompanyController { 
 	@Autowired
 	CompanyService companyService;
-	
+	 
 	@RequestMapping(value="/join_cp")
 	public String joinCompany(CompanyVO vo,
 							  @RequestParam(value="cp_num1") String num1, @RequestParam(value="cp_num2") String num2,

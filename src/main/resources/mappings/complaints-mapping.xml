@@ -6,7 +6,7 @@
 		INSERT INTO complaints(com_seq, con_num, name, title, content, address, user_id)
 		VALUES (com_seq.NEXTVAL, #{con_num}, #{name}, #{title}, #{content}, #{address}, #{user_id})
 	</insert>
-	
+	 
 	<!-- 공사 현황에서 등록 -->
 	<insert id="insertComplaintsFromCon">
 		INSERT INTO complaints(com_seq, con_seq, con_name, con_num, name, title, content, address)

@@ -5,7 +5,7 @@
 	<insert id="insertCompany">
 		INSERT INTO company(cp_id, pwd, admin_name, admin_phone, cp_name, cp_num, cp_phone, fax_num, cp_address , cp_email)
 			   VALUES(#{cp_id}, #{pwd}, #{admin_name}, #{admin_phone}, #{cp_name}, #{cp_num}, #{cp_phone}, #{fax_num}, #{cp_address}, #{cp_email})
-	</insert> 
+	</insert>  
 	
 	<!-- 공사업체 가져오기(로그인 처리) -->
 	<select id="getCompany" parameterType="String" resultType="company">

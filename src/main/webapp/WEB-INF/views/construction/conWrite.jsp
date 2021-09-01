@@ -8,7 +8,7 @@
                     <th><p>제목</p></th>
                     <td colspan="3"><input style="width:600px" type="text" name="con_name" id="con_name"></td>
                 </tr>
-                <tr>
+                <tr> 
                     <th><p>공사 분류</p></th>
                     <td>
                         <select name="con_num" id="con_num">
