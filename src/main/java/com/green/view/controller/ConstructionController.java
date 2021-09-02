@@ -156,7 +156,7 @@ public class ConstructionController {
 		
 		model.addAttribute("ConstructionVO", con);
 		return "construction/conDetail";
-	}
+	} 
 	
 	@RequestMapping(value="con_delete")
 	public String conDelete(ConstructionVO vo, HttpSession session, Model model) {

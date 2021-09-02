@@ -25,7 +25,7 @@
 		DELETE construction WHERE con_seq=#{con_seq}
 	</delete>
 	
-	<!-- 공사 가져오기 -->
+	<!-- 공사 가져오기 -->  
 	<select id="getConstruction" resultType="construction">
 		SELECT * FROM construction WHERE con_seq=#{con_seq}
 	</select>

@@ -1,7 +1,7 @@
 package com.green.biz.dto;
 
 import java.sql.Timestamp;
- 
+  
 public class ConstructionVO {
 	private int con_seq;
 	private String con_name;     

@@ -5,7 +5,7 @@
 	 <!-- 동이름으로 우편번호 찾기 -->
    <select id="selectAddressByDong" parameterType="String" resultType="address">
       SELECT * FROM address WHERE dong LIKE '%'||#{dong}||'%'
-   </select>  
+   </select>   
    
      
    

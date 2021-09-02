@@ -33,7 +33,7 @@ public class CompanyController {
 		vo.setCp_address(cp_address);
 		
 		companyService.insertCompany(vo);
-		return "member/login";
+		return "member/login"; 
 	}
 
 }

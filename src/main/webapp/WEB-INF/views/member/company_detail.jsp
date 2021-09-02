@@ -63,7 +63,7 @@
 			<td>상세주소</td>
 			<td><input type="text" name="addr2" id="address_detail"> </td>
 		</tr>
-		</table>
+		</table> 
 		<input type="reset" value="취소">
 		<input type="button" value="확인" onclick="go_save_cp()">
 	</div>

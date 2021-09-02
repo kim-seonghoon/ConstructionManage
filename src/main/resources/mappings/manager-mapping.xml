@@ -6,7 +6,7 @@
 		INSERT INTO manager (manager_id, pwd, sido, gugun, address, name, position)
 		VALUES(#{manager_id}, #{pwd}, #{sido}, #{gugun}, #{address}, 
 			   #{name}, #{position})
-	</insert> 
+	</insert>  
 	 
 	<!-- 매니저 정보 수정 (승진했을 경우나 관리 지역이 달라졌을 경우) -->
 	<update id="updateManager">
