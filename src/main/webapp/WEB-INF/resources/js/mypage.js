@@ -65,9 +65,25 @@ function updateCp() {
 }
 
 function deleteUser() {
-	$("#myForm").attr("action", "delete_user").submit();
+	if ($("#pwd").val() != $("#pwd_chk").val()) {
+		alert("비밀번호가 일치하지 않습니다!");
+		$("#pwd").focus();
+	} else if("#pwd".val() != $("#pwdUser").val()) {
+		alert("비밀번호가 틀렸습니다!");
+		$("#pwd").focus();
+	} else {
+		$("#myForm").attr("action", "delete_user").submit();
+	}	
 }
 
 function deleteCp() {
-	$("#myForm").attr("action", "delete_cp").submit();
+	if ($("#pwd").val() != $("#pwd_chk").val()) {
+		alert("비밀번호가 일치하지 않습니다!");
+		$("#pwd").focus();
+	} else if("#pwd".val() != $("#pwdUser").val()) {
+		alert("비밀번호가 틀렸습니다!");
+		$("#pwd").focus();
+	} else {
+		$("#myForm").attr("action", "delete_cp").submit();
+	}
 }

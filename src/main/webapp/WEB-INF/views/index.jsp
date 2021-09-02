@@ -10,7 +10,7 @@
 
 		<div class="container bbs_main">
 			<div class="search"> 
-				<select class="form-control input" id="search01">
+				<select class="form-control input" name="search-condition" id="search01">
 					<option value="1">통합검색</option>
                     <option value="2">지역</option>
                     <option value="3">제목</option>
@@ -52,15 +52,5 @@
 		<!-- /inner-container -->
 		</div>
 		<!-- /container -->
+<%@ include file="footer.jsp" %>
 
-
-		<!-- /container -->
-		<div class="container copyright">
-			Copyright 2021 project construction management
-		</div>
-		<!-- /container -->
-	</div> 
-<!-- /wrap -->
-
-</body>
-</html>

@@ -138,6 +138,20 @@ public class ConstructionController {
 	public String conDetailForm(ConstructionVO vo, Model model) {
 		ConstructionVO con = constructionService.getConstruction(vo);
 		con.setView_count(con.getView_count()+1);
+		String[] addr = con.getAddress().split(" ");
+		String addr1 = "";
+		String addr2 = "";
+		
+		for(int i=0; i<3; i++) {
+			addr1 += addr[i] + " ";
+		}
+		for(int i=3; i<addr.length; i++) {
+			addr2 += addr[i] + " ";
+		}
+		
+		model.addAttribute("addr1", addr1);
+		model.addAttribute("addr2", addr2);
+		
 		constructionService.updateConstView(con);
 		
 		model.addAttribute("ConstructionVO", con);
@@ -173,7 +187,7 @@ public class ConstructionController {
 		int user_type = 0;
 		
 		if(session.getAttribute("user_type")!=null) {
-			user_type = (int) session.getAttribute("user_type");
+			user_type = (int) session.getAttribute("user_type");	
 		}
 		
 		if(user_type == 2) {
@@ -181,8 +195,8 @@ public class ConstructionController {
 			
 			if(loginUser!=null && loginUser.getCp_num().equals(vo.getCp_num())) {
 
-				
 				ConstructionVO con = constructionService.getConstruction(vo);
+				System.out.println(con);
 				
 				String[] addr = con.getAddress().split(" ");
 				String addr2 = "";

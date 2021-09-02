@@ -155,6 +155,7 @@ public class MypageController {
 	
 	@RequestMapping(value="delete_cp")
 	public String deleteCp(CompanyVO vo, SessionStatus status) {
+		System.out.println(vo);
 		companyService.deleteCompany(vo.getCp_num());
 		
 		status.setComplete();
