@@ -37,4 +37,10 @@ public class ManagerServcieImpl implements ManagerService {
 		return managerDao.getManagerByArea(sido, gugun);
 	}
 
+	@Override
+	public ManagerVO getManager(String id) {
+		
+		return managerDao.getManager(id);
+	}
+
 }

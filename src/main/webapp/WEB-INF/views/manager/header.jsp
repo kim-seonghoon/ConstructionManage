@@ -26,8 +26,8 @@
 			<nav class="gnb">
 				<ul class="nav navbar-nav">
 					<!-- <li class="active"><a href="#">1depth-01</a></li> -->
-					<li><a href="con_list_form">공사 현황</a></li>
-					<li><a href="comp_list_form">민원 보기</a></li>
+					<li><a href="con_list_form_mg">공사 현황</a></li>
+					<li><a href="comp_list_form_mg">민원 보기</a></li>
 					<c:choose>
 						<c:when test="${empty sessionScope.loginUser}">
 							<li class="btn"><a href="manager_login_form">관리자 로그인</a></li>

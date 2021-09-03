@@ -11,5 +11,7 @@ public interface ManagerService {
 	void deleteManager(ManagerVO vo);
 
 	ManagerVO getManagerByArea(String sido, String gugun);
+	
+	public ManagerVO getManager(String id);
 
 }

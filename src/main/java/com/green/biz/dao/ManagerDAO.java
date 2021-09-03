@@ -32,4 +32,10 @@ public class ManagerDAO {
 		
 		return mybatis.selectOne("ManagerDAO.getManagerByArea", map);
 	}
+	
+	public ManagerVO getManager(String id) {
+		
+		return mybatis.selectOne("ManagerDAO.getManager", id);
+	}
+	
 }

@@ -23,4 +23,12 @@
 	<select id="getManagerByArea" parameterType="HashMap" resultType="manager">
 		SELECT * FROM manager WHERE sido=#{sido} AND gugun=#{gugun}
 	</select>
+	
+	<select id="getManager" parameterType="String" resultType="manager">
+		SELECT * FROM manager
+		 WHERE  manager_id = #{manager_id}
+	
+	
+	</select>
+	
 </mapper>
