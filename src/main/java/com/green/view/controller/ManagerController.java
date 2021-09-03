@@ -41,15 +41,31 @@ public class ManagerController {
 	
 	@RequestMapping(value="manager_login", method=RequestMethod.POST)
 	public String ManagerLoginAction(ManagerVO vo, Model model, HttpSession session) {
+		System.out.println(vo);
 		
-		ManagerVO loginUser = managerService.getManager(vo.getManager_id());
-		
-		model.addAttribute("loginUser", loginUser);
+		ManagerVO loginUser = (ManagerVO) managerService.getManager(vo.getManager_id());
+		System.out.println("loginUser = " + loginUser);
 		
 		if(loginUser != null) {
-			System.out.println("loginUser = " + loginUser);
-			
-			return "manager/conList";
+			if(loginUser.getPwd().equals(vo.getPwd())) {
+				
+				model.addAttribute("loginUser", loginUser);
+				session.setAttribute("user_type", 3);
+				
+				String sido = loginUser.getSido();
+				String gugun = loginUser.getGugun();
+				String address = sido + " " + gugun;
+				List<ConstructionVO> conList = constructionService.managerMainConList(sido, gugun);
+				List<ComplaintsVO> compList = complaintService.managerMainCompList(address);
+				
+				model.addAttribute("newConstructionList", conList);
+				model.addAttribute("newComplaintList", compList);
+				
+				return "manager/index";
+			} else {
+				
+				return "member/login_fail";
+			}
 		} else {
 			return "member/login_fail";
 		}
@@ -59,11 +75,16 @@ public class ManagerController {
 	public String constListFormMg(HttpSession session, Model model, Criteria criteria,
 								  @RequestParam(value="con_num",defaultValue="") String con_num,
 								  @RequestParam(value="key",defaultValue="") String key) {
-		List<ConstructionVO> conList = constructionService.constListWithPaging(key, criteria, con_num);
+		
+		ManagerVO loginUser = (ManagerVO) session.getAttribute("loginUser");
+		String sido = loginUser.getSido();
+		String gugun = loginUser.getGugun();
+		
+		List<ConstructionVO> conList = constructionService.getManageConstructionList(sido, gugun, criteria, con_num, key);
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(criteria);	// 현재 페이지와 페이지당 항목 수 설정
-		pageMaker.setTotalCount(constructionService.getConstCount(key));
+		pageMaker.setTotalCount(conList.size());
 		System.out.println("페이징 정보="+pageMaker);
 		
 		model.addAttribute("conListSize", conList.size());
@@ -78,11 +99,14 @@ public class ManagerController {
 								 @RequestParam(value="com_num",defaultValue="")String con_num,
 								 @RequestParam(value="key", defaultValue="") String key) {
 		
-		List<ComplaintsVO> compList = complaintService.compListWithPaging(key, criteria, con_num);
+		ManagerVO loginUser = (ManagerVO) session.getAttribute("loginUser");
+		String address = loginUser.getAddress();
+		
+		List<ComplaintsVO> compList = complaintService.managerCompList(address, con_num, key, criteria);
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(criteria);	// 현재 페이지와 페이지당 항목 수 설정
-		pageMaker.setTotalCount(complaintService.getCompCount(key));
+		pageMaker.setTotalCount(compList.size());
 		System.out.println("페이징 정보="+pageMaker);
 		
 		model.addAttribute("compListSize", compList.size());

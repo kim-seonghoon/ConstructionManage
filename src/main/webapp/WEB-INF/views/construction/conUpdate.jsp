@@ -4,7 +4,7 @@
 
     <div class="container bbs_main">
         <form id="con_detail_form" name="formm" action="con_update" method="POST">
-            <table>
+            <table width="1200" cellpadding="0" cellspacing="0" class="table">
                 <tr>
                     <th><p>제목</p></th>
                     <td colspan="3">

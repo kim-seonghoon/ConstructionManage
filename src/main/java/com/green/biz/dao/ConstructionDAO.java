@@ -44,10 +44,13 @@ public class ConstructionDAO {
 		return mybatis.selectList("ConstructionDAO.getConstructionListByArea", map);
 	}
 	
-	public List<ConstructionVO> getManageConstructionList(String sido, String gugun) {
-		HashMap<String, String> map = new HashMap<>();
+	public List<ConstructionVO> getManageConstructionList(String sido, String gugun, Criteria criteria, String con_num, String key) {
+		HashMap<String, Object> map = new HashMap<>();
 		map.put("sido", sido);
 		map.put("gugn", gugun);
+		map.put("criteria", criteria);
+		map.put("con_num", con_num);
+		map.put("key", key);
 		
 		return mybatis.selectList("ConstructionDAO.getManageConstructionList", map);
 	}
@@ -80,5 +83,15 @@ public class ConstructionDAO {
 	public void updateConstView(ConstructionVO vo) {
 		
 		mybatis.update("ConstructionDAO.updateConstView", vo);
+	}
+	
+	public List<ConstructionVO> managerMainConList(String sido, String gugun) {
+		
+		HashMap<String, String> map = new HashMap<>();
+		
+		map.put("sido", sido);
+		map.put("gugun", gugun);
+		
+		return mybatis.selectList("ConstructionDAO.managerMainConList", map);
 	}
 }

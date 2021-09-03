@@ -75,4 +75,16 @@ public class ComplaintsServiceImpl implements ComplaintsService {
 		
 		complaintsDao.updateCompView(vo);
 	}
+
+	@Override
+	public List<ComplaintsVO> managerMainCompList(String address) {
+		
+		return complaintsDao.managerMainCompList(address);
+	}
+
+	@Override
+	public List<ComplaintsVO> managerCompList(String address, String con_num, String key, Criteria criteria) {
+		
+		return complaintsDao.managerCompList(address, key, con_num, criteria);
+	}
 }

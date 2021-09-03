@@ -12,6 +12,6 @@ public interface ManagerService {
 
 	ManagerVO getManagerByArea(String sido, String gugun);
 	
-	public ManagerVO getManager(String id);
+	public ManagerVO getManager(String manager_id);
 
 }

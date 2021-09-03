@@ -19,7 +19,7 @@ public interface ConstructionService {
 
 	List<ConstructionVO> getConstructionListByArea(String sido, String gugun, String dong);
 
-	List<ConstructionVO> getManageConstructionList(String sido, String gugun);
+	List<ConstructionVO> getManageConstructionList(String sido, String gugun, Criteria criteria, String con_num, String key);
 
 	List<ConstructionVO> getConstructionListByKey(String keyArea, String keyTitle);
 
@@ -30,4 +30,6 @@ public interface ConstructionService {
 	int getConstCount(String key);
 	
 	void updateConstView(ConstructionVO vo);
+	
+	List<ConstructionVO> managerMainConList(String sido, String gugun);
 }

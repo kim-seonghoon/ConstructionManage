@@ -44,14 +44,6 @@
 		AND dong LIKE '%'||#{dong}||'%'
 	</select>
 	
-	<!-- 관리 지역 리스트 찾기 -->
-	<select id="getManageConstructionList" parameterType="HashMap" resultType="construction">
-		SELECT *
-		FROM construction
-		WHERE sido=#{sido}
-		AND gugun LIKE '%'||#{gugun}||'%'
-	</select>
-	
 	<!-- keyword로 지역 리스트 찾기 -->
 	<select id="getConstructionListByKey" parameterType="HashMap" resultType="construction">
 		SELECT *
@@ -68,6 +60,18 @@
 		FROM
     		(SELECT ROW_NUMBER() OVER(ORDER BY start_date DESC) rn, con_seq, con_name, start_date
      		 FROM construction)    
+		WHERE rn > 0 AND rn <=5
+		]]>
+	</select>
+	
+	<!-- 관리자 페이지에서 최신 5개의 공사현황 전시-->
+	<select id="managerMainConList" parameterType="HashMap" resultType="construction">
+		<![CDATA[
+		SELECT con_seq, con_name, start_date
+		FROM
+    		(SELECT ROW_NUMBER() OVER(ORDER BY start_date DESC) rn, con_seq, con_name, start_date
+     		 FROM construction
+     		 WHERE sido=#{sido} AND gugun=#{gugun})    
 		WHERE rn > 0 AND rn <=5
 		]]>
 	</select>
@@ -96,5 +100,21 @@
 	<!-- 조회수 업데이트 -->
 	<update id="updateConstView" parameterType="construction">
 		UPDATE construction SET view_count = #{view_count} WHERE con_seq=#{con_seq}
-	</update>	
+	</update>
+	
+	<!-- 관리지역 공사 페이징 처리(공사종류, 제목 검색) -->
+	<select id="getManageConstructionList" parameterType="HashMap" resultType="construction">
+		<![CDATA[
+		SELECT con_seq, con_name, sido, gugun, dong, zip_num, address, cp_name, cp_num, dept, 
+			   dept_tel, start_date, end_date, con_size, con_state, view_count, con_num, content
+		  FROM
+    		(SELECT row_number() over(ORDER BY start_date) rn, con_seq, con_name, sido, gugun, dong,
+    			    zip_num, address, cp_name, cp_num, dept, dept_tel, start_date, end_date, 
+    			    con_size, con_state, view_count, con_num, content
+           	   FROM construction
+     	   	  WHERE sido=#{sido} AND gugun=#{gugun} AND con_num=#{con_num} AND con_name=#{key})
+		 WHERE rn > (#{criteria.pageNum}-1) * #{criteria.rowsPerPage}
+		   AND rn <= #{criteria.pageNum} * #{criteria.rowsPerPage}
+		]]>
+	</select>	
 </mapper>

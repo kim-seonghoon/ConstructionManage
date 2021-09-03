@@ -38,9 +38,9 @@ public class ManagerServcieImpl implements ManagerService {
 	}
 
 	@Override
-	public ManagerVO getManager(String id) {
+	public ManagerVO getManager(String manager_id) {
 		
-		return managerDao.getManager(id);
+		return managerDao.getManager(manager_id);
 	}
 
 }

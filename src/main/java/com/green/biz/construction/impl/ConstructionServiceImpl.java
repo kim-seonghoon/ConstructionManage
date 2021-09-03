@@ -53,9 +53,9 @@ public class ConstructionServiceImpl implements ConstructionService {
 	}
 
 	@Override
-	public List<ConstructionVO> getManageConstructionList(String sido, String gugun) {
+	public List<ConstructionVO> getManageConstructionList(String sido, String gugun, Criteria criteria, String con_num, String key) {
 
-		return constructionDao.getManageConstructionList(sido, gugun);
+		return constructionDao.getManageConstructionList(sido, gugun, criteria, con_num, key);
 	}
 
 	@Override
@@ -86,6 +86,12 @@ public class ConstructionServiceImpl implements ConstructionService {
 	public void updateConstView(ConstructionVO vo) {
 		
 		constructionDao.updateConstView(vo);
+	}
+
+	@Override
+	public List<ConstructionVO> managerMainConList(String sido, String gugun) {
+		
+		return constructionDao.managerMainConList(sido, gugun);
 	}
 
 }

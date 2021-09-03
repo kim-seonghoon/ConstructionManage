@@ -26,4 +26,8 @@ public interface ComplaintsService {
 	public int getCompCount(String key);
 	
 	public void updateCompView(ComplaintsVO vo);
+	
+	List<ComplaintsVO> managerMainCompList(String address);
+	
+	List<ComplaintsVO> managerCompList(String address, String con_num, String key, Criteria criteria);
 }

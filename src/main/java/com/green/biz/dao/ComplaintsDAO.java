@@ -68,6 +68,23 @@ public class ComplaintsDAO {
 	
 	public void updateCompView(ComplaintsVO vo) {
 		
-		mybatis.update("updateCompView", vo);
+		mybatis.update("ComplaintsDAO.updateCompView", vo);
+	}
+	
+	public List<ComplaintsVO> managerMainCompList(String address) {
+
+		
+		return mybatis.selectList("ComplaintsDAO.managerMainCompList", address);
+	}
+	
+	public List<ComplaintsVO> managerCompList(String address, String key, String con_num, Criteria criteria) {
+		HashMap<String, Object> map = new HashMap<>();
+		
+		map.put("address", address);
+		map.put("con_num", con_num);
+		map.put("criteria", criteria);
+		map.put("key", key);
+		
+		return mybatis.selectList("ComplaintsDAO.managerCompList", map);
 	}
 }
