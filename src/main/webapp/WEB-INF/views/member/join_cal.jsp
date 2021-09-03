@@ -17,7 +17,7 @@
 				</table>	
 			</div>
 			<input type="reset" value="취소">
-			<input type="submit" value="확인">
+			<input type="button" value="확인" onclick="agreeChk()">
 		</form>
 		</body>
 	</div>

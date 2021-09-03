@@ -6,13 +6,14 @@
 <html lang="ko"> 
 
 <head>
-	<link rel="stylesheet" type="text/css" href="css/mainstyle.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.2-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/공사관리style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript" src="js/member.js"></script>
 	<script type="text/javascript" src="js/complaint.js"></script>
 	<script type="text/javascript" src="js/construction.js"></script>
 	<script type="text/javascript" src="js/mypage.js"></script>  
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	<title>공사관리 Main</title>
 </head>
 
@@ -25,8 +26,8 @@
 			<nav class="gnb">
 				<ul class="nav navbar-nav">
 					<!-- <li class="active"><a href="#">1depth-01</a></li> -->
-					<li><a href="con_list_form">공사 현황</a></li>
-					<li><a href="comp_list_form">민원 보기</a></li>
+					<li><a href="con_list_form_mg">공사 현황</a></li>
+					<li><a href="comp_list_form_mg">민원 보기</a></li>
 					<c:choose>
 						<c:when test="${empty sessionScope.loginUser}">
 							<li class="btn"><a href="manager_login_form">관리자 로그인</a></li>

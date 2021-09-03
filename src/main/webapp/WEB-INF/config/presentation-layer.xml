@@ -19,6 +19,7 @@
 	<mvc:resources location="/WEB-INF/views/complaint/" mapping="/complaint/**"></mvc:resources>
 	<mvc:resources location="/WEB-INF/views/construction/" mapping="/construction/**"></mvc:resources>
 	<mvc:resources location="/WEB-INF/views/mypage/" mapping="/mypage/**"></mvc:resources>
+	<mvc:resources location="/WEB-INF/views/manager/" mapping="/manager/**"></mvc:resources>
 	
 	<!-- jsp 소스 View Resolver -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
