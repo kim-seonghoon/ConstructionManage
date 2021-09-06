@@ -21,13 +21,14 @@
 	<div class="wrap">
 		<header class="navbar navbar-inverse">
 			<div class="navbar-header">
-				<h1><a class="navbar-brand" href="#">공사관리</a></h1>
+				<h1><a class="navbar-brand" href="go_home_mg">공사관리</a></h1>
 			</div>
 			<nav class="gnb">
 				<ul class="nav navbar-nav">
 					<!-- <li class="active"><a href="#">1depth-01</a></li> -->
+					<li><a href="con_list_form_mg">공사 관리</a></li>
 					<li><a href="comp_list_form_mg">민원 관리</a></li>
-					<li><a href="con_list_form_mg">유저 관리</a></li>
+					<li><a href="user_list_form_mg">유저 관리</a></li>
 					<li class="btn"><a href="logout">로그아웃</a></li>
 				</ul>
 			</nav>

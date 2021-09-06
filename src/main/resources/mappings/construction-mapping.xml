@@ -112,7 +112,7 @@
     			    zip_num, address, cp_name, cp_num, dept, dept_tel, start_date, end_date, 
     			    con_size, con_state, view_count, con_num, content
            	   FROM construction
-     	   	  WHERE sido=#{sido} AND gugun=#{gugun} AND con_num=#{con_num} AND con_name=#{key})
+     	   	  WHERE sido=#{sido} AND gugun=#{gugun} AND con_name LIKE '%'||#{key}||'%' AND con_num LIKE '%'||#{con_num}||'%')
 		 WHERE rn > (#{criteria.pageNum}-1) * #{criteria.rowsPerPage}
 		   AND rn <= #{criteria.pageNum} * #{criteria.rowsPerPage}
 		]]>

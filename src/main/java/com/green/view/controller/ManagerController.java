@@ -39,12 +39,39 @@ public class ManagerController {
 	return "manager/login";	
 	}
 	
+	@RequestMapping(value="go_home_mg")
+	public String managerHome(HttpSession session, Model model) {
+		
+		ManagerVO loginUser = (ManagerVO) session.getAttribute("loginUser");
+		int user_type = (int) session.getAttribute("user_type");
+		
+		if(loginUser != null) {
+			if(user_type == 3) {
+				
+				String sido = loginUser.getSido();
+				String gugun = loginUser.getGugun();
+				String address = sido + " " + gugun;
+				List<ConstructionVO> conList = constructionService.managerMainConList(sido, gugun);
+				List<ComplaintsVO> compList = complaintService.managerMainCompList(address);
+				
+				model.addAttribute("newConstructionList", conList);
+				model.addAttribute("newComplaintList", compList);
+				System.out.println("loginUser=" + loginUser + " " + "user_type=" + user_type);
+				
+				return "manager/index";
+			} else {
+				
+				return "index";
+			}
+		} else {
+			return "index";
+		}
+	}
+	
 	@RequestMapping(value="manager_login", method=RequestMethod.POST)
-	public String ManagerLoginAction(ManagerVO vo, Model model, HttpSession session) {
-		System.out.println(vo);
+	public String managerLoginAction(ManagerVO vo, Model model, HttpSession session) {
 		
 		ManagerVO loginUser = (ManagerVO) managerService.getManager(vo.getManager_id());
-		System.out.println("loginUser = " + loginUser);
 		
 		if(loginUser != null) {
 			if(loginUser.getPwd().equals(vo.getPwd())) {
@@ -68,7 +95,7 @@ public class ManagerController {
 			}
 		} else {
 			return "member/login_fail";
-		}
+		} 
 	}
 	
 	@RequestMapping(value = "con_list_form_mg")
@@ -77,8 +104,10 @@ public class ManagerController {
 								  @RequestParam(value="key",defaultValue="") String key) {
 		
 		ManagerVO loginUser = (ManagerVO) session.getAttribute("loginUser");
+		System.out.println(loginUser);
 		String sido = loginUser.getSido();
 		String gugun = loginUser.getGugun();
+		System.out.println("sido="+sido+" "+"gugun="+gugun);
 		
 		List<ConstructionVO> conList = constructionService.getManageConstructionList(sido, gugun, criteria, con_num, key);
 		

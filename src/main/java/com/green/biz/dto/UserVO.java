@@ -12,7 +12,14 @@ public class UserVO {
 	private String email;
 	private String birth_date;
 	private String phone;
+	private String dropyn;
 	
+	public String getDropyn() {
+		return dropyn;
+	}
+	public void setDropyn(String dropyn) {
+		this.dropyn = dropyn;
+	}
 	public String getZip_num() {
 		return zip_num;
 	}
@@ -83,6 +90,6 @@ public class UserVO {
 	public String toString() {
 		return "UserVO [user_id=" + user_id + ", pwd=" + pwd + ", name=" + name + ", sido=" + sido + ", gugun=" + gugun
 				+ ", dong=" + dong + ", zip_num=" + zip_num + ", address=" + address + ", email=" + email
-				+ ", birth_date=" + birth_date + ", phone=" + phone + "]";
+				+ ", birth_date=" + birth_date + ", phone=" + phone + ", dropyn=" + dropyn + "]";
 	}
 }

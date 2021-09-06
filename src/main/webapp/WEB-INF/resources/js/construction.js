@@ -74,3 +74,7 @@ function delete_con() {
 function update_con() {
 	$("#con_detail_form").attr("action", "con_update_form").submit();
 }
+
+function go_write_comp() {
+	$("#comp_write_form").attr("action", "write_comp_form").submit();
+}

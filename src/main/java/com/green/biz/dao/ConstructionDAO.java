@@ -47,7 +47,7 @@ public class ConstructionDAO {
 	public List<ConstructionVO> getManageConstructionList(String sido, String gugun, Criteria criteria, String con_num, String key) {
 		HashMap<String, Object> map = new HashMap<>();
 		map.put("sido", sido);
-		map.put("gugn", gugun);
+		map.put("gugun", gugun);
 		map.put("criteria", criteria);
 		map.put("con_num", con_num);
 		map.put("key", key);

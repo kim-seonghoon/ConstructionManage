@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="../header.jsp" %>  
+<%@ include file="header.jsp" %>  
 	<div class="container bbs_main">
         <div id="content">
             <form id="con_detail_form" action="answer" method="POST">
