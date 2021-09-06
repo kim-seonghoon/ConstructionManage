@@ -73,6 +73,22 @@
 		   AND user_id = #{user_id}
 	</update>
 	
+	<select id="userListWithPaging" parameterType="HashMap" resultType="user">
+	<![CDATA[
+	SELECT user_id, address, dropyn, name, phone
+	FROM
+	(SELECT row_number() over(ORDER BY name desc) rn, user_id, address, dropyn, name, phone
+	 FROM users
+	 WHERE user_id LIKE '%'||#{key}||'%')
+	WHERE rn > (#{criteria.pageNum}-1) * #{criteria.rowsPerPage}
+		   AND rn <= #{criteria.pageNum} * #{criteria.rowsPerPage}
+	]]>
+	</select>
+	
+	<select id="getUserCount" parameterType="String" resultType="int">
+		SELECT COUNT(*) FROM users WHERE user_id LIKE '%'||#{key}||'%'
+	</select>
+	
 	
 	
 </mapper>

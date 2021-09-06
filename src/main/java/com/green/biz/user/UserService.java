@@ -3,6 +3,7 @@ package com.green.biz.user;
 import java.util.List;
 
 import com.green.biz.dto.UserVO;
+import com.green.biz.utils.Criteria;
 
 public interface UserService {
  
@@ -32,4 +33,8 @@ public interface UserService {
 	public UserVO getUserByNameAndEmailAndID(UserVO vo);
 	
 	public void pwdChange(UserVO vo);
+	
+	public List<UserVO> userListWithPaging(String key, Criteria criteria, String user_id);
+	
+	public int getUserCount(String key);
 }

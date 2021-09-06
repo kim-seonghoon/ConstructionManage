@@ -17,7 +17,9 @@ import com.green.biz.construction.ConstructionService;
 import com.green.biz.dto.ComplaintsVO;
 import com.green.biz.dto.ConstructionVO;
 import com.green.biz.dto.ManagerVO;
+import com.green.biz.dto.UserVO;
 import com.green.biz.manager.ManagerService;
+import com.green.biz.user.UserService;
 import com.green.biz.utils.Criteria;
 import com.green.biz.utils.PageMaker;
 
@@ -33,6 +35,9 @@ public class ManagerController {
 	
 	@Autowired
 	ComplaintsService complaintService;
+	
+	@Autowired
+	UserService userService;
 	
 	@RequestMapping(value="/manager_login_form",method=RequestMethod.GET)
 	public String manager_login_form() {
@@ -167,4 +172,24 @@ public class ManagerController {
 		
 		return "manager/compDetail";
 	}
+	
+	@RequestMapping(value="user_list_form_mg")
+	public String userList(HttpSession session, Model model, Criteria criteria,
+						   @RequestParam(value="user_id",defaultValue="") String user_id,
+						   @RequestParam(value="key", defaultValue="") String key) {
+		
+		List<UserVO> userList = userService.userListWithPaging(key, criteria, user_id);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(criteria);
+		pageMaker.setTotalCount(userService.getUserCount(key));
+		System.out.println("∆‰¿Ã¬° ¡§∫∏="+pageMaker);
+		
+		model.addAttribute("userListSize",userList.size());
+		model.addAttribute("userList",userList);
+		model.addAttribute("pageMaker",pageMaker);
+		
+		return "manager/userList";
+	}
+	
 }

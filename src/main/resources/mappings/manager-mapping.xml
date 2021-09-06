@@ -27,8 +27,6 @@
 	<select id="getManager" parameterType="String" resultType="manager">
 		SELECT * FROM manager
 		 WHERE  manager_id = #{manager_id}
-	
-	
 	</select>
 	
 </mapper>
