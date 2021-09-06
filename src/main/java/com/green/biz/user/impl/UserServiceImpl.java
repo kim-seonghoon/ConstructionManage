@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.green.biz.dao.UserDAO;
 import com.green.biz.dto.UserVO;
 import com.green.biz.user.UserService;
+import com.green.biz.utils.Criteria;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -90,6 +91,18 @@ public class UserServiceImpl implements UserService {
 	public void pwdChange(UserVO vo) {
 		
 		userDao.pwdChange(vo);
+	}
+
+	@Override
+	public List<UserVO> userListWithPaging(String key, Criteria criteria, String user_id) {
+		
+		return userDao.userListWithPaging(key, criteria, user_id);
+	}
+
+	@Override
+	public int getUserCount(String key) {
+		
+		return userDao.getUserCount(key);
 	}
 
 }

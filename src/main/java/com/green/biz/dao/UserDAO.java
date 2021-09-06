@@ -1,5 +1,6 @@
 package com.green.biz.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.green.biz.dto.UserVO;
+import com.green.biz.utils.Criteria;
  
 @Repository
 public class UserDAO { 
@@ -88,6 +90,21 @@ public class UserDAO {
 	public void pwdChange(UserVO vo) {
 		
 		mybatis.update("UserDAO.pwdChange",vo);
+	}
+	
+	public List<UserVO> userListWithPaging(String key, Criteria criteria, String user_id){
+		HashMap<String, Object> map = new HashMap<>();
+		
+		map.put("criteria", criteria);
+		map.put("key", key);
+		map.put("user_id", user_id);
+		
+		return mybatis.selectList("UserDAO.userListWithPaging",map);
+	}
+	
+	public int getUserCount(String key) {
+		
+		return mybatis.selectOne("UserDAO.getUserCount",key);
 	}
 }
 
