@@ -203,6 +203,9 @@ public class ManagerController {
 							  @RequestParam(value="key", defaultValue="")String key) {
 		
 		List<CompanyVO> companyList = companyService.companyListWithPaging(key, criteria, cp_id);
+		for(CompanyVO com : companyList) {
+			System.out.println(com);
+		}
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(criteria);

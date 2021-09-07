@@ -57,7 +57,7 @@
 			</div>
             <form name="comp_write_form" id="comp_write_form">
             	<c:choose>
-       				<c:when test="${sessionScope.user_type == 2}">
+       				<c:when test="${sessionScope.user_type == 1}">
 						<input type="button" onclick="go_write_comp()" value="글쓰기">
        				</c:when>
        				<c:otherwise>

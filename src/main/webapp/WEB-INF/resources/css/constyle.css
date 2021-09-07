@@ -217,7 +217,11 @@ body {
     width: 500px;
     text-align: left;
 }
+.bbs_main h3 {
+	margin-top: 15px;
+	text-align: left;
 
+}
 .bbs_main .table {
     padding: 0;
     margin: 0;
