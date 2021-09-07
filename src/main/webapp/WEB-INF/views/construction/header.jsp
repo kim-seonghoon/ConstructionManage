@@ -29,6 +29,7 @@
 					<li><a href="comp_list_form">민원 보기</a></li>
 					<c:choose>
 						<c:when test="${empty sessionScope.loginUser}">
+							<li class="btn_nav"><a href="manager_login_form">관리자 로그인</a></li>
 							<li class="btn_nav"><a href="login_form">로그인</a></li>
 							<li class="btn_nav"><a href="join_form">회원가입</a></li>
 						</c:when>

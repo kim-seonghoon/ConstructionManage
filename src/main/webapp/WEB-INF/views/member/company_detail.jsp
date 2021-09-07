@@ -12,7 +12,7 @@
 				<input type="text" name="cp_id" id="cp_id" value="${cp_id}"> 
 				<input type="hidden" id="reid" name="reid" value="${reid}">
 				<input type="button" value="중복체크" onclick="idcheckcp()"> 
-			</td>
+			</td> 
 		</tr>
 		
 		<tr>

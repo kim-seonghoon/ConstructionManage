@@ -10,7 +10,7 @@
 	<!-- 공사업체 가져오기(로그인 처리) -->
 	<select id="getCompany" parameterType="String" resultType="company">
 		SELECT * FROM company WHERE cp_id=#{cp_id}
-	</select>
+	</select> 
 	 
 	<!-- 공사업체 수정 -->
 	<update id="updateCompany">

@@ -10,7 +10,7 @@ import com.green.biz.dto.CompanyVO;
 
 @Controller
 public class CompanyController { 
-	@Autowired
+	@Autowired 
 	CompanyService companyService;
 	 
 	@RequestMapping(value="/join_cp")

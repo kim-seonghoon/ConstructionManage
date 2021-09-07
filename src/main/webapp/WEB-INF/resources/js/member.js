@@ -15,7 +15,7 @@ function join_form() {
 
 function join_detail_form(){
 	   $("#member").attr("action","join_detail_form").submit();
-}
+} 
 
 function company_join_form(){
 	   $("#member").attr("action","company_join_form").submit();

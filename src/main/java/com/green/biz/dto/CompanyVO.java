@@ -12,8 +12,14 @@ public class CompanyVO {
 	private String cp_address;
 	private String zip_num;
 	private String cp_email;
-	
+	private String dropyn;
 
+	public String getDropyn() {
+		return dropyn;
+	}
+	public void setDropyn(String dropyn) {
+		this.dropyn = dropyn;
+	}
 	public String getAdmin_phone() {
 		return admin_phone;
 	}
@@ -85,7 +91,8 @@ public class CompanyVO {
 	public String toString() {
 		return "CompanyVO [cp_id=" + cp_id + ", pwd=" + pwd + ", admin_name=" + admin_name + ", admin_phone="
 				+ admin_phone + ", cp_name=" + cp_name + ", cp_num=" + cp_num + ", cp_phone=" + cp_phone + ", fax_num="
-				+ fax_num + ", cp_address=" + cp_address + ", zip_num=" + zip_num + ", cp_email=" + cp_email + "]";
+				+ fax_num + ", cp_address=" + cp_address + ", zip_num=" + zip_num + ", cp_email=" + cp_email
+				+ ", dropyn=" + dropyn + "]";
 	}
 
 }

@@ -67,6 +67,10 @@ function go_con_list() {
 	$("#con_detail_form").attr("action", "con_list_form").submit();
 }
 
+function go_con_list_mg() {
+	$("#con_detail_form").attr("action", "con_list_form_mg").submit();
+}
+
 function delete_con() {
 	$("#con_detail_form").attr("action", "con_delete").submit();
 }

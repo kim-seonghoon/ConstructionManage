@@ -18,6 +18,9 @@ function go_comp_list(){
 	$("#comp_detail_form").attr("action","comp_list_form").submit();
 }
 
+function go_comp_list_mg(){
+	$("#comp_detail_form").attr("action","comp_list_form_mg").submit();
+}
 
 function categoryChange(e) {
 	var good_a = ["강남구", "관악구", "중구", "강동구","종로구"

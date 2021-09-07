@@ -23,7 +23,7 @@ import com.green.biz.user.UserService;
 @Controller
 @SessionAttributes("loginUser") 
 public class MemberController {
-	@Autowired
+	@Autowired 
 	UserService userService;
 	@Autowired
 	CompanyService companyService;

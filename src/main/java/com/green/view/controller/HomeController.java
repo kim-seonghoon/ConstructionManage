@@ -17,7 +17,7 @@ import com.green.biz.dto.ConstructionVO;
  * Handles requests for the application home page.
  */
 @Controller
-public class HomeController {
+public class HomeController { 
 	@Autowired
 	ConstructionService constructionService;
 	@Autowired
