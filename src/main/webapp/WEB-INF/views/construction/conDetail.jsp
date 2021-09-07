@@ -55,7 +55,7 @@
 				      <td>${ConstructionVO.dept_tel}</td>
 			        </tr>
 				    <tr>
-				      <td class="b">기타</td>
+				      <td class="b">내용</td>
 				      <td height="0" colspan="4">${ConstructionVO.content}</td>
 			        </tr>
 			      </table>
@@ -68,7 +68,7 @@
 							<button class="btn-black" onclick="update_con()">수정</button>
 		                </c:when>
 		                <c:otherwise>
-		                	<button class="btn-black" onclick="go_con_list()">목록</button>
+		                	<button class="btn-gray" onclick="go_con_list()">목록</button>
 							<button class="btn-black" onclick="go_write_comp()">민원 접수</button>
 		            	</c:otherwise>
 		            </c:choose>

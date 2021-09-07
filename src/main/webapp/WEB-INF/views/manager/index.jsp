@@ -60,7 +60,7 @@
 				<table class="list-group">
                     <c:forEach items="${newConstructionList}"  var="constructionVO">
 					<tr>
-                        <td><a href="con_detail_mg?con_seq=${constructionVO.con_seq}">- ${constructionVO.con_name}</a></td>
+                        <td><a href="con_detail_mg?con_seq=${constructionVO.con_seq}"> - ${constructionVO.con_name}</a></td>
 						<td><fmt:formatDate value="${constructionVO.start_date}" pattern="yyyy-MM-dd"/></td>
 					</tr>
                     </c:forEach>

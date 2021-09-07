@@ -141,7 +141,6 @@ body {
     height: 420px;
     background: url(../images/visual.jpg) top;
     background-size: cover;
-
     box-sizing: content-box;
     overflow-x: hidden;
 }
@@ -155,20 +154,18 @@ body {
     font-size: 36px;
     color: #fff;
 }
-
-
 .jumbotron_small {
     width: 100%;
     height: 220px;
     background: url(../images/main.jpg) top;
     background-size: cover;
-
     box-sizing: content-box;
     overflow-x: hidden;
 }
     /* max-width: 960px !important; */
     /* height: 100%; */
 }
+
 .jumbotron_small h1 {
     padding-top: 90px;
     text-align: center;

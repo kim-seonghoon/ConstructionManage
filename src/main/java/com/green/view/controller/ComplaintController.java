@@ -14,6 +14,7 @@ import com.green.biz.complaints.ComplaintsService;
 import com.green.biz.dto.CompanyVO;
 import com.green.biz.dto.ComplaintsVO;
 import com.green.biz.dto.ConstructionVO;
+import com.green.biz.dto.ManagerVO;
 import com.green.biz.dto.UserVO;
 import com.green.biz.utils.Criteria;
 import com.green.biz.utils.PageMaker;
@@ -149,7 +150,17 @@ public class ComplaintController {
 		if(session.getAttribute("user_type")!= null) {
 			user_type = (int) session.getAttribute("user_type");
 		}
-		if(user_type == 1) {
+		if(user_type == 3) {
+			ManagerVO loginUser = (ManagerVO) session.getAttribute("loginUser");
+			
+			if(loginUser!=null) {
+				complaintService.deleteComplaints(vo);
+				
+				return "redirect:/comp_list_form_mg";
+			} else {
+				return "index";
+			}
+		} else if(user_type == 1) {
 			UserVO loginUser = (UserVO) session.getAttribute("loginUser");
 			
 			if(loginUser.getUser_id().equals(vo.getUser_id())) {

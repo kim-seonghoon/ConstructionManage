@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="../header.jsp" %>
+<%@ include file="header.jsp" %>
         <div id="container" class="container bbs_main">
+        	<div class="notice-wrap">
             <form id="com_detail_form" action="comp_update" method="POST"> 
             <input type="hidden" name="com_seq" value="${ComplaintsVO.com_seq }">
-                <table>
+                <table width="1200" cellpadding="0" cellspacing="0" class="table">
                     <tr> 
-                        <th><p>문의 분류</p></th>
-                        <td>
+                        <td width="100" class="b"><p>문의 분류</p></th>
+                        <td width="500">
                         	<c:set var="c_num" value="${ComplaintsVO.con_num}"/>
                         <select name="con_num" id="con_num">
                             <option value="1" <c:if test="${c_num == 1}">selected="selected"</c:if>>도로 공사</option>
@@ -16,8 +17,8 @@
                             <option value="4" <c:if test="${c_num == 4}">selected="selected"</c:if>>기타</option>
                         </select>
                         </td>
-                        <th><p>문의 지역</p></th>
-                      	<td><select onchange="categoryChange(this)" id="addr1" name="addr1">
+                        <td width="100" class="b"><p>문의 지역</p></th>
+                      	<td colspan="2"><select onchange="categoryChange(this)" id="addr1" name="addr1">
 						<option value="시도">시.도</option>
 						<option value="서울">서울</option>
 						<option value="경기">경기</option>
@@ -36,19 +37,19 @@
 					</select></td>
                     </tr>
                     <tr>
-                        <th><p>제목</p></th>
-                        <td><input type="text" name="title" id="title" value="${ComplaintsVO.title}"></td>
+                        <td width="100" class="b"><p>제목</p></td>
+                        <td colspan="3"><input type="text" width="100%" name="title" id="title" value="${ComplaintsVO.title}"></td>
                     </tr>
                     <tr>
-                        <td colspan="4"><textarea name="content" id="content" cols="30" rows="10">${ComplaintsVO.content}</textarea></td>
+                    	<td class="b">내용</td>
+                        <td colspan="4"><textarea name="content" id="content" cols="100%" rows="4">${ComplaintsVO.content}</textarea></td>
                 </table>
                 <div id="buttons">
-                    <input type="button" value="취소">
-                    <input type="button" value="삭제하기" onclick="comp_delete()">
-                    <input type="submit" value="수정하기">
+                    <input type="button" class="btn-gray" value="취소">
+                    <input type="button" class="btn-black" value="삭제하기" onclick="comp_delete()">
+                    <input type="submit" class="btn-black" value="수정하기">
                 </div>
             </form>
+            </div>
         </div>
-    </div>
-</body>
-</html>
+<%@ include file="../footer.jsp" %>
