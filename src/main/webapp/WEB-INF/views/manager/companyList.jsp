@@ -42,6 +42,8 @@
 	                    <th>${CompanyVO.cp_name}</th>
 	                    <th>${CompanyVO.cp_id}</th>
 	                    <th>${CompanyVO.cp_address}</th>
+	                    <th>${CompanyVO.admin_name}</th>
+	                    <th>${CompanyVO.admin_phone}</th>
 	                </tr>
                 </c:forEach>
             </table>
