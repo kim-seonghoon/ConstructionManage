@@ -38,7 +38,7 @@
                     </tr>
                     <tr>
                         <td width="100" class="b"><p>제목</p></td>
-                        <td colspan="3"><input type="text" name="title" id="title" value="${ComplaintsVO.title}"></td>
+                        <td colspan="3"><input type="text" width="100%" name="title" id="title" value="${ComplaintsVO.title}"></td>
                     </tr>
                     <tr>
                     	<td class="b">내용</td>
