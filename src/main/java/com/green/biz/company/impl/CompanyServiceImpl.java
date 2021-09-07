@@ -1,5 +1,7 @@
 package com.green.biz.company.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -7,6 +9,7 @@ import com.green.biz.company.CompanyService;
 import com.green.biz.dao.CompanyDAO;
 import com.green.biz.dto.CompanyVO;
 import com.green.biz.dto.UserVO;
+import com.green.biz.utils.Criteria;
  
 @Service("CompanyService")
 public class CompanyServiceImpl implements CompanyService {
@@ -48,6 +51,24 @@ public class CompanyServiceImpl implements CompanyService {
 	public int loginID(UserVO vo) {
 		
 		return companyDao.loginID(vo);
+	}
+
+	@Override
+	public List<CompanyVO> getCompanyList() {
+
+		return companyDao.getCompanyList();
+	}
+
+	@Override
+	public List<CompanyVO> companyListWithPaging(String key, Criteria criteria, String cp_id) {
+
+		return companyDao.companyListWithPaging(key, criteria, cp_id);
+	}
+
+	@Override
+	public int getCompanyCount(String key) {
+
+		return companyDao.getCompanyCount(key);
 	}
 
 }

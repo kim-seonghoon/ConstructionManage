@@ -1,11 +1,15 @@
 package com.green.biz.dao;
 
+import java.util.HashMap;
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.green.biz.dto.CompanyVO;
 import com.green.biz.dto.UserVO;
+import com.green.biz.utils.Criteria;
  
 @Repository
 public class CompanyDAO {
@@ -59,5 +63,25 @@ public class CompanyDAO {
 			result = 0;
 		}
 		return result;
+	}
+	
+	public List<CompanyVO> getCompanyList(){
+		
+		return mybatis.selectList("CompanyDAO.getCompanyList");
+	}
+	
+	public List<CompanyVO> companyListWithPaging(String key, Criteria criteria, String cp_id){
+		HashMap<String,Object> map = new HashMap<>();
+		
+		map.put("criteria", criteria);
+		map.put("key", key);
+		map.put("cp_id", cp_id);
+		
+		return mybatis.selectList("CompanyDAO.companyListWithPaging",map);
+	}
+	
+	public int getCompanyCount(String key) {
+		
+		return mybatis.selectOne("CompanyDAO.getCompanyCount",key);
 	}
 }
