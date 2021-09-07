@@ -134,8 +134,8 @@ body {
 }
 
 .body .inner-container {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 10px;
+    margin-right: 10px;
     text-align: center;
     display: inline-block;
     /* position: relative; */
@@ -166,19 +166,22 @@ body {
 }
 
 .bbs_main .list-group {
+	width: 440px;
     list-style: none;
+    border-collapse: separate !important;
+    border-spacing: 0;
     border: 1px solid #666;
     border-radius: 15px;
-    padding: 20px;
-    width: 480px;
+    margin: 5px;
+    padding: 10px;
     text-align: left;
 }
-
 .bbs_main .list-group tr {
     height: 30px;
 }
 
 .bbs_main .list-group tr td a  {
+	margin-left: 5px;
     white-space: nowrap;
     text-decoration: none;
     color: #000;

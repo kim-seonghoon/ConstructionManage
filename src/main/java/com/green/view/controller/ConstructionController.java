@@ -94,8 +94,9 @@ public class ConstructionController {
 	@RequestMapping(value="search_by_address")
 	public String searchConByUserAddress(HttpSession session, Model model) {
 		UserVO loginUser = (UserVO) session.getAttribute("loginUser");
+		int user_type = (int) session.getAttribute("user_type");
 		
-		if(loginUser==null) {
+		if(loginUser==null || user_type!=1) {
 			return "member/login";
 		} else {
 			String sido = loginUser.getSido();

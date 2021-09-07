@@ -29,7 +29,7 @@
 					<li><a href="con_list_form_mg">공사 현황</a></li>
 					<li><a href="comp_list_form_mg">민원 관리</a></li>
 					<li><a href="user_list_form_mg">유저 관리</a></li>
-					<li class="btn"><a href="logout">로그아웃</a></li>
+					<li class="btn_nav"><a href="logout">로그아웃</a></li>
 				</ul>
 			</nav>
 		</header>

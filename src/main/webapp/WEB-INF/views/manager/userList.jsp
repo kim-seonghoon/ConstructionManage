@@ -1,19 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="header.jsp" %>
-
-<head>
-	<link rel="stylesheet" href="css/mainstyle.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-	<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
-	<script type="text/javascript" src="js/member.js"></script>
-	<script type="text/javascript" src="js/complaint.js"></script>
-	<script type="text/javascript" src="js/construction.js"></script>
-	<script type="text/javascript" src="js/mypage.js"></script>  
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-	<title>공사관리 Main</title>
-</head>
-<div class="jumbotron">
+<%@ include file="../header.jsp" %>
+		<div class="jumbotron">
 			<div class="container">
 				<h1>유저 관리</h1>
 			</div>

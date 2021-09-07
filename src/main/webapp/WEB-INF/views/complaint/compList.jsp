@@ -56,7 +56,14 @@
 				</ul>
 			</div>
             <form name="comp_write_form" id="comp_write_form">
-            	<input type="button" onclick="go_write_comp()" value="글쓰기">
+            	<c:choose>
+       				<c:when test="${sessionScope.user_type == 2}">
+						<input type="button" onclick="go_write_comp()" value="글쓰기">
+       				</c:when>
+       				<c:otherwise>
+
+       				</c:otherwise>       
+       			</c:choose>
             </form>
         </div>
     </div>

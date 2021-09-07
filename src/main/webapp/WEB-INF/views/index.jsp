@@ -16,13 +16,12 @@
                     <option value="3">제목</option>
 				</select>
 				<input type="text" name="key" class="form-control textarea" id="search02" placeholder="원하시는 지역을 입력하세요">
-				<span ><button class="form-control btn" type="button">검색</button></span>
+				<span><button class="form-control btn" type="button">검색</button></span>
 			</div>
-		<!-- /Search-->
+			<!-- /Search-->
 
 			<div class="inner-container">
 				<h2>｜ 공사현황</h2>
-
 				<table class="list-group">
                     <c:forEach items="${newConstructionList}"  var="constructionVO">
 					<tr>
@@ -30,8 +29,7 @@
 						<td><fmt:formatDate value="${constructionVO.start_date}" pattern="yyyy-MM-dd"/></td>
 					</tr>
                     </c:forEach>
-				</table>
-			
+				</table>			
 			<!-- /list-group -->
 			</div>
 
@@ -40,16 +38,14 @@
 				<table class="list-group">
                     <c:forEach items="${newComplaintList}"  var="complaintVO">
 					<tr>
-						<td><a href="comp_detail?com_seq=${complaintVO.com_seq}">- ${complaintVO.title}</a></td>
+						<td><a href="com_detail?com_seq=${complaintVO.com_seq}">- ${complaintVO.title}</a></td>
 						<td><fmt:formatDate value="${complaintVO.regdate}" pattern="yyyy-MM-dd"/></td>
 					</tr>
 					</c:forEach>
 				</table>
-	
 				<!-- /list-group -->
 			</div>
-		</div>
-		<!-- /inner-container -->
+			<!-- /inner-container -->
 		</div>
 		<!-- /container -->
 <%@ include file="footer.jsp" %>

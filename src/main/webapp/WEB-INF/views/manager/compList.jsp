@@ -47,7 +47,7 @@
 						<a href="comp_list_form${pageMaker.makeQuery(index)}">[${index}]</a>
 					</c:forEach>
 					
-					<c:if test="${pageMaker.next}">
+					<c:if test="${pageMaker.next}"> 
 						<li class="paginate_button next">
 							<a href="comp_list_form${pageMaker.makeQuery(pageMaker.endPage+1)}">[다음]</a>
 						</li>
