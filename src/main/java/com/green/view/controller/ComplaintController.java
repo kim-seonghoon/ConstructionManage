@@ -23,7 +23,7 @@ import com.green.biz.utils.PageMaker;
 public class ComplaintController {
 
 	@Autowired
-	ComplaintsService complaintService;
+	ComplaintsService complaintService; 
 	
 	@RequestMapping(value="comp_list_form")
 	public String compListForm(HttpSession session, Model model, Criteria criteria,

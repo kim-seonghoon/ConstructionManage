@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.green.biz.dto.ComplaintsVO;
 import com.green.biz.utils.Criteria;
  
-@Repository
+@Repository 
 public class ComplaintsDAO {
 	
 	@Autowired

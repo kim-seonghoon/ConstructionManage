@@ -9,7 +9,7 @@ import com.green.biz.complaints.ComplaintsService;
 import com.green.biz.dao.ComplaintsDAO;
 import com.green.biz.dto.ComplaintsVO;
 import com.green.biz.utils.Criteria;
- 
+  
 @Service("ComplaintsService")
 public class ComplaintsServiceImpl implements ComplaintsService {
 	
