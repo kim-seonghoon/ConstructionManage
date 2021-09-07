@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.green.biz.company.CompanyService;
 import com.green.biz.complaints.ComplaintsService;
 import com.green.biz.construction.ConstructionService;
+import com.green.biz.dto.CompanyVO;
 import com.green.biz.dto.ComplaintsVO;
 import com.green.biz.dto.ConstructionVO;
 import com.green.biz.dto.ManagerVO;
@@ -38,6 +40,9 @@ public class ManagerController {
 	
 	@Autowired
 	UserService userService;
+	
+	@Autowired
+	CompanyService companyService;
 	
 	@RequestMapping(value="/manager_login_form",method=RequestMethod.GET)
 	public String manager_login_form() {
@@ -190,6 +195,25 @@ public class ManagerController {
 		model.addAttribute("pageMaker",pageMaker);
 		
 		return "manager/userList";
+	}
+	
+	@RequestMapping(value="company_list_form_mg")
+	public String companyList(HttpSession session, Model model, Criteria criteria,
+							  @RequestParam(value="cp_id",defaultValue="")String cp_id,
+							  @RequestParam(value="key", defaultValue="")String key) {
+		
+		List<CompanyVO> companyList = companyService.companyListWithPaging(key, criteria, cp_id);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(criteria);
+		pageMaker.setTotalCount(companyService.getCompanyCount(key));
+		System.out.println("∆‰¿Ã¬° ¡§∫∏="+pageMaker);
+		
+		model.addAttribute("CompanyListSize",companyList.size());
+		model.addAttribute("companyList", companyList);
+		model.addAttribute("pageMaker",pageMaker);
+		
+		return "manager/companyList";
 	}
 	
 }
