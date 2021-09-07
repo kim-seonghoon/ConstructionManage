@@ -30,4 +30,13 @@
 		SELECT pwd FROM company WHERE cp_id = #{cp_id}
 	</select>
 	
+	<select id="companyListWithPaging" parameterType="HashMap" resultType="company">
+	<![CDATA[
+		SELECT cp_id,address
+	
+	
+	]]>
+	
+	</select>
+	
 </mapper>
