@@ -105,4 +105,10 @@ public class UserServiceImpl implements UserService {
 		return userDao.getUserCount(key);
 	}
 
+	@Override
+	public void deleteUserUpdate(UserVO vo) {
+		
+		userDao.deleteUserUpdate(vo);
+	}
+
 }

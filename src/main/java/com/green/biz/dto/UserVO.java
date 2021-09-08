@@ -13,7 +13,7 @@ public class UserVO {
 	private String birth_date;
 	private String phone;
 	private String dropyn;
-	
+
 	public String getDropyn() {
 		return dropyn;
 	}

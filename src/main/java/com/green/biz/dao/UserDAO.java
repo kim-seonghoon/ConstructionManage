@@ -27,6 +27,10 @@ public class UserDAO {
 		mybatis.delete("UserDAO.deleteUser", vo);
 	}
 	
+	public void deleteUserUpdate(UserVO vo) {
+		mybatis.update("UserDAO.deleteUserUpdate",vo);
+	}
+	
 	public UserVO getUser(UserVO vo) {
 		return mybatis.selectOne("UserDAO.getUser", vo);
 	}

@@ -87,3 +87,10 @@ function deleteCp() {
 		$("#myForm").attr("action", "delete_cp").submit();
 	}
 }
+
+function userDelete() {
+	var url = "userDelete";
+	
+	window.open(url, "_blank_1", 
+	"toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=600, height=450");
+}
