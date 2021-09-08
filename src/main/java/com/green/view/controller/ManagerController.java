@@ -180,10 +180,21 @@ public class ManagerController {
 	
 	@RequestMapping(value="user_list_form_mg")
 	public String userList(HttpSession session, Model model, Criteria criteria,
-						   @RequestParam(value="user_id",defaultValue="") String user_id,
+						   @RequestParam(value="search-user",defaultValue="") String search_user,
 						   @RequestParam(value="key", defaultValue="") String key) {
+		String keyId = "";
+		String keyName = "";
 		
-		List<UserVO> userList = userService.userListWithPaging(key, criteria, user_id);
+		if(search_user.equals("1")) {
+			keyId = key;
+			keyName = "";
+			
+		} else if(search_user.equals("2")) {
+			keyId = "";
+			keyName = key;
+		}
+		System.out.println("search="+search_user+" keyId,keyName="+keyId+keyName);
+		List<UserVO> userList = userService.userListWithPaging(keyName, keyId, criteria);
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(criteria);
@@ -199,10 +210,20 @@ public class ManagerController {
 	
 	@RequestMapping(value="company_list_form_mg")
 	public String companyList(HttpSession session, Model model, Criteria criteria,
-							  @RequestParam(value="cp_id",defaultValue="")String cp_id,
+							  @RequestParam(value="search-company",defaultValue="")String search_company,
 							  @RequestParam(value="key", defaultValue="")String key) {
 		
-		List<CompanyVO> companyList = companyService.companyListWithPaging(key, criteria, cp_id);
+		String keyName = "";
+		String keyId = "";
+		
+		if(search_company.equals("1")) {
+			keyName = "";
+			keyId = key;
+		} else if(search_company.equals("2")) {
+			keyName = key;
+			keyId = "";
+		}
+		List<CompanyVO> companyList = companyService.companyListWithPaging(keyName, keyId, criteria);
 		for(CompanyVO com : companyList) {
 			System.out.println(com);
 		}

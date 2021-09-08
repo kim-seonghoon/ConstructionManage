@@ -44,12 +44,14 @@
 		
 		<div class="container bbs_main">
 			<div class="search"> 
+			<form id="userform" action="user_list_form_mg" method="POST">
 				<select class="form-control input" name="search-user" id="search01">
-					<option value="1">공사업체</option>
-                    <option value="2">민원인</option>
+					<option value="1">아이디</option>
+                    <option value="2">이름</option>
 				</select>
 				<input type="text" name="key" class="form-control textarea" id="search02" placeholder="이름을 입력하세요">
-				<span ><button class="form-control btn" type="button">검색</button></span>
+				<span ><input class="form-control btn" type="submit" value="검색"></span>
+			</form>
 			</div>
 			 <div>
             <table>

@@ -36,7 +36,7 @@
 		  FROM
 		  (SELECT row_number() over(ORDER BY cp_name desc) rn,cp_name, cp_id, cp_address, dropyn, cp_phone, admin_name, admin_phone
 		     FROM company
-		    WHERE cp_name LIKE '%'||#{key}||'%')
+		    WHERE cp_name LIKE '%'||#{keyName}||'%' AND cp_id LIKE '%'||#{keyId}||'%')
 		WHERE rn > (#{criteria.pageNum}-1) * #{criteria.rowsPerPage}
 		   AND rn <= #{criteria.pageNum} * #{criteria.rowsPerPage}
 	]]>

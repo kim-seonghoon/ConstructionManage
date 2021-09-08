@@ -94,9 +94,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public List<UserVO> userListWithPaging(String key, Criteria criteria, String user_id) {
+	public List<UserVO> userListWithPaging(String keyName, String keyId, Criteria criteria) {
 		
-		return userDao.userListWithPaging(key, criteria, user_id);
+		return userDao.userListWithPaging(keyName, keyId, criteria);
 	}
 
 	@Override

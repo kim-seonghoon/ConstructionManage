@@ -44,12 +44,14 @@
 		
 		<div class="container bbs_main">
 			<div class="search"> 
+			<form id="companyform" action="company_list_form_mg">
 				<select class="form-control input" name="search-company" id="search01">
 					<option value="1">아이디</option>
                     <option value="2">회사명</option>
 				</select>
 				<input type="text" name="key" class="form-control textarea" id="search02" placeholder="입력하세요">
-				<span ><button class="form-control btn" type="button">검색</button></span>
+				<span ><input class="form-control btn" type="submit" value="검색"></span>
+			</form>
 			</div>
 			 <div>
             <table>

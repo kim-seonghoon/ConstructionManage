@@ -60,9 +60,9 @@ public class CompanyServiceImpl implements CompanyService {
 	}
 
 	@Override
-	public List<CompanyVO> companyListWithPaging(String key, Criteria criteria, String cp_id) {
+	public List<CompanyVO> companyListWithPaging(String keyName, String keyId, Criteria criteria) {
 
-		return companyDao.companyListWithPaging(key, criteria, cp_id);
+		return companyDao.companyListWithPaging(keyName, keyId, criteria);
 	}
 
 	@Override

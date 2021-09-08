@@ -7,17 +7,19 @@
 			</div>
 		</div>
 		<!-- /jumbotron -->
-
+		
 		<div class="container bbs_main">
+			<form id="search_form" action="search">
 			<div class="search"> 
 				<select class="form-control input" name="search-condition" id="search01">
 					<option value="1">통합검색</option>
                     <option value="2">지역</option>
                     <option value="3">제목</option>
 				</select>
-				<input type="text" name="key" class="form-control textarea" id="search02" placeholder="원하시는 지역을 입력하세요">
-				<span><button class="form-control btn" type="button">검색</button></span>
+				<input type="text" name="key" class="form-control textarea" id="search02" placeholder="원하시는 지역 또는 공사 종류를 입력하세요">
+				<span><input type="submit" class="form-control btn" value="검색"></span>
 			</div>
+			</form>
 			<!-- /Search-->
 
 			<div class="inner-container">

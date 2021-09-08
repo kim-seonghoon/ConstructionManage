@@ -79,7 +79,7 @@
 	FROM
 	(SELECT row_number() over(ORDER BY name desc) rn, user_id, address, dropyn, name, phone
 	 FROM users
-	 WHERE user_id LIKE '%'||#{key}||'%')
+	 WHERE user_id LIKE '%'||#{keyId}||'%' AND name LIKE '%'||#{keyName}||'%')
 	WHERE rn > (#{criteria.pageNum}-1) * #{criteria.rowsPerPage}
 		   AND rn <= #{criteria.pageNum} * #{criteria.rowsPerPage}
 	]]>

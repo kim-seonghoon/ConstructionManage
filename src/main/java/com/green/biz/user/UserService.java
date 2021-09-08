@@ -34,7 +34,7 @@ public interface UserService {
 	
 	public void pwdChange(UserVO vo);
 	
-	public List<UserVO> userListWithPaging(String key, Criteria criteria, String user_id);
+	public List<UserVO> userListWithPaging(String keyName, String keyId, Criteria criteria);
 	
 	public int getUserCount(String key);
 }

@@ -70,12 +70,12 @@ public class CompanyDAO {
 		return mybatis.selectList("CompanyDAO.getCompanyList");
 	}
 	
-	public List<CompanyVO> companyListWithPaging(String key, Criteria criteria, String cp_id){
+	public List<CompanyVO> companyListWithPaging(String keyName, String keyId, Criteria criteria){
 		HashMap<String,Object> map = new HashMap<>();
 		
 		map.put("criteria", criteria);
-		map.put("key", key);
-		map.put("cp_id", cp_id);
+		map.put("keyName", keyName);
+		map.put("keyId", keyId);
 		
 		return mybatis.selectList("CompanyDAO.companyListWithPaging",map);
 	}

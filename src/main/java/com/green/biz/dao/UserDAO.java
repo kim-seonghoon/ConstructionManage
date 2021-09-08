@@ -92,13 +92,13 @@ public class UserDAO {
 		mybatis.update("UserDAO.pwdChange",vo);
 	}
 	
-	public List<UserVO> userListWithPaging(String key, Criteria criteria, String user_id){
+	public List<UserVO> userListWithPaging(String keyName, String keyId, Criteria criteria){
 		HashMap<String, Object> map = new HashMap<>();
 		
 		map.put("criteria", criteria);
-		map.put("key", key);
-		map.put("user_id", user_id);
-		
+		map.put("keyName", keyName);
+		map.put("keyId", keyId);
+
 		return mybatis.selectList("UserDAO.userListWithPaging",map);
 	}
 	

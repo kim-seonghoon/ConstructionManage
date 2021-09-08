@@ -21,7 +21,7 @@ public interface CompanyService {
 	
 	public List<CompanyVO> getCompanyList();
 	
-	public List<CompanyVO> companyListWithPaging(String key, Criteria criteria, String cp_id);
+	public List<CompanyVO> companyListWithPaging(String keyName, String keyId, Criteria criteria);
 	
 	public int getCompanyCount(String key);
 	
