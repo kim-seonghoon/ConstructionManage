@@ -119,12 +119,10 @@ public class MypageController {
 	}
 	
 	@RequestMapping(value="delete_user")
-	public String deleteUser(UserVO vo, SessionStatus status) {
+	public String deleteUser(UserVO vo) {
 		userService.deleteUserUpdate(vo);
 		
-		status.setComplete();
-		
-		return "mypage/deleteask";
+		return "redirect:/logout";
 	}
 	
 	// 공사 업체 정보 수정

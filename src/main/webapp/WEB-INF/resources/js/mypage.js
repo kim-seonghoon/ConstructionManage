@@ -72,9 +72,16 @@ function deleteUser() {
 		alert("비밀번호가 틀렸습니다!");
 		$("#pwd").focus();
 	} else {
-		$("#myForm").attr("action", "delete_user").submit();
-	}	
-}
+		  if (confirm("정말 탈퇴요청 하시겠습니까?")) {
+		      alert("탈퇴요청 되었습니다.");
+		      $("#myForm").attr("action", "delete_user").submit();
+		  } else {
+			  history.go(-1);
+		  }
+	}
+		
+}	
+
 
 function deleteCp() {
 	if ($("#pwd").val() != $("#pwd_chk").val()) {
