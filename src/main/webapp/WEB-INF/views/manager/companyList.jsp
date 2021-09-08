@@ -38,7 +38,7 @@
 		<!-- /navbar -->
 		<div class="jumbotron">
 			<div class="container">
-				<h1>유저 관리</h1>
+				<h1>공사업체 관리</h1>
 			</div>
 		</div>
 		

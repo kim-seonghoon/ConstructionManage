@@ -120,11 +120,11 @@ public class MypageController {
 	
 	@RequestMapping(value="delete_user")
 	public String deleteUser(UserVO vo, SessionStatus status) {
-		userService.deleteUser(vo);
+		userService.deleteUserUpdate(vo);
 		
 		status.setComplete();
 		
-		return "index";
+		return "mypage/deleteask";
 	}
 	
 	// 공사 업체 정보 수정
@@ -171,17 +171,6 @@ public class MypageController {
 		model.addAttribute("pwd", pwd);
 		
 		return "mypage/userDelete";
-	}
-	
-	@RequestMapping(value="deleteUser")
-	public String deleteUserUpdate(UserVO vo, HttpSession session){
-		
-		UserVO loginUser = (UserVO) session.getAttribute("loginUser");
-		vo.setUser_id(loginUser.getUser_id());
-		
-		userService.deleteUserUpdate(vo);
-		
-		return "mypage/deleteask";
 	}
 	
 }

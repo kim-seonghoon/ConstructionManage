@@ -5,9 +5,9 @@ function mypage_form() {
 	$("#theform").attr("action", "mypage_form").submit();
 }
 
-// 일반회원 정보 수정
+//일반회원 정보 수정
 function updateUser() {
-	var $pwdCheck = $('#pwd_chk');
+	var $pwdCheck = $("#pwd_chk");
 	
 	if ($("#addr1").val()=="" || $("#addr2").val()=="") {
 		alert("주소를 입력해 주세요!");
@@ -21,7 +21,7 @@ function updateUser() {
 	} else if ($("#pwd").val() != $pwdCheck.val()) {
 		alert("비밀번호가 일치하지 않습니다!");
 		$("#pwd").focus();
-	} else if("#pwd".val() != $("#pwdUser").val()) {
+	} else if($("#pwd").val() != $("#pwdUser").val()) {
 		alert("비밀번호가 틀렸습니다!");
 		$("#pwd").focus();
 	} else {
@@ -68,7 +68,7 @@ function deleteUser() {
 	if ($("#pwd").val() != $("#pwd_chk").val()) {
 		alert("비밀번호가 일치하지 않습니다!");
 		$("#pwd").focus();
-	} else if("#pwd".val() != $("#pwdUser").val()) {
+	} else if($("#pwd").val() != $("#pwdUser").val()) {
 		alert("비밀번호가 틀렸습니다!");
 		$("#pwd").focus();
 	} else {
@@ -80,17 +80,10 @@ function deleteCp() {
 	if ($("#pwd").val() != $("#pwd_chk").val()) {
 		alert("비밀번호가 일치하지 않습니다!");
 		$("#pwd").focus();
-	} else if("#pwd".val() != $("#pwdUser").val()) {
+	} else if($("#pwd").val() != $("#pwdUser").val()) {
 		alert("비밀번호가 틀렸습니다!");
 		$("#pwd").focus();
 	} else {
 		$("#myForm").attr("action", "delete_cp").submit();
 	}
-}
-
-function userDelete() {
-	var url = "userDelete";
-	
-	window.open(url, "_blank_1", 
-	"toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=600, height=450");
 }
