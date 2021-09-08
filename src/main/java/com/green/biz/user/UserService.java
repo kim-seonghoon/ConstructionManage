@@ -37,4 +37,6 @@ public interface UserService {
 	public List<UserVO> userListWithPaging(String keyName, String keyId, Criteria criteria);
 	
 	public int getUserCount(String key);
+	
+	public void deleteUserUpdate(UserVO vo);
 }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
@@ -162,4 +163,25 @@ public class MypageController {
 		
 		return "index";
 	}
+	
+	@RequestMapping(value="/userDelete", method=RequestMethod.GET)
+	public String idCheckForm(@RequestParam(value="pwd", defaultValue="", required=true) String pwd,
+			 				  Model model) {
+
+		model.addAttribute("pwd", pwd);
+		
+		return "mypage/userDelete";
+	}
+	
+	@RequestMapping(value="deleteUser")
+	public String deleteUserUpdate(UserVO vo, HttpSession session){
+		
+		UserVO loginUser = (UserVO) session.getAttribute("loginUser");
+		vo.setUser_id(loginUser.getUser_id());
+		
+		userService.deleteUserUpdate(vo);
+		
+		return "mypage/deleteask";
+	}
+	
 }

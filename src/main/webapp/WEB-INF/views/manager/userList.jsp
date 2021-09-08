@@ -60,6 +60,7 @@
                     <th><p>이름</p></th>
                     <th><p>아이디</p></th>
                     <th><p>주소</p></th>
+                    <th><p>탈퇴 여부</p></th>
                 </tr>
                 <c:forEach items="${userList}" var="UserVO">
 	                <tr>
@@ -67,6 +68,7 @@
 	                    <th>${UserVO.name}</th>
 	                    <th>${UserVO.user_id}</th>
 	                    <th>${UserVO.address}</th>
+	                    <th>${UserVO.dropyn}</th>
 	                </tr>
                 </c:forEach>
             </table>
