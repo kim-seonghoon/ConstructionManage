@@ -3,9 +3,8 @@
 <%@ include file="header.jsp" %>
 	<div class="container bbs_main">
 	   <h3>| 공사업체 정보수정</h3>
-	   <div class="notice-wrap">
 	   <form method="post" name="formm" id="myForm">
-	   <div>
+	   <div class="notice-wrap">
 	        <table width="1200" cellpadding="0" cellspacing="0" class="table">
 	        <tr>
 	            <td width="150" class="b">아이디*</td>
@@ -67,6 +66,5 @@
 	            <input type="submit" class="btn-black" value="정보 수정" onclick="updateCp()">
 	    </div>
 	    </form>
-	    </div>
 	</div>
     <%@ include file="../footer.jsp" %>

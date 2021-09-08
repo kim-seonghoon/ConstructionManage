@@ -8,7 +8,7 @@
 		<input type="hidden" name="user_id" value="${loginUser.user_id}">
 	    	<table width="1200" cellpadding="0" cellspacing="0" class="table">
 	            <tr>
-	                <td width="100" class="b">아이디*</td>
+	                <td width="120" class="b">아이디*</td>
 	                <td colspan="3">${loginUser.user_id} </td>
 	            </tr>
 	            
@@ -18,32 +18,32 @@
 	                	<input type="password" name="pwd" id="pwd">
 	                	<input type="hidden" name="pwdUser" id="pwdUser" value="${loginUser.pwd}">
 	                </td>
-	                <td class="b">비밀번호 확인*</td>
+	                <td class="b" width="120">비밀번호 확인*</td>
 	                <td><input type="password" name="pwd_chk" id="pwd_chk"></td>
 	            </tr>
 	            
 	            <tr>
-	                <td width="100" class="b">이름</td>
+	                <td width="120" class="b">이름</td>
 	                <td colspan="3">${loginUser.name}</td>
 	            </tr>
 	            
 	            <tr>
-	                <td width="100" class="b">생년월일*</td>
+	                <td width="120" class="b">생년월일*</td>
 	                <td colspan="3">${loginUser.birth_date}</td>
 	            </tr>
 	            
 	            <tr>
-	                <td width="100" class="b">이메일</td>
+	                <td width="120" class="b">이메일</td>
 	                <td colspan="3"><input type="text" name="email" id="email" value="${loginUser.email}"></td>
 	            </tr>
 	            
 	            <tr>
-	                <td width="100" class="b">연락처</td>
+	                <td width="120" class="b">연락처</td>
 	                <td colspan="3"><input type="text" name="num1" id="num1" value="${num0}" size="5"> - <input type="text" name="num2" id="num2" value="${num1}" size="5"> - <input type="text" name="num3" id="num3" value="${num2}" size="5"> </td> 
 	            </tr>
 	            
 	            <tr>
-					<td width="100" rowspan="2" class="b">주소</td>
+					<td width="120" rowspan="2" class="b">주소</td>
 					<td colspan="3"><input type="text" name="zip_num" id="zip_num" value="${loginUser.zip_num}"><input type="button" value="주소검색" onclick="post_zip()">
 				</tr>
 				<tr>
