@@ -99,3 +99,45 @@ function deleteCp() {
 		  }
 	}
 }
+
+function go_delete_cp() {
+    var count = 0;
+    if (document.frm.result.length == undefined) {
+      if (document.frm.result.checked == true) {
+        count++;
+      }
+    } else {
+      for ( var i = 0; i < document.frm.result.length; i++) {
+        if (document.frm.result[i].checked == true) {
+          count++;
+        }
+      }
+    }
+    if (count == 0) {
+      alert("삭제할 업체 회원을 선택해 주세요.");
+    } else {
+      document.frm.action = "delete_cp_mg";
+      document.frm.submit();
+    }
+}
+
+function go_delete_user() {
+    var count = 0;
+    if (document.frm.result.length == undefined) {
+      if (document.frm.result.checked == true) {
+        count++;
+      }
+    } else {
+      for ( var i = 0; i < document.frm.result.length; i++) {
+        if (document.frm.result[i].checked == true) {
+          count++;
+        }
+      }
+    }
+    if (count == 0) {
+      alert("삭제할 회원을 선택해 주세요.");
+    } else {
+      document.frm.action = "delete_user_mg";
+      document.frm.submit();
+    }
+}

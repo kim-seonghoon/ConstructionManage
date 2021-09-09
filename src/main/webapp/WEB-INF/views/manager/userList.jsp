@@ -44,7 +44,7 @@
 		
 		<div class="container bbs_main">
 			<div class="search"> 
-			<form id="userform" action="user_list_form_mg" method="POST">
+			<form id="userform" action="user_list_form_mg" name="frm" method="POST">
 				<select class="form-control input" name="search-user" id="search01">
 					<option value="1">아이디</option>
                     <option value="2">이름</option>
@@ -61,15 +61,22 @@
                     <th><p>아이디</p></th>
                     <th><p>주소</p></th>
                     <th><p>탈퇴 여부</p></th>
-                </tr>
+                </tr>               
                 <c:forEach items="${userList}" var="UserVO">
-	                <tr>
-	                	<th><input type="checkbox" value="dropyn"></th>
-	                    <th>${UserVO.name}</th>
-	                    <th>${UserVO.user_id}</th>
-	                    <th>${UserVO.address}</th>
-	                    <th>${UserVO.dropyn}</th>
-	                </tr>
+                <tr>
+	                <c:choose>
+	                	<c:when test="${UserVO.dropyn=='y'}">
+	                		<th><input type="checkbox" name="result" value="${UserVO.user_id}"></th>
+	                	</c:when>
+	               		<c:otherwise>
+	               			<th><input type="checkbox" disabled="disabled"></th>
+	               		</c:otherwise>
+	               	</c:choose>
+	                <th>${UserVO.name}</th>
+	                <th>${UserVO.user_id}</th>
+	                <th>${UserVO.address}</th>
+	                <th>${UserVO.dropyn}</th>
+	            </tr>
                 </c:forEach>
             </table>
             <div>
@@ -95,7 +102,7 @@
 				</ul>
 			</div>
             <form name="user_List_form" id="user_lsit_form">
-            	<input type="button" value="삭제">
+            	<input type="button" value="삭제" onclick="go_delete_user()">
             </form>
         </div>
     </div>

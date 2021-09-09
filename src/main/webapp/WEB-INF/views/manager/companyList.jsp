@@ -44,7 +44,7 @@
 		
 		<div class="container bbs_main">
 			<div class="search"> 
-			<form id="companyform" action="company_list_form_mg">
+			<form id="companyform" name="frm" action="company_list_form_mg" method="POST">
 				<select class="form-control input" name="search-company" id="search01">
 					<option value="1">아이디</option>
                     <option value="2">회사명</option>
@@ -60,17 +60,24 @@
                     <th><p>회사명</p></th>
                     <th><p>아이디</p></th>
                     <th><p>주소</p></th>
-                </tr>
-                <c:forEach items="${companyList}" var="CompanyVO">
-	                <tr>
-	                	<th><input type="checkbox" value="dropyn"></th>
-	                    <th>${CompanyVO.cp_name}</th>
-	                    <th>${CompanyVO.cp_id}</th>
-	                    <th>${CompanyVO.cp_address}</th>
-	                    <th>${CompanyVO.admin_name}</th>
-	                    <th>${CompanyVO.admin_phone}</th>
-	                </tr>
-                </c:forEach>
+                </tr>             
+	            <c:forEach items="${companyList}" var="CompanyVO">
+	            <tr>
+	               	<c:choose>
+		                <c:when test="${CompanyVO.dropyn=='y'}">
+			                <th><input type="checkbox" name="result" value="${CompanyVO.cp_id}"></th>							
+		                </c:when>
+			            <c:otherwise>
+			                <th><input type="checkbox" disabled="disabled"></th>
+			            </c:otherwise>
+		            </c:choose>	                
+	                	<th>${CompanyVO.cp_name}</th>
+		            	<th>${CompanyVO.cp_id}</th>
+		            	<th>${CompanyVO.cp_address}</th>
+		            	<th>${CompanyVO.admin_name}</th>
+		           		<th>${CompanyVO.admin_phone}</th>
+		        </tr>
+		        </c:forEach>    
             </table>
             <div>
 				<ul class="pagination">
@@ -95,7 +102,7 @@
 				</ul>
 			</div>
             <form name="user_List_form" id="user_lsit_form">
-            	<input type="button" value="삭제">
+            	<input type="button" value="삭제" onclick="go_delete_cp">
             </form>
         </div>
     </div>

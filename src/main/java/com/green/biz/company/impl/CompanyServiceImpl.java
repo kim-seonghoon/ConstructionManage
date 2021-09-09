@@ -24,9 +24,9 @@ public class CompanyServiceImpl implements CompanyService {
 	}
 
 	@Override
-	public int deleteCompany(String cp_num) {
+	public int deleteCompany(String cp_id) {
 		
-		return companyDao.deleteCompany(cp_num);
+		return companyDao.deleteCompany(cp_id);
 	}
 
 	@Override

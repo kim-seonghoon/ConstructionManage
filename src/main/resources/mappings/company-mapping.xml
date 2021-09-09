@@ -22,7 +22,7 @@
 	</update>
 	<!-- 업체 탈퇴 -->
 	<delete id="deleteCompany" parameterType="String">
-		DELETE company WHERE cp_num = #{cp_num}
+		DELETE company WHERE cp_id = #{cp_id}
 	</delete>
 	
 	<!-- cp_id 중복확인 -->

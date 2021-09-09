@@ -240,4 +240,27 @@ public class ManagerController {
 		return "manager/companyList";
 	}
 	
+	@RequestMapping(value="delete_cp_mg")
+	public String deleteCpMg(@RequestParam(value="result") String[] idList) {
+		CompanyVO vo = new CompanyVO();
+		
+		for(String cp_id : idList) {
+			vo.setCp_id(cp_id);
+			companyService.deleteCompany(cp_id);
+		}
+		
+		return "redirect:/company_list_form_mg";
+	}
+	
+	@RequestMapping(value="delete_user_mg")
+	public String deleteUserMg(@RequestParam(value="result") String[] idList) {
+		UserVO vo = new UserVO();
+		
+		for(String user_id : idList) {
+			vo.setUser_id(user_id);
+			userService.deleteUser(vo);
+		}
+		
+		return "redirect:/user_list_form_mg";
+	}
 }
