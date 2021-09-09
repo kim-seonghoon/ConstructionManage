@@ -25,4 +25,5 @@ public interface CompanyService {
 	
 	public int getCompanyCount(String key);
 	
+	public void deleteCpUpdate(CompanyVO vo);
 }

@@ -71,4 +71,10 @@ public class CompanyServiceImpl implements CompanyService {
 		return companyDao.getCompanyCount(key);
 	}
 
+	@Override
+	public void deleteCpUpdate(CompanyVO vo) {
+		
+		companyDao.deleteCpUpdate(vo);
+	}
+
 }

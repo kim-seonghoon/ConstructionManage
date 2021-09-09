@@ -84,4 +84,9 @@ public class CompanyDAO {
 		
 		return mybatis.selectOne("CompanyDAO.getCompanyCount",key);
 	}
+	
+	public void deleteCpUpdate(CompanyVO vo) {
+		
+		mybatis.update("CompanyDAO.deleteCpUpdate", vo);
+	}
 }

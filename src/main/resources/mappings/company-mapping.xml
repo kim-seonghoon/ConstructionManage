@@ -50,4 +50,7 @@
 		SELECT * FROM company
 	</select>
 	
+	<update id="deleteCpUpdate">
+		UPDATE company SET dropyn = 'y' WHERE cp_id = #{cp_id}
+	</update>
 </mapper>

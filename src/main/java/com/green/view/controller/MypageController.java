@@ -155,11 +155,10 @@ public class MypageController {
 	@RequestMapping(value="delete_cp")
 	public String deleteCp(CompanyVO vo, SessionStatus status) {
 		System.out.println(vo);
-		companyService.deleteCompany(vo.getCp_num());
+		companyService.deleteCpUpdate(vo);
 		
-		status.setComplete();
 		
-		return "index";
+		return "redirect:/logout";
 	}
 	
 	@RequestMapping(value="/userDelete", method=RequestMethod.GET)
