@@ -33,7 +33,7 @@ public class ComplaintsDAO {
 	
 	public int answerComplaints(ComplaintsVO vo) {
 		
-		return mybatis.update("ComplauntsDAO.answerComplaints", vo);
+		return mybatis.update("ComplaintsDAO.answerComplaints", vo);
 	}
 	
 	public List<ComplaintsVO> getComplaintsList(){
@@ -86,5 +86,13 @@ public class ComplaintsDAO {
 		map.put("key", key);
 		
 		return mybatis.selectList("ComplaintsDAO.managerCompList", map);
+	}
+	
+	public void updateAnswer(ComplaintsVO vo) {
+		mybatis.update("ComplaintsDAO.updateAnswer", vo);
+	}
+	
+	public void deleteAnswer(ComplaintsVO vo) {
+		mybatis.update("ComplaintsDAO.deleteAnswer", vo);
 	}
 }

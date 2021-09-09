@@ -93,4 +93,15 @@ function go_save_comp(){
 	}
 }
 
+function go_answer_form() {
+	$("#comp_detail_form").attr("action", "answer_write_form");
+}
+
+function go_answer_mod() {
+	$("#comp_detail_form").attr("action", "answer_write_form");
+}
+
+function go_answer_delete() {
+	$("#comp_detail_form").attr("action", "answer_delete");
+}
 

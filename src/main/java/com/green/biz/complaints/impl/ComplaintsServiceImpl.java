@@ -87,4 +87,16 @@ public class ComplaintsServiceImpl implements ComplaintsService {
 		
 		return complaintsDao.managerCompList(address, key, con_num, criteria);
 	}
+
+	@Override
+	public void updateAnswer(ComplaintsVO vo) {
+		
+		complaintsDao.updateAnswer(vo);
+	}
+
+	@Override
+	public void deleteAnswer(ComplaintsVO vo) {
+		
+		complaintsDao.deleteAnswer(vo);
+	}
 }

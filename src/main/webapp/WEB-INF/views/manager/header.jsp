@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript" src="js/member.js"></script>
-	<script type="text/javascript" src="js/complaint.js"></script>
+	<script type="text/javascript" src="js/complaint.js?ver=1"></script>
 	<script type="text/javascript" src="js/construction.js"></script>
 	<script type="text/javascript" src="js/mypage.js"></script>  
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>

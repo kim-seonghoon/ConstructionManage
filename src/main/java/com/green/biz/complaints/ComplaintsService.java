@@ -30,4 +30,8 @@ public interface ComplaintsService {
 	List<ComplaintsVO> managerMainCompList(String address);
 	
 	List<ComplaintsVO> managerCompList(String address, String con_num, String key, Criteria criteria);
+	
+	public void updateAnswer(ComplaintsVO vo);
+	
+	public void deleteAnswer(ComplaintsVO vo);
 }

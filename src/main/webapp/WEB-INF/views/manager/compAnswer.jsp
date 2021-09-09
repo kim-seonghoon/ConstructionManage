@@ -3,11 +3,11 @@
 <%@ include file="header.jsp" %>
 	
         <div id="container" class="container bbs_main">
-            <form id="comp_detail_form" method="POST">
-            <input type="hidden" name="com_seq" value="${ComplaintsVO.com_seq}">
-            <input type="hidden" name="user_id" value="${ComplaintsVO.user_id }">
             <div class="notice-wrap">
             	<div class="inner-container">
+            	<form id="answerForm" method="POST" action="write_answer">
+            	    <input type="hidden" name="com_seq" value="${ComplaintsVO.com_seq}">
+            		<input type="hidden" name="user_id" value="${ComplaintsVO.user_id }">
 	                <table width="1200" cellpadding="0" cellspacing="0" class="table">
 	                    <tr> 
 	                        <td width="100" class="b"><p>문의 분류</p></td>
@@ -32,27 +32,38 @@
 	                    </tr>
 	                    <tr><td height="0" colspan="4">${ComplaintsVO.content}</td></tr>
 	                </table>
-	                <c:choose>
-	                	<c:when test="${ComplaintsVO.answer == '답변 없음'}">
-		                <div id="buttons">
-		                	<button class="btn-gray" onclick="go_comp_list_mg()">목록</button>
-		                    <button class="btn-black" onclick="go_answer_form()">답변</button>
-		                    <button class="btn-black" onclick="comp_delete()">삭제</button>
-		                </div>
-		                </c:when>
-		                <c:otherwise>
-		                <div class="container">
-		                	${ComplaintsVO.answer}
-		                </div>
-		                	<button class="btn-gray" onclick="go_comp_list_mg()">목록</button>
-		                    <button class="btn-black" onclick="go_answer_mod()">답변 수정</button>
-		                    <button class="btn-black" onclick="go_answer_delete()">답변 삭제</button>
-		                    <button class="btn-black" onclick="comp_delete()">삭제</button>
-		                </c:otherwise>
-	                </c:choose>
+	                <div id="buttons">
+			            <div>
+			                <span><h3>답변</h3></span>
+			            </div>
+			            <div id="reply">
+			                <table id="rep_input" style="width: 650px">                    
+			                    <tr>
+			                    	<c:choose>
+			                    		<c:when test="${ComplaintsVO.answer != '답변 없음'}">
+			                    			<td style="width:80%;">
+			                    				<textarea  rows="3" cols="77" id="answer" name="answer">${ComplaintsVO.answer}</textarea>
+			                    			</td>
+			                    			<td style="width:10%;">
+			                            		<input type="submit" class="btn-black" value="답변 수정">
+			                        		</td>
+			                    		</c:when>
+			                    		<c:otherwise>
+			                    			<td style="width:80%;">
+			                            		<textarea  rows="3" cols="77" id="answer" name="answer" placeholder="답변을 입력하세요"></textarea>
+			                        		</td>
+			                        		<td style="width:10%;">
+			                            		<input type="submit" class="btn-black" value="답변 등록">
+			                        		</td>
+			                    		</c:otherwise>
+			                    	</c:choose>
+
+			                    </tr>
+			                </table>
+			            </div>			        
+	                </div>
+	            </form>
                 </div>
             </div>
-            </form>
         </div>
-
 <%@ include file="../footer.jsp" %>

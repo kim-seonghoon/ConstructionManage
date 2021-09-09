@@ -31,6 +31,18 @@
 	                        <td>${ComplaintsVO.view_count}</td>
 	                    </tr>
 	                    <tr><td height="0" colspan="4">${ComplaintsVO.content}</td></tr>
+	                    <c:choose>
+	                    	<c:when test="${loginUser.name == ComplaintsVO.name}">
+		                    	<c:if test="${ComplaintsVO.answer != '답변 없음'}">
+		                    		<tr>
+				                		<td colspan="5">답 변</td>
+				                	</tr>
+			                    	<tr>
+				                		<td colspan="5">${ComplaintsVO.answer}</td>
+				                	</tr>
+				                </c:if>
+	                    	</c:when>
+	                    </c:choose>
 	                </table>
 	                <div id="buttons">
 	                	<button class="btn-gray" onclick="go_comp_list()">목록</button>

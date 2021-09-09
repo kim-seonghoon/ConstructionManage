@@ -101,5 +101,15 @@
 	<!-- 조회수 업데이트 -->
 	<update id="updateCompView" parameterType="complaint">
 		UPDATE complaints SET view_count = #{view_count} WHERE com_seq=#{com_seq}
-	</update>	
+	</update>
+	
+	<!-- 답변 수정 -->	
+	<update id="updateAnswer" parameterType="complaint">
+		UPDATE complaints SET answer = #{answer} WHERE com_seq=#{com_seq}
+	</update>
+	
+	<!-- 답변 삭제 -->
+	<update id="deleteAnswer" parameterType="complaint">
+		UPDATE complaints SET answer = '답변 없음' WHERE com_seq=#{com_seq}
+	</update>
 </mapper>

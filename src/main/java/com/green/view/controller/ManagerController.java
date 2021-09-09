@@ -265,4 +265,32 @@ public class ManagerController {
 		
 		return "redirect:/user_list_form_mg";
 	}
+	
+	@RequestMapping(value="answer_write_form")
+	public String writeAnswerForm(ComplaintsVO vo, Model model) {
+		ComplaintsVO comp = complaintService.getComplaints(vo);
+		
+		model.addAttribute("ComplaintsVO", comp);
+		return "manager/compAnswer";
+	}
+	
+	@RequestMapping(value="write_answer")
+	public String writeAnswer(ComplaintsVO vo, Model model) {
+		complaintService.answerComplaints(vo);
+		ComplaintsVO comp = complaintService.getComplaints(vo);
+		
+		model.addAttribute("ComplaintsVO", comp);
+		
+		return "manager/compDetail";
+	}
+	
+	@RequestMapping(value="answer_delete")
+	public String deleteAnswer(ComplaintsVO vo, Model model) {
+		complaintService.deleteAnswer(vo);
+		ComplaintsVO comp = complaintService.getComplaints(vo);
+		
+		model.addAttribute("ComplaintsVO", comp);
+		System.out.println(comp);
+		return "manager/compDetail";
+	}
 }
