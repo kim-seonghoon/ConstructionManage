@@ -129,6 +129,7 @@ public class ManagerController {
 		model.addAttribute("conListSize", conList.size());
 		model.addAttribute("conList", conList);
 		model.addAttribute("pageMaker", pageMaker);
+		model.addAttribute("key", key);
 		
 		return "manager/conList";
 	}
@@ -151,6 +152,7 @@ public class ManagerController {
 		model.addAttribute("compListSize", compList.size());
 		model.addAttribute("compList", compList);
 		model.addAttribute("pageMaker", pageMaker);
+		model.addAttribute("key", key);
 		
 		return "manager/compList";
 	}

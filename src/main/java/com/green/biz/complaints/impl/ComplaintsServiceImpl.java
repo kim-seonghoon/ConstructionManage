@@ -99,4 +99,10 @@ public class ComplaintsServiceImpl implements ComplaintsService {
 		
 		complaintsDao.deleteAnswer(vo);
 	}
+
+	@Override
+	public int searchCount(String key, Criteria criteria, String con_num) {
+		
+		return complaintsDao.searchCount(key, criteria, con_num);
+	}
 }

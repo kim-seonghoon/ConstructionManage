@@ -94,4 +94,10 @@ public class ConstructionServiceImpl implements ConstructionService {
 		return constructionDao.managerMainConList(sido, gugun);
 	}
 
+	@Override
+	public int searchCount(String key, Criteria criteria, String con_num) {
+		
+		return constructionDao.searchCount(key, criteria, con_num);
+	}
+
 }

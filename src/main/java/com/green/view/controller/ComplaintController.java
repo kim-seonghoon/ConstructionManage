@@ -34,7 +34,7 @@ public class ComplaintController {
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(criteria);	// 현재 페이지와 페이지당 항목 수 설정
-		pageMaker.setTotalCount(complaintService.getCompCount(key));
+		pageMaker.setTotalCount(complaintService.searchCount(key, criteria, con_num));
 		System.out.println("페이징 정보="+pageMaker);
 		
 		model.addAttribute("compListSize", compList.size());
@@ -176,18 +176,40 @@ public class ComplaintController {
 		
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	@RequestMapping(value="/search_comp")
+	public String searchCompByKeyword(Model model, Criteria criteria,
+									 @RequestParam(value="con_num", defaultValue="") String con_num,
+									 @RequestParam(value="key") String key,
+									 @RequestParam(value="search_condition", defaultValue="1") int search_condition) {
+		String keyArea = "";
+		String keyTitle = "";
+		List<ComplaintsVO> compList = complaintService.compListWithPaging(keyArea, criteria, con_num);
+		
+		if(search_condition==1) {
+			keyArea = key;
+			keyTitle = key;
+			
+			compList = complaintService.compListWithPaging(keyArea, criteria, con_num);
+			
+		} else if(search_condition==2) {
+			keyArea = key;
+			
+			compList = complaintService.compListWithPaging(keyArea, criteria, con_num);
+		} else if(search_condition==3) {
+			keyTitle = key;
+			
+			compList = complaintService.compListWithPaging(keyArea, criteria, con_num);
+		}
+			PageMaker pageMaker = new PageMaker();
+			pageMaker.setCri(criteria);	// 현재 페이지와 페이지당 항목 수 설정
+			pageMaker.setTotalCount(complaintService.searchCount(key, criteria, con_num));
+			System.out.println("페이징 정보="+pageMaker);
+			
+			model.addAttribute("compListSize", compList.size());
+			model.addAttribute("compList", compList);
+			model.addAttribute("pageMaker", pageMaker);
+		
+			return "complaint/compList";
+	}
+		
 }

@@ -92,6 +92,21 @@
 		]]>
 	</select>
 	
+	<!-- 공사 페이징 처리 갯수(공사종류, 제목 검색) -->
+	<select id="searchCount" parameterType="HashMap" resultType="int">
+		<![CDATA[
+		SELECT count(*)
+		  FROM
+    		(SELECT row_number() over(ORDER BY start_date) rn, con_seq, con_name, sido, gugun, dong,
+    			    zip_num, address, cp_name, cp_num, dept, dept_tel, start_date, end_date, 
+    			    con_size, con_state, view_count, con_num, content
+           	   FROM construction
+     	   	  WHERE con_name LIKE '%'||#{key}||'%' AND con_num LIKE '%'||#{con_num}||'%')
+		 WHERE rn > (#{criteria.pageNum}-1) * #{criteria.rowsPerPage}
+		   AND rn <= #{criteria.pageNum} * #{criteria.rowsPerPage}
+		]]>
+	</select>
+	
 	<!-- 전체 민원 갯수 구하기 -->
 	<select id="getConstCount" parameterType="String" resultType="int">
 		SELECT COUNT(*) FROM construction WHERE con_name LIKE '%'||#{key}||'%'

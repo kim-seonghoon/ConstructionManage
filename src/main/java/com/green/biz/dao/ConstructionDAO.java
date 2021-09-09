@@ -76,6 +76,16 @@ public class ConstructionDAO {
 		return mybatis.selectList("ConstructionDAO.constListWithPaging", map);
 	}
 	
+	public int searchCount(String key, Criteria criteria, String con_num) {
+		HashMap<String, Object> map = new HashMap<>();
+		
+		map.put("key", key);
+		map.put("criteria", criteria);
+		map.put("con_num", con_num);
+		
+		return mybatis.selectOne("ConstructionDAO.searchCount", map);
+	}
+	
 	public int getConstCount(String key) {
 		return mybatis.selectOne("ConstructionDAO.getConstCount", key);
 	}
@@ -94,4 +104,5 @@ public class ConstructionDAO {
 		
 		return mybatis.selectList("ConstructionDAO.managerMainConList", map);
 	}
+
 }

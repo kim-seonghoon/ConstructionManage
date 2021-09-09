@@ -34,4 +34,6 @@ public interface ComplaintsService {
 	public void updateAnswer(ComplaintsVO vo);
 	
 	public void deleteAnswer(ComplaintsVO vo);
+	
+	public int searchCount(String key, Criteria criteria, String con_num);
 }

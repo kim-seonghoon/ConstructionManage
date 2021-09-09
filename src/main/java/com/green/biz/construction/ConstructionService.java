@@ -32,4 +32,6 @@ public interface ConstructionService {
 	void updateConstView(ConstructionVO vo);
 	
 	List<ConstructionVO> managerMainConList(String sido, String gugun);
+	
+	int searchCount(String key, Criteria criteria, String con_num);
 }

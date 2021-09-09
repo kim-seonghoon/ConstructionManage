@@ -61,6 +61,16 @@ public class ComplaintsDAO {
 		return mybatis.selectList("ComplaintsDAO.compListWithPaging", map);
 	}
 	
+	public int searchCount(String key, Criteria criteria, String con_num) {
+		HashMap<String, Object> map = new HashMap<>();
+		
+		map.put("criteria", criteria);
+		map.put("key", key);
+		map.put("con_num", con_num);
+		
+		return mybatis.selectOne("ComplaintsDAO.searchCount", map);
+	}
+	
 	public int getCompCount(String key) {
 		
 		return mybatis.selectOne("ComplaintsDAO.getCompCount", key);

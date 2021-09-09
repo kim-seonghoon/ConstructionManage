@@ -33,12 +33,13 @@ public class ConstructionController {
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(criteria);	// 현재 페이지와 페이지당 항목 수 설정
-		pageMaker.setTotalCount(constructionService.getConstCount(key));
+		pageMaker.setTotalCount(constructionService.searchCount(key, criteria, con_num));
 		System.out.println("페이징 정보="+pageMaker);
 		
 		model.addAttribute("conListSize", conList.size());
 		model.addAttribute("conList", conList);
 		model.addAttribute("pageMaker", pageMaker);
+		model.addAttribute("key", key);
 		
 		return "construction/conList";
 	}
@@ -64,29 +65,38 @@ public class ConstructionController {
 	}
 	
 	@RequestMapping(value="/search")
-	public String searchConByKeyword(Model model,
+	public String searchConByKeyword(Model model, Criteria criteria,
+									 @RequestParam(value="con_num", defaultValue="") String con_num,
 									 @RequestParam(value="key") String key,
 									 @RequestParam(value="search_condition", defaultValue="1") int search_condition) {
 		String keyArea = "";
 		String keyTitle = "";
-		List<ConstructionVO> conList = constructionService.getConstructionList();
+		List<ConstructionVO> conList = constructionService.constListWithPaging(keyArea, criteria, con_num);
 		
 		if(search_condition==1) {
 			keyArea = key;
 			keyTitle = key;
 			
-			conList = constructionService.getConstructionListByKey(keyArea, keyTitle);
+			conList = constructionService.constListWithPaging(keyArea, criteria, con_num);
 			
 		} else if(search_condition==2) {
 			keyArea = key;
 			
-			conList = constructionService.getConstructionListByKey(keyArea, keyTitle);
+			conList = constructionService.constListWithPaging(keyArea, criteria, con_num);
 		} else if(search_condition==3) {
 			keyTitle = key;
 			
-			conList = constructionService.getConstructionListByKey(keyArea, keyTitle);
+			conList = constructionService.constListWithPaging(keyArea, criteria, con_num);
 		}
+			PageMaker pageMaker = new PageMaker();
+			pageMaker.setCri(criteria);	// 현재 페이지와 페이지당 항목 수 설정
+			pageMaker.setTotalCount(constructionService.searchCount(key, criteria, con_num));
+			System.out.println("페이징 정보="+pageMaker);
+			
+			model.addAttribute("conListSize", conList.size());
 			model.addAttribute("conList", conList);
+			model.addAttribute("pageMaker", pageMaker);
+			model.addAttribute("key", key);
 		
 			return "construction/conList";
 	}

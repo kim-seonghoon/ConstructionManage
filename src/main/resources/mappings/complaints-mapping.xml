@@ -78,6 +78,20 @@
 		]]>
 	</select>
 	
+	<!-- 민원 페이징 개수 처리 -->
+	<select id="searchCount" parameterType="HashMap" resultType="int">
+		<![CDATA[
+		SELECT count(*)
+		  FROM
+    		(SELECT row_number() over(ORDER BY regdate desc) rn, com_seq, con_seq, con_name, con_num, 
+    				title, name, content, answer, view_count, regdate, moddate, address, user_id
+           	   FROM complaints
+     	   	  WHERE title LIKE '%'||#{key}||'%' AND con_num LIKE '%'||#{con_num}||'%')
+		 WHERE rn > (#{criteria.pageNum}-1) * #{criteria.rowsPerPage}
+		   AND rn <= #{criteria.pageNum} * #{criteria.rowsPerPage}
+		]]>
+	</select>
+	
 	<!-- 관리자 민원 페이징 처리 -->
 	<select id="managerCompList" parameterType="HashMap" resultType="complaint">
 		<![CDATA[
