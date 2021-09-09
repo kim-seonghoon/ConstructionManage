@@ -246,12 +246,14 @@ public class ManagerController {
 		
 		for(String cp_id : idList) {
 			vo.setCp_id(cp_id);
-			companyService.deleteCompany(cp_id);
+			System.out.println(vo);
+			companyService.deleteCompany(vo);
 		}
 		
 		return "redirect:/company_list_form_mg";
 	}
 	
+	@SuppressWarnings("null")
 	@RequestMapping(value="delete_user_mg")
 	public String deleteUserMg(@RequestParam(value="result") String[] idList) {
 		UserVO vo = new UserVO();

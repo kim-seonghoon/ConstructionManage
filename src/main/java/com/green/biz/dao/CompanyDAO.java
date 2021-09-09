@@ -22,9 +22,9 @@ public class CompanyDAO {
 		mybatis.insert("CompanyDAO.insertCompany",vo);
 	}
 
-	public int deleteCompany(String cp_id) {
+	public int deleteCompany(CompanyVO vo) {
 		
-		return mybatis.delete("CompanyDAO.deleteComany", cp_id);
+		return mybatis.delete("CompanyDAO.deleteCompany", vo);
 	}
 	
 	public int updateCompany(CompanyVO vo) {

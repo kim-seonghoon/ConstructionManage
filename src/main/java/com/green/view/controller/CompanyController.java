@@ -31,6 +31,9 @@ public class CompanyController {
 		vo.setCp_phone(cp_phone);
 		vo.setFax_num(fax_num);
 		vo.setCp_address(cp_address);
+		vo.setDropyn("n");
+		
+		System.out.println(vo);
 		
 		companyService.insertCompany(vo);
 		return "member/login"; 

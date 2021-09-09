@@ -12,7 +12,7 @@
 	<script type="text/javascript" src="js/member.js"></script>
 	<script type="text/javascript" src="js/complaint.js"></script>
 	<script type="text/javascript" src="js/construction.js"></script>
-	<script type="text/javascript" src="js/mypage.js?ver=1"></script>  
+	<script type="text/javascript" src="js/mypage.js"></script>
 	<title>공사관리 Main</title>
 </head>
 

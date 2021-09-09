@@ -99,7 +99,6 @@ function deleteCp() {
 		  }
 	}
 }
-
 function go_delete_cp() {
     var count = 0;
     if (document.frm.result.length == undefined) {
@@ -114,7 +113,7 @@ function go_delete_cp() {
       }
     }
     if (count == 0) {
-      alert("삭제할 업체 회원을 선택해 주세요.");
+      alert("삭제할 회원을 선택해 주세요.");
     } else {
       document.frm.action = "delete_cp_mg";
       document.frm.submit();
@@ -141,3 +140,4 @@ function go_delete_user() {
       document.frm.submit();
     }
 }
+

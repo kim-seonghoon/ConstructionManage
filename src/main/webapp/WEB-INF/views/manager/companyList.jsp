@@ -12,7 +12,7 @@
 	<script type="text/javascript" src="js/member.js"></script>
 	<script type="text/javascript" src="js/complaint.js"></script>
 	<script type="text/javascript" src="js/construction.js"></script>
-	<script type="text/javascript" src="js/mypage.js"></script>  
+	<script type="text/javascript" src="js/mypage.js?ver=2"></script>  
 	<title>공사관리 Main</title>
 </head>
 
@@ -44,7 +44,7 @@
 		
 		<div class="container bbs_main">
 			<div class="search"> 
-			<form id="companyform" name="frm" action="company_list_form_mg" method="POST">
+			<form id="companyform" action="company_list_form_mg" method="POST">
 				<select class="form-control input" name="search-company" id="search01">
 					<option value="1">아이디</option>
                     <option value="2">회사명</option>
@@ -53,7 +53,8 @@
 				<span ><input class="form-control btn" type="submit" value="검색"></span>
 			</form>
 			</div>
-			 <div>
+			<div>
+			<form name="frm" id="user_lsit_form" method="POST">
             <table>
                 <tr>
                 	<th>체크</th>
@@ -101,8 +102,7 @@
 						
 				</ul>
 			</div>
-            <form name="user_List_form" id="user_lsit_form">
-            	<input type="button" value="삭제" onclick="go_delete_cp">
+            <input type="button" value="삭제" onclick="go_delete_cp()">
             </form>
         </div>
     </div>

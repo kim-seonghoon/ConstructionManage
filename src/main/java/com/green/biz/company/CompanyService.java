@@ -9,7 +9,7 @@ import com.green.biz.utils.Criteria;
 public interface CompanyService {
 	public void insertCompany(CompanyVO vo);
  
-	public int deleteCompany(String cp_id); 
+	public int deleteCompany(CompanyVO vo); 
 	
 	public int updateCompany(CompanyVO vo);
 	

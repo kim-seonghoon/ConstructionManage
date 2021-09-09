@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="CompanyDAO">
 	<!-- 공사업체 등록 -->
-	<insert id="insertCompany">
-		INSERT INTO company(cp_id, pwd, admin_name, admin_phone, cp_name, cp_num, cp_phone, fax_num, cp_address , cp_email)
-			   VALUES(#{cp_id}, #{pwd}, #{admin_name}, #{admin_phone}, #{cp_name}, #{cp_num}, #{cp_phone}, #{fax_num}, #{cp_address}, #{cp_email})
+	<insert id="insertCompany" parameterType="company">
+		INSERT INTO company(cp_id, pwd, admin_name, admin_phone, cp_name, cp_num, cp_phone, fax_num, cp_address, zip_num, cp_email, dropyn)
+			   VALUES(#{cp_id}, #{pwd}, #{admin_name}, #{admin_phone}, #{cp_name}, #{cp_num}, #{cp_phone}, #{fax_num}, #{cp_address}, #{zip_num}, #{cp_email}, #{dropyn})
 	</insert>   
 	
 	<!-- 공사업체 가져오기(로그인 처리) -->
@@ -21,7 +21,7 @@
 	     WHERE cp_num = #{cp_num}
 	</update>
 	<!-- 업체 탈퇴 -->
-	<delete id="deleteCompany" parameterType="String">
+	<delete id="deleteCompany" parameterType="company">
 		DELETE company WHERE cp_id = #{cp_id}
 	</delete>
 	
