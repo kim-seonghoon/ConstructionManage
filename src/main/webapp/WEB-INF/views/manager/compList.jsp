@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="header.jsp" %>
+	<div class="jumbotron_small">
+		<div class="container">
+			<h1>민원 관리</h1>
+		</div>
+	</div>	
     <div id="contents" class="container bbs_main" style="text-align: center;">
         <form name="search" action="comp_list_form_mg">
         <input type="hidden" name="con_num" value="${con_num}">

@@ -2,6 +2,11 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
     <%@ include file="header.jsp" %>
+    <div class="jumbotron_small">
+		<div class="container">
+			<h1 style="padding-top: 90px">회원 가입</h1>
+		</div>
+	</div>
 	<div class="container bbs_main">
 		<h3>| 회원 정보입력</h3>
 		<form id="join" name="formm" method="post">
@@ -47,8 +52,8 @@
 			</tr>
 			
 			<tr>
-				<td width="120" class="b" rowspan="2">주소</td>
-				<td colspan="3"><input type="text" name="zip_num" id="zip_num"><input type="button" value="주소검색" onclick="post_zip()">
+				<td width="120" class="b" rowspan="2" style="line-height: 82px">주소</td>
+				<td colspan="3"><input type="text" name="zip_num" id="zip_num"> <input type="button" value="주소검색" onclick="post_zip()">
 			</tr>
 			<tr>
 				<td>

@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file="header.jsp" %>
 	<div class="container bbs_main">
-	   <h3>| 공사업체 정보수정</h3>
+	   <h3 class="sub_title">| 공사업체 정보수정</h3>
 	   <form method="post" name="formm" id="myForm">
 	   <div class="notice-wrap">
 	        <table width="1200" cellpadding="0" cellspacing="0" class="table">

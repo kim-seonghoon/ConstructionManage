@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file="header.jsp" %>
 	<div class="container bbs_main">
-		<h3>| 회원 정보수정</h3>
+		<h3 class="sub_title">| 회원 정보수정</h3>
 		<div class="notice-wrap">
 		<form name="formm" id="myForm" method="post">
 		<input type="hidden" name="user_id" value="${loginUser.user_id}">
@@ -43,7 +43,7 @@
 	            </tr>
 	            
 	            <tr>
-					<td width="120" rowspan="2" class="b">주소</td>
+					<td width="120" rowspan="2" class="b" style="line-height: 82px">주소</td>
 					<td colspan="3"><input type="text" name="zip_num" id="zip_num" value="${loginUser.zip_num}"><input type="button" value="주소검색" onclick="post_zip()">
 				</tr>
 				<tr>

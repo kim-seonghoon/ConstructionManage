@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ include file="../header.jsp" %>
+    <div class="jumbotron">
+		<div class="container">
+			<h1>회원 로그인</h1>
+		</div>
+	</div>
 	<div class="container bbs_main">
 		<h3>| 로그인</h3>
 	    <form method="post" action="login" id="member">
@@ -21,5 +26,4 @@
 	        </div>
 	    </form>  
 	</div>
-</body>
-</html>
+<%@ include file="../footer.jsp" %>

@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="header.jsp" %>
+	<div class="jumbotron_small">
+		<div class="container">
+			<h1>민원 관리</h1>
+		</div>
+	</div>
 	
         <div id="container" class="container bbs_main">
             <div class="notice-wrap">

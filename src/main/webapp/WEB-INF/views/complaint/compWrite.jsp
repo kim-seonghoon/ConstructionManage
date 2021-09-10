@@ -37,12 +37,12 @@
 			</tr>
 			<tr>
 				<td width="100" class="b"><p>제목</p></td>
-				<td colspan="3"><input type="text" size="60" id="title" name="title"></td>
+				<td colspan="3"><input type="text" size="50" id="title" name="title"></td>
 			</tr>
 			<tr>
 				<td class="b">내용</td>
 				<td colspan="3">
-				<textarea name="content" id="content" cols="100%" rows="10"></textarea></td>
+				<textarea name="content" id="content" cols="60%" rows="5"></textarea></td>
 		</table>
 		<div id="buttons">
 			 <input type="reset" class="btn-gray" value="취소">

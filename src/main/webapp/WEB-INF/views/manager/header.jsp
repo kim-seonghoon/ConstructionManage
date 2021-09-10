@@ -6,7 +6,7 @@
 <html lang="ko"> 
 
 <head>
-	<link rel="stylesheet" href="css/constyle.css">
+	<link rel="stylesheet" href="css/constyle.css?ver=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript" src="js/member.js"></script>
@@ -36,9 +36,3 @@
 			</nav>
 		</header>
 		<!-- /navbar -->
-		
-		<div class="jumbotron_small">
-			<div class="container">
-				<h1>관리자 모드</h1>
-			</div>
-		</div>

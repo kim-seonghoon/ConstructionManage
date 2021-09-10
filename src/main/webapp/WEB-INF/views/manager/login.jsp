@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ include file="../header.jsp" %>
+	<div class="jumbotron">
+		<div class="container">
+			<h1>관리자 로그인</h1>
+		</div>
+	</div>  
+
+<div class="container bbs_main">
 <h3>| 관리자 로그인</h3>
     <form method="post" action="manager_login" id="manager">
     <input type="hidden" value="3" id="user_type" name="user_type">
@@ -22,5 +23,5 @@
             <input type="submit" value="로그인">
         </div>
     </form>  
-</body>
-</html>
+</div>
+<%@ include file="../footer.jsp" %>

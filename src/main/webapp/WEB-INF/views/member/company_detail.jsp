@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="header.jsp" %>
+	<div class="jumbotron_small">
+		<div class="container">
+			<h1>회원 가입</h1>
+		</div>
+	</div>
+	
 	<div class="container bbs_main">
 	<h3>| 공사업체 정보 입력</h3> 
 	<form name="formm" id="formm" method="POST">
@@ -50,7 +56,7 @@
 			</tr>
 			
 			<tr>
-				<td class="b" width="150" rowspan="2">사업장 주소</td>
+				<td class="b" width="150" rowspan="2" style="line-height: 82px">사업장 주소</td>
 				<td colspan="3"><input type="text" name="zip_num" id="zip_num"> <input type="button" onclick="post_zip()" value="주소검색"></td>
 			</tr>
 			<tr> 
