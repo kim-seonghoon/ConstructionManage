@@ -8,19 +8,66 @@
 <title>아이디 중복 체크</title>
 <link href="CSS/subpage.css" rel="stylesheet">
 <style type="text/css">
-body{   
-  background-color:#B96DB5;
-  font-family: Verdana;
+
+.btn, .btn:focus, .btn:hover, .btn-gray, .btn-black {
+    color: #fff;
+    background-color: #999;
+    padding: 10px;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: center;
+    height: 40px;
+    width: 80px;
+    border: 0;
 }
+
+.btn-gray:focus, .btn-gray:hover {
+    background-color: #999;
+}
+
+.btn-black:focus, .btn-black:hover {
+    background-color: #000;
+    
+}
+
+.btn-black, .btn-black:focus, .btn-black:hover {
+    color: #fff;
+    background-color: #000;
+    padding: 10px;
+    font-size: 12px;
+    text-align: center;
+}
+
+#head{
+	background-color: #424242;
+	color:white;
+	margin: 0;
+	padding: 1mm;
+}
+
+.title{
+	margin-left: 5%;
+}
+
 #wrap{     
-  margin: 0 20px;
+  margin: 10px 20px;
 }
-h1 {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 45px;
-  color: #CCC;
-  font-weight: normal;
+
+.id_chk{
+	width: 250px;
+    height : 30px;
+    border: 2px solid #333;
+    box-sizing: content-box;
+    margin-left: 5%;
 }
+
+.use_id{
+	margin-left: 5%;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 2.5;
+}
+
 input[type=button], input[type=submit] {
   float: right;
 }
@@ -34,12 +81,14 @@ function idokcp(){
 </script>
 </head>
 <body>
+	<div id="head">
+  <h3 class="title">아이디 중복확인</h3>
+  </div>
 <div id="wrap">
-  <h1>ID 중복확인</h1>
   <form method=post name=formm id="formm" style="margin-right:0 "
   		action="id_check_form_cp" >
     Company ID <input type=text name="cp_id" value="${cp_id}"> 
-            <input type=submit value="검색" class="submit"><br>     
+            <input type=submit value="검색" class="form-control btn"><br>     
     <div style="margin-top: 20px">   
       <c:if test="${message == 1}">
         <script type="text/javascript">
@@ -49,7 +98,7 @@ function idokcp(){
       </c:if>
       <c:if test="${message==-1}">
         ${cp_id}는 사용 가능한 ID입니다.
-        <input type="button" value="사용" class="cancel" onclick="idokcp()">
+        <input type="button" value="사용" class="form-control btn" onclick="idokcp()">
       </c:if>
     </div>
   </form> 
