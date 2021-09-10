@@ -78,7 +78,5 @@
 			</form>
 		</div>
 		<!-- /inner-container -->
-		</div>
-		<!-- /container -->
 
 <%@ include file="../footer.jsp" %>

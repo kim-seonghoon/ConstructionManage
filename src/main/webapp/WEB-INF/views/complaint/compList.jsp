@@ -13,7 +13,6 @@
                 <li class="navbar-right"><input type="text" name="key"><input type="submit" value="검색" style="margin-right: 20px"></li>
             </ul> 
         </form>
-        <div>
             <table>
                 <tr>
                     <th><p>번호</p></th>
@@ -67,6 +66,4 @@
        			</c:choose>
             </form>
         </div>
-    </div>
-</body>
-</html>
+<%@ include file="../footer.jsp" %>

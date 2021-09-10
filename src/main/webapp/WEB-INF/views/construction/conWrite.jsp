@@ -4,7 +4,7 @@
     <div id="content" class="container bbs_main"> 
         <form id="writeForm" name="formm" method="POST">
        	<div class="notice-wrap">
-            <table width="1200" cellpadding="0" cellspacing="0" class="table">
+            <table width="1200" cellpadding="0" cellspacing="0" class="table write">
                 <tr>
                     <td width="100" class="b"><p>제목</p></td>
                     <td colspan="3"><input style="width:600px" type="text" name="con_name" id="con_name"></td>
@@ -27,7 +27,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td width="100" class="b" rowspan="2"><p>공사 위치</p></td>
+                    <td width="100" class="b" rowspan="2" style="line-height: 94px"><p>공사 위치</p></td>
                     <td colspan="3">
                         <input type="text" name="zip_num" id="zip_num" value="우편 번호">
                         <input type="button" value="주소검색" onclick="post_zip()">
@@ -59,8 +59,8 @@
                     <td><input type="text" name="dept_tel"></td>
                 </tr>
                 <tr>
-                    <td class="b"><p>기타</p></td>
-                    <td colspan="4"><textarea name="content" id="content" rows="4" cols="100%"></textarea></td>
+                    <td class="b" style="line-height: 91px"><p>기타</p></td>
+                    <td colspan="4"><textarea name="content" id="content" rows="5" cols="110%"></textarea></td>
                 </tr>
             </table>
             <div id="buttons">
@@ -70,5 +70,4 @@
         </div>
         </form>
     </div>
-
     <%@ include file="../footer.jsp" %>

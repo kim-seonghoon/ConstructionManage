@@ -13,7 +13,6 @@
                 <li class="navbar-right"><input type="text" name="key" value="${key}"><input type="submit" value="검색" style="margin-right: 20px"></li>
             </ul> 
         </form>
-        <div>
             <table>
                 <tr>
                     <th><p>번호</p></th>
@@ -34,28 +33,26 @@
 	                </tr>
                 </c:forEach>
             </table>
-            <div>
-				<ul class="pagination">
-				
-					<c:if test="${pageMaker.prev}">
-						<li class="paginate_button previous">
-							<a href="con_list_form${pageMaker.makeQuery(pageMaker.startPage-1)}">[이전]</a>
-						</li>
-					</c:if>
+        <div>
+			<ul class="pagination">		
+				<c:if test="${pageMaker.prev}">
+					<li class="paginate_button previous">
+						<a href="con_list_form${pageMaker.makeQuery(pageMaker.startPage-1)}">[이전]</a>
+					</li>
+				</c:if>
 							
-					<!-- [1][2][3]... 표시 부분 -->
-					<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="index">
-						<a href="con_list_form${pageMaker.makeQuery(index)}">[${index}]</a>
-					</c:forEach>
+				<!-- [1][2][3]... 표시 부분 -->
+				<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="index">
+					<a href="con_list_form${pageMaker.makeQuery(index)}">[${index}]</a>
+				</c:forEach>
 					
-					<c:if test="${pageMaker.next}">
-						<li class="paginate_button next">
-							<a href="con_list_form${pageMaker.makeQuery(pageMaker.endPage+1)}">[다음]</a>
-						</li>
-					</c:if>	
-						
-				</ul>
-			</div>
+				<c:if test="${pageMaker.next}">
+					<li class="paginate_button next">
+						<a href="con_list_form${pageMaker.makeQuery(pageMaker.endPage+1)}">[다음]</a>
+					</li>
+				</c:if>		
+			</ul>
+		</div>
             <form id="write_con_form" name="write_con_form">        	
        			<c:choose>
        				<c:when test="${sessionScope.user_type == 2}">
@@ -67,7 +64,4 @@
        			</c:choose>
             </form>
         </div>
-    </div>
-</div>
-</body>
-</html>
+<%@ include file="../footer.jsp" %>

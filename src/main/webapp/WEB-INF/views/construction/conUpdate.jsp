@@ -3,9 +3,9 @@
 <%@ include file="header.jsp" %> 
 
     <div class="container bbs_main">
-    	<div class="notice-wrap"></div>
+    	<div class="notice-wrap">
         <form id="con_detail_form" name="formm" action="con_update" method="POST">
-            <table width="1200" cellpadding="0" cellspacing="0" class="table">
+            <table width="1200" cellpadding="0" cellspacing="0" class="table write">
                 <tr>
                     <td width="100" class="b"><p>제목</p></td>
                     <td colspan="3">
@@ -77,5 +77,4 @@
         </form>
         </div>
     </div>
-
     <%@ include file="../footer.jsp" %>

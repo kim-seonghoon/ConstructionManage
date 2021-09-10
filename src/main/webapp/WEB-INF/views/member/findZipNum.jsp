@@ -4,34 +4,75 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.2-dist/css/bootstrap.min.css">
 <meta charset="UTF-8">
 <title>우편 번호 검색</title>
 <link href="CSS/subpage.css" rel="stylesheet">
 <style type="text/css">
 body{   
-   background-color:#B96DB5;
-   font-family: Verdana;
+   background-color:#333;
 }
 #popup{   
    padding: 0 10px;
 }
 #popup h1 {
-   font-family: "Times New Roman", Times, serif;
    font-size: 45px;
+   text-align: center;
+   margin-top: 10px;
    color: #CCC;
    font-weight: normal;
 }
+#popup .search {
+	width: 100%;
+	display: flex;	
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: nowrap;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+#popup .form-control.textarea {
+	font-size: 20px;
+	width: 50%;
+}
+#popup input::placeholder{
+	font-size: 14px;
+}
+#popup .form-control.btn {
+	width: 10%;
+	text-align: center;
+	line-height: 100%;
+	text-align: center;
+}
+.btn, .btn:focus, .btn:hover, .btn-gray, .btn-black {
+    color: #fff;
+    background-color: #888;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    vertical-align: center;
+    height: 40px;
+    width: 80px;
+    border: 0;
+    margin-top: 0;
+    margin-left: 3px;
+}
 
+.btn-gray:focus, .btn-gray:hover {
+    background-color: #999;
+}
 table#zipcode {
     border-collapse:collapse;    /* border 사이의 간격 없앰 */   
     border-top: 3px solid  #fff;  
     border-bottom: 3px solid  #fff;
     width: 100%;  
-    margin-top: 15px; 
+    margin-top: 13px; 
 }
 table#zipcode th, table#zipcode td{   
    text-align: center;
-   border-bottom: 1px dotted  #fff;  
+   line-height: 100%;
+   border-bottom: 1px solid  #fff;  
    color:#FFF;   
 }
 table th, td{
@@ -45,7 +86,7 @@ table#zipcode  a{
     padding: 10px;
 }
 table#zipcode a:hover{
-    color: #F90;
+    color: yellow;
     font-weight: bold;
 }
 </style>
@@ -63,10 +104,11 @@ function result(zip_num,sido,gugun,dong) {
 <body>
 <div id="popup">
   <h1>우편번호검색</h1>
-  <form method=post name=formm action="find_zip_num">
-    동 이름 : <input name="dong" type="text">
-            <input type="submit" value="찾기"  class="submit">
-  </form>
+	<form method=post name=formm action="find_zip_num">
+		<div class="search">
+		<input type="text" name="dong" class="form-control textarea" id="search02" placeholder="동이름을 입력해주세요  ex)방배동 -> 방배"> <input type="submit" class="btn-gray" value="찾기">
+		</div>
+	</form>
   <table id="zipcode">
     <tr>
       <th>우편번호</th>
