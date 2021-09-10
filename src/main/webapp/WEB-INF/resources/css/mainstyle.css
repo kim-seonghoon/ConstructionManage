@@ -19,6 +19,27 @@ body {
     padding-top: 44px;
 }
 
+.btn-black-lg {
+	color: #fff;
+    background-color: #333;
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    height: 50px;
+    width: 110px;
+    border: 0;
+    margin-top: 30px;	
+}
+
+.btn-black-lg:focus, .btn-black-lg:hover {
+    background-color: #333;
+    
+}
+
+
 /* ==========================================================================
    gnb
    ========================================================================== */
@@ -173,6 +194,7 @@ body {
 .bbs_main h3 {
 	margin-top: 50px;
 	text-align: left;
+	font-weight: bold;
 }
 
 .bbs_main .search {
@@ -186,6 +208,74 @@ body {
     box-sizing: content-box;
 }
 
+.bbs_main .login_box {
+	width: 800px;
+	height: 400px;
+	margin: 40px auto 100px auto;
+	padding-top: 90px;
+	padding-right: 80px;
+	border: 3px solid #444;	
+}
+
+.login_box label.lb {
+	vertical-align: center;
+	width: 100px;
+	height: 40px;
+	font-size: 20px;
+}
+
+.login_box input[type="text"], input[type="password"] {
+	font-size: 20px;
+	height: 40px;
+}
+
+.login_box fieldset {
+	display: inline-flex;
+	flex-direction: row;
+}
+
+.login_box .login_content {
+	display: inline-block;
+	margin-right: 4px;
+}
+
+.login_box .btn_login {
+	display: inline-block;
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+	background-color: #000;
+	text-align: center;
+	vertical-align: center;
+	border: 0;
+}
+
+.login_box .btn_login {
+	width: 90px;
+	height: 90px;
+}
+
+
+.login_box .radio {
+	width: 90px;
+	display: inline-block;
+}
+.login_box .radio input[type="radio"] {
+	display: none;
+}
+.login_box .radio input[type="radio"] + span {
+	display: inline-block;
+	padding: 15px 10px;
+	border: 1px solid #dfdfdf;
+	border-radius: 15px;
+	background-color: #ffffff;
+	text-align: center;
+	cursor: pointer;
+}
+.login_box .radio input[type="radio"]:checked + span {
+	background-color: #113a6b;
+	color: #ffffff;
+}  
 .bbs_main .list-group {
 	width: 440px;
     list-style: none;

@@ -218,6 +218,12 @@ body {
 .bbs_main h3 {
 	margin-top: 50px;
 	text-align: left;
+	font-weight: bold;
+}
+
+.bbs_main h4 {
+	margin-top: 15px;
+	font-weight: bold;
 }
 
 .bbs_main .table {

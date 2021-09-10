@@ -20,23 +20,23 @@
             </ul> 
         </form>
         <div>
-            <table>
+            <table class="table">
                 <tr>
-                    <th><p>번호</p></th>
-                    <th><p>제목</p></th>
-                    <th><p>지역</p></th>
-                    <th><p>글쓴이</p></th>
-                    <th><p>조회</p></th>
-                    <th><p>종료일자</p></th>
+                    <td><p>번호</p></td>
+                    <td><p>제목</p></td>
+                    <td><p>지역</p></td>
+                    <td><p>글쓴이</p></td>
+                    <td><p>조회</p></td>
+                    <td><p>종료일자</p></td>
                 </tr>
                 <c:forEach items="${conList}" var="ConstructionVO">
 	                <tr>
-	                    <th>${ConstructionVO.con_seq}</th>
-	                    <th><a href="con_detail_mg${pageMaker.makeQuery(pageMaker.cri.pageNum)}&con_seq=${ConstructionVO.con_seq}">${ConstructionVO.con_name}</a></th>
-	                    <th>${ConstructionVO.sido} ${ConstructionVO.gugun}</th>
-	                    <th>${ConstructionVO.cp_name}</th>
-	                    <th>${ConstructionVO.view_count}</th>
-	                    <th><fmt:formatDate value="${ConstructionVO.end_date}" pattern="yyyy-MM-dd"/></th>
+	                    <td>${ConstructionVO.con_seq}</td>
+	                    <td><a href="con_detail_mg${pageMaker.makeQuery(pageMaker.cri.pageNum)}&con_seq=${ConstructionVO.con_seq}">${ConstructionVO.con_name}</a></td>
+	                    <td>${ConstructionVO.sido} ${ConstructionVO.gugun}</td>
+	                    <td>${ConstructionVO.cp_name}</td>
+	                    <td>${ConstructionVO.view_count}</td>
+	                    <td><fmt:formatDate value="${ConstructionVO.end_date}" pattern="yyyy-MM-dd"/></td>
 	                </tr>
                 </c:forEach>
             </table>
