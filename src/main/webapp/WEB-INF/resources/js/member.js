@@ -13,14 +13,6 @@ function join_form() {
 	   $("#theform").attr("action", "join_form").submit();
 }
 
-function join_detail_form(){
-	   $("#member").attr("action","join_detail_form").submit();
-} 
-
-function company_join_form(){
-	   $("#member").attr("action","company_join_form").submit();
-}
-
 function go_find_id_form(){
 	$("#member").attr("action","find_id_form").submit();
 }
@@ -149,5 +141,19 @@ function logout() {
 	$("#theform").attr("action", "logout").submit();
 }
 
+function join_agree(){
+	if($("#agree").is(":checked")){
+		$("#member").attr("action","join_detail_form").submit();
+	}else{
+		alert("약관에 동의해 주시길 바람니다.");
+	}
+}
 
+function comp_join_agree(){
+	if($("#agree").is(":checked")){
+		$("#member").attr("action","company_join_form").submit();
+	}else{
+		alert("약관에 동의해 주시길 바람니다.");
+	}
+}
 
