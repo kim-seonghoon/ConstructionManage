@@ -31,11 +31,19 @@
 	                    </tr>
 	                    <tr>
 	                        <td class="b"><p>작성일</p></td>
-	                        <td>${ComplaintsVO.regdate}</td>
+	                        <td><fmt:formatDate value="${ComplaintsVO.regdate}" pattern="yyyy-MM-dd"/></td>
 	                        <td class="b"><p>조회수</p></td>
 	                        <td>${ComplaintsVO.view_count}</td>
 	                    </tr>
 	                    <tr><td height="0" colspan="4">${ComplaintsVO.content}</td></tr>
+	                    <c:if test="${ComplaintsVO.answer != '답변 없음'}">
+			                <tr>
+					        	<td colspan="4" class="b answer">답  변</td>
+					        </tr>
+				            <tr>
+					        	<td colspan="4" width="1200px">${ComplaintsVO.answer}</td>
+					        </tr>
+				        </c:if>
 	                </table>
 	                <c:choose>
 	                	<c:when test="${ComplaintsVO.answer == '답변 없음'}">
@@ -46,9 +54,6 @@
 		                </div>
 		                </c:when>
 		                <c:otherwise>
-		                <div class="container">
-		                	${ComplaintsVO.answer}
-		                </div>
 		                	<button class="btn-gray" onclick="go_comp_list_mg()">목록</button>
 		                    <button class="btn-black" onclick="go_answer_mod()">답변 수정</button>
 		                    <button class="btn-black" onclick="go_answer_delete()">답변 삭제</button>

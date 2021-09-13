@@ -21,6 +21,11 @@
 	          <input type="submit" value="로그인" class="btn_login">
 	        </div>
 	        </fieldset>
+	        <c:if test="${message!=null}">
+				<div class="find_msg">
+					<span>${message}</span>
+				</div>
+			</c:if>
 	        <div class="radio-group">
 		        <label class="radio">
 		       	  <input type="radio" name="user_type" value="1" checked="checked"><span>일반회원</span>&nbsp;&nbsp;

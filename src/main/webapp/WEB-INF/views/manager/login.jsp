@@ -8,7 +8,7 @@
 	</div>
 	<div class="container bbs_main" style="padding-top: 20px; padding-bottom: 10px">
 		<h3 style="margin-left: 170px; margin-top: 0">| 관리자 로그인</h3>
-		<div class="login_box">
+		<div class="login_box" style="padding-top: 100px">
 	    <form method="post" action="manager_login" id="manager">
 	    <input type="hidden" value="3" id="user_type" name="user_type">
 	        <fieldset>

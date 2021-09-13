@@ -89,4 +89,23 @@ public class CompanyDAO {
 		
 		mybatis.update("CompanyDAO.deleteCpUpdate", vo);
 	}
+	
+	public CompanyVO getCompanyByNameAndEmail(String cp_name, String cp_email) {
+		HashMap<String, String> map = new HashMap<>();
+
+		map.put("cp_name", cp_name);
+		map.put("cp_email", cp_email);
+		
+		return mybatis.selectOne("CompanyDAO.getCompanyByNameAndEmail", map);
+	}
+	
+	public CompanyVO getPwdByIdAndName(String cp_name, String cp_email, String cp_id) {
+		HashMap<String, String> map = new HashMap<>();
+
+		map.put("cp_name", cp_name);
+		map.put("cp_email", cp_email);
+		map.put("cp_id", cp_id);
+		
+		return mybatis.selectOne("CompanyDAO.getPwdByIdAndName", map);
+	}
 }

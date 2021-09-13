@@ -76,8 +76,8 @@
                     <div class="tab_content" id="all_content">
             			<table width="1200" cellpadding="0" cellspacing="0" class="table_list">
                             <tr>
-                                <td width="50" class="b">번호</td>
-                                <td width="750" class="b">제목</td>
+                                <td width="100" class="b">번호</td>
+                                <td width="700" class="b">제목</td>
                                 <td width="100" class="b">글쓴이</td>
                                 <td width="100" class="b">조회</td>
                                 <td width="100" class="b">날짜</td>
@@ -86,11 +86,18 @@
                 		<c:forEach items="${compList}" var="ComplaintsVO">
 			                <tr>
 			                    <td class="b">${ComplaintsVO.com_seq}</td>
-			                    <td class="left"><a href="comp_detail_mg${pageMaker.makeQuery(pageMaker.cri.pageNum)}&com_seq=${ComplaintsVO.com_seq}">${ComplaintsVO.title}</a></td>
+			                    <td><a href="comp_detail_mg${pageMaker.makeQuery(pageMaker.cri.pageNum)}&com_seq=${ComplaintsVO.com_seq}">${ComplaintsVO.title}</a></td>
 			                    <td>${ComplaintsVO.name}</td>
 			                    <td>${ComplaintsVO.view_count}</td>
 			                    <td><fmt:formatDate value="${ComplaintsVO.regdate}" pattern="yyyy-MM-dd"/></td>
-			                    <td>${ComplaintsVO.answer}</td>
+			                    <c:choose>
+			                    	<c:when test="${ComplaintsVO.answer=='답변 없음'}">
+			                    		<td>없음</td>
+			                    	</c:when>
+			                    	<c:otherwise>
+			                    		<td>답변 완료</td>
+			                    	</c:otherwise>
+			                    </c:choose>		
 			                </tr>
                 		</c:forEach>
             			</table>
@@ -132,21 +139,28 @@
                     <div class="tab_content" id="tab1_content">
             			<table width="1200" cellpadding="0" cellspacing="0" class="table_list">
                             <tr>
-                                <td width="50" class="b">번호</td>
-                                <td width="750" class="b">제목</td>
+                                <td width="100" class="b">번호</td>
+                                <td width="700" class="b">제목</td>
                                 <td width="100" class="b">글쓴이</td>
                                 <td width="100" class="b">조회</td>
                                 <td width="100" class="b">날짜</td>
-                                <td width="100" class="b">답변</td>
+                                <td width="100" class="b">답변</td>               
                             </tr>
                 		<c:forEach items="${compList1}" var="ComplaintsVO">
 			                <tr>
 			                    <td class="b">${ComplaintsVO.com_seq}</td>
-			                    <td class="left"><a href="comp_detail_mg${pageMaker1.makeQuery(pageMaker1.cri.pageNum)}&com_seq=${ComplaintsVO.com_seq}">${ComplaintsVO.title}</a></td>
+			                    <td><a href="comp_detail_mg${pageMaker1.makeQuery(pageMaker1.cri.pageNum)}&com_seq=${ComplaintsVO.com_seq}">${ComplaintsVO.title}</a></td>
 			                    <td>${ComplaintsVO.name}</td>
 			                    <td>${ComplaintsVO.view_count}</td>
 			                    <td><fmt:formatDate value="${ComplaintsVO.regdate}" pattern="yyyy-MM-dd"/></td>
-			                    <td>${ComplaintsVO.answer}</td>
+			                    <c:choose>
+			                    	<c:when test="${ComplaintsVO.answer=='답변 없음'}">
+			                    		<td>없음</td>
+			                    	</c:when>
+			                    	<c:otherwise>
+			                    		<td>답변 완료</td>
+			                    	</c:otherwise>
+			                    </c:choose>	
 			                </tr>
                 		</c:forEach>
             			</table>
@@ -187,8 +201,8 @@
                     <div class="tab_content" id="tab2_content">
             			<table width="1200" cellpadding="0" cellspacing="0" class="table_list">
                             <tr>
-                                <td width="50" class="b">번호</td>
-                                <td width="750" class="b">제목</td>
+                                <td width="100" class="b">번호</td>
+                                <td width="700" class="b">제목</td>
                                 <td width="100" class="b">글쓴이</td>
                                 <td width="100" class="b">조회</td>
                                 <td width="100" class="b">날짜</td>
@@ -197,11 +211,18 @@
                 		<c:forEach items="${compList2}" var="ComplaintsVO">
 			                <tr>
 			                    <td class="b">${ComplaintsVO.com_seq}</td>
-			                    <td class="left"><a href="comp_detail_mg${pageMaker2.makeQuery(pageMaker2.cri.pageNum)}&com_seq=${ComplaintsVO.com_seq}">${ComplaintsVO.title}</a></td>
+			                    <td><a href="comp_detail_mg${pageMaker2.makeQuery(pageMaker2.cri.pageNum)}&com_seq=${ComplaintsVO.com_seq}">${ComplaintsVO.title}</a></td>
 			                    <td>${ComplaintsVO.name}</td>
 			                    <td>${ComplaintsVO.view_count}</td>
 			                    <td><fmt:formatDate value="${ComplaintsVO.regdate}" pattern="yyyy-MM-dd"/></td>
-			                    <td>${ComplaintsVO.answer}</td>
+			                    <c:choose>
+			                    	<c:when test="${ComplaintsVO.answer=='답변 없음'}">
+			                    		<td>없음</td>
+			                    	</c:when>
+			                    	<c:otherwise>
+			                    		<td>답변 완료</td>
+			                    	</c:otherwise>
+			                    </c:choose>	
 			                </tr>
                 		</c:forEach>
             			</table>
@@ -242,8 +263,8 @@
                 <div class="tab_content" id="tab3_content">
             			<table width="1200" cellpadding="0" cellspacing="0" class="table_list">
                             <tr>
-                                <td width="50" class="b">번호</td>
-                                <td width="750" class="b">제목</td>
+                                <td width="100" class="b">번호</td>
+                                <td width="700" class="b">제목</td>
                                 <td width="100" class="b">글쓴이</td>
                                 <td width="100" class="b">조회</td>
                                 <td width="100" class="b">날짜</td>
@@ -252,11 +273,18 @@
                 		<c:forEach items="${compList3}" var="ComplaintsVO">
 			                <tr>
 			                    <td class="b">${ComplaintsVO.com_seq}</td>
-			                    <td class="left"><a href="comp_detail_mg${pageMaker3.makeQuery(pageMaker3.cri.pageNum)}&com_seq=${ComplaintsVO.com_seq}">${ComplaintsVO.title}</a></td>
+			                    <td><a href="comp_detail_mg${pageMaker3.makeQuery(pageMaker3.cri.pageNum)}&com_seq=${ComplaintsVO.com_seq}">${ComplaintsVO.title}</a></td>
 			                    <td>${ComplaintsVO.name}</td>
 			                    <td>${ComplaintsVO.view_count}</td>
 			                    <td><fmt:formatDate value="${ComplaintsVO.regdate}" pattern="yyyy-MM-dd"/></td>
-			                    <td>${ComplaintsVO.answer}</td>
+			                    <c:choose>
+			                    	<c:when test="${ComplaintsVO.answer=='답변 없음'}">
+			                    		<td>없음</td>
+			                    	</c:when>
+			                    	<c:otherwise>
+			                    		<td>답변 완료</td>
+			                    	</c:otherwise>
+			                    </c:choose>	
 			                </tr>
                 		</c:forEach>
             			</table>
@@ -297,8 +325,8 @@
                     <div class="tab_content" id="tab4_content">
             			<table width="1200" cellpadding="0" cellspacing="0" class="table_list">
                             <tr>
-                                <td width="50" class="b">번호</td>
-                                <td width="750" class="b">제목</td>
+                                <td width="100" class="b">번호</td>
+                                <td width="700" class="b">제목</td>
                                 <td width="100" class="b">글쓴이</td>
                                 <td width="100" class="b">조회</td>
                                 <td width="100" class="b">날짜</td>
@@ -307,11 +335,18 @@
                 		<c:forEach items="${compList4}" var="ComplaintsVO">
 			                <tr>
 			                    <td class="b">${ComplaintsVO.com_seq}</td>
-			                    <td class="left"><a href="comp_detail_mg${pageMaker4.makeQuery(pageMaker4.cri.pageNum)}&com_seq=${ComplaintsVO.com_seq}">${ComplaintsVO.title}</a></td>
+			                    <td><a href="comp_detail_mg${pageMaker4.makeQuery(pageMaker4.cri.pageNum)}&com_seq=${ComplaintsVO.com_seq}">${ComplaintsVO.title}</a></td>
 			                    <td>${ComplaintsVO.name}</td>
 			                    <td>${ComplaintsVO.view_count}</td>
 			                    <td><fmt:formatDate value="${ComplaintsVO.regdate}" pattern="yyyy-MM-dd"/></td>
-			                    <td>${ComplaintsVO.answer}</td>
+			                    <c:choose>
+			                    	<c:when test="${ComplaintsVO.answer=='답변 없음'}">
+			                    		<td>${ComplaintsVO.answer}</td>
+			                    	</c:when>
+			                    	<c:otherwise>
+			                    		<td>답변 완료</td>
+			                    	</c:otherwise>
+			                    </c:choose>	
 			                </tr>
                 		</c:forEach>
             			</table>

@@ -26,4 +26,8 @@ public interface CompanyService {
 	public int getCompanyCount(String key);
 	
 	public void deleteCpUpdate(CompanyVO vo);
+	
+	public CompanyVO getCompanyByNameAndEmail(String cp_name, String cp_email);
+	
+	public CompanyVO getPwdByIdAndName(String cp_name, String cp_email, String cp_id);
 }

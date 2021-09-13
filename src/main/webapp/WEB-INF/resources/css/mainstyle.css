@@ -31,7 +31,7 @@ body {
     height: 50px;
     width: 110px;
     border: 0;
-    margin-top: 30px;	
+    margin-top: 0px;	
 }
 
 .btn-black-lg:focus, .btn-black-lg:hover {
@@ -222,6 +222,16 @@ body {
 	width: 100px;
 	height: 40px;
 	font-size: 20px;
+}
+
+.login_box .find_msg {
+	margin: 5px;
+	text-align: center;
+	color: red;	
+}
+
+.login_box .find_msg span {
+	font-size: 14px;	
 }
 
 .login_box input[type="text"], input[type="password"] {

@@ -70,7 +70,7 @@
 			                <td><input type="checkbox" name="result" value="${CompanyVO.cp_id}"></td>							
 		                </c:when>
 			            <c:otherwise>
-			                <td><input type="checkbox" disabled="disabled"></td>
+			                <td></td>
 			            </c:otherwise>
 		            </c:choose>	                
 	                	<td>${CompanyVO.cp_name}</td>

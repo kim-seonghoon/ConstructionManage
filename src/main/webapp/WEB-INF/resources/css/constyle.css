@@ -21,7 +21,7 @@ body {
     overflow: scroll;
 }
 
-.btn, .btn:focus, .btn:hover, .btn-gray, .btn-black {
+.btn, .btn:focus, .btn:hover, .btn-gray, .btn-black, .btn-red {
     color: #fff;
     background-color: #999;
     padding: 10px;
@@ -86,6 +86,12 @@ body {
 	color: #fff;
 }
 
+.btn-red, .btn-red:focus, .btn-red:hover {
+    color: #fff;
+    background-color: #d50000;
+    /* padding: 10px; */
+
+}
 
 /* ==========================================================================
    gnb
@@ -307,6 +313,13 @@ body {
 
 .bbs_main .table textarea {
 	padding: 15px;
+}
+
+
+.bbs_main .table tr .b.answer {
+	margin-top: 10px;
+	background-color: #333;
+	color: #fff;
 }
 
 .bbs_main .list-group tr {

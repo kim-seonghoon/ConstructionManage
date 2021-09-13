@@ -68,7 +68,7 @@
 	                		<td><input type="checkbox" name="result" value="${UserVO.user_id}"></td>
 	                	</c:when>
 	               		<c:otherwise>
-	               			<td><input type="checkbox" disabled="disabled"></td>
+	               			<td></td>
 	               		</c:otherwise>
 	               	</c:choose>
 	                <td>${UserVO.name}</td>

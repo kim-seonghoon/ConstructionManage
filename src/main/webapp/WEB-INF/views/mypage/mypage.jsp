@@ -59,7 +59,7 @@
 	        </table>
 	            <div class="button">
 		            <input type="reset" class="btn-gray" value="취소">
-		            <input type="button" class="btn-black" value="회원탈퇴" onclick="deleteUser()">
+		            <input type="button" class="btn-red" value="회원탈퇴" onclick="deleteUser()">
 		            <input type="submit" class="btn-black" value="정보 수정" onclick="updateUser()">
 	        	</div>
 		</form>

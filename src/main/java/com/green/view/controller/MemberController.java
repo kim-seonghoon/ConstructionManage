@@ -212,36 +212,80 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="find_id")
-	public String getUserByNameAndEmail(UserVO vo, Model model) {
-			
-		UserVO user = userService.getUserByNameAndEmail(vo);
-		
-		if(user != null) {
-			model.addAttribute("user_id", user.getUser_id());
-			
-			return "member/idResult";
-		}else {
-			
-			return "member/idResultFail";
-		}
+	public String getUserByNameAndEmail(Model model,
+										@RequestParam(value="name") String name,
+										@RequestParam(value="email") String email,
+										@RequestParam(value="user_type") String user_type) {
+				if(user_type.equals("1")) {	
+					UserVO vo = new UserVO();
+					vo.setName(name);
+					vo.setEmail(email);
+					UserVO user = userService.getUserByNameAndEmail(vo);
+					
+					if(user != null) {
+						String message = "아이디는 " + user.getUser_id() + "입니다";
+						model.addAttribute("message", message);
+						
+						return "member/login";
+					}else {
+						String message = "등록된 아이디가 없습니다.";
+						model.addAttribute("message", message);
+						return "member/find_id";
+					}
+				} else {
+					CompanyVO user = companyService.getCompanyByNameAndEmail(name, email);
+					if(user != null) {
+						String message = "아이디는 " + user.getCp_id() + "입니다";
+						model.addAttribute("message", message);
+						
+						return "member/login";
+					}else {
+						String message = "등록된 아이디가 없습니다.";
+						model.addAttribute("message", message);
+						return "member/find_id";
+					}	
+				}
 	}
 	
+	
 	@RequestMapping(value="find_pwd")
-	public String getUserByNameAndEmailAndID(UserVO vo, Model model) {
-		
-		UserVO user = userService.getUserByNameAndEmailAndID(vo);
-		
-		if(user != null) {
-			model.addAttribute("user_id",vo.getUser_id());
-			model.addAttribute("email",vo.getEmail());
-			model.addAttribute("name",vo.getName());
-			
-			System.out.println(vo);
-			return "member/changePwd";
-		}else {
-			return "member/idResultFail";
-		}
+	public String getPwdByIdAndNameAndEmail(Model model,
+											@RequestParam(value="name") String name,
+											@RequestParam(value="email") String email,
+											@RequestParam(value="id") String id,
+											@RequestParam(value="user_type") String user_type) {
+			if(user_type.equals("1")) {	
+				UserVO vo = new UserVO();
+				vo.setName(name);
+				vo.setEmail(email);
+				vo.setUser_id(id);
+				UserVO user = userService.getUserByNameAndEmailAndID(vo);
+				
+				if(user != null) {
+					String message = "비밀번호는 " + user.getPwd() + "입니다";
+					model.addAttribute("message", message);
+					
+					return "member/login";
+				}else {
+					String message = "등록된 아이디가 없습니다.";
+					model.addAttribute("message", message);
+					return "member/find_pwd";
+				}
+			} else {
+				CompanyVO user = companyService.getPwdByIdAndName(name, email, id);
+				if(user != null) {
+					String message = "비밀번호는 " + user.getPwd() + "입니다";
+					model.addAttribute("message", message);
+					
+					return "member/login";
+				}else {
+					String message = "등록된 아이디가 없습니다.";
+					model.addAttribute("message", message);
+					return "member/find_pwd";
+				}	
+			}
 	}
+	
 	
 	@RequestMapping(value="pwd_change")
 	public String pwdChange(UserVO vo) {

@@ -77,4 +77,16 @@ public class CompanyServiceImpl implements CompanyService {
 		companyDao.deleteCpUpdate(vo);
 	}
 
+	@Override
+	public CompanyVO getCompanyByNameAndEmail(String cp_name, String cp_email) {
+		
+		return companyDao.getCompanyByNameAndEmail(cp_name, cp_email);
+	}
+
+	@Override
+	public CompanyVO getPwdByIdAndName(String cp_name, String cp_email, String cp_id) {
+		// TODO Auto-generated method stub
+		return companyDao.getPwdByIdAndName(cp_name, cp_email, cp_id);
+	}
+
 }

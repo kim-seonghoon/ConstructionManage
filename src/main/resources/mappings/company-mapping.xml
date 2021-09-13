@@ -30,6 +30,16 @@
 		SELECT pwd FROM company WHERE cp_id = #{cp_id}
 	</select>
 	
+	<!-- 아이디 찾기 -->
+	<select id="getCompanyByNameAndEmail" parameterType="HashMap" resultType="company">
+		SELECT * FROM company WHERE cp_name = #{cp_name} AND cp_email = #{cp_email}
+	</select>
+	
+	<!-- 비밀번호 찾기 -->
+	<select id="getPwdByIdAndName" parameterType="HashMap" resultType="company">
+		SELECT * FROM company WHERE cp_name = #{cp_name} AND cp_email = #{cp_email} AND cp_id = #{cp_id}
+	</select>
+	
 	<select id="companyListWithPaging" parameterType="HashMap" resultType="company">
 	<![CDATA[
 		SELECT cp_id, cp_address, dropyn, cp_name, cp_phone, admin_name, admin_phone

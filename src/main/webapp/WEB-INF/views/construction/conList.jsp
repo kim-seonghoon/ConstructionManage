@@ -81,17 +81,17 @@
 				<div class="tab_content" id="all_content">
 		            <table width="1200" cellpadding="0" cellspacing="0" class="table_list">
 		                <tr>
-		                    <td width="50" class="b"><p>번호</p></td>
-		                    <td width="750" class="b"><p>제목</p></td>
-		                    <td width="100" class="b"><p>지역</p></td>
-		                    <td width="100" class="b"><p>글쓴이</p></td>
-		                    <td width="100" class="b"><p>조회</p></td>
-		                    <td width="100" class="b"><p>종료일자</p></td>
+		                    <td width="100" class="b">번호</td>
+		                    <td width="700" class="b">제목</td>
+		                    <td width="100" class="b">지역</td>
+		                    <td width="100" class="b">글쓴이</td>
+		                    <td width="100" class="b">조회</td>
+		                    <td width="100" class="b">종료일자</td>
 		                </tr>
 		                <c:forEach items="${conList}" var="ConstructionVO">
 			                <tr>
 			                    <td class="b">${ConstructionVO.con_seq}</td>
-			                    <td class="left"><a href="con_detail${pageMaker.makeQuery(pageMaker.cri.pageNum)}&con_seq=${ConstructionVO.con_seq}">${ConstructionVO.con_name}</a></td>
+			                    <td><a href="con_detail${pageMaker.makeQuery(pageMaker.cri.pageNum)}&con_seq=${ConstructionVO.con_seq}">${ConstructionVO.con_name}</a></td>
 			                    <td>${ConstructionVO.sido} ${ConstructionVO.gugun}</td>
 			                    <td>${ConstructionVO.cp_name}</td>
 			                    <td>${ConstructionVO.view_count}</td>
@@ -139,8 +139,8 @@
 		    	<div class="tab_content" id="tab1_content">
 		            <table width="1200" cellpadding="0" cellspacing="0" class="table_list">
 		                <tr>
-		                    <td width="50" class="b"><p>번호</p></td>
-		                    <td width="750" class="b"><p>제목</p></td>
+		                    <td width="100" class="b"><p>번호</p></td>
+		                    <td width="700" class="b"><p>제목</p></td>
 		                    <td width="100" class="b"><p>지역</p></td>
 		                    <td width="100" class="b"><p>글쓴이</p></td>
 		                    <td width="100" class="b"><p>조회</p></td>
@@ -149,7 +149,7 @@
 		                <c:forEach items="${conList1}" var="ConstructionVO">
 			                <tr>
 			                    <td class="b">${ConstructionVO.con_seq}</td>
-			                    <td class="left"><a href="con_detail${pageMaker.makeQuery(pageMaker.cri.pageNum)}&con_seq=${ConstructionVO.con_seq}">${ConstructionVO.con_name}</a></td>
+			                    <td><a href="con_detail${pageMaker.makeQuery(pageMaker.cri.pageNum)}&con_seq=${ConstructionVO.con_seq}">${ConstructionVO.con_name}</a></td>
 			                    <td>${ConstructionVO.sido} ${ConstructionVO.gugun}</td>
 			                    <td>${ConstructionVO.cp_name}</td>
 			                    <td>${ConstructionVO.view_count}</td>
@@ -197,8 +197,8 @@
 		    	<div class="tab_content" id="tab2_content">
 		            <table width="1200" cellpadding="0" cellspacing="0" class="table_list">
 		                <tr>
-		                    <td width="50" class="b"><p>번호</p></td>
-		                    <td width="750" class="b"><p>제목</p></td>
+		                    <td width="100" class="b"><p>번호</p></td>
+		                    <td width="700" class="b"><p>제목</p></td>
 		                    <td width="100" class="b"><p>지역</p></td>
 		                    <td width="100" class="b"><p>글쓴이</p></td>
 		                    <td width="100" class="b"><p>조회</p></td>
@@ -207,7 +207,7 @@
 		                <c:forEach items="${conList2}" var="ConstructionVO">
 			                <tr>
 			                    <td class="b">${ConstructionVO.con_seq}</td>
-			                    <td class="left"><a href="con_detail${pageMaker2.makeQuery(pageMaker2.cri.pageNum)}&con_seq=${ConstructionVO.con_seq}">${ConstructionVO.con_name}</a></td>
+			                    <td><a href="con_detail${pageMaker2.makeQuery(pageMaker2.cri.pageNum)}&con_seq=${ConstructionVO.con_seq}">${ConstructionVO.con_name}</a></td>
 			                    <td>${ConstructionVO.sido} ${ConstructionVO.gugun}</td>
 			                    <td>${ConstructionVO.cp_name}</td>
 			                    <td>${ConstructionVO.view_count}</td>
@@ -255,8 +255,8 @@
 		    	<div class="tab_content" id="tab3_content">
 		            <table width="1200" cellpadding="0" cellspacing="0" class="table_list">
 		                <tr>
-		                    <td width="50" class="b"><p>번호</p></td>
-		                    <td width="750" class="b"><p>제목</p></td>
+		                    <td width="100" class="b"><p>번호</p></td>
+		                    <td width="700" class="b"><p>제목</p></td>
 		                    <td width="100" class="b"><p>지역</p></td>
 		                    <td width="100" class="b"><p>글쓴이</p></td>
 		                    <td width="100" class="b"><p>조회</p></td>
@@ -265,7 +265,7 @@
 		                <c:forEach items="${conList3}" var="ConstructionVO">
 			                <tr>
 			                    <td class="b">${ConstructionVO.con_seq}</td>
-			                    <td class="left"><a href="con_detail${pageMaker3.makeQuery(pageMaker3.cri.pageNum)}&con_seq=${ConstructionVO.con_seq}">${ConstructionVO.con_name}</a></td>
+			                    <td><a href="con_detail${pageMaker3.makeQuery(pageMaker3.cri.pageNum)}&con_seq=${ConstructionVO.con_seq}">${ConstructionVO.con_name}</a></td>
 			                    <td>${ConstructionVO.sido} ${ConstructionVO.gugun}</td>
 			                    <td>${ConstructionVO.cp_name}</td>
 			                    <td>${ConstructionVO.view_count}</td>
@@ -313,8 +313,8 @@
 		    	<div class="tab_content" id="tab4_content">
 		            <table width="1200" cellpadding="0" cellspacing="0" class="table_list">
 		                <tr>
-		                    <td width="50" class="b"><p>번호</p></td>
-		                    <td width="750" class="b"><p>제목</p></td>
+		                    <td width="100" class="b"><p>번호</p></td>
+		                    <td width="700" class="b"><p>제목</p></td>
 		                    <td width="100" class="b"><p>지역</p></td>
 		                    <td width="100" class="b"><p>글쓴이</p></td>
 		                    <td width="100" class="b"><p>조회</p></td>
@@ -323,7 +323,7 @@
 		                <c:forEach items="${conList4}" var="ConstructionVO">
 			                <tr>
 			                    <td class="b">${ConstructionVO.con_seq}</td>
-			                    <td class="left"><a href="con_detail${pageMaker4.makeQuery(pageMaker4.cri.pageNum)}&con_seq=${ConstructionVO.con_seq}">${ConstructionVO.con_name}</a></td>
+			                    <td><a href="con_detail${pageMaker4.makeQuery(pageMaker4.cri.pageNum)}&con_seq=${ConstructionVO.con_seq}">${ConstructionVO.con_name}</a></td>
 			                    <td>${ConstructionVO.sido} ${ConstructionVO.gugun}</td>
 			                    <td>${ConstructionVO.cp_name}</td>
 			                    <td>${ConstructionVO.view_count}</td>

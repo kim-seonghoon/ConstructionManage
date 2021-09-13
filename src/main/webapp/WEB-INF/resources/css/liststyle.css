@@ -417,7 +417,30 @@ select.form-control{
     display: inline-block;
     left: 12px;
 }
+.form-control.btn-search, .btn-search:focus, .btn-search:hover  {
+    border: none;
+    width: 60px;
+    /* height: 50px; */
+    background-color: #333;
+    color: #fff;
+    font-size: 12px;
+    padding: 0;
+    position: relative;
+    display: inline-block;
+    left: 12px;
+}
 
+.btn-search, .btn-search:focus, .btn-search:hover  {
+    border: none;
+    width: 60px;
+    height: 45px;
+    background-color: #333;
+    color: #fff;
+    font-size: 12px;
+    padding: 0;
+    display: inline-block;
+    left: 12px;
+}
 
 /* ==========================================================================
    navbar
