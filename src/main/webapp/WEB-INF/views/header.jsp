@@ -6,7 +6,7 @@
 <html lang="ko"> 
 
 <head>
-	<link rel="stylesheet" type="text/css" href="css/mainstyle.css?ver=1">
+	<link rel="stylesheet" type="text/css" href="css/mainstyle.css?ver=2">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.2-dist/css/bootstrap.min.css">
 	<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript" src="js/member.js"></script>

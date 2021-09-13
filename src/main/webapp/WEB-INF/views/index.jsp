@@ -40,7 +40,7 @@
 				<table class="list-group">
                     <c:forEach items="${newComplaintList}"  var="complaintVO">
 					<tr>
-						<td><a href="com_detail?com_seq=${complaintVO.com_seq}">- ${complaintVO.title}</a></td>
+						<td><a href="comp_detail?com_seq=${complaintVO.com_seq}">- ${complaintVO.title}</a></td>
 						<td><fmt:formatDate value="${complaintVO.regdate}" pattern="yyyy-MM-dd"/></td>
 					</tr>
 					</c:forEach>

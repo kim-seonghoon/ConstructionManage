@@ -129,6 +129,16 @@ public class ManagerController {
 		model.addAttribute("conListSize", conList.size());
 		model.addAttribute("conList", conList);
 		model.addAttribute("pageMaker", pageMaker);
+		model.addAttribute("con_num", con_num);
+		
+		for(int i=1; i<5; i++) {
+			con_num = Integer.toString(i);
+			conList = constructionService.getManageConstructionList(sido, gugun, criteria, con_num, key);
+			model.addAttribute("conList"+i, conList);
+			model.addAttribute("conListSize"+i, conList.size());
+			model.addAttribute("pageMaker"+i, pageMaker);
+		}
+		
 		model.addAttribute("key", key);
 		
 		return "manager/conList";
@@ -153,6 +163,14 @@ public class ManagerController {
 		model.addAttribute("compList", compList);
 		model.addAttribute("pageMaker", pageMaker);
 		model.addAttribute("key", key);
+		
+		for(int i=1; i<5; i++) {
+			con_num = Integer.toString(i);
+			compList = complaintService.managerCompList(address, con_num, key, criteria);
+			model.addAttribute("compList"+i, compList);
+			model.addAttribute("compListSize"+i, compList.size());
+			model.addAttribute("pageMaker"+i, pageMaker);
+		}
 		
 		return "manager/compList";
 	}
@@ -294,5 +312,10 @@ public class ManagerController {
 		model.addAttribute("ComplaintsVO", comp);
 		System.out.println(comp);
 		return "manager/compDetail";
+	}
+	
+	@RequestMapping(value="find_id_form_mg")
+	public String findIdFormMg() {
+		return "";
 	}
 }

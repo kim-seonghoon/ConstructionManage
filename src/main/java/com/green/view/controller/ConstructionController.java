@@ -41,6 +41,17 @@ public class ConstructionController {
 		model.addAttribute("pageMaker", pageMaker);
 		model.addAttribute("key", key);
 		
+		for(int i=1; i<5; i++) {
+			con_num = Integer.toString(i);
+			conList = constructionService.constListWithPaging(key, criteria, con_num);
+			model.addAttribute("conList"+i, conList);
+			model.addAttribute("conListSize"+i, conList.size());
+			model.addAttribute("pageMaker"+i, pageMaker);
+		}
+		
+		model.addAttribute("c_num", con_num);
+		System.out.println("con_num="+con_num);
+		
 		return "construction/conList";
 	}
 	
@@ -97,6 +108,8 @@ public class ConstructionController {
 			model.addAttribute("conList", conList);
 			model.addAttribute("pageMaker", pageMaker);
 			model.addAttribute("key", key);
+			model.addAttribute("con_num", con_num);
+			System.out.println("con_num="+con_num);
 		
 			return "construction/conList";
 	}

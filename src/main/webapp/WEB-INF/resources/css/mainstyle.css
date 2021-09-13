@@ -210,9 +210,9 @@ body {
 
 .bbs_main .login_box {
 	width: 800px;
-	height: 400px;
-	margin: 40px auto 100px auto;
-	padding-top: 90px;
+	height: 350px;
+	margin: 30px auto 100px auto;
+	padding-top: 60px;
 	padding-right: 80px;
 	border: 3px solid #444;	
 }
@@ -367,7 +367,10 @@ select.form-control{
    navbar
    ========================================================================== */
 
-   
+header {
+    width: 100%;
+    background-color: rgb(0,0,0,0.4);
+}   
 .navbar-inverse {
     background-color: rgb(0,0,0,0.4);
 
@@ -386,4 +389,31 @@ select.form-control{
 .navbar-inverse .navbar-nav > li > a {
     color: #fff;
     text-decoration: none;
+}
+
+/* */
+footer{
+    background-color: #333;
+    text-align: left;
+    color: #ddd;
+    font-size: 12px;
+    line-height: 70px;
+    text-align: center;
+    position:fixed;
+    width: 100%;
+    bottom:0;
+}
+li{
+    list-style: none;
+    margin-left: 30px;
+}
+
+.b {
+    font-weight: bold;
+}
+.brn {
+    border-right: none !important;
+}
+.tar {
+    text-align: right !important;
 }

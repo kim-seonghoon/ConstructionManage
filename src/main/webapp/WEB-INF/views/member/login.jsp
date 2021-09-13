@@ -6,7 +6,7 @@
 			<h1>회원 로그인</h1>
 		</div>
 	</div>
-	<div class="container bbs_main">
+	<div class="container bbs_main" style="padding-top: 20px; padding-bottom: 10px">
 		<h3 style="margin-left: 170px; margin-top: 0">| 로그인</h3>
 		<div class="login_box">
 	    <form method="post" action="login" id="member">

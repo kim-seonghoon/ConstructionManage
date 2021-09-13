@@ -34,12 +34,20 @@ public class ComplaintController {
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(criteria);	// 현재 페이지와 페이지당 항목 수 설정
-		pageMaker.setTotalCount(complaintService.searchCount(key, criteria, con_num));
+		pageMaker.setTotalCount(compList.size());
 		System.out.println("페이징 정보="+pageMaker);
 		
 		model.addAttribute("compListSize", compList.size());
 		model.addAttribute("compList", compList);
 		model.addAttribute("pageMaker", pageMaker);
+		
+		for(int i=1; i<5; i++) {
+			con_num = Integer.toString(i);
+			compList = complaintService.compListWithPaging(key, criteria, con_num);
+			model.addAttribute("compList"+i, compList);
+			model.addAttribute("compListSize"+i, compList.size());
+			model.addAttribute("pageMaker"+i, pageMaker);
+		}
 
 		return "complaint/compList";
 	}
@@ -82,7 +90,7 @@ public class ComplaintController {
 		
 	}
 	
-	@RequestMapping(value="/com_detail")
+	@RequestMapping(value="/comp_detail")
 	public String complaintDetail(ComplaintsVO vo, Model model) {
 		
 		ComplaintsVO com = complaintService.getComplaints(vo);

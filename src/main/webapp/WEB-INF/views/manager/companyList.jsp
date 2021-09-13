@@ -1,6 +1,40 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="header.jsp" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
+<!DOCTYPE html>
+<html lang="ko"> 
+
+<head>
+	<link rel="stylesheet" href="css/liststyle.css?ver=3">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="js/member.js"></script>
+	<script type="text/javascript" src="js/complaint.js?ver=1"></script>
+	<script type="text/javascript" src="js/construction.js"></script>
+	<script type="text/javascript" src="js/mypage.js"></script>  
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<title>공사관리 Main</title>
+</head>
+<body class="body">
+	<div class="wrap">
+		<header class="navbar navbar-inverse">
+			<div class="navbar-header">
+				<h1><a class="navbar-brand" href="go_home_mg">공사관리</a></h1>
+			</div>
+			<nav class="gnb">
+				<ul class="nav navbar-nav">
+					<!-- <li class="active"><a href="#">1depth-01</a></li> -->
+					<li><a href="con_list_form_mg">공사 현황</a></li>
+					<li><a href="comp_list_form_mg">민원 관리</a></li>
+					<li><a href="user_list_form_mg">유저 관리</a></li>
+					<li><a href="company_list_form_mg">공사업체 관리</a></li>
+
+					<li class="btn_nav"><a href="logout">로그아웃</a></li>
+				</ul>
+			</nav>
+		</header>
+		
 		<div class="jumbotron_small">
 			<div class="container">
 				<h1>공사업체 관리</h1>
@@ -8,66 +42,70 @@
 		</div>
 		
 		<div class="container bbs_main">
-			<div class="search"> 
 			<form id="companyform" action="company_list_form_mg" method="POST">
+			<div class="search"> 
 				<select class="form-control input" name="search-company" id="search01">
 					<option value="1">아이디</option>
                     <option value="2">회사명</option>
 				</select>
 				<input type="text" name="key" class="form-control textarea" id="search02" placeholder="입력하세요">
-				<span ><input class="form-control btn" type="submit" value="검색" style="margin-top:0"></span>
-			</form>
+				<span ><input class="form-control btn" type="submit" value="검색" style="margin-top:0"></span>			
 			</div>
+			</form>
 			<div>
 			<form name="frm" id="user_lsit_form" method="POST">
-            <table>
+            <table width="1200" cellpadding="0" cellspacing="0" class="table_list">
                 <tr>
-                	<th>체크</th>
-                    <th><p>회사명</p></th>
-                    <th><p>아이디</p></th>
-                    <th><p>주소</p></th>
+                	<td width="50" class="b">체크</td>
+                    <td width="100" class="b">회사명</td>
+                    <td width="150" class="b">아이디</td>
+                    <td width="500" class="b">주소</td>
+                    <td width="100" class="b">책임자</td>
+                    <td width="300" class="b">연락처</td>
                 </tr>             
 	            <c:forEach items="${companyList}" var="CompanyVO">
 	            <tr>
 	               	<c:choose>
 		                <c:when test="${CompanyVO.dropyn=='y'}">
-			                <th><input type="checkbox" name="result" value="${CompanyVO.cp_id}"></th>							
+			                <td><input type="checkbox" name="result" value="${CompanyVO.cp_id}"></td>							
 		                </c:when>
 			            <c:otherwise>
-			                <th><input type="checkbox" disabled="disabled"></th>
+			                <td><input type="checkbox" disabled="disabled"></td>
 			            </c:otherwise>
 		            </c:choose>	                
-	                	<th>${CompanyVO.cp_name}</th>
-		            	<th>${CompanyVO.cp_id}</th>
-		            	<th>${CompanyVO.cp_address}</th>
-		            	<th>${CompanyVO.admin_name}</th>
-		           		<th>${CompanyVO.admin_phone}</th>
+	                	<td>${CompanyVO.cp_name}</td>
+		            	<td>${CompanyVO.cp_id}</td>
+		            	<td>${CompanyVO.cp_address}</td>
+		            	<td>${CompanyVO.admin_name}</td>
+		           		<td>${CompanyVO.admin_phone}</td>
 		        </tr>
 		        </c:forEach>    
             </table>
-            <div>
-				<ul class="pagination">
-				
-					<c:if test="${pageMaker.prev}">
-						<li class="paginate_button previous">
-							<a href="user_list_form${pageMaker.makeQuery(pageMaker.startPage-1)}">[이전]</a>
-						</li>
-					</c:if>
-							
-					<!-- [1][2][3]... 표시 부분 -->
-					<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="index">
-						<a href="user_list_form${pageMaker.makeQuery(index)}">[${index}]</a>
-					</c:forEach>
+            <div class="bbs_list_bottom">
+            	<div class="bbs_list_num">
+					<ul class="pagination">
 					
-					<c:if test="${pageMaker.next}">
-						<li class="paginate_button next">
-							<a href="user_list_form${pageMaker.makeQuery(pageMaker.endPage+1)}">[다음]</a>
-						</li>
-					</c:if>	
+						<c:if test="${pageMaker.prev}">
+							<li class="paginate_button previous">
+								<a href="company_list_form_mg${pageMaker.makeQuery(pageMaker.startPage-1)}">[이전]</a>
+							</li>
+						</c:if>
+								
+						<!-- [1][2][3]... 표시 부분 -->
+						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="index">
+							<a href="company_list_form_mg${pageMaker.makeQuery(index)}">[${index}]</a>
+						</c:forEach>
 						
-				</ul>
-			</div>
-            <input type="button" value="삭제" onclick="go_delete_cp()">
+						<c:if test="${pageMaker.next}">
+							<li class="paginate_button next">
+								<a href="company_list_form_mg${pageMaker.makeQuery(pageMaker.endPage+1)}">[다음]</a>
+							</li>
+						</c:if>	
+							
+					</ul>
+				</div>
+            		<input type="button" value="삭제" class="btn-red" onclick="go_delete_cp()">
+            </div>
             </form>
         </div>
     </div>
