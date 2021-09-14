@@ -49,7 +49,7 @@
 			<h1>회원 가입</h1>
 		</div>
 	</div>
-   <div class="container bbs_main" style="overflow: scroll">
+   <div class="container bbs_main">
    <h3 style="text-align: left; font-weight: bold;">| 약관 정보</h3>
    <form id="member" >
    	   <div>

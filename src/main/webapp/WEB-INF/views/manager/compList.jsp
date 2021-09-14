@@ -121,17 +121,6 @@
 									</c:if>		
 								</ul>
                             </div>
-
-                            <div class="bbs_list_btn">
-                                <ul>
-                                    <li>
-                                    	<form name="comp_write_form" id="comp_write_form">
-							            	<input type="button" onclick="go_write_comp()" value="글쓰기">
-							            </form>
-                                    </li>
-                                </ul>
-                            </div>
-
                         </div>
                     </div>
 
@@ -183,16 +172,6 @@
 										</li>
 									</c:if>		
 								</ul>
-                            </div>
-
-                            <div class="bbs_list_btn">
-                                <ul>
-                                    <li>
-                                    	<form name="comp_write_form" id="comp_write_form">
-							            	<input type="button" onclick="go_write_comp()" value="글쓰기">
-							            </form>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                     </div>
@@ -246,16 +225,6 @@
 									</c:if>		
 								</ul>
                             </div>
-
-                            <div class="bbs_list_btn">
-                                <ul>
-                                    <li>
-                                    	<form name="comp_write_form" id="comp_write_form">
-							            	<input type="button" onclick="go_write_comp()" value="글쓰기">
-							            </form>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
                 </div>
                 
@@ -307,16 +276,6 @@
 										</li>
 									</c:if>		
 								</ul>
-                            </div>
-
-                            <div class="bbs_list_btn">
-                                <ul>
-                                    <li>
-                                    	<form name="comp_write_form" id="comp_write_form">
-							            	<input type="button" onclick="go_write_comp()" value="글쓰기">
-							            </form>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                     </div>
@@ -370,15 +329,6 @@
 									</c:if>		
 								</ul>
                             </div>
-
-                            <div class="bbs_list_btn">
-                                <ul>
-                                    <li>
-                                    	<form name="comp_write_form" id="comp_write_form">
-							            	<input type="button" onclick="go_write_comp()" value="글쓰기">
-							            </form>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                     </div>

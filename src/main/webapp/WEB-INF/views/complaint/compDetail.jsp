@@ -31,8 +31,9 @@
 	                        <td>${ComplaintsVO.view_count}</td>
 	                    </tr>
 	                    <tr><td height="0" colspan="4">${ComplaintsVO.content}</td></tr>
+	                    <c:if test="${user_type == 1}">
 	                    <c:choose>
-	                    	<c:when test="${loginUser.name == ComplaintsVO.name}">
+	                    	<c:when test="${loginUser.user_id == ComplaintsVO.user_id}">
 		                    	<c:if test="${ComplaintsVO.answer != '답변 없음'}">
 		                    		<tr>
 				                		<td colspan="4" class="b answer">답  변</td>
@@ -43,12 +44,29 @@
 				                </c:if>
 	                    	</c:when>
 	                    </c:choose>
+	                    </c:if>
 	                </table>
-	                <div id="buttons">
-	                	<button class="btn-gray" onclick="go_comp_list()">목록</button>
-	                    <button class="btn-black" onclick="comp_delete()">삭제</button>
-	                    <button class="btn-black" onclick="comp_update()">수정</button>
-	                </div>
+	                <c:choose>
+	                	<c:when test="${user_type == 1}">
+	                		<c:if test="${loginUser.user_id == ComplaintsVO.user_id}">
+	                			<div id="buttons">
+				                	<button class="btn-gray" onclick="go_comp_list()">목록</button>
+				                    <button class="btn-black" onclick="comp_delete()">삭제</button>
+				                    <button class="btn-black" onclick="comp_update()">수정</button>
+	                			</div>
+	                		</c:if>
+	                		<c:if test="${loginUser.user_id != ComplaintsVO.user_id}">
+		                		<div id="buttons">
+		                			<button class="btn-black" onclick="go_comp_list()">목록</button>
+		                		</div>
+	                		</c:if>
+	                	</c:when>
+	                	<c:otherwise>
+	                		<div id="buttons">
+	                			<button class="btn-black" onclick="go_comp_list()">목록</button>
+	                		</div>
+	                	</c:otherwise>
+	                </c:choose>
                 </div>
             </div>
             </form>
