@@ -69,12 +69,9 @@
 	                <c:choose>
 	       				<c:when test="${sessionScope.user_type == 3}">
 		                    <input type="button" class="btn-gray" value="목록" onclick="go_con_list_mg()">
-		                    <input type="button" class="btn-black" value="삭제하기" onclick="delete_con()">
-		                    <input type="submit" class="btn-black" value="답변">
 		                </c:when>
 		                <c:otherwise>
 		                	<input type="button" class="btn-gray" value="목록" onclick="go_con_list_mg()">
-		                	<input type="button" class="btn-black" value="민원접수" onclick="go_write_comp()">
 		            	</c:otherwise>
 		            </c:choose>
 				  </div>

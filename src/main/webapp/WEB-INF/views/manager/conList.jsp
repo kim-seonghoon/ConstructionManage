@@ -136,7 +136,7 @@
 		                <c:forEach items="${conList}" var="ConstructionVO">
 			                <tr>
 			                    <td class="b">${ConstructionVO.con_seq}</td>
-			                    <td><a href="con_detail${pageMaker.makeQuery(pageMaker.cri.pageNum)}&con_seq=${ConstructionVO.con_seq}">${ConstructionVO.con_name}</a></td>
+			                    <td><a href="con_detail_mg${pageMaker.makeQuery(pageMaker.cri.pageNum)}&con_seq=${ConstructionVO.con_seq}">${ConstructionVO.con_name}</a></td>
 			                    <td>${ConstructionVO.sido} ${ConstructionVO.gugun}</td>
 			                    <td>${ConstructionVO.cp_name}</td>
 			                    <td>${ConstructionVO.view_count}</td>
